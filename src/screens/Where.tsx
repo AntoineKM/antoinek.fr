@@ -5,9 +5,9 @@ import PageWrapper from "@components/PageWrapper";
 import Co from "@components/Co";
 import Repo from "@components/Repo";
 
-const onRuntimeIcon = '@assets/images/onruntime-icon.png' as string;
-const NFactoryIcon = '@assets/images/nfactoryschool-icon.png' as string;
-const AirFranceIcon = '@assets/images/airfrance-icon.png' as string;
+const NFactoryIcon = '/p-static/images/nfactoryschool-icon.png' as string;
+const onRuntimeIcon = '/p-static/images/onruntime-icon.png' as string;
+const AirFranceIcon = '/p-static/images/airfrance-icon.png' as string;
 
 const Where = () => {
   return (
