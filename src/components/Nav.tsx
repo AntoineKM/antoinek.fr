@@ -35,7 +35,7 @@ const Nav = () => {
   useEffect(() => {
     if (openOnMobile) setOpenOnMobile(false);
     playSwitchPageSound();
-  }, [pathname, openOnMobile, playSwitchPageSound]);
+  }, [pathname, playSwitchPageSound]);
 
   const pageIndicatorOffset = useMemo(
     () => (pathname ? pathnameOffsets[pathname] ?? -120 : 0),
