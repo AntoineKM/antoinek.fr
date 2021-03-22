@@ -18,7 +18,7 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
       if (body.success) {
         setDoing(body.data);
 
-        setActive(((!!body.data.listening_to_spotify || body.data.activities[body.data.activities.length - 1]?.type === 0) ? true : false));
+        setActive(doing?.listening_to_spotify || currentActivity);
       }
     }
 
@@ -32,7 +32,7 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
 
   if (!doing || doing?.discord_status === 'offline') return null;
 
-  const currentActivity = doing?.activities[doing.activities.length - 1];
+  const currentActivity = doing?.activities.filter(activity => activity.type === 0)[0];
   const currentDate: any = new Date();
 
   const timeElapsed = (startTime: any) => {
@@ -78,7 +78,7 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
       }
       {(currentActivity?.type === 0) ?
         <Container ref={ref} href="/presence" {...props}>
-          <h5>Playing a game</h5>
+          <h5>Doing something</h5>
           <ActivityRow>
             {currentActivity.assets ?
               <ActivityImageContainer>
@@ -89,8 +89,8 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
             }
             <ActivityInfo>
               <h5>{currentActivity.name}</h5>
-              {currentActivity.assets?.small_text ? <p>{currentActivity.assets.small_text}</p> : null}
-              {currentActivity.assets?.large_text ? <p>{currentActivity.assets.large_text}</p> : null}
+              {currentActivity.details ? <p>{currentActivity.details}</p> : null}
+              {currentActivity.state ? <p>{currentActivity.state}</p> : null}
               <p>{timeElapsed(currentActivity.created_at + -1000)} elapsed</p>
             </ActivityInfo>
           </ActivityRow>
