@@ -161,7 +161,8 @@ const ContentWrapper = styled.div`
 
   @media (max-width:850px)  { 
     margin-left: 0px;
-    margin-top: 65px;
+    padding-top: 0;
+    margin-top: 85px;
   }
 `;
 
