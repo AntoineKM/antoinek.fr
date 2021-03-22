@@ -1,12 +1,13 @@
 import Head from 'next/head';
-
-import PageWrapper from "../components/PageWrapper";
-import Co from "../components/Co";
 import styled from "styled-components";
-import onRuntimeIcon from '@assets/images/onruntime-icon.png';
-import NFactoryIcon from '@assets/images/nfactoryschool-icon.png';
-import AirFranceIcon from '@assets/images/airfrance-icon.png';
-import Repo from "../components/Repo";
+
+import PageWrapper from "@components/PageWrapper";
+import Co from "@components/Co";
+import Repo from "@components/Repo";
+
+const onRuntimeIcon = '@assets/images/onruntime-icon.png' as string;
+const NFactoryIcon = '@assets/images/nfactoryschool-icon.png' as string;
+const AirFranceIcon = '@assets/images/airfrance-icon.png' as string;
 
 const Where = () => {
   return (

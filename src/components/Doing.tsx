@@ -6,7 +6,7 @@ import styled, { keyframes } from "styled-components";
 import Progress from "./Progress";
 import Link from "./Link";
 
-import SpotifyLogo from '@assets/images/spotify-logo.svg';
+import SpotifyLogo from '../assets/images/spotify-logo.svg';
 
 const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void } & any, ref: any) => {
   const [doing, setDoing] = React.useState<any | null>(null);
