@@ -8,7 +8,7 @@ const Head = () => (
         <meta name="theme-color" content="#000000" />
         <meta
             name="description"
-            content="phineas walton: developer, innovator, investor"
+            content="Antoine Kingue: developer, designer and youtuber"
         />
         <link rel="apple-touch-icon" href="/p-static/images/favicons/favicon.png" />
 
