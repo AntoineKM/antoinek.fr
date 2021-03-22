@@ -1,0 +1,60 @@
+html, body, #__next {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    font-family: 'Karla', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+::selection {
+    background-color: #ccc;
+    color: #000;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+    color: #ff7675;
+    text-decoration: none;
+}
+
+p {
+    color: #ccc;
+}
+
+/* scrollbar */
+
+body {
+    scrollbar-color: rgba(255, 255, 255, .6) #000;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    /* for vertical scrollbars */
+    height: 7px;
+    /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid #101010;
+    border-radius: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    height: 30px;
+}
