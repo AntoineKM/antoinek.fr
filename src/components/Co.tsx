@@ -64,6 +64,7 @@ const Container = styled(animated.div)`
   transition: all 0.1s ease;
   will-change: transform;
   transition: background-color .2s;
+  height: 100%;
 
   &:hover {
     background-color: #101010;
