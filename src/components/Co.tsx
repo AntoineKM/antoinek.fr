@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
 import { ExternalLinkIcon } from "./Icons";
@@ -24,13 +25,13 @@ const Co = ({
 
   return (
     <A href={url} target="_blank" rel="noopener">
-      <Container  onMouseMove={({ clientX: x, clientY: y }: {clientX: number, clientY: number}) => set({ xys: calc(x, y) })}
-      onMouseLeave={() => set({ xys: [0, 0, 1] })}
-      //@ts-ignore
-      style={{ transform: props.xys.interpolate(trans) }}>
+      <Container onMouseMove={({ clientX: x, clientY: y }: { clientX: number, clientY: number }) => set({ xys: calc(x, y) })}
+        onMouseLeave={() => set({ xys: [0, 0, 1] })}
+        //@ts-ignore
+        style={{ transform: props.xys.interpolate(trans) }}>
         <Header>
-          <img alt={`${name} Logo`} draggable={false} src={iconReference} />
-          <div>
+          <Image alt={`${name} Logo`} draggable={false} src={iconReference} width={225} height={225} priority={true} />
+          <div style={{ paddingLeft: '1rem' }}>
             <h3>
               {name} <ExternalLinkIcon />
             </h3>
@@ -84,7 +85,6 @@ const Header = styled.div`
     width: 70px;
     height: 70px;
     border-radius: 25%;
-    margin-right: 1rem;
   }
 
   div {
