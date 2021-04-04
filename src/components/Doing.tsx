@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
@@ -63,8 +64,8 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
 
           <ActivityRow>
             <ActivityImageContainer>
-              <ActivityImage src={doing.spotify.album_art_url} />
-              <ActivitySecondaryImage src={SpotifyLogo} />
+              <ActivityImage src={doing.spotify.album_art_url} alt="Activity Image" />
+              <ActivitySecondaryImage src={SpotifyLogo} alt="Spotify Logo" />
             </ActivityImageContainer>
             <ActivityInfo>
               <h5>{doing.spotify.song}</h5>
@@ -82,8 +83,8 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
           <ActivityRow>
             {currentActivity.assets ?
               <ActivityImageContainer>
-                <ActivityImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`} />
-                <ActivitySecondaryImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`} />
+                <ActivityImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`} alt="Activity Image" />
+                <ActivitySecondaryImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`} alt="ActivitySecondaryImage" />
               </ActivityImageContainer>
               : null
             }

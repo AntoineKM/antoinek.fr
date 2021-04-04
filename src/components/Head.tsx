@@ -11,7 +11,7 @@ const Head = () => (
             content="Antoine Kingue: developer, designer and youtuber"
         />
         <link rel="apple-touch-icon" href="/p-static/images/favicons/favicon.png" />
-
+        <link rel="canonical" href="https://antoinek.fr/" />
         <link rel="manifest" href="/manifest.json" />
 
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
