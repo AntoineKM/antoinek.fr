@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import PageWrapper from "../components/PageWrapper";
 import Technology from "../components/Technology";
-import { ReactLogo, SymfonyLogo, TypescriptLogo, GoLangLogo } from "../components/Icons"
+import { ReactLogo, SymfonyLogo, TypescriptLogo, GoLangLogo, GraphQLLogo } from "../components/Icons"
 
 const How = () => {
   return (
@@ -74,6 +74,16 @@ const How = () => {
         type="PHP Framework"
         useCase={
           "High Performance PHP Framework for Web Development."
+        }
+      />
+
+      <Technology
+        color="#171e26"
+        icon={<GraphQLLogo />}
+        name="GraphQL"
+        type="Backend"
+        useCase={
+          "Query language for APIs and a runtime for fulfilling those queries with your existing data."
         }
       />
 

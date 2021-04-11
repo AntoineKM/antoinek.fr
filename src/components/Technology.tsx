@@ -45,6 +45,7 @@ const Container = styled.div`
   margin-bottom: 1rem;
   transition: background-color .2s;
   cursor: default;
+  user-select: none;
   
   @media (max-width: 850px) {
     flex-direction: column;
