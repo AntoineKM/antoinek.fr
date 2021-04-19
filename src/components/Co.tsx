@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
 import { ExternalLinkIcon } from "./Icons";
@@ -30,7 +29,7 @@ const Co = ({
         //@ts-ignore
         style={{ transform: props.xys.interpolate(trans) }}>
         <Header>
-          <Image alt={`${name} Logo`} draggable={false} src={iconReference} width={225} height={225} priority={true} />
+          <img alt={`${name} Logo`} draggable={false} src={iconReference} />
           <div style={{ paddingLeft: '1rem' }}>
             <h3>
               {name} <ExternalLinkIcon />
