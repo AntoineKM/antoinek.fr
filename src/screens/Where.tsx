@@ -18,12 +18,15 @@ const Where = () => {
       <h1>📍 Where I've Done It</h1>
       <h3>🏢 Companies</h3>
       <CoWrapper>
+        {/* <Co url="https://challengeforearth.com/" name="Challenge For Earth" iconReference={ChallengeForEarthIcon} tagline="Consumer social" role="Trainee" what="" /> */}
         <Co url="https://nfactory.school/" name="NFactory School" iconReference={NFactoryIcon} tagline="Digital school" role="Student & Developer" what="I decided to join this school to learn good practices, create a network of developers and acquire a diploma that confirms my skills." />
         <Co url="https://onruntime.com/" name="onRuntime" iconReference={onRuntimeIcon} tagline="Development studio" role="Director & Developer" what="I founded onRuntime in 2019 to brings projects and teams of creators togethers." />
         <Co url="https://wwws.airfrance.fr/" name="Air France" iconReference={AirFranceIcon} tagline="Airline company" role="Trainee" what="I discovered the IT sector of Air France at Orly, where I was able to study and analyze the network and participate in meetings to implement new technologies on board the company's planes." />
       </CoWrapper>
 
       <h3>☕ Open-source Projects</h3>
+      <Repo name="Waifusion API" url="https://github.com/waifusion/waifusion-api" primaryLanguage="TypeScript" description="Core API for Waifusion, currently serving as a metadata source for OpenSea." />
+      <Repo name="Waifusion Website" url="https://github.com/waifusion/waifusion-site" primaryLanguage="TypeScript" description="React project implementing Web3 which allows users to interact with the Waifusion NFT project." />
       <Repo name="UberSitter" url="https://github.com/nfactoryschool-2020/nfactory-ubersitter" primaryLanguage="TypeScript" description="UberSitter is a project as part of an NFactory School training course which consists of developing a web solution allowing, on the one hand, childcare professionals to offer their services and, on the other hand, to parents looking for a one-off or regular care solution for their children." />
       <Repo name="onRuntime Website" url="https://github.com/onRuntime/onruntime-website" primaryLanguage="TypeScript" description="onRuntime official website." />
       <Repo name="Curricase" url="https://github.com/nfactoryschool-2020/nfactory-curricase" primaryLanguage="PHP" description="Curricase is a project as part of an NFactory School training course which consists of developing a CV management site." />

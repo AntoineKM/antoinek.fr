@@ -51,7 +51,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <SuccessiveType
             onEnd={onIntroEnd}
             words={
-              "You will never regret what you have done, but always regret what you have not done, which is why I design and approve for the future simple but effective, highly scalable and real-time projects for the future."
+              "You will never regret what you have done, and you will always regret what you did not do, which is why I quickly design simple but effective projects for the future using a lot of new bleeding edge technologies and languages."
             }
             speed={1}
             userSkipped={introEnded}
@@ -61,7 +61,6 @@ const App = ({ Component, pageProps }: AppProps) => {
         <motion.video
           transition={{ duration: 0.85 }}
           animate={{ opacity: introEnded ? 0 : 0.25 }}
-          id="stars"
           src="/p-static/videos/background.mp4"
           autoPlay muted loop playsInline
         />
