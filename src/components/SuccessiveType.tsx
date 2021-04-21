@@ -46,7 +46,7 @@ const SuccessiveType = ({words, speed, userSkipped, onEnd}: ISuccessiveTypeProps
 
     setTimeout(() => {
       setIndex(index + 1);
-    }, currentWord.length * (Math.E * 24.5) + (currentWord[currentWord.length-1] === '.' ? 500 : 0));
+    }, currentWord.length * (Math.E * 20) + (currentWord[currentWord.length-1] === '.' ? 500 : 0));
   }, [index, splitWords, onEnd]);
 
   useEffect(() => {
