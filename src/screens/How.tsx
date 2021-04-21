@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import PageWrapper from "../components/PageWrapper";
 import Technology from "../components/Technology";
-import { ReactLogo, SymfonyLogo, TypescriptLogo, GoLangLogo, GraphQLLogo } from "../components/Icons"
+import { ReactLogo, SymfonyLogo, TypescriptLogo, GoLangLogo, GraphQLLogo, LaravelLogo } from "../components/Icons"
 
 const How = () => {
   return (
@@ -31,7 +31,7 @@ const How = () => {
         color="#232340"
         icon={<ReactLogo />}
         name="React"
-        type="Frontend framework"
+        type="Frontend Framework"
         useCase={
           "Constructing stateful and durable frontends for large and interactive web apps."
         }
@@ -63,7 +63,17 @@ const How = () => {
         name="TypeScript"
         type="JavaScript Framework"
         useCase={
-          "Types for JS - will save your life when projects expand."
+          "Types for JavaScript - will save your life when projects expand."
+        }
+      />
+
+      <Technology
+        color="#FF2D20"
+        icon={<LaravelLogo />}
+        name="Laravel"
+        type="PHP Framework"
+        useCase={
+          "PHP Framework for Web Artisans, with expressive and elegant syntax."
         }
       />
 
