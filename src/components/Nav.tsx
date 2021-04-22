@@ -16,7 +16,8 @@ const pathnameOffsets: { [key: string]: number } = {
   "/": 0,
   "/where": 39,
   "/how": 78,
-  "/etc": 117,
+  "/videos": 117,
+  "/etc": 156,
 };
 
 const Nav = () => {
@@ -102,6 +103,9 @@ const Nav = () => {
             </Page>
             <Page active={pathname === "/how"} href="/how">
               how I do it
+            </Page>
+            <Page active={pathname === "/videos"} href="/videos">
+              videos
             </Page>
             <Page active={pathname === "/etc"} href="/etc">
               more + contact
