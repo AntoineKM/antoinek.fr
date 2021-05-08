@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Video from '@components/Video';
 import PageWrapper from "@components/PageWrapper";
+import VideoSkeleton from '@components/VideoSkeleton';
 
 const Presence = () => {
 
@@ -54,11 +55,15 @@ const Presence = () => {
             <Head>
                 <title>Videos | Antoine Kingue</title>
             </Head>
-            <h1>🎥 My videos</h1>
+            <h1>🎥 My latest videos</h1>
             <VideosWrapper>
-                {videos?.length > 1 && videos.map((video) => (
-                    <Video key={video.id} url={`https://youtu.be/${video.snippet.resourceId.videoId}`} title={video.snippet.title} thumbnailUrl={video.snippet.thumbnails.standard.url} />
-                ))}
+                {
+                    videos?.length > 1 ? videos.map((video) => (
+                        <Video key={video.id} url={`https://youtu.be/${video.snippet.resourceId.videoId}`} title={video.snippet.title} thumbnailUrl={video.snippet.thumbnails.standard.url} />
+                    )) : Array.from({ length: 50 }, (_, i) => (
+                        <VideoSkeleton key={i} />
+                    ))
+                }
             </VideosWrapper>
         </PageWrapper>
     );
