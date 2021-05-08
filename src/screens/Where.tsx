@@ -8,6 +8,7 @@ import Repo from "@components/Repo";
 const NFactoryIcon = '/p-static/images/nfactoryschool-icon.png' as string;
 const onRuntimeIcon = '/p-static/images/onruntime-icon.png' as string;
 const AirFranceIcon = '/p-static/images/airfrance-icon.png' as string;
+const ChallengeForEarthIcon = '/p-static/images/challengeforearth.png' as string;
 
 const Where = () => {
   return (
@@ -18,9 +19,9 @@ const Where = () => {
       <h1>📍 Where I've Done It</h1>
       <h3>🏢 Companies</h3>
       <CoWrapper>
-        {/* <Co url="https://challengeforearth.com/" name="Challenge For Earth" iconReference={ChallengeForEarthIcon} tagline="Consumer social" role="Trainee" what="" /> */}
+        <Co url="https://challengeforearth.com/" name="Challenge For Earth" iconReference={ChallengeForEarthIcon} tagline="Consumer social" role="Developer" what="I had the honor of being able to create a social hub that educates people about ecology, here I was able to gain experience both back and front." />
         <Co url="https://nfactory.school/" name="NFactory School" iconReference={NFactoryIcon} tagline="Digital school" role="Student & Developer" what="I decided to join this school to learn good practices, create a network of developers and acquire a diploma that confirms my skills." />
-        <Co url="https://onruntime.com/" name="onRuntime" iconReference={onRuntimeIcon} tagline="Development studio" role="Director & Developer" what="I founded onRuntime in 2019 to brings projects and teams of creators togethers." />
+        <Co url="https://onruntime.com/" name="onRuntime" iconReference={onRuntimeIcon} tagline="Creative studio" role="Director & Developer" what="I founded onRuntime in 2019 to brings projects and teams of creators togethers." />
         <Co url="https://wwws.airfrance.fr/" name="Air France" iconReference={AirFranceIcon} tagline="Airline company" role="Trainee" what="I discovered the IT sector of Air France at Orly, where I was able to study and analyze the network and participate in meetings to implement new technologies on board the company's planes." />
       </CoWrapper>
 
