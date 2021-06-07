@@ -83,8 +83,8 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
           <ActivityRow>
             {currentActivity.assets ?
               <ActivityImageContainer>
-                <ActivityImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`} alt="Activity Image" />
-                <ActivitySecondaryImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`} alt="ActivitySecondaryImage" />
+                {currentActivity.assets.large_image && <ActivityImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`} alt="Activity Image" />}
+                {currentActivity.assets.small_image && <ActivitySecondaryImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`} alt="ActivitySecondaryImage" />}
               </ActivityImageContainer>
               : null
             }
