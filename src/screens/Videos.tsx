@@ -58,8 +58,8 @@ const Presence = () => {
             <h1>🎥 My latest videos</h1>
             <VideosWrapper>
                 {
-                    videos?.length > 1 ? videos.map((video) => (
-                        <Video key={video.id} url={`https://youtu.be/${video.snippet.resourceId.videoId}`} title={video.snippet.title} thumbnailUrl={video.snippet.thumbnails.standard.url} />
+                    videos?.length > 1 ? videos.map((video, i) => (
+                        <Video key={i} url={`https://youtu.be/${video.snippet.resourceId.videoId}`} title={video.snippet.title} thumbnailUrl={video.snippet.thumbnails.medium.url} />
                     )) : Array.from({ length: 50 }, (_, i) => (
                         <VideoSkeleton key={i} />
                     ))
