@@ -8,7 +8,8 @@ import Repo from "@components/Repo";
 const NFactoryIcon = '/p-static/images/nfactoryschool-icon.png' as string;
 const onRuntimeIcon = '/p-static/images/onruntime-icon.png' as string;
 const AirFranceIcon = '/p-static/images/airfrance-icon.png' as string;
-const ChallengeForEarthIcon = '/p-static/images/challengeforearth.png' as string;
+const ChallengeForEarthIcon = '/p-static/images/challengeforearth-icon.png' as string;
+const ExpatsFacilitiesIcon = '/p-static/images/expatsfacilities-icon.png' as string;
 
 const Where = () => {
   return (
@@ -19,6 +20,7 @@ const Where = () => {
       <h1>📍 Where I've Done It</h1>
       <h3>🏢 Companies</h3>
       <CoWrapper>
+        <Co url="https://expatsfacilities.com/" name="Expat's Facilities" iconReference={ExpatsFacilitiesIcon} tagline="Travel company" role="CTO & Developer" what="I designed Expats Facilities to help people move abroad." />
         <Co url="https://challengeforearth.com/" name="Challenge For Earth" iconReference={ChallengeForEarthIcon} tagline="Consumer social" role="Developer" what="I had the honor of being able to create a social hub that educates people about ecology, here I was able to gain experience both back and front." />
         <Co url="https://nfactory.school/" name="NFactory School" iconReference={NFactoryIcon} tagline="Digital school" role="Student & Developer" what="I decided to join this school to learn good practices, create a network of developers and acquire a diploma that confirms my skills." />
         <Co url="https://onruntime.com/" name="onRuntime" iconReference={onRuntimeIcon} tagline="Creative studio" role="Director & Developer" what="I founded onRuntime in 2019 to brings projects and teams of creators togethers." />
