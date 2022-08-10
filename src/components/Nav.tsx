@@ -1,13 +1,8 @@
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { motion, PanInfo } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
-import {
-  GitHubLogo,
-  LinkedinLogo,
-  MenuIcon,
-  XIcon,
-} from "./Icons";
+import { GitHubLogo, LinkedinLogo, MenuIcon, XIcon } from "./Icons";
 import Doing from "./Doing";
 import useSound from "use-sound";
 import Link from "./Link";
@@ -21,11 +16,10 @@ const pathnameOffsets: { [key: string]: number } = {
 };
 
 const Nav = () => {
-
   const router = useRouter();
   const { pathname } = useRouter();
 
-  const [playSwitchPageSound] = useSound("/p-static/sounds/switch-page.mp3");
+  const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
 
   const [dragYOffset, setDragYOffset] = useState(0);
   const [openOnMobile, setOpenOnMobile] = useState(false);
@@ -68,55 +62,70 @@ const Nav = () => {
     [router, pageIndicatorOffset, dragYOffset, pathname]
   );
 
-  const toggleMobileMenu = useCallback(() => setOpenOnMobile(!openOnMobile), [
-    openOnMobile,
-  ]);
+  const toggleMobileMenu = useCallback(
+    () => setOpenOnMobile(!openOnMobile),
+    [openOnMobile]
+  );
 
   return (
     <>
       <MobileHeader>
         <Title>Antoine Kingue</Title>
-        {openOnMobile ? <XIcon onClick={toggleMobileMenu} /> : <MenuIcon onClick={toggleMobileMenu} />}
+        {openOnMobile ? (
+          <XIcon onClick={toggleMobileMenu} />
+        ) : (
+          <MenuIcon onClick={toggleMobileMenu} />
+        )}
       </MobileHeader>
       <Container openOnMobile={openOnMobile}>
-        {!openOnMobile ? <PageIndicator
-          whileHover={{ width: 3 }}
-          drag="y"
-          onDragEnd={onPageIndicatorDragEnd}
-          dragConstraints={dragConstraintsRef}
-          animate={{ top: pageIndicatorOffsetWithDecoration }}
-        /> : null}
+        {!openOnMobile ? (
+          <PageIndicator
+            whileHover={{ width: 3 }}
+            drag="y"
+            onDragEnd={onPageIndicatorDragEnd}
+            dragConstraints={dragConstraintsRef}
+            animate={{ top: pageIndicatorOffsetWithDecoration }}
+          />
+        ) : null}
         <Items>
-          {!openOnMobile ?
+          {!openOnMobile ? (
             <Row>
               <Title>Antoine Kingue</Title>
               {/* <IconButton>
               <ChevronDown />
             </IconButton> */}
-            </Row> : null}
+            </Row>
+          ) : null}
           <div ref={dragConstraintsRef}>
             <Page active={pathname === "/"} href="/">
-              what I do
+              {"what I do"}
             </Page>
             <Page active={pathname === "/where"} href="/where">
-              where I've done it
+              {"where I've done it"}
             </Page>
             <Page active={pathname === "/how"} href="/how">
-              how I do it
+              {"how I do it"}
             </Page>
             <Page active={pathname === "/videos"} href="/videos">
-              videos
+              {"videos"}
             </Page>
             <Page active={pathname === "/etc"} href="/etc">
-              more + contact
+              {"more + contact"}
             </Page>
           </div>
 
           <Icons>
-            <Link href="https://github.com/AntoineKM"><GitHubLogo /></Link>
-            <Link href="https://linkedin.com/in/antoinekm/"><LinkedinLogo /></Link>
+            <Link href="https://github.com/AntoineKM">
+              <GitHubLogo />
+            </Link>
+            <Link href="https://linkedin.com/in/antoinekm/">
+              <LinkedinLogo />
+            </Link>
           </Icons>
-          <Doing style={{ display: presenceActive ? 'block' : 'none' }} setActive={setPresenceActive} />
+          <Doing
+            style={{ display: presenceActive ? "block" : "none" }}
+            setActive={setPresenceActive}
+          />
         </Items>
       </Container>
     </>
@@ -136,7 +145,7 @@ const Container = styled.aside<{ openOnMobile: boolean }>`
   height: 100vh;
 
   @media (max-width: 850px) {
-    display: ${({ openOnMobile }) => openOnMobile ? 'block' : 'none'};
+    display: ${({ openOnMobile }) => (openOnMobile ? "block" : "none")};
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(7px);
     z-index: 1;
@@ -150,7 +159,7 @@ const MobileHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: fixed ;
+  position: fixed;
   top: 0;
   display: flex;
   padding: 2rem;
@@ -201,7 +210,7 @@ const Title = styled.div`
   padding: 10px 0px;
 `;
 
-const Page = styled(Link) <{ active: boolean }>`
+const Page = styled(Link)<{ active: boolean }>`
   color: ${({ active }) => (active ? "#fff" : "#ccc")};
   padding: 10px 0px;
   display: flex;

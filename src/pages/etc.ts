@@ -1,3 +1,3 @@
-import Etc from '@screens/Etc';
+import Etc from "@screens/Etc";
 
-export default Etc
+export default Etc;

@@ -1,3 +1,3 @@
-import Videos from '@screens/Videos';
+import Videos from "@screens/Videos";
 
-export default Videos
+export default Videos;

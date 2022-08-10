@@ -1,54 +1,64 @@
+import Link from "@components/Link";
 import { animated, useSpring } from "react-spring";
+import { Compagny } from "src/types";
 import styled from "styled-components";
-import { ExternalLinkIcon } from "./Icons";
+import { ExternalLinkIcon } from "../../../Icons";
 
-const calc = (x: number, y: number) => [-(y - window.innerHeight / 2) / 35, (x - window.innerWidth / 2) / 35, 1.05]
-const trans = (x: number, y: number, s: number): string => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+interface Props {
+  data: Compagny;
+}
 
-const Co = ({
-  url,
-  name,
-  iconReference,
-  tagline,
-  role,
-  what,
-}: {
-  url: string;
-  name: string;
-  iconReference: string;
-  tagline: string;
-  role: string;
-  what: string;
-}) => {
-  const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 2, tension: 350, friction: 40 } }))
+const calc = (x: number, y: number) => [
+  -(y - window.innerHeight / 2) / 35,
+  (x - window.innerWidth / 2) / 35,
+  1.05,
+];
+const trans = (x: number, y: number, s: number): string =>
+  `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
+
+const CoCard: React.FC<Props> = ({
+  data: { name, type, description, role, url, image },
+}: Props) => {
+  const [props, set] = useSpring(() => ({
+    xys: [0, 0, 1],
+    config: { mass: 2, tension: 350, friction: 40 },
+  }));
 
   return (
-    <A href={url} target="_blank" rel="noopener">
-      <Container onMouseMove={({ clientX: x, clientY: y }: { clientX: number, clientY: number }) => set({ xys: calc(x, y) })}
+    <A href={url}>
+      <Container
+        onMouseMove={({
+          clientX: x,
+          clientY: y,
+        }: {
+          clientX: number;
+          clientY: number;
+        }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        //@ts-ignore
-        style={{ transform: props.xys.interpolate(trans) }}>
+        // eslint-disable-next-line react/prop-types
+        style={{ transform: props.xys.interpolate(trans) }}
+      >
         <Header>
-          <img alt={`${name} Logo`} draggable={false} src={iconReference} />
-          <div style={{ paddingLeft: '1rem' }}>
+          <img alt={`${name} Logo`} draggable={false} src={image} />
+          <div style={{ paddingLeft: "1rem" }}>
             <h3>
               {name} <ExternalLinkIcon />
             </h3>
-            <span>{tagline}</span>
+            <span>{type}</span>
           </div>
         </Header>
         <Content>
           <h3>Role</h3>
           <p>{role}</p>
           <h3>What</h3>
-          <p>{what}</p>
+          <p>{description}</p>
         </Content>
       </Container>
     </A>
   );
 };
 
-const A = styled.a`
+const A = styled(Link)`
   text-decoration: none;
   color: inherit;
 
@@ -63,7 +73,7 @@ const Container = styled(animated.div)`
   cursor: pointer;
   transition: all 0.1s ease;
   will-change: transform;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   height: 100%;
 
   &:hover {
@@ -108,4 +118,4 @@ const Content = styled.div`
   box-sizing: border-box;
 `;
 
-export default Co;
+export default CoCard;

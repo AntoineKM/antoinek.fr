@@ -1,3 +1,3 @@
-import Presence from '@screens/Presence'
+import Presence from "@screens/Presence";
 
-export default Presence
+export default Presence;

@@ -1,8 +1,15 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 import PageWrapper from "../components/PageWrapper";
 import Technology from "../components/Technology";
-import { ReactLogo, SymfonyLogo, TypescriptLogo, GoLangLogo, GraphQLLogo, LaravelLogo } from "../components/Icons"
+import {
+  ReactLogo,
+  SymfonyLogo,
+  TypescriptLogo,
+  GoLangLogo,
+  GraphQLLogo,
+  LaravelLogo,
+} from "../components/Icons";
 
 const How = () => {
   return (
@@ -13,8 +20,8 @@ const How = () => {
       <h1>💻 How I Do It</h1>
       <p>
         I highly leverage new bleeding-edge technologies and languages like
-        Typescript or Go to stay on top of the game. You can find a list of my most-used
-        technologies below.
+        Typescript or Go to stay on top of the game. You can find a list of my
+        most-used technologies below.
       </p>
 
       {/* <Technology
@@ -82,9 +89,7 @@ const How = () => {
         icon={<SymfonyLogo />}
         name="Symfony"
         type="PHP Framework"
-        useCase={
-          "High Performance PHP Framework for Web Development."
-        }
+        useCase={"High Performance PHP Framework for Web Development."}
       />
 
       <Technology

@@ -7,21 +7,26 @@ import styled, { keyframes } from "styled-components";
 import Progress from "./Progress";
 import Link from "./Link";
 
-import SpotifyLogo from '../assets/images/spotify-logo.svg';
+import SpotifyLogo from "../assets/images/spotify-logo.svg";
 
-const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void } & any, ref: any) => {
+const Doing = (
+  { setActive, ...props }: { setActive: (active: boolean) => void } & any,
+  ref: any
+) => {
   const [doing, setDoing] = React.useState<any | null>(null);
 
   React.useEffect(() => {
     const queryLanyard = async () => {
-      const body = await fetch("https://api.lanyard.rest/v1/users/623154662765232128").then(res => res.json());
+      const body = await fetch(
+        "https://api.lanyard.rest/v1/users/623154662765232128"
+      ).then((res) => res.json());
 
       if (body.success) {
         setDoing(body.data);
 
         setActive(doing?.listening_to_spotify || currentActivity);
       }
-    }
+    };
 
     queryLanyard();
 
@@ -30,41 +35,48 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
     }, 1000);
   }, [setActive]);
 
+  if (!doing || doing?.discord_status === "offline") return null;
 
-  if (!doing || doing?.discord_status === 'offline') return null;
-
-  const currentActivity = doing?.activities.filter(activity => activity.type === 0)[0];
+  const currentActivity = doing?.activities.filter(
+    (activity) => activity.type === 0
+  )[0];
   const currentDate: any = new Date();
 
   const timeElapsed = (startTime: any) => {
-
     const formatIntDouble = (int: number) => {
-      return (int < 10 && int >= 0) ? '0' + int : int;
-    }
+      return int < 10 && int >= 0 ? "0" + int : int;
+    };
 
-    var endTime: any = currentDate;
-    var timeDiff = endTime - startTime;
+    const endTime: any = currentDate;
+    let timeDiff = endTime - startTime;
     timeDiff /= 1000;
-    var seconds = Math.round(timeDiff % 60);
+    const seconds = Math.round(timeDiff % 60);
     timeDiff = Math.floor(timeDiff / 60);
-    var minutes = Math.round(timeDiff % 60);
+    const minutes = Math.round(timeDiff % 60);
     timeDiff = Math.floor(timeDiff / 60);
-    var hours = Math.round(timeDiff % 24);
+    const hours = Math.round(timeDiff % 24);
     timeDiff = Math.floor(timeDiff / 24);
-    var days = timeDiff;
+    const days = timeDiff;
 
-    return `${(days > 0) ? formatIntDouble(days) + ':' : ''}${(hours > 0) ? formatIntDouble(hours) + ':' : ''}${formatIntDouble(minutes) + ':' + formatIntDouble(seconds)}`;
-  }
+    return `${days > 0 ? formatIntDouble(days) + ":" : ""}${
+      hours > 0 ? formatIntDouble(hours) + ":" : ""
+    }${formatIntDouble(minutes) + ":" + formatIntDouble(seconds)}`;
+  };
 
   return (
     <>
-      {doing?.listening_to_spotify ?
+      {doing?.listening_to_spotify ? (
         <Container ref={ref} href="/presence" {...props}>
-          <h5>Listening to Spotify <LiveDot /></h5>
+          <h5>
+            Listening to Spotify <LiveDot />
+          </h5>
 
           <ActivityRow>
             <ActivityImageContainer>
-              <ActivityImage src={doing.spotify.album_art_url} alt="Activity Image" />
+              <ActivityImage
+                src={doing.spotify.album_art_url}
+                alt="Activity Image"
+              />
               <ActivitySecondaryImage src={SpotifyLogo} alt="Spotify Logo" />
             </ActivityImageContainer>
             <ActivityInfo>
@@ -72,35 +84,48 @@ const Doing = ({ setActive, ...props }: { setActive: (active: boolean) => void }
               <p>by {doing.spotify.artist}</p>
             </ActivityInfo>
           </ActivityRow>
-          <Progress percentage={100 * (currentDate - doing.spotify.timestamps.start) / (doing.spotify.timestamps.end - doing.spotify.timestamps.start)} />
-
+          <Progress
+            percentage={
+              (100 * (currentDate - doing.spotify.timestamps.start)) /
+              (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
+            }
+          />
         </Container>
-        : null
-      }
-      {(currentActivity?.type === 0) ?
+      ) : null}
+      {currentActivity?.type === 0 ? (
         <Container ref={ref} href="/presence" {...props}>
           <h5>Doing something</h5>
           <ActivityRow>
-            {currentActivity.assets ?
+            {currentActivity.assets ? (
               <ActivityImageContainer>
-                {currentActivity.assets.large_image && <ActivityImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`} alt="Activity Image" />}
-                {currentActivity.assets.small_image && <ActivitySecondaryImage src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`} alt="ActivitySecondaryImage" />}
+                {currentActivity.assets.large_image && (
+                  <ActivityImage
+                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
+                    alt="Activity Image"
+                  />
+                )}
+                {currentActivity.assets.small_image && (
+                  <ActivitySecondaryImage
+                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
+                    alt="ActivitySecondaryImage"
+                  />
+                )}
               </ActivityImageContainer>
-              : null
-            }
+            ) : null}
             <ActivityInfo>
               <h5>{currentActivity.name}</h5>
-              {currentActivity.details ? <p>{currentActivity.details}</p> : null}
+              {currentActivity.details ? (
+                <p>{currentActivity.details}</p>
+              ) : null}
               {currentActivity.state ? <p>{currentActivity.state}</p> : null}
               <p>{timeElapsed(currentActivity.created_at + -1000)} elapsed</p>
             </ActivityInfo>
           </ActivityRow>
         </Container>
-        : null
-      }
+      ) : null}
     </>
-  )
-}
+  );
+};
 
 const Container = styled(motion(Link))`
   width: calc(100% + 2rem);
@@ -135,7 +160,6 @@ const fadeInOut = keyframes`
     opacity: 0%;
   }
 `;
-
 
 const LiveDot = styled.div`
   display: inline-block;

@@ -1,3 +1,3 @@
-import How from '@screens/How';
+import How from "@screens/How";
 
-export default How
+export default How;

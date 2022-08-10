@@ -1,21 +1,19 @@
-import { AppProps } from 'next/app'
-import React from 'react';
+import { AppProps } from "next/app";
+import React from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { ChevronsRight } from '@components/Icons';
-import SuccessiveType from '@components/SuccessiveType';
-import Head from '@components/Head';
-import Nav from '@components/Nav';
+import { ChevronsRight } from "@components/Icons";
+import SuccessiveType from "@components/SuccessiveType";
+import Head from "@components/Head";
+import Nav from "@components/Nav";
 
-import '@styles/app.css'
+import "@styles/app.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
-
   const [introEnded, setIntroEnded] = React.useState(false);
 
   React.useEffect(() => {
-
     const onKeyDown = (e: React.KeyboardEvent<HTMLDocument> & any) => {
       if ((e.keyCode === 9 || e.which === 9) && !introEnded) {
         e.preventDefault();
@@ -24,12 +22,12 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     /*
     const script = document.createElement("script");
-    script.src = "/p-static/js/stars.js";
+    script.src = "/static/js/stars.js";
     script.async = true;
     document.body.appendChild(script);
     */
 
-    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener("keydown", onKeyDown);
   }, [introEnded]);
 
   const onIntroEnd = React.useCallback(() => {
@@ -43,15 +41,19 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Wrapper>
         <SuccessiveTypeContainer
           transition={{ duration: 0.85 }}
-          animate={{ y: introEnded && process.browser ? -window.innerHeight : 0 }}
+          animate={{
+            y: introEnded && process.browser ? -window.innerHeight : 0,
+          }}
         >
           <ProgressContainer onClick={onIntroEnd}>
-            <h4>Skip intro <ChevronsRight /></h4>
+            <h4>
+              Skip intro <ChevronsRight />
+            </h4>
           </ProgressContainer>
           <SuccessiveType
             onEnd={onIntroEnd}
             words={
-              "You will never regret what you have done, and you will always regret what you did not do, which is why I quickly design simple but effective projects for the future using a lot of new bleeding edge technologies and languages."
+              "You will never regret what you did, you will always regret what you didn't do. That's why I quickly design simple but effective projects for the future using a wide range of new bleeding edge technologies and languages."
             }
             speed={1}
             userSkipped={introEnded}
@@ -61,13 +63,18 @@ const App = ({ Component, pageProps }: AppProps) => {
         <motion.video
           transition={{ duration: 0.85 }}
           animate={{ opacity: introEnded ? 0 : 0.25 }}
-          src="/p-static/videos/background.mp4"
-          autoPlay muted loop playsInline
+          src="/static/videos/background.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
         <MainContent
           transition={{ duration: 0.85 }}
           initial={false}
-          animate={{ y: !introEnded && process.browser ? window.innerHeight : 0 }}
+          animate={{
+            y: !introEnded && process.browser ? window.innerHeight : 0,
+          }}
         >
           <Nav />
           <ContentWrapper>
@@ -78,8 +85,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         </MainContent>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
 const Wrapper = styled.div`
   display: flex;
@@ -138,7 +145,7 @@ const MainContent = styled(motion.div)`
   flex-direction: row;
   overflow-y: auto;
 
-  @media (max-width:850px) { 
+  @media (max-width: 850px) {
     flex-direction: column;
     /* padding-top: 65px; */
   }
@@ -150,7 +157,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   box-sizing: border-box;
   font-size: 1rem;
-  transition: all .2s;
+  transition: all 0.2s;
 
   a {
     &:hover {
@@ -158,10 +165,10 @@ const ContentWrapper = styled.div`
     }
   }
 
-  @media (max-width:850px)  { 
+  @media (max-width: 850px) {
     margin-left: 0px;
     padding-top: 65px;
   }
 `;
 
-export default App
+export default App;

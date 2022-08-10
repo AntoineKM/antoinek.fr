@@ -35,11 +35,7 @@ export const GitHubLogo = (props: any) => (
 );
 
 export const GraphQLLogo = (props: any) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 400 400"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" {...props}>
     <g fill="#e10098">
       <path d="m57.468 302.66-14.376-8.3 160.15-277.38 14.376 8.3z" />
       <path d="m39.8 272.2h320.3v16.6h-320.3z" />

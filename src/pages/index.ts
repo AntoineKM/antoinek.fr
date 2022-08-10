@@ -1,3 +1,3 @@
-import What from '@screens/What';
+import What from "@screens/What";
 
-export default What
+export default What;

@@ -43,10 +43,10 @@ const Container = styled.div`
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 1rem;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
   cursor: default;
   user-select: none;
-  
+
   @media (max-width: 850px) {
     flex-direction: column;
     height: auto;
@@ -83,7 +83,8 @@ const Column = styled.div<{ forceWidth?: number; noBorder?: boolean }>`
   height: 100%;
   width: ${({ forceWidth }) =>
     forceWidth ? forceWidth + "px" : "fit-content"};
-  min-width: ${({ forceWidth }) => forceWidth ? forceWidth + 'px' : undefined};
+  min-width: ${({ forceWidth }) =>
+    forceWidth ? forceWidth + "px" : undefined};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,12 +92,13 @@ const Column = styled.div<{ forceWidth?: number; noBorder?: boolean }>`
     ${({ noBorder }) => (noBorder ? "transparent" : "#101010")};
   padding: 1rem;
   box-sizing: border-box;
-  flex-shrink: ${({ noBorder }) => noBorder ? undefined : 0};
+  flex-shrink: ${({ noBorder }) => (noBorder ? undefined : 0)};
 
   @media (max-width: 850px) {
     height: 50px;
     width: 100%;
-    border-bottom: 1px solid ${({ noBorder }) => (noBorder ? "transparent" : "#101010")};
+    border-bottom: 1px solid
+      ${({ noBorder }) => (noBorder ? "transparent" : "#101010")};
     padding: 1rem;
     flex-shrink: 0;
     box-sizing: content-box;

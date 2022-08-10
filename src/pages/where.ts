@@ -1,3 +1,3 @@
-import Where from '@screens/Where';
+import Where from "@screens/Where";
 
-export default Where
+export default Where;
