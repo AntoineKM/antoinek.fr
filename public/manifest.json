@@ -3,17 +3,17 @@
   "name": "Antoine Kingue",
   "icons": [
     {
-      "src": "p-static/images/favicons/favicon.ico",
+      "src": "static/images/favicons/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "p-static/images/favicons/favicon.png",
+      "src": "static/images/favicons/favicon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "p-static/images/favicons/favicon.png",
+      "src": "static/images/favicons/favicon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
