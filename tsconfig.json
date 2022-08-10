@@ -28,8 +28,9 @@
       ],
       "@screens/*": [
         "./src/screens/*"
-      ],
+      ]
     },
+    "incremental": true
   },
   "include": [
     "next-env.d.ts",
