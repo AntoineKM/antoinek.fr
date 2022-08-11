@@ -8,13 +8,7 @@ import VideoSkeleton from "@components/VideoSkeleton";
 
 const Presence = () => {
   const [videos, setVideos] = React.useState([]);
-
-  React.useEffect(() => {
-    apiCall();
-    return () => {};
-  }, []);
-
-  const apiCall = (npt?: any) => {
+  const apiCall = React.useCallback((npt?: any) => {
     fetch(getUrl(npt))
       .then((response) => {
         return response.json();
@@ -26,7 +20,11 @@ const Presence = () => {
           responseHandler(response);
         }
       });
-  };
+  }, []);
+
+  React.useEffect(() => {
+    apiCall();
+  }, [apiCall]);
 
   const getUrl = (pagetoken) => {
     const pt =

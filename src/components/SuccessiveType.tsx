@@ -14,19 +14,17 @@ const Word = ({ word }: { word: string }) => {
   return <WordSC filled={filled}>{word}</WordSC>;
 };
 
-interface ISuccessiveTypeProps {
+interface Props {
   words: string;
-  speed: number;
   userSkipped?: boolean;
   onEnd?: () => void;
 }
 
-const SuccessiveType = ({
+const SuccessiveType: React.FC<Props> = ({
   words,
-  speed,
   userSkipped,
   onEnd,
-}: ISuccessiveTypeProps) => {
+}: Props) => {
   const [play] = useSound("/static/sounds/type.ogg");
 
   const [index, setIndex] = useState(0);

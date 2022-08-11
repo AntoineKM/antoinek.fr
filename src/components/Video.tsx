@@ -1,6 +1,5 @@
 import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
-import { ExternalLinkIcon } from "./Icons";
 
 const calc = (x: number, y: number) => [
   -(y - window.innerHeight / 2) / 35,
@@ -35,7 +34,7 @@ const Video = ({
           clientY: number;
         }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
-        //@ts-ignore
+        // eslint-disable-next-line react/prop-types
         style={{ transform: props.xys.interpolate(trans) }}
       >
         <Header>

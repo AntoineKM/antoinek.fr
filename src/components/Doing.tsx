@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
@@ -14,6 +13,10 @@ const Doing = (
   ref: any
 ) => {
   const [doing, setDoing] = React.useState<any | null>(null);
+
+  const currentActivity = doing?.activities.filter(
+    (activity) => activity.type === 0
+  )[0];
 
   React.useEffect(() => {
     const queryLanyard = async () => {
@@ -33,13 +36,10 @@ const Doing = (
     setInterval(() => {
       queryLanyard();
     }, 1000);
-  }, [setActive]);
+  }, [currentActivity, doing?.listening_to_spotify, setActive]);
 
   if (!doing || doing?.discord_status === "offline") return null;
 
-  const currentActivity = doing?.activities.filter(
-    (activity) => activity.type === 0
-  )[0];
   const currentDate: any = new Date();
 
   const timeElapsed = (startTime: any) => {

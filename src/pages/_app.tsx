@@ -55,7 +55,6 @@ const App = ({ Component, pageProps }: AppProps) => {
             words={
               "You will never regret what you did, you will always regret what you didn't do. That's why I quickly design simple but effective projects for the future using a wide range of new bleeding edge technologies and languages."
             }
-            speed={1}
             userSkipped={introEnded}
           />
         </SuccessiveTypeContainer>
