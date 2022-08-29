@@ -1671,6 +1671,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@onruntime/next-link@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@onruntime/next-link/-/next-link-0.1.5.tgz#d2daee083b9eb81452d009cafa549ffae13dc39f"
+  integrity sha512-yiBvqhxuLK8LnpEw+0NcwUwz+EZ8Jvgc6whL4nLB3jtVLAkOnKQd3+B4aBZDCtpGR5NASEHifxFYNzuqkCCGdw==
+  dependencies:
+    styled-components "^5.3.5"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.7.tgz#58f8217ba70069cc6a73f5d7e05e85b458c150e2"
