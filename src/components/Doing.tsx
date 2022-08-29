@@ -1,115 +1,129 @@
-import React from "react";
-
 import { motion } from "framer-motion";
-import styled, { keyframes } from "styled-components";
-
-import Progress from "./Progress";
+import { forwardRef, useEffect, useMemo, useState } from "react";
 import Link from "@onruntime/next-link";
-
+import styled, { keyframes } from "styled-components";
+import { Presence } from "../types/lanyard";
 import SpotifyLogo from "../assets/images/spotify-logo.svg";
+import { useAtom } from "jotai";
+import { doingAtom } from "../states/lanyard";
+
+// Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
+
+enum Operation {
+  Event,
+  Hello,
+  Initialize,
+  Heartbeat,
+}
+
+enum EventType {
+  INIT_STATE = "INIT_STATE",
+  PRESENCE_UPDATE = "PRESENCE_UPDATE",
+}
+
+type SocketEvent = {
+  op: Operation;
+  t?: EventType;
+  d: Presence | unknown;
+};
+
+const logLanyardEvent = (eventName: string, data: any) => {
+  // eslint-disable-next-line no-console
+  console.log(
+    `%cLanyard%c <~ ${eventName} %o`,
+    "background-color: #d7bb87; border-radius: 5px; padding: 3px; color: #372910;",
+    "background: none; color: #d7bb87;",
+    data
+  );
+};
+
+const discordId = "623154662765232128";
 
 const Doing = (
   { setActive, ...props }: { setActive: (active: boolean) => void } & any,
   ref: any
 ) => {
-  const [doing, setDoing] = React.useState<any | null>(null);
+  const [socket, setSocket] = useState<WebSocket | null>(null);
+  const [doing, setDoing] = useAtom(doingAtom);
 
-  const currentActivity = doing?.activities.filter(
-    (activity) => activity.type === 0
-  )[0];
+  const send = (op: Operation, d?: unknown): void => {
+    if (socket !== null) socket.send(JSON.stringify({ op, d }));
+  };
 
-  React.useEffect(() => {
-    const queryLanyard = async () => {
-      const body = await fetch(
-        "https://api.lanyard.rest/v1/users/623154662765232128"
-      ).then((res) => res.json());
+  useEffect(() => {
+    if (socket === null) return () => {};
 
-      if (body.success) {
-        setDoing(body.data);
+    socket.onmessage = function ({ data }: MessageEvent): void {
+      const { op, t, d }: SocketEvent = JSON.parse(data);
 
-        setActive(doing?.listening_to_spotify || currentActivity);
+      if (op === Operation.Hello) {
+        setInterval(
+          () => send(Operation.Heartbeat),
+          (d as { heartbeat_interval: number }).heartbeat_interval
+        );
+        send(Operation.Initialize, { subscribe_to_id: discordId });
+      } else if (op === Operation.Event && t) {
+        logLanyardEvent(t, d);
+
+        if ([EventType.INIT_STATE, EventType.PRESENCE_UPDATE].includes(t))
+          setDoing(d as Presence);
       }
     };
 
-    queryLanyard();
-
-    setInterval(() => {
-      queryLanyard();
-    }, 1000);
-  }, [currentActivity, doing?.listening_to_spotify, setActive]);
-
-  if (!doing || doing?.discord_status === "offline") return null;
-
-  const currentDate: any = new Date();
-
-  const timeElapsed = (startTime: any) => {
-    const formatIntDouble = (int: number) => {
-      return int < 10 && int >= 0 ? "0" + int : int;
+    socket.onclose = () => {
+      setSocket(null);
     };
+  }, [socket]);
 
-    const endTime: any = currentDate;
-    let timeDiff = endTime - startTime;
-    timeDiff /= 1000;
-    const seconds = Math.round(timeDiff % 60);
-    timeDiff = Math.floor(timeDiff / 60);
-    const minutes = Math.round(timeDiff % 60);
-    timeDiff = Math.floor(timeDiff / 60);
-    const hours = Math.round(timeDiff % 24);
-    timeDiff = Math.floor(timeDiff / 24);
-    const days = timeDiff;
+  useEffect(() => {
+    if (!socket) setSocket(new WebSocket("wss://api.lanyard.rest/socket"));
+  }, [socket]);
 
-    return `${days > 0 ? formatIntDouble(days) + ":" : ""}${
-      hours > 0 ? formatIntDouble(hours) + ":" : ""
-    }${formatIntDouble(minutes) + ":" + formatIntDouble(seconds)}`;
-  };
+  const currentActivity = useMemo(
+    () => doing?.activities.filter((activity) => activity.type === 0)[0],
+    [doing]
+  );
+
+  useEffect(() => {
+    setActive(doing?.listening_to_spotify || currentActivity);
+  }, [doing, currentActivity, setActive]);
+
+  if (!doing || !doing?.discord_status) return null;
 
   return (
     <>
       {doing?.listening_to_spotify ? (
-        <Container ref={ref} href="/presence" {...props}>
+        <Container ref={ref} to={"/presence"} {...props}>
           <h5>
             Listening to Spotify <LiveDot />
           </h5>
+          <>
+            <ActivityRow>
+              <ActivityImageContainer>
+                <ActivityImage src={doing.spotify.album_art_url} />
+                <ActivitySecondaryImage src={SpotifyLogo} />
+              </ActivityImageContainer>
 
-          <ActivityRow>
-            <ActivityImageContainer>
-              <ActivityImage
-                src={doing.spotify.album_art_url}
-                alt="Activity Image"
-              />
-              <ActivitySecondaryImage src={SpotifyLogo} alt="Spotify Logo" />
-            </ActivityImageContainer>
-            <ActivityInfo>
-              <h5>{doing.spotify.song}</h5>
-              <p>by {doing.spotify.artist}</p>
-            </ActivityInfo>
-          </ActivityRow>
-          <Progress
-            percentage={
-              (100 * (currentDate - doing.spotify.timestamps.start)) /
-              (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
-            }
-          />
+              <ActivityInfo>
+                <h5>{doing.spotify.song}</h5>
+                <p>by {doing.spotify.artist}</p>
+              </ActivityInfo>
+            </ActivityRow>
+          </>
         </Container>
       ) : null}
-      {currentActivity?.type === 0 ? (
-        <Container ref={ref} href="/presence" {...props}>
+      {currentActivity ? (
+        <Container to={"/presence"} {...props}>
           <h5>Doing something</h5>
           <ActivityRow>
             {currentActivity.assets ? (
               <ActivityImageContainer>
-                {currentActivity.assets.large_image && (
-                  <ActivityImage
-                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
-                    alt="Activity Image"
-                  />
-                )}
-                {currentActivity.assets.small_image && (
-                  <ActivitySecondaryImage
-                    src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
-                    alt="ActivitySecondaryImage"
-                  />
-                )}
+                <ActivityImage
+                  src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.large_image}.png`}
+                />
+                <ActivitySecondaryImage
+                  src={`https://cdn.discordapp.com/app-assets/${currentActivity.application_id}/${currentActivity.assets.small_image}.png`}
+                />
               </ActivityImageContainer>
             ) : null}
             <ActivityInfo>
@@ -118,7 +132,6 @@ const Doing = (
                 <p>{currentActivity.details}</p>
               ) : null}
               {currentActivity.state ? <p>{currentActivity.state}</p> : null}
-              <p>{timeElapsed(currentActivity.created_at + -1000)} elapsed</p>
             </ActivityInfo>
           </ActivityRow>
         </Container>
@@ -180,7 +193,6 @@ const ActivityRow = styled.div`
 const ActivityImageContainer = styled.div`
   position: relative;
   height: 50px;
-  margin-right: 1rem;
 `;
 
 const ActivityImage = styled.img`
@@ -201,6 +213,8 @@ const ActivitySecondaryImage = styled.img`
 `;
 
 const ActivityInfo = styled.div`
+  margin-left: 1rem;
+
   h5 {
     color: #fff;
     margin: 0;
@@ -212,4 +226,4 @@ const ActivityInfo = styled.div`
   }
 `;
 
-export default React.forwardRef(Doing);
+export default forwardRef(Doing);
