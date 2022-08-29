@@ -45,13 +45,14 @@ const Doing = (
   ref: any
 ) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
-  const [doing, setDoing] = useAtom(doingAtom);
+  const [doing, setDoing] = useAtom(doingAtom) as any;
 
   const send = (op: Operation, d?: unknown): void => {
     if (socket !== null) socket.send(JSON.stringify({ op, d }));
   };
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     if (socket === null) return () => {};
 
     socket.onmessage = function ({ data }: MessageEvent): void {
