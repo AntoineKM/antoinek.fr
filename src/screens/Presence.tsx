@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import Link from "@components/Link";
+import Link from "@onruntime/next-link";
 import PageWrapper from "../components/PageWrapper";
 
 const Presence = () => (

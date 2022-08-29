@@ -1,4 +1,4 @@
-import Link from "@components/Link";
+import Link from "@onruntime/next-link";
 import { animated, useSpring } from "react-spring";
 import { Compagny } from "src/types";
 import styled from "styled-components";

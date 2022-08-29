@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 import Progress from "./Progress";
-import Link from "./Link";
+import Link from "@onruntime/next-link";
 
 import SpotifyLogo from "../assets/images/spotify-logo.svg";
 

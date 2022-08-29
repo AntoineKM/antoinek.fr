@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { GitHubLogo, LinkedinLogo, MenuIcon, XIcon } from "./Icons";
 import Doing from "./Doing";
 import useSound from "use-sound";
-import Link from "./Link";
+import Link from "@onruntime/next-link";
 
 const pathnameOffsets: { [key: string]: number } = {
   "/": 0,

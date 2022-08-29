@@ -1,4 +1,4 @@
-import Link from "@components/Link";
+import Link from "@onruntime/next-link";
 import React from "react";
 
 const Where: React.FC = () => {
