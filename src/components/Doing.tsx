@@ -6,6 +6,7 @@ import { Presence } from "../types/lanyard";
 import SpotifyLogo from "../assets/images/spotify-logo.svg";
 import { useAtom } from "jotai";
 import { doingAtom } from "../states/lanyard";
+import Progress from "./Progress";
 
 // Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
 
@@ -73,7 +74,7 @@ const Doing = (
     socket.onclose = () => {
       setSocket(null);
     };
-  }, [socket]);
+  }, [send, setDoing, socket]);
 
   useEffect(() => {
     if (!socket) setSocket(new WebSocket("wss://api.lanyard.rest/socket"));
@@ -90,10 +91,12 @@ const Doing = (
 
   if (!doing || !doing?.discord_status) return null;
 
+  const currentDate: any = new Date();
+
   return (
     <>
       {doing?.listening_to_spotify ? (
-        <Container ref={ref} to={"/presence"} {...props}>
+        <Container ref={ref} href={"/presence"} {...props}>
           <h5>
             Listening to Spotify <LiveDot />
           </h5>
@@ -109,11 +112,17 @@ const Doing = (
                 <p>by {doing.spotify.artist}</p>
               </ActivityInfo>
             </ActivityRow>
+            <Progress
+              percentage={
+                (100 * (currentDate - doing.spotify.timestamps.start)) /
+                (doing.spotify.timestamps.end - doing.spotify.timestamps.start)
+              }
+            />
           </>
         </Container>
       ) : null}
       {currentActivity ? (
-        <Container to={"/presence"} {...props}>
+        <Container href={"/presence"} {...props}>
           <h5>Doing something</h5>
           <ActivityRow>
             {currentActivity.assets ? (
