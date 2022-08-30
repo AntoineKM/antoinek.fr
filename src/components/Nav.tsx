@@ -2,10 +2,20 @@ import { useRouter } from "next/router";
 import { motion, PanInfo } from "framer-motion";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import styled from "styled-components";
-import { GitHubLogo, LinkedinLogo, MenuIcon, XIcon } from "./Icons";
+import {
+  GitHubLogo,
+  LinkedinLogo,
+  MenuIcon,
+  NavigationIcon,
+  TwitterLogo,
+  XIcon,
+} from "./Icons";
 import Doing from "./Doing";
 import useSound from "use-sound";
 import Link from "@onruntime/next-link";
+import { useAtom } from "jotai";
+import { doingAtom } from "src/states/lanyard";
+import ContentLoader from "react-content-loader";
 
 const pathnameOffsets: { [key: string]: number } = {
   "/": 0,
@@ -22,23 +32,25 @@ const Nav = () => {
   const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
 
   const [dragYOffset, setDragYOffset] = useState(0);
-  const [openOnMobile, setOpenOnMobile] = useState(false);
+  const [openOnMobile, setOpenOnMobile] = useState(true);
   const [presenceActive, setPresenceActive] = useState(false);
+
+  const [doing] = useAtom(doingAtom);
 
   const dragConstraintsRef = useRef(null);
 
   useEffect(() => {
     if (openOnMobile) setOpenOnMobile(false);
     playSwitchPageSound();
-  }, [openOnMobile, pathname, playSwitchPageSound]);
+  }, [pathname]);
 
   const pageIndicatorOffset = useMemo(
-    () => (pathname ? pathnameOffsets[pathname] ?? -120 : 0),
+    () => (pathname ? pathnameOffsets[pathname] ?? -180 : 0),
     [pathname]
   );
 
   const pageIndicatorOffsetWithDecoration = useMemo(
-    () => 71 + pageIndicatorOffset - dragYOffset,
+    () => 71 + 33 + pageIndicatorOffset - dragYOffset,
     [pageIndicatorOffset, dragYOffset]
   );
 
@@ -62,10 +74,9 @@ const Nav = () => {
     [router, pageIndicatorOffset, dragYOffset, pathname]
   );
 
-  const toggleMobileMenu = useCallback(
-    () => setOpenOnMobile(!openOnMobile),
-    [openOnMobile]
-  );
+  const toggleMobileMenu = useCallback(() => {
+    setOpenOnMobile(!openOnMobile);
+  }, [openOnMobile]);
 
   return (
     <>
@@ -95,7 +106,34 @@ const Nav = () => {
               <ChevronDown />
             </IconButton> */}
             </Row>
-          ) : null}
+          ) : null}{" "}
+          <Row>
+            <Location
+              href={
+                doing
+                  ? `https://www.google.com/maps/search/${encodeURIComponent(
+                      doing.kv.location
+                    )}`
+                  : undefined
+              }
+            >
+              <NavigationIcon />
+              {doing?.kv.location ? (
+                doing.kv.location
+              ) : (
+                <ContentLoader
+                  speed={2}
+                  // width={"auto"}
+                  height={19}
+                  viewBox="0 0 160 25"
+                  backgroundColor="#121212"
+                  foregroundColor="#2e2e2e"
+                >
+                  <rect x="0" y="3" rx="6" ry="6" width="160" height="19" />
+                </ContentLoader>
+              )}
+            </Location>
+          </Row>
           <div ref={dragConstraintsRef}>
             <Page active={pathname === "/"} href="/">
               {"what I do"}
@@ -113,13 +151,15 @@ const Nav = () => {
               {"more + contact"}
             </Page>
           </div>
-
           <Icons>
+            <Link href="https://linkedin.com/in/antoinekm/">
+              <LinkedinLogo />
+            </Link>
             <Link href="https://github.com/AntoineKM">
               <GitHubLogo />
             </Link>
-            <Link href="https://linkedin.com/in/antoinekm/">
-              <LinkedinLogo />
+            <Link href="https://twitter.com/AntoineKingue">
+              <TwitterLogo />
             </Link>
           </Icons>
           <Doing
@@ -208,6 +248,30 @@ const Row = styled.div`
 const Title = styled.div`
   font-weight: 600;
   padding: 10px 0px;
+`;
+
+const Location = styled(Link)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  height: 19px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  user-select: none;
+
+  color: white;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  svg:first-child {
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+    color: #ff7675;
+  }
 `;
 
 const Page = styled(Link)<{ active: boolean }>`
