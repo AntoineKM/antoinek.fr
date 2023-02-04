@@ -260,10 +260,10 @@ const Location = styled(Link)`
   margin-bottom: 15px;
   user-select: none;
 
-  color: white;
+  color: rgba(255, 255, 227, 1);
 
   &:hover {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 227, 0.8);
   }
 
   svg:first-child {
