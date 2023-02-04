@@ -111,10 +111,10 @@ const Nav = () => {
             <Location
               href={
                 doing
-                  ? `https://www.google.com/maps/search/${encodeURIComponent(
+                  ? `https://google.com/maps/search/${encodeURIComponent(
                       doing.kv.location
                     )}`
-                  : undefined
+                  : "#"
               }
             >
               <NavigationIcon />
