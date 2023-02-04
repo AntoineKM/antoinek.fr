@@ -34,8 +34,12 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Wrapper>
         <SuccessiveTypeContainer
           transition={{ duration: 0.85 }}
+          initial={{
+            opacity: 0,
+          }}
           animate={{
             y: introEnded && process.browser ? -window.innerHeight : 0,
+            opacity: 1,
           }}
         >
           <ProgressContainer onClick={onIntroEnd}>
