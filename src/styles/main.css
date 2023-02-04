@@ -36,6 +36,15 @@ p {
     color: #ffffe3;
 }
 
+p a, ul a {
+    text-decoration: underline;
+}
+
+/* hover */
+p a:hover, li a:hover {
+    filter: brightness(0.8);
+}
+
 /* scrollbar */
 
 body {
