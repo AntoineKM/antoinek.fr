@@ -12,6 +12,13 @@ const Head = () => (
     />
     <link rel="apple-touch-icon" href="/static/images/favicons/favicon.png" />
     <link rel="canonical" href="https://antoinek.fr/" />
+    {/* add open graph */}
+    <meta property="og:image" content="/static/images/open-graph.jpg" />
+    {/* add twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AntoineKingue" />
+    <meta name="twitter:creator" content="@AntoineKingue" />
+    <meta name="twitter:image" content="/static/images/open-graph.jpg" />
 
     <title>Antoine Kingue</title>
   </NextHead>
