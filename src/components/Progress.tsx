@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
   margin-top: 10px;
   height: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #606055;
   overflow: hidden;
   border-radius: 5px;
 `;
@@ -25,7 +25,7 @@ const Container = styled.div`
 const ProgressFill = styled(motion.div)`
   width: 100%;
   height: 5px;
-  background-color: #fff;
+  background-color: #ffffe3;
   transform: translateX(-100%);
 `;
 

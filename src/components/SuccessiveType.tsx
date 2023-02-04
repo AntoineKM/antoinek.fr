@@ -67,14 +67,14 @@ const SuccessiveType: React.FC<Props> = ({
 
 const Container = styled.div`
   text-align: left;
-  color: #fff;
+  color: #ffffe3;
   font-size: 20pt;
 `;
 
 const WordSC = styled.span<{ filled: boolean }>`
-  color: ${({ filled }) => (filled ? "#ccc" : "#fff")};
+  color: ${({ filled }) => (filled ? "#606055" : "#ffffe3")};
   margin-right: 4pt;
-  transition: color 0.1s ease;
+  transition: color 2s ease;
   display: inline-block;
 `;
 

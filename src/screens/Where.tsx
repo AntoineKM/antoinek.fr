@@ -8,9 +8,9 @@ const Where = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>{"Where I've Done It | Antoine Kingue"}</title>
+        <title>{"where I've done it | Antoine Kingue"}</title>
       </Head>
-      <h1>{"📍 Where I've Done It"}</h1>
+      <h1>{"📍 where I've done it"}</h1>
       <Co />
       <Repo />
     </PageWrapper>

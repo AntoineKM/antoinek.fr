@@ -20,13 +20,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       }
     };
 
-    /*
-    const script = document.createElement("script");
-    script.src = "/static/js/stars.js";
-    script.async = true;
-    document.body.appendChild(script);
-    */
-
     document.addEventListener("keydown", onKeyDown);
   }, [introEnded]);
 
@@ -53,26 +46,21 @@ const App = ({ Component, pageProps }: AppProps) => {
           <SuccessiveType
             onEnd={onIntroEnd}
             words={
-              "You will never regret what you did, you will always regret what you didn't do. That's why I quickly design simple but effective projects for the future using a wide range of new bleeding edge technologies and languages."
+              "My future is yours, I develop for us simple but effective projects using a wide range of new bleeding edge technologies and languages."
             }
             userSkipped={introEnded}
           />
         </SuccessiveTypeContainer>
 
-        <motion.video
-          transition={{ duration: 0.85 }}
-          animate={{ opacity: introEnded ? 0 : 0.25 }}
-          src="/static/videos/background.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
         <MainContent
           transition={{ duration: 0.85 }}
           initial={false}
           animate={{
-            y: !introEnded && process.browser ? window.innerHeight : 0,
+            y: process.browser
+              ? !introEnded
+                ? window.innerHeight
+                : 0
+              : "100%",
           }}
         >
           <Nav />
@@ -101,16 +89,6 @@ const Wrapper = styled.div`
     height: 100vh;
     z-index: 0;
   }
-
-  video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 0;
-    object-fit: cover;
-  }
 `;
 
 const SuccessiveTypeContainer = styled(motion.div)`
@@ -132,7 +110,7 @@ const ProgressContainer = styled.div`
   }
 
   &:hover {
-    color: #ff7675;
+    color: #ffffe3;
   }
 `;
 

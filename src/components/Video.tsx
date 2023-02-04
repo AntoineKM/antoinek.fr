@@ -58,7 +58,7 @@ const A = styled.a`
 `;
 
 const Container = styled(animated.div)`
-  border: 1px solid #101010;
+  border: 1px solid #30302b;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -68,7 +68,7 @@ const Container = styled(animated.div)`
   overflow: hidden;
 
   &:hover {
-    background-color: #101010;
+    background-color: #30302b;
   }
 `;
 
@@ -77,7 +77,7 @@ const Header = styled.div`
   flex-direction: row;
   align-items: center;
   height: 150px;
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid #30302b;
   /* box-sizing: border-box; */
 
   img {

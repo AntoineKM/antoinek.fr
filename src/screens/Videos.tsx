@@ -51,7 +51,7 @@ const Presence = () => {
       <Head>
         <title>Videos | Antoine Kingue</title>
       </Head>
-      <h1>🎥 My latest videos</h1>
+      <h1>🎥 latest videos</h1>
       <VideosWrapper>
         {videos?.length > 1
           ? videos.map((video, i) => (

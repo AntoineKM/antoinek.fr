@@ -41,17 +41,11 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
-          <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="true"
-          />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;700&amp;display=swap"
+            href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=panchang@400&display=swap"
           />
           <link
             rel="apple-touch-icon"

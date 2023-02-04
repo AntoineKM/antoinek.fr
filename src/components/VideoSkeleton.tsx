@@ -62,7 +62,7 @@ const A = styled.a`
 `;
 
 const Container = styled(animated.div)`
-  border: 1px solid #101010;
+  border: 1px solid #30302b;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -72,7 +72,7 @@ const Container = styled(animated.div)`
   overflow: hidden;
 
   &:hover {
-    background-color: #101010;
+    background-color: #30302b;
   }
 `;
 
@@ -81,7 +81,7 @@ const Header = styled.div`
   flex-direction: row;
   align-items: center;
   height: 150px;
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid #30302b;
   /* box-sizing: border-box; */
 
   div {
@@ -91,9 +91,9 @@ const Header = styled.div`
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.05),
-      rgb(0, 0, 0),
+      rgb(48, 48, 43),
       rgba(255, 255, 255, 0.1),
-      rgb(0, 0, 0)
+      rgb(48, 48, 43)
     );
     background-size: 400% 400%;
     animation: loading 5s ease infinite;
@@ -111,9 +111,9 @@ const Content = styled.div`
     background: linear-gradient(
       to right,
       rgba(255, 255, 255, 0.05),
-      rgb(0, 0, 0),
+      rgb(48, 48, 43),
       rgba(255, 255, 255, 0.1),
-      rgb(0, 0, 0)
+      rgb(48, 48, 43)
     );
     background-size: 400% 400%;
     animation: loading 5s ease infinite;

@@ -154,14 +154,14 @@ const Container = styled(motion(Link))`
   width: calc(100% + 2rem);
   margin-left: -2rem;
   background-color: transparent;
-  color: #ccc;
-  border-top: 1px solid #101010;
+  color: #606055;
+  border-top: 1px solid #30302b;
   padding: 1rem;
   cursor: pointer;
 
   &:hover {
-    background-color: #101010;
-    color: #fff;
+    background-color: #30302b;
+    color: #ffffe3;
   }
 
   h5 {
@@ -218,15 +218,15 @@ const ActivitySecondaryImage = styled.img`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #000;
-  border: 2px solid #000;
+  background-color: #10100e;
+  border: 2px solid #30302b;
 `;
 
 const ActivityInfo = styled.div`
   margin-left: 1rem;
 
   h5 {
-    color: #fff;
+    color: #ffffe3;
     margin: 0;
   }
 

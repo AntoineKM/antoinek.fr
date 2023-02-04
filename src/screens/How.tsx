@@ -15,9 +15,9 @@ const How = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>How I Do It | Antoine Kingue</title>
+        <title>how I do it | Antoine Kingue</title>
       </Head>
-      <h1>💻 How I Do It</h1>
+      <h1>💻 how I do it</h1>
       <p>
         I highly leverage new bleeding-edge technologies and languages like
         Typescript or Go to stay on top of the game. You can find a list of my

@@ -18,7 +18,7 @@ const compagnies: Compagny[] = [
     image: "/static/images/expatsfacilities-icon.jpeg",
   },
   {
-    name: "Challenge For Earthl",
+    name: "Challenge For Earth",
     type: "Consumer social",
     description:
       "I had the honor of being able to create a social hub that educates people about ecology, here I was able to gain experience both back and front.",

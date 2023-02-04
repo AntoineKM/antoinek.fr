@@ -19,10 +19,10 @@ import ContentLoader from "react-content-loader";
 
 const pathnameOffsets: { [key: string]: number } = {
   "/": 0,
-  "/where": 39,
-  "/how": 78,
-  "/videos": 117,
-  "/etc": 156,
+  "/where": 42,
+  "/how": 84,
+  "/videos": 126,
+  "/etc": 168,
 };
 
 const Nav = () => {
@@ -50,7 +50,7 @@ const Nav = () => {
   );
 
   const pageIndicatorOffsetWithDecoration = useMemo(
-    () => 71 + 33 + pageIndicatorOffset - dragYOffset,
+    () => 71 + 36 + pageIndicatorOffset - dragYOffset,
     [pageIndicatorOffset, dragYOffset]
   );
 
@@ -152,13 +152,13 @@ const Nav = () => {
             </Page>
           </div>
           <Icons>
-            <Link href="https://linkedin.com/in/antoinekm/">
+            <Link name={"LinkedIn"} href="https://linkedin.com/in/antoinekm/">
               <LinkedinLogo />
             </Link>
-            <Link href="https://github.com/AntoineKM">
+            <Link name={"GitHub"} href="https://github.com/AntoineKM">
               <GitHubLogo />
             </Link>
-            <Link href="https://twitter.com/AntoineKingue">
+            <Link name={"Twitter"} href="https://twitter.com/AntoineKingue">
               <TwitterLogo />
             </Link>
           </Icons>
@@ -181,12 +181,12 @@ const Container = styled.aside<{ openOnMobile: boolean }>`
   top: 0;
   left: 0;
   width: 15rem;
-  border-right: 1px solid #101010;
+  border-right: 1px solid #30302b;
   height: 100vh;
 
   @media (max-width: 850px) {
     display: ${({ openOnMobile }) => (openOnMobile ? "block" : "none")};
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(48, 48, 43, 0.8);
     backdrop-filter: blur(7px);
     z-index: 1;
     top: 65px;
@@ -206,16 +206,16 @@ const MobileHeader = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 65px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(48, 48, 43, 0.8);
   backdrop-filter: blur(5px);
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid #30302b;
   flex-shrink: 0;
   z-index: 1;
 
   svg {
     margin-left: auto;
     cursor: pointer;
-    color: #ccc;
+    color: #606055;
   }
 
   @media (min-width: 850px) {
@@ -226,7 +226,7 @@ const MobileHeader = styled.div`
 const PageIndicator = styled(motion.div)`
   width: 1px;
   height: 39px;
-  background-color: #fff;
+  background-color: #ffffe3;
   position: absolute;
   right: -1px;
   cursor: pointer;
@@ -270,24 +270,24 @@ const Location = styled(Link)`
     height: 18px;
     width: 18px;
     margin-right: 10px;
-    color: #ff7675;
+    color: #ffffe3;
   }
 `;
 
 const Page = styled(Link)<{ active: boolean }>`
-  color: ${({ active }) => (active ? "#fff" : "#ccc")};
+  color: ${({ active }) => (active ? "#ffffe3" : "#606055")};
   padding: 10px 0px;
   display: flex;
 
   &:hover {
-    /* background-color: #fff; */
-    color: #fff;
+    /* background-color: #ffffe3; */
+    color: #ffffe3;
   }
 `;
 
 const Icons = styled.div`
   margin-top: auto;
-  color: #ccc;
+  color: #606055;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -298,10 +298,10 @@ const Icons = styled.div`
     width: 20px;
     height: 20px;
     cursor: pointer;
-    color: #ccc;
+    color: #606055;
 
     &:hover {
-      color: #fff;
+      color: #ffffe3;
     }
   }
 `;

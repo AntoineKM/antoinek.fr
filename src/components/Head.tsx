@@ -5,7 +5,7 @@ const Head = () => (
     <meta charSet="utf-8" />
     <link rel="icon" href="/static/images/favicons/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#10100e000" />
     <meta
       name="description"
       content="Antoine Kingue: developer, designer and youtuber"

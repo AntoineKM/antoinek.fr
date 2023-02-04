@@ -15,12 +15,12 @@ const Container = styled.button`
   border: none;
   outline: none;
   background-color: transparent;
-  color: #ccc;
+  color: #606055;
   cursor: pointer;
 
   &:hover {
-    background-color: #101010;
-    color: #fff;
+    background-color: #30302b;
+    color: #ffffe3;
   }
 `;
 

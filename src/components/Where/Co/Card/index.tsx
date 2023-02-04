@@ -68,7 +68,7 @@ const A = styled(Link)`
 `;
 
 const Container = styled(animated.div)`
-  border: 1px solid #101010;
+  border: 1px solid #30302b;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -77,7 +77,7 @@ const Container = styled(animated.div)`
   height: 100%;
 
   &:hover {
-    background-color: #101010;
+    background-color: #30302b;
   }
 `;
 
@@ -86,7 +86,7 @@ const Header = styled.div`
   flex-direction: row;
   align-items: center;
   height: 100px;
-  border-bottom: 1px solid #101010;
+  border-bottom: 1px solid #30302b;
   padding: 1rem;
   /* box-sizing: border-box; */
 
@@ -104,11 +104,11 @@ const Header = styled.div`
     svg {
       width: 15px;
       height: 15px;
-      color: #ccc;
+      color: #606055;
     }
 
     span {
-      color: #ccc;
+      color: #606055;
     }
   }
 `;
