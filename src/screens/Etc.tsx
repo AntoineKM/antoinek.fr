@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 const Etc = () => (
   <PageWrapper>
     <Head>
-      <title>{"More | Antoine Kingue"}</title>
+      <title>{"contact | Antoine Kingue"}</title>
     </Head>
     <h1>{"/etc"}</h1>
     <h2>{"🤝 Thanks"}</h2>

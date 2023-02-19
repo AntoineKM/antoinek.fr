@@ -6,7 +6,7 @@ import PageWrapper from "../components/PageWrapper";
 const Presence = () => (
   <PageWrapper forceReadableWidth>
     <Head>
-      <title>Presence | Antoine Kingue</title>
+      <title>presence | Antoine Kingue</title>
     </Head>
     <h1>👀 Presence</h1>
     <p>

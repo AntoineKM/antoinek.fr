@@ -49,7 +49,7 @@ const Presence = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>Videos | Antoine Kingue</title>
+        <title>videos | Antoine Kingue</title>
       </Head>
       <h1>🎥 latest videos</h1>
       <VideosWrapper>
