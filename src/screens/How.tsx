@@ -9,6 +9,7 @@ import {
   GoLangLogo,
   GraphQLLogo,
   LaravelLogo,
+  PythonLogo,
 } from "../components/Icons";
 
 const How = () => {
@@ -34,16 +35,6 @@ const How = () => {
         }
       /> */}
 
-      <Technology
-        color="#232340"
-        icon={<ReactLogo />}
-        name="React"
-        type="Frontend Framework"
-        useCase={
-          "Constructing stateful and durable frontends for large and interactive web apps."
-        }
-      />
-
       {/* <Technology
         color="#dea584"
         icon={<RustLogo />}
@@ -53,6 +44,16 @@ const How = () => {
           "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code."
         }
       /> */}
+
+      <Technology
+        color="#007acc"
+        icon={<TypescriptLogo />}
+        name="TypeScript"
+        type="JavaScript Framework"
+        useCase={
+          "Types for JavaScript - will save your life when projects expand."
+        }
+      />
 
       <Technology
         color="#00acd7"
@@ -65,12 +66,20 @@ const How = () => {
       />
 
       <Technology
-        color="#007acc"
-        icon={<TypescriptLogo />}
-        name="TypeScript"
-        type="JavaScript Framework"
+        color="#1e2933"
+        icon={<PythonLogo />}
+        name="Python"
+        type="Backend"
+        useCase={"Work quickly and integrate systems more effectively."}
+      />
+
+      <Technology
+        color="#232340"
+        icon={<ReactLogo />}
+        name="React"
+        type="Frontend library"
         useCase={
-          "Types for JavaScript - will save your life when projects expand."
+          "Constructing stateful and durable frontends for large and interactive web apps."
         }
       />
 
