@@ -10,6 +10,7 @@ import {
   GraphQLLogo,
   LaravelLogo,
   PythonLogo,
+  FastifyLogo,
 } from "../components/Icons";
 
 const How = () => {
@@ -99,6 +100,16 @@ const How = () => {
         name="Symfony"
         type="PHP Framework"
         useCase={"High Performance PHP Framework for Web Development."}
+      />
+
+      <Technology
+        color="#fff"
+        icon={<FastifyLogo />}
+        name="Fastify"
+        type="Backend"
+        useCase={
+          "Extremely fast and simple, low-overhead framework to build APIs."
+        }
       />
 
       <Technology
