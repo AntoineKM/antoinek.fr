@@ -225,7 +225,7 @@ const MobileHeader = styled.div`
 
 const PageIndicator = styled(motion.div)`
   width: 1px;
-  height: 39px;
+  height: 42px;
   background-color: #ffffe3;
   position: absolute;
   right: -1px;
