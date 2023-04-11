@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Link from "@onruntime/next-link";
 import PageWrapper from "@components/PageWrapper";
+import calculateAge from "src/utils/calculateAge";
 
 const Home = () => {
   return (
@@ -10,7 +11,9 @@ const Home = () => {
         <title>{"what I do | Antoine Kingue"}</title>
       </Head>
       <h1>{"🤔 what I do"}</h1>
-      <p>{"Antoine, 21 y/o developer, designer and youtuber."}</p>
+      <p>{`Antoine, ${calculateAge(
+        "2001-03-10"
+      )} y/o developer, designer and youtuber.`}</p>
       <p>
         {
           "I design, build and publish projects of quality and reliability. Currently, I'm working on "
