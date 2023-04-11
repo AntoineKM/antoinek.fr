@@ -11,6 +11,7 @@ import {
   LaravelLogo,
   PythonLogo,
   FastifyLogo,
+  NextLogo,
 } from "../components/Icons";
 
 const How = () => {
@@ -81,6 +82,16 @@ const How = () => {
         type="Frontend library"
         useCase={
           "Constructing stateful and durable frontends for large and interactive web apps."
+        }
+      />
+
+      <Technology
+        color="#fff"
+        icon={<NextLogo />}
+        name="Next.js"
+        type="React Framework"
+        useCase={
+          "Next.js is a React framework that provides an easy way to build static and server-rendered applications."
         }
       />
 

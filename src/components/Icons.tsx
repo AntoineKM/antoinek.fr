@@ -81,6 +81,80 @@ export const FastifyLogo = (props: any) => (
   </svg>
 );
 
+export const NextLogo = (props: any) => (
+  <svg
+    width="800"
+    height="800"
+    viewBox="0 0 800 800"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect width="800" height="800" fill="white" />
+    <g clipPath="url(#clip0_101_2)">
+      <mask
+        id="mask0_101_2"
+        style={{ maskType: "alpha" }}
+        maskUnits="userSpaceOnUse"
+        x="50"
+        y="50"
+        width="700"
+        height="700"
+      >
+        <path
+          d="M400 750C593.3 750 750 593.3 750 400C750 206.7 593.3 50 400 50C206.7 50 50 206.7 50 400C50 593.3 206.7 750 400 750Z"
+          fill="black"
+        />
+      </mask>
+      <g mask="url(#mask0_101_2)">
+        <path
+          d="M400 750C593.3 750 750 593.3 750 400C750 206.7 593.3 50 400 50C206.7 50 50 206.7 50 400C50 593.3 206.7 750 400 750Z"
+          fill="black"
+        />
+        <path
+          d="M631.42 662.578L318.886 260H260V539.883H307.108V319.825L594.441 691.064C607.406 682.388 619.757 672.864 631.42 662.578Z"
+          fill="url(#paint0_linear_101_2)"
+        />
+        <path
+          d="M543.889 260H497.222V540H543.889V260Z"
+          fill="url(#paint1_linear_101_2)"
+        />
+      </g>
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_101_2"
+        x1="473.889"
+        y1="503.056"
+        x2="611.944"
+        y2="674.167"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_101_2"
+        x1="520.556"
+        y1="260"
+        x2="519.774"
+        y2="465.625"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="white" />
+        <stop offset="1" stopColor="white" stopOpacity="0" />
+      </linearGradient>
+      <clipPath id="clip0_101_2">
+        <rect
+          width="700"
+          height="700"
+          fill="white"
+          transform="translate(50 50)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
 export const ElixirLogo = (props: any) => (
   <svg
     width="32px"
