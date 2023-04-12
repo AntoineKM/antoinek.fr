@@ -13,6 +13,7 @@ import {
   FastifyLogo,
   NextLogo,
 } from "../components/Icons";
+import { technologies } from "src/data/technologies";
 
 const How = () => {
   return (
@@ -47,92 +48,6 @@ const How = () => {
         }
       /> */}
 
-      <Technology
-        color="#007acc"
-        icon={<TypescriptLogo />}
-        name="TypeScript"
-        type="JavaScript Framework"
-        useCase={
-          "Types for JavaScript - will save your life when projects expand."
-        }
-      />
-
-      <Technology
-        color="#00acd7"
-        icon={<GoLangLogo />}
-        name="Go"
-        type="Backend, System"
-        useCase={
-          "It makes it easy to build simple, reliable, and efficient software."
-        }
-      />
-
-      <Technology
-        color="#1e2933"
-        icon={<PythonLogo />}
-        name="Python"
-        type="Backend"
-        useCase={"Work quickly and integrate systems more effectively."}
-      />
-
-      <Technology
-        color="#232340"
-        icon={<ReactLogo />}
-        name="React"
-        type="Frontend library"
-        useCase={
-          "Constructing stateful and durable frontends for large and interactive web apps."
-        }
-      />
-
-      <Technology
-        color="#fff"
-        icon={<NextLogo />}
-        name="Next.js"
-        type="React Framework"
-        useCase={
-          "Next.js is a React framework that provides an easy way to build static and server-rendered applications."
-        }
-      />
-
-      <Technology
-        color="#FF2D20"
-        icon={<LaravelLogo />}
-        name="Laravel"
-        type="PHP Framework"
-        useCase={
-          "PHP Framework for Web Artisans, with expressive and elegant syntax."
-        }
-      />
-
-      <Technology
-        color="#18171b"
-        icon={<SymfonyLogo />}
-        name="Symfony"
-        type="PHP Framework"
-        useCase={"High Performance PHP Framework for Web Development."}
-      />
-
-      <Technology
-        color="#fff"
-        icon={<FastifyLogo />}
-        name="Fastify"
-        type="Backend"
-        useCase={
-          "Extremely fast and simple, low-overhead framework to build APIs."
-        }
-      />
-
-      <Technology
-        color="#171e26"
-        icon={<GraphQLLogo />}
-        name="GraphQL"
-        type="Backend"
-        useCase={
-          "Query language for APIs and a runtime for fulfilling those queries with your existing data."
-        }
-      />
-
       {/* <Technology
         color="#FF6600"
         icon={<RabbitMQLogo/>}
@@ -142,6 +57,17 @@ const How = () => {
           "Messaging between different services in a robust & durable way"
         }
       /> */}
+
+      {technologies.map(({ color, icon: Icon, name, type, useCase }, i) => (
+        <Technology
+          key={i}
+          color={color}
+          icon={<Icon />}
+          name={name}
+          type={type}
+          useCase={useCase}
+        />
+      ))}
     </PageWrapper>
   );
 };
