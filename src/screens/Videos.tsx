@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Video from "@components/Video";
 import PageWrapper from "@components/PageWrapper";
 import VideoSkeleton from "@components/VideoSkeleton";
+import VideoChannel from "@components/VideoChannel";
 
 const Presence = () => {
   const [videos, setVideos] = React.useState([]);
@@ -31,7 +32,7 @@ const Presence = () => {
         typeof pagetoken === "undefined" ? "" : `&pageToken=${pagetoken}`,
       mykey = "AIzaSyA3R6LsS3L7cYq1QyPvjyah_adg3zrSqXY",
       playListID = "UUN0hmDGaj1RAshd3A-x35pA",
-      URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playListID}&key=${mykey}${pt}`;
+      URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=14&playlistId=${playListID}&key=${mykey}${pt}`;
     return URL;
   };
 
@@ -63,6 +64,10 @@ const Presence = () => {
               />
             ))
           : Array.from({ length: 50 }, (_, i) => <VideoSkeleton key={i} />)}
+        <VideoChannel
+          title="Visit my youtube channel to see more ➡️"
+          url={"https://youtube.com/@orionmood"}
+        />
       </VideosWrapper>
     </PageWrapper>
   );
