@@ -11,6 +11,10 @@ import {
   NextLogo,
   JavaLogo,
   NestLogo,
+  DockerLogo,
+  MongoDBLogo,
+  RedisLogo,
+  MySQLLogo,
 } from "../components/Icons";
 
 export const technologies: Technology[] = [
@@ -45,6 +49,39 @@ export const technologies: Technology[] = [
     useCase:
       "It makes it easy to build simple, reliable, and efficient software.",
   },
+  // Platforms
+  {
+    color: "#003f8c",
+    icon: DockerLogo,
+    name: "Docker",
+    type: "Containerization",
+    useCase:
+      "Set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.",
+  },
+  // Databases
+  {
+    color: "#023430",
+    icon: MongoDBLogo,
+    name: "MongoDB",
+    type: "Database",
+    useCase:
+      "Document-based, distributed database built for modern application developers and for the cloud era.",
+  },
+  {
+    color: "#3E6E93",
+    icon: MySQLLogo,
+    name: "MySQL",
+    type: "Database",
+    useCase: "Relational database, used for storing data in tables.",
+  },
+  {
+    color: "#161F31",
+    icon: RedisLogo,
+    name: "Redis",
+    type: "Database",
+    useCase:
+      "In-memory data structure store, used as a database, cache and message broker.",
+  },
   // Libraries
   {
     color: "#232340",
@@ -55,7 +92,7 @@ export const technologies: Technology[] = [
       "Constructing stateful and durable frontends for large and interactive web apps.",
   },
   {
-    color: "#fff",
+    color: "#000",
     icon: FastifyLogo,
     name: "Fastify",
     type: "Backend library",
@@ -71,7 +108,7 @@ export const technologies: Technology[] = [
   },
   // Frameworks
   {
-    color: "#fff",
+    color: "#000",
     icon: NextLogo,
     name: "Next.js",
     type: "React Framework",
