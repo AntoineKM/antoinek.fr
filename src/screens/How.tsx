@@ -2,17 +2,6 @@ import Head from "next/head";
 
 import PageWrapper from "../components/PageWrapper";
 import Technology from "../components/Technology";
-import {
-  ReactLogo,
-  SymfonyLogo,
-  TypescriptLogo,
-  GoLangLogo,
-  GraphQLLogo,
-  LaravelLogo,
-  PythonLogo,
-  FastifyLogo,
-  NextLogo,
-} from "../components/Icons";
 import { technologies } from "src/data/technologies";
 
 const How = () => {
@@ -27,6 +16,19 @@ const How = () => {
         Typescript or Go to stay on top of the game. You can find a list of my
         most-used technologies below.
       </p>
+
+      <>
+        {technologies.map(({ color, icon: Icon, name, type, useCase }) => (
+          <Technology
+            key={name}
+            color={color}
+            icon={<Icon />}
+            name={name}
+            type={type}
+            useCase={useCase}
+          />
+        ))}
+      </>
 
       {/* <Technology
         color="#9c1fa5"
@@ -57,17 +59,6 @@ const How = () => {
           "Messaging between different services in a robust & durable way"
         }
       /> */}
-
-      {technologies.map(({ color, icon: Icon, name, type, useCase }, i) => (
-        <Technology
-          key={i}
-          color={color}
-          icon={<Icon />}
-          name={name}
-          type={type}
-          useCase={useCase}
-        />
-      ))}
     </PageWrapper>
   );
 };

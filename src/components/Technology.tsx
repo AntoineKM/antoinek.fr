@@ -1,19 +1,21 @@
 import { ReactElement } from "react";
 import styled from "styled-components";
 
-const Technology = ({
-  color,
-  icon,
-  name,
-  type,
-  useCase,
-}: {
+export type TechnologyProps = {
   color: string;
   icon: ReactElement;
   name: string;
   type: string;
   useCase: string;
-}) => {
+};
+
+const Technology: React.FC<TechnologyProps> = ({
+  color,
+  icon,
+  name,
+  type,
+  useCase,
+}: TechnologyProps) => {
   return (
     <Container>
       <Head color={color}>{icon}</Head>
