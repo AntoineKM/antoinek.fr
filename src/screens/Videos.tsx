@@ -9,7 +9,7 @@ import VideoChannel from "@components/VideoChannel";
 
 const Presence = () => {
   const [videos, setVideos] = React.useState([]);
-  const apiCall = React.useCallback((npt?: any) => {
+  const apiCall = React.useCallback((npt?: string) => {
     fetch(getUrl(npt))
       .then((response) => {
         return response.json();
@@ -27,7 +27,7 @@ const Presence = () => {
     apiCall();
   }, [apiCall]);
 
-  const getUrl = (pagetoken) => {
+  const getUrl = (pagetoken: string) => {
     const pt =
         typeof pagetoken === "undefined" ? "" : `&pageToken=${pagetoken}`,
       mykey = "AIzaSyA3R6LsS3L7cYq1QyPvjyah_adg3zrSqXY",
