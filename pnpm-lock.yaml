@@ -41,8 +41,8 @@ dependencies:
     specifier: ^4.0.1
     version: 4.0.1(react@18.2.0)
   web-vitals:
-    specifier: ^2.1.4
-    version: 2.1.4
+    specifier: ^3.0.0
+    version: 3.0.0
 
 devDependencies:
   '@types/node':
@@ -12492,8 +12492,8 @@ packages:
       defaults: 1.0.4
     dev: false
 
-  /web-vitals@2.1.4:
-    resolution: {integrity: sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg==}
+  /web-vitals@3.0.0:
+    resolution: {integrity: sha512-3Gh6rH5aetFYqfkl9V59KCvjj9vp9U2Tkaep9MO+xpAVg+JULmQfi5zEkcPLkE6iU8pNYVwdjHvIU8RFAchYyQ==}
     dev: false
 
   /webidl-conversions@3.0.1:
