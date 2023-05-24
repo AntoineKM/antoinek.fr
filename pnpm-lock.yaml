@@ -8,8 +8,8 @@ dependencies:
     specifier: ^10.0.0
     version: 10.0.0(react-dom@18.2.0)(react@18.2.0)
   jotai:
-    specifier: ^1.8.1
-    version: 1.13.1(@babel/core@7.21.3)(react@18.2.0)
+    specifier: ^2.0.0
+    version: 2.0.0(react@18.2.0)
   next:
     specifier: ^12.2.4
     version: 12.3.4(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)
@@ -7905,47 +7905,15 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: false
 
-  /jotai@1.13.1(@babel/core@7.21.3)(react@18.2.0):
-    resolution: {integrity: sha512-RUmH1S4vLsG3V6fbGlKzGJnLrDcC/HNb5gH2AeA9DzuJknoVxSGvvg8OBB7lke+gDc4oXmdVsaKn/xDUhWZ0vw==}
+  /jotai@2.0.0(react@18.2.0):
+    resolution: {integrity: sha512-04G0CRZQgp3xrFAezd6X14psZ2TRGekHeYMBcbDJ/BR8ZJQPS+j0YkMTxUxyG58HJnN2+adfj5sWQWoqgtp1XQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
-      '@babel/core': '*'
-      '@babel/template': '*'
-      jotai-devtools: '*'
-      jotai-immer: '*'
-      jotai-optics: '*'
-      jotai-redux: '*'
-      jotai-tanstack-query: '*'
-      jotai-urql: '*'
-      jotai-valtio: '*'
-      jotai-xstate: '*'
-      jotai-zustand: '*'
-      react: '>=16.8'
+      react: '>=17.0.0'
     peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@babel/template':
-        optional: true
-      jotai-devtools:
-        optional: true
-      jotai-immer:
-        optional: true
-      jotai-optics:
-        optional: true
-      jotai-redux:
-        optional: true
-      jotai-tanstack-query:
-        optional: true
-      jotai-urql:
-        optional: true
-      jotai-valtio:
-        optional: true
-      jotai-xstate:
-        optional: true
-      jotai-zustand:
+      react:
         optional: true
     dependencies:
-      '@babel/core': 7.21.3
       react: 18.2.0
     dev: false
 
