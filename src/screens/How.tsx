@@ -42,16 +42,6 @@ const How = () => {
       /> */}
 
       {/* <Technology
-        color="#dea584"
-        icon={<RustLogo />}
-        name="Rust"
-        type="Backend, System"
-        useCase={
-          "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code."
-        }
-      /> */}
-
-      {/* <Technology
         color="#FF6600"
         icon={<RabbitMQLogo/>}
         name="RabbitMQ"
