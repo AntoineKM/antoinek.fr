@@ -15,6 +15,7 @@ import {
   MongoDBLogo,
   RedisLogo,
   MySQLLogo,
+  RustLogo,
 } from "../components/Icons";
 
 export const technologies: Technology[] = [
@@ -25,6 +26,14 @@ export const technologies: Technology[] = [
     name: "TypeScript",
     type: "JavaScript Framework",
     useCase: "Types for JavaScript - will save your life when projects expand.",
+  },
+  {
+    color: "#dea584",
+    icon: RustLogo,
+    name: "Rust",
+    type: "Backend, System",
+    useCase:
+      "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code.",
   },
   {
     color: "#00acd7",
