@@ -33,7 +33,7 @@ export const technologies: Technology[] = [
     name: "Rust",
     type: "Backend, System",
     useCase:
-      "Optimizing parts of Elixir code using Rust NIFs and writing efficient system code.",
+      "A language empowering everyone to build reliable and efficient software.",
   },
   {
     color: "#00acd7",
