@@ -19,7 +19,7 @@
     "react-router": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-spring": "^9.5.2",
-    "styled-components": "^5.3.5",
+    "styled-components": "^6.0.0",
     "url-loader": "^4.1.1",
     "use-sound": "^4.0.1",
     "web-vitals": "^3.0.0"
