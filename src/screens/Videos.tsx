@@ -30,7 +30,8 @@ const Presence = () => {
   const getUrl = (pagetoken: string) => {
     const pt =
         typeof pagetoken === "undefined" ? "" : `&pageToken=${pagetoken}`,
-      mykey = "AIzaSyA3R6LsS3L7cYq1QyPvjyah_adg3zrSqXY",
+      // this api key is restricted
+      mykey = "AIzaSyAwCRe7TDWt3qyHvzIQWMhik8yUy3umHRA",
       playListID = "UUN0hmDGaj1RAshd3A-x35pA",
       URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=14&playlistId=${playListID}&key=${mykey}${pt}`;
     return URL;
