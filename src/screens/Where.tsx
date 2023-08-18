@@ -1,8 +1,7 @@
-import Head from "next/head";
-
 import PageWrapper from "@components/PageWrapper";
 import Co from "@components/Where/Co";
 import Repo from "@components/Where/Repo";
+import Head from "next/head";
 
 const Where = () => {
   return (

@@ -16,7 +16,7 @@ const VideoChannel = ({ url, title }: { url: string; title: string }) => {
   }));
 
   return (
-    <A href={url} target="_blank" rel="noopener">
+    <A href={url} target={"_blank"} rel={"noopener"}>
       <Container
         onMouseMove={({
           clientX: x,

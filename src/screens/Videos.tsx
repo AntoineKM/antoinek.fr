@@ -1,11 +1,10 @@
+import PageWrapper from "@components/PageWrapper";
+import Video from "@components/Video";
+import VideoChannel from "@components/VideoChannel";
+import VideoSkeleton from "@components/VideoSkeleton";
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
-
-import Video from "@components/Video";
-import PageWrapper from "@components/PageWrapper";
-import VideoSkeleton from "@components/VideoSkeleton";
-import VideoChannel from "@components/VideoChannel";
 
 const Presence = () => {
   const [videos, setVideos] = React.useState([]);
@@ -51,9 +50,9 @@ const Presence = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>videos | Antoine Kingue</title>
+        <title>{"videos | Antoine Kingue"}</title>
       </Head>
-      <h1>🎥 latest videos</h1>
+      <h1>{"🎥 latest videos"}</h1>
       <VideosWrapper>
         {videos?.length > 1
           ? videos.map((video, i) => (
@@ -66,7 +65,7 @@ const Presence = () => {
             ))
           : Array.from({ length: 50 }, (_, i) => <VideoSkeleton key={i} />)}
         <VideoChannel
-          title="Visit my youtube channel to see more ➡️"
+          title={"Visit my youtube channel to see more ➡️"}
           url={"https://youtube.com/@orionmood"}
         />
       </VideosWrapper>

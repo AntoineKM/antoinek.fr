@@ -1,21 +1,25 @@
+import Link from "@onruntime/next-link";
 import Head from "next/head";
+import { technologies } from "src/data/technologies";
 
 import PageWrapper from "../components/PageWrapper";
 import Technology from "../components/Technology";
-import { technologies } from "src/data/technologies";
-import Link from "@onruntime/next-link";
 
 const How = () => {
   return (
     <PageWrapper>
       <Head>
-        <title>how I do it | Antoine Kingue</title>
+        <title>{"how I do it | Antoine Kingue"}</title>
       </Head>
-      <h1>💻 how I do it</h1>
+      <h1>{"💻 how I do it"}</h1>
       <p>
-        I highly leverage new bleeding-edge technologies and languages like
-        Typescript or Go to stay on top of the game. You can find a list of my
-        most-used technologies below.
+        {
+          "I highly leverage new bleeding-edge technologies and languages like\r"
+        }
+        {
+          "Typescript or Go to stay on top of the game. You can find a list of my\r"
+        }
+        {"most-used technologies below.\r"}
       </p>
 
       <>

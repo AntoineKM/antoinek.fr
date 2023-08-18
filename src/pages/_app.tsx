@@ -1,12 +1,11 @@
+import Head from "@components/Head";
+import { ChevronsRight } from "@components/Icons";
+import Nav from "@components/Nav";
+import SuccessiveType from "@components/SuccessiveType";
+import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import React from "react";
 import styled from "styled-components";
-import { AnimatePresence, motion } from "framer-motion";
-
-import { ChevronsRight } from "@components/Icons";
-import SuccessiveType from "@components/SuccessiveType";
-import Head from "@components/Head";
-import Nav from "@components/Nav";
 
 import "@styles/app.css";
 
@@ -44,7 +43,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         >
           <ProgressContainer onClick={onIntroEnd}>
             <h4>
-              Skip intro <ChevronsRight />
+              {"Skip intro "}
+              <ChevronsRight />
             </h4>
           </ProgressContainer>
           <SuccessiveType

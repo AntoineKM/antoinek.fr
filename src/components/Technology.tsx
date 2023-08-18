@@ -21,15 +21,15 @@ const Technology: React.FC<TechnologyProps> = ({
       <Head color={color}>{icon}</Head>
 
       <Column forceWidth={110}>
-        <h5>name</h5>
+        <h5>{"name"}</h5>
         <p>{name}</p>
       </Column>
       <Column forceWidth={200}>
-        <h5>type</h5>
+        <h5>{"type"}</h5>
         <p>{type}</p>
       </Column>
       <Column noBorder>
-        <h5>use case</h5>
+        <h5>{"use case"}</h5>
         <p>{useCase}</p>
       </Column>
     </Container>

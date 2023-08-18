@@ -1,7 +1,6 @@
-import Head from "next/head";
-
-import Link from "@onruntime/next-link";
 import PageWrapper from "@components/PageWrapper";
+import Link from "@onruntime/next-link";
+import Head from "next/head";
 import calculateAge from "src/utils/calculateAge";
 
 const Home = () => {
@@ -12,13 +11,13 @@ const Home = () => {
       </Head>
       <h1>{"🤔 what I do"}</h1>
       <p>{`Antoine, ${calculateAge(
-        "2001-03-10"
+        "2001-03-10",
       )} y/o developer, designer and youtuber.`}</p>
       <p>
         {
           "I design, build and publish projects of quality and reliability. Currently, I'm working on "
         }
-        <Link href="https://tonightpass.com">{"Tonight Pass"}</Link>
+        <Link href={"https://tonightpass.com"}>{"Tonight Pass"}</Link>
         {"."}
       </p>
       <p>
@@ -31,13 +30,13 @@ const Home = () => {
           "In my free time, I make music as a DJ and post slow motion music on my Youtube Channel and by the way I love bringing people together to create and have fun together! 🥳"
         }
       </p>
-      <h3>A note about reverse engineering</h3>
+      <h3>{"A note about reverse engineering"}</h3>
       <p>
         {
           "I visit a lot of websites every day, and it's always funny to see that humans mainly think that a feature will only be used for its purpose. I study the way the functionality is done, it allows me to evolve by learning different ways of doing things, and then especially to automate our daily workflow, by creating bots or apis that interact like us or with which we can interact!"
         }
       </p>
-      <h3>About Tonight Pass</h3>
+      <h3>{"About Tonight Pass"}</h3>
       <p>
         {`I often go out to nightclubs and parties, and I have seen that this world is not very technologically advanced. Most companies only think about pre-selling tickets for events, but in reality the organization of a party is much more complex.
 Tonight Pass simplifies the whole organization: find your teams and DJs, create your parties, promote and sell in presale or on the spot, pay in groups, provide self-service kiosks and reduce your queues, set up loyalty programs, at the end collect authentic reviews and allow your customers to stay in touch with each other and with you.`}

@@ -1,5 +1,4 @@
 /* eslint-disable react/display-name */
-/* eslint-disable @next/next/no-document-import-in-page */
 import Document, {
   DocumentContext,
   DocumentInitialProps,
@@ -12,7 +11,7 @@ import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
   static async getInitialProps(
-    ctx: DocumentContext
+    ctx: DocumentContext,
   ): Promise<DocumentInitialProps> {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -41,30 +40,32 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html lang="en">
+      <Html lang={"en"}>
         <Head>
           <link
-            rel="stylesheet"
-            href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=panchang@400&display=swap"
+            rel={"stylesheet"}
+            href={
+              "https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=panchang@400&display=swap"
+            }
           />
           <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/static/images/favicon/apple-touch-icon.png"
+            rel={"apple-touch-icon"}
+            sizes={"180x180"}
+            href={"/static/images/favicon/apple-touch-icon.png"}
           />
           <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/static/images/favicon/favicon-32x32.png"
+            rel={"icon"}
+            type={"image/png"}
+            sizes={"32x32"}
+            href={"/static/images/favicon/favicon-32x32.png"}
           />
           <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/static/images/favicon/favicon-16x16.png"
+            rel={"icon"}
+            type={"image/png"}
+            sizes={"16x16"}
+            href={"/static/images/favicon/favicon-16x16.png"}
           />
-          <link rel="manifest" href="/manifest.json" />
+          <link rel={"manifest"} href={"/manifest.json"} />
         </Head>
         <body>
           <Main />

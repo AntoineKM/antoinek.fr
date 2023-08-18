@@ -28,9 +28,9 @@ const PageWrapper = ({
 }) => {
   return (
     <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
+      initial={"initial"}
+      animate={"in"}
+      exit={"out"}
       variants={pageVariants}
       transition={pageTransition}
       style={{

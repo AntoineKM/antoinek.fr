@@ -2,6 +2,7 @@ import Link from "@onruntime/next-link";
 import { animated, useSpring } from "react-spring";
 import { Compagny } from "src/types";
 import styled from "styled-components";
+
 import { ExternalLinkIcon } from "../../../Icons";
 
 interface Props {
@@ -48,9 +49,9 @@ const CoCard: React.FC<Props> = ({
           </div>
         </Header>
         <Content>
-          <h3>Role</h3>
+          <h3>{"Role"}</h3>
           <p>{role}</p>
-          <h3>What</h3>
+          <h3>{"What"}</h3>
           <p>{description}</p>
         </Content>
       </Container>

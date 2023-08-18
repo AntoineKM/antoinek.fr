@@ -1,7 +1,14 @@
-import { useRouter } from "next/router";
+import Link from "@onruntime/next-link";
 import { motion, PanInfo } from "framer-motion";
+import { useAtom } from "jotai";
+import { useRouter } from "next/router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import ContentLoader from "react-content-loader";
+import { doingAtom } from "src/states/lanyard";
 import styled from "styled-components";
+import useSound from "use-sound";
+
+import Doing from "./Doing";
 import {
   GitHubLogo,
   LinkedinLogo,
@@ -10,12 +17,6 @@ import {
   TwitterLogo,
   XIcon,
 } from "./Icons";
-import Doing from "./Doing";
-import useSound from "use-sound";
-import Link from "@onruntime/next-link";
-import { useAtom } from "jotai";
-import { doingAtom } from "src/states/lanyard";
-import ContentLoader from "react-content-loader";
 
 const pathnameOffsets: { [key: string]: number } = {
   "/": 0,
@@ -46,12 +47,12 @@ const Nav = () => {
 
   const pageIndicatorOffset = useMemo(
     () => (pathname ? pathnameOffsets[pathname] ?? -180 : 0),
-    [pathname]
+    [pathname],
   );
 
   const pageIndicatorOffsetWithDecoration = useMemo(
     () => 71 + 36 + pageIndicatorOffset - dragYOffset,
-    [pageIndicatorOffset, dragYOffset]
+    [pageIndicatorOffset, dragYOffset],
   );
 
   const onPageIndicatorDragEnd = useCallback(
@@ -63,7 +64,7 @@ const Nav = () => {
           return Math.abs(curOffset - goal) < Math.abs(prevOffset - goal)
             ? [curPath, curOffset]
             : [prevPath, prevOffset];
-        }
+        },
       );
 
       if (closest[0] === pathname) return;
@@ -71,7 +72,7 @@ const Nav = () => {
       setDragYOffset(dragYOffset + info.offset.y + info.velocity.y);
       router.push(closest[0]);
     },
-    [router, pageIndicatorOffset, dragYOffset, pathname]
+    [router, pageIndicatorOffset, dragYOffset, pathname],
   );
 
   const toggleMobileMenu = useCallback(() => {
@@ -81,7 +82,7 @@ const Nav = () => {
   return (
     <>
       <MobileHeader>
-        <Title>Antoine Kingue</Title>
+        <Title>{"Antoine Kingue"}</Title>
         {openOnMobile ? (
           <XIcon onClick={toggleMobileMenu} />
         ) : (
@@ -92,7 +93,7 @@ const Nav = () => {
         {!openOnMobile ? (
           <PageIndicator
             whileHover={{ width: 3 }}
-            drag="y"
+            drag={"y"}
             onDragEnd={onPageIndicatorDragEnd}
             dragConstraints={dragConstraintsRef}
             animate={{ top: pageIndicatorOffsetWithDecoration }}
@@ -101,7 +102,7 @@ const Nav = () => {
         <Items>
           {!openOnMobile ? (
             <Row>
-              <Title>Antoine Kingue</Title>
+              <Title>{"Antoine Kingue"}</Title>
               {/* <IconButton>
               <ChevronDown />
             </IconButton> */}
@@ -112,7 +113,7 @@ const Nav = () => {
               href={
                 doing
                   ? `https://google.com/maps/search/${encodeURIComponent(
-                      doing.kv.location
+                      doing.kv.location,
                     )}`
                   : "#"
               }
@@ -125,40 +126,47 @@ const Nav = () => {
                   speed={2}
                   // width={"auto"}
                   height={19}
-                  viewBox="0 0 160 25"
-                  backgroundColor="#121212"
-                  foregroundColor="#2e2e2e"
+                  viewBox={"0 0 160 25"}
+                  backgroundColor={"#121212"}
+                  foregroundColor={"#2e2e2e"}
                 >
-                  <rect x="0" y="3" rx="6" ry="6" width="160" height="19" />
+                  <rect
+                    x={"0"}
+                    y={"3"}
+                    rx={"6"}
+                    ry={"6"}
+                    width={"160"}
+                    height={"19"}
+                  />
                 </ContentLoader>
               )}
             </Location>
           </Row>
           <div ref={dragConstraintsRef}>
-            <Page active={pathname === "/"} href="/">
+            <Page active={pathname === "/"} href={"/"}>
               {"what I do"}
             </Page>
-            <Page active={pathname === "/where"} href="/where">
+            <Page active={pathname === "/where"} href={"/where"}>
               {"where I've done it"}
             </Page>
-            <Page active={pathname === "/how"} href="/how">
+            <Page active={pathname === "/how"} href={"/how"}>
               {"how I do it"}
             </Page>
-            <Page active={pathname === "/videos"} href="/videos">
+            <Page active={pathname === "/videos"} href={"/videos"}>
               {"videos"}
             </Page>
-            <Page active={pathname === "/etc"} href="/etc">
+            <Page active={pathname === "/etc"} href={"/etc"}>
               {"more + contact"}
             </Page>
           </div>
           <Icons>
-            <Link name={"LinkedIn"} href="https://linkedin.com/in/antoinekm/">
+            <Link name={"LinkedIn"} href={"https://linkedin.com/in/antoinekm/"}>
               <LinkedinLogo />
             </Link>
-            <Link name={"GitHub"} href="https://github.com/AntoineKM">
+            <Link name={"GitHub"} href={"https://github.com/AntoineKM"}>
               <GitHubLogo />
             </Link>
-            <Link name={"Twitter"} href="https://twitter.com/AntoineKingue">
+            <Link name={"Twitter"} href={"https://twitter.com/AntoineKingue"}>
               <TwitterLogo />
             </Link>
           </Icons>

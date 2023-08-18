@@ -32,7 +32,7 @@ const SuccessiveType: React.FC<Props> = ({
   const splitWords: string[] = useMemo(() => words.split(" "), [words]);
   const shownWords: string[] = useMemo(
     () => splitWords.slice(0, index + 1),
-    [splitWords, index]
+    [splitWords, index],
   );
 
   useEffect(() => {
@@ -47,9 +47,13 @@ const SuccessiveType: React.FC<Props> = ({
 
     const currentWord = splitWords[index];
 
-    setTimeout(() => {
-      setIndex(index + 1);
-    }, currentWord.length * (Math.E * 20) + (currentWord[currentWord.length - 1] === "." ? 500 : 0));
+    setTimeout(
+      () => {
+        setIndex(index + 1);
+      },
+      currentWord.length * (Math.E * 20) +
+        (currentWord[currentWord.length - 1] === "." ? 500 : 0),
+    );
   }, [index, splitWords, onEnd]);
 
   useEffect(() => {

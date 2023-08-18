@@ -1,12 +1,13 @@
-import { motion } from "framer-motion";
-import { forwardRef, useEffect, useMemo, useState } from "react";
 import Link from "@onruntime/next-link";
-import styled, { keyframes } from "styled-components";
-import { Presence } from "../types/lanyard";
-import SpotifyLogo from "../assets/images/spotify-logo.svg";
+import { motion } from "framer-motion";
 import { useAtom } from "jotai";
-import { doingAtom } from "../states/lanyard";
+import { forwardRef, useEffect, useMemo, useState } from "react";
+import styled, { keyframes } from "styled-components";
+
 import Progress from "./Progress";
+import SpotifyLogo from "../assets/images/spotify-logo.svg";
+import { doingAtom } from "../states/lanyard";
+import { Presence } from "../types/lanyard";
 
 // Thanks to Tim (https://github.com/timcole/timcole.me/blob/%F0%9F%A6%84/components/lanyard.tsx) for the types
 
@@ -34,7 +35,7 @@ const logLanyardEvent = (eventName: string, data: any) => {
     `%cLanyard%c <~ ${eventName} %o`,
     "background-color: #d7bb87; border-radius: 5px; padding: 3px; color: #372910;",
     "background: none; color: #d7bb87;",
-    data
+    data,
   );
 };
 
@@ -42,7 +43,7 @@ const discordId = "623154662765232128";
 
 const Doing = (
   { setActive, ...props }: { setActive: (active: boolean) => void } & any,
-  ref: any
+  ref: any,
 ) => {
   const [socket, setSocket] = useState<WebSocket | null>(null);
   const [doing, setDoing] = useAtom(doingAtom) as any;
@@ -61,7 +62,7 @@ const Doing = (
       if (op === Operation.Hello) {
         setInterval(
           () => send(Operation.Heartbeat),
-          (d as { heartbeat_interval: number }).heartbeat_interval
+          (d as { heartbeat_interval: number }).heartbeat_interval,
         );
         send(Operation.Initialize, { subscribe_to_id: discordId });
       } else if (op === Operation.Event && t) {
@@ -83,7 +84,7 @@ const Doing = (
 
   const currentActivity = useMemo(
     () => doing?.activities.filter((activity) => activity.type === 0)[0],
-    [doing]
+    [doing],
   );
 
   useEffect(() => {
@@ -99,7 +100,8 @@ const Doing = (
       {doing?.listening_to_spotify ? (
         <Container ref={ref} href={"/presence"} {...props}>
           <h5>
-            Listening to Spotify <LiveDot />
+            {"Listening to Spotify "}
+            <LiveDot />
           </h5>
           <>
             <ActivityRow>
@@ -110,7 +112,10 @@ const Doing = (
 
               <ActivityInfo>
                 <h5>{doing.spotify.song}</h5>
-                <p>by {doing.spotify.artist}</p>
+                <p>
+                  {"by "}
+                  {doing.spotify.artist}
+                </p>
               </ActivityInfo>
             </ActivityRow>
             <Progress
@@ -124,7 +129,7 @@ const Doing = (
       ) : null}
       {currentActivity ? (
         <Container href={"/presence"} {...props}>
-          <h5>Doing something</h5>
+          <h5>{"Doing something"}</h5>
           <ActivityRow>
             {currentActivity.assets ? (
               <ActivityImageContainer>

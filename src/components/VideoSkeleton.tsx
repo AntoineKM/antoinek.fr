@@ -16,7 +16,11 @@ const VideoSkeleton = () => {
   }));
 
   return (
-    <A href={"https://youtube.com/c/orionmood"} target="_blank" rel="noopener">
+    <A
+      href={"https://youtube.com/c/orionmood"}
+      target={"_blank"}
+      rel={"noopener"}
+    >
       <Container
         onMouseMove={({
           clientX: x,

@@ -1,5 +1,6 @@
 import compagnies from "src/data/compagnies";
 import styled from "styled-components";
+
 import CoCard from "./Card";
 
 const Co: React.FC = () => {

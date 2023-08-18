@@ -1,6 +1,6 @@
+import Link from "@onruntime/next-link";
 import Head from "next/head";
 
-import Link from "@onruntime/next-link";
 import PageWrapper from "../components/PageWrapper";
 
 const Etc = () => (
@@ -44,7 +44,7 @@ const Etc = () => (
     <h2>{"🧭 Other"}</h2>
     <ul>
       <li>
-        <Link href="/presence">{"/presence"}</Link>
+        <Link href={"/presence"}>{"/presence"}</Link>
       </li>
       <li>
         <a href={"https://onruntime.com"}>{"onRuntime Studio"}</a>
