@@ -42,6 +42,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang={"en"}>
         <Head>
+          <link rel={"preconnect"} href={"https://api.fontshare.com"} />
+          <link
+            rel={"preconnect"}
+            href={"https://cdn.fontshare.com"}
+            crossOrigin={""}
+          />
           <link
             rel={"stylesheet"}
             href={
