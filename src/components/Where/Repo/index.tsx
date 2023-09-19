@@ -1,4 +1,4 @@
-import Link from "@onruntime/next-link";
+import Link from "@components/Link";
 import React from "react";
 
 const Repo: React.FC = () => {

@@ -1,4 +1,4 @@
-import Link from "@onruntime/next-link";
+import Link from "@components/Link";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { forwardRef, useEffect, useMemo, useState } from "react";

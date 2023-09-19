@@ -1,4 +1,4 @@
-import Link from "@onruntime/next-link";
+import Link from "@components/Link";
 import Head from "next/head";
 
 import PageWrapper from "../components/PageWrapper";

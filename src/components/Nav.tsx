@@ -1,4 +1,4 @@
-import Link from "@onruntime/next-link";
+import Link from "@components/Link";
 import { motion, PanInfo } from "framer-motion";
 import { useAtom } from "jotai";
 import { useRouter } from "next/router";
@@ -162,21 +162,18 @@ const Nav = () => {
           <Icons>
             <Link
               aria-label={"LinkedIn - @antoinekm"}
-              name={"LinkedIn"}
               href={"https://linkedin.com/in/antoinekm/"}
             >
               <LinkedinLogo />
             </Link>
             <Link
               aria-label={"GitHub - @AntoineKM"}
-              name={"GitHub"}
               href={"https://github.com/AntoineKM"}
             >
               <GitHubLogo />
             </Link>
             <Link
               aria-label={"Twitter - @AntoineKingue"}
-              name={"Twitter"}
               href={"https://twitter.com/AntoineKingue"}
             >
               <TwitterLogo />
