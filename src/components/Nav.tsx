@@ -160,13 +160,25 @@ const Nav = () => {
             </Page>
           </div>
           <Icons>
-            <Link name={"LinkedIn"} href={"https://linkedin.com/in/antoinekm/"}>
+            <Link
+              aria-label={"LinkedIn - @antoinekm"}
+              name={"LinkedIn"}
+              href={"https://linkedin.com/in/antoinekm/"}
+            >
               <LinkedinLogo />
             </Link>
-            <Link name={"GitHub"} href={"https://github.com/AntoineKM"}>
+            <Link
+              aria-label={"GitHub - @AntoineKM"}
+              name={"GitHub"}
+              href={"https://github.com/AntoineKM"}
+            >
               <GitHubLogo />
             </Link>
-            <Link name={"Twitter"} href={"https://twitter.com/AntoineKingue"}>
+            <Link
+              aria-label={"Twitter - @AntoineKingue"}
+              name={"Twitter"}
+              href={"https://twitter.com/AntoineKingue"}
+            >
               <TwitterLogo />
             </Link>
           </Icons>
