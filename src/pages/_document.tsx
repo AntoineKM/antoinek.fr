@@ -42,18 +42,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang={"en"}>
         <Head>
-          <link rel={"preconnect"} href={"https://api.fontshare.com"} />
-          <link
-            rel={"preconnect"}
-            href={"https://cdn.fontshare.com"}
-            crossOrigin={""}
-          />
-          <link
-            rel={"stylesheet"}
-            href={
-              "https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=panchang@400&display=swap"
-            }
-          />
           <link
             rel={"apple-touch-icon"}
             sizes={"180x180"}
