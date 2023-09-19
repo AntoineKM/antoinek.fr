@@ -159,7 +159,7 @@ const Container = styled(motion(Link))`
   width: calc(100% + 2rem);
   margin-left: -2rem;
   background-color: transparent;
-  color: #606055;
+  color: #bdbdb2;
   border-top: 1px solid #30302b;
   padding: 1rem;
   cursor: pointer;

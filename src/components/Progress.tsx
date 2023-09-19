@@ -17,7 +17,7 @@ const Container = styled.div`
   width: 100%;
   margin-top: 10px;
   height: 5px;
-  border: 1px solid #606055;
+  border: 1px solid #bdbdb2;
   overflow: hidden;
   border-radius: 5px;
 `;

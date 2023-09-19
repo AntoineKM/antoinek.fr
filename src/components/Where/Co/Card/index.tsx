@@ -105,11 +105,11 @@ const Header = styled.div`
     svg {
       width: 15px;
       height: 15px;
-      color: #606055;
+      color: #bdbdb2;
     }
 
     span {
-      color: #606055;
+      color: #bdbdb2;
     }
   }
 `;

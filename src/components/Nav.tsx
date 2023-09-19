@@ -232,7 +232,7 @@ const MobileHeader = styled.div`
   svg {
     margin-left: auto;
     cursor: pointer;
-    color: #606055;
+    color: #bdbdb2;
   }
 
   @media (min-width: 850px) {
@@ -292,7 +292,7 @@ const Location = styled(Link)`
 `;
 
 const Page = styled(Link)<{ active: boolean }>`
-  color: ${({ active }) => (active ? "#ffffe3" : "#606055")};
+  color: ${({ active }) => (active ? "#ffffe3" : "#bdbdb2")};
   padding: 10px 0px;
   display: flex;
 
@@ -304,7 +304,7 @@ const Page = styled(Link)<{ active: boolean }>`
 
 const Icons = styled.div`
   margin-top: auto;
-  color: #606055;
+  color: #bdbdb2;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -315,7 +315,7 @@ const Icons = styled.div`
     width: 20px;
     height: 20px;
     cursor: pointer;
-    color: #606055;
+    color: #bdbdb2;
 
     &:hover {
       color: #ffffe3;

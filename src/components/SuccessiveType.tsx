@@ -76,7 +76,7 @@ const Container = styled.div`
 `;
 
 const WordSC = styled.span<{ filled: boolean }>`
-  color: ${({ filled }) => (filled ? "#606055" : "#ffffe3")};
+  color: ${({ filled }) => (filled ? "#bdbdb2" : "#ffffe3")};
   margin-right: 4pt;
   transition: color 2s ease;
   display: inline-block;
