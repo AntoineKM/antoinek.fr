@@ -1,5 +1,5 @@
-import PageWrapper from "@components/PageWrapper";
 import Link from "@components/Link";
+import PageWrapper from "@components/PageWrapper";
 import Head from "next/head";
 import calculateAge from "src/utils/calculateAge";
 
