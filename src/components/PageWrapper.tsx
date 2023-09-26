@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 const pageVariants = {
   initial: {
@@ -19,13 +19,14 @@ const pageTransition = {
   duration: 0.4,
 };
 
-const PageWrapper = ({
+export type PageWrapperProps = {
+  forceReadableWidth?: boolean;
+} & React.PropsWithChildren;
+
+const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
   forceReadableWidth,
-}: {
-  children: ReactElement | ReactElement[];
-  forceReadableWidth?: boolean;
-}) => {
+}: PageWrapperProps) => {
   return (
     <motion.div
       initial={"initial"}
