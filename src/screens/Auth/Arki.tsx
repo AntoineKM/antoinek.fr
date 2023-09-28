@@ -1,10 +1,17 @@
 import { GoogleLogin } from "@react-oauth/google";
 import React from "react";
 import styled from "styled-components";
+import urlcat from "urlcat";
 
 const ArkiAuth: React.FC = () => {
   const handleSuccess = (response) => {
-    console.log(response);
+    // eslint-disable-next-line no-prototype-builtins
+    if (!response.hasOwnProperty("error")) {
+      const link = document.createElement("a");
+      link.href = urlcat("arki://auth", response);
+      document.body.appendChild(link);
+      link.click();
+    }
   };
 
   return (
