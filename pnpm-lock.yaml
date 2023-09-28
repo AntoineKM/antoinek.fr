@@ -44,6 +44,9 @@ dependencies:
   url-loader:
     specifier: ^4.1.1
     version: 4.1.1(webpack@5.88.2)
+  urlcat:
+    specifier: ^3.1.0
+    version: 3.1.0
   use-sound:
     specifier: ^4.0.1
     version: 4.0.1(react@18.2.0)
@@ -14547,6 +14550,12 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: false
+
+  /urlcat@3.1.0:
+    resolution: {integrity: sha512-qY6b94/aGMIHh70EEQ/4hfR2LUGZ+fPQNp64cf7yRX9kAp4XG2tx7LgYUU1Qkh17bFylME0u4n3lOezonougPw==}
+    dependencies:
+      qs: 6.11.0
     dev: false
 
   /use-sound@4.0.1(react@18.2.0):
