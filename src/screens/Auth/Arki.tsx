@@ -1,4 +1,5 @@
 import { GoogleLogin } from "@react-oauth/google";
+import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 import urlcat from "urlcat";
@@ -16,6 +17,9 @@ const ArkiAuth: React.FC = () => {
 
   return (
     <>
+      <Head>
+        <meta name={"robots"} content={"noindex, nofollow"} />
+      </Head>
       <Container>
         <GoogleLogin
           onSuccess={(response) => handleSuccess(response)}
