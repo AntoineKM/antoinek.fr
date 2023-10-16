@@ -2,6 +2,15 @@ import { Compagny } from "src/types";
 
 const compagnies: Compagny[] = [
   {
+    name: "Arkée by Jaws",
+    type: "Agency",
+    role: "Consultant & Developer",
+    description:
+      "I have to make internal workflow faster and I help companies to improve their SEO.",
+    url: "https://arkee.fr",
+    image: "/static/images/arkee-icon.jpg",
+  },
+  {
     name: "Tonight Pass",
     type: "Booking service",
     role: "Founder & Developer",
