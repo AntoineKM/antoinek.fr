@@ -4,12 +4,12 @@ import React from "react";
 import styled from "styled-components";
 import urlcat from "urlcat";
 
-const ArkiAuth: React.FC = () => {
+const ArkeyAuth: React.FC = () => {
   const handleSuccess = (response) => {
     // eslint-disable-next-line no-prototype-builtins
     if (!response.hasOwnProperty("error")) {
       const link = document.createElement("a");
-      link.href = urlcat("arki://auth", response);
+      link.href = urlcat("arkey://auth", response);
       document.body.appendChild(link);
       link.click();
     }
@@ -40,4 +40,4 @@ const Container = styled.div`
   height: 100%;
 `;
 
-export default ArkiAuth;
+export default ArkeyAuth;
