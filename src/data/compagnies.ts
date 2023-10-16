@@ -6,7 +6,7 @@ const compagnies: Compagny[] = [
     type: "Agency",
     role: "Consultant & Developer",
     description:
-      "I have to make internal workflow faster and I help companies to improve their SEO.",
+      "I have to make internal workflow faster and help companies to improve their SEO.",
     url: "https://arkee.fr",
     image: "/static/images/arkee-icon.jpg",
   },
