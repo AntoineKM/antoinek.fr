@@ -25,6 +25,7 @@ const securityHeaders = [
   },
 ];
 
+/** @type {import('next').NextConfig} */
 const config = {
   webpack(config) {
     config.module.rules.push({
@@ -39,6 +40,7 @@ const config = {
     });
     return config;
   },
+  output: "export",
   compiler: {
     styledComponents: true,
   },

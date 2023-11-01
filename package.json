@@ -9,7 +9,7 @@
     "postbuild": "next-sitemap",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
-    "export": "next build && next-sitemap && next export"
+    "export": "next build && next-sitemap"
   },
   "dependencies": {
     "@react-oauth/google": "^0.11.1",
