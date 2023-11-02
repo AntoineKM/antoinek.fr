@@ -7,7 +7,7 @@ import { useCopyToClipboard } from "usehooks-ts";
 
 const YTGGroupTransformer = () => {
   const [csvData, setCsvData] = React.useState([]);
-  const [error, setError] = React.useState(null);
+  const [error, setError] = React.useState<string>();
   const [copiedValue, copy] = useCopyToClipboard();
 
   const handleFileChange = (e) => {
