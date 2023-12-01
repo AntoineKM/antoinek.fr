@@ -40,7 +40,6 @@ const config = {
     });
     return config;
   },
-  output: "export",
   compiler: {
     styledComponents: true,
   },
