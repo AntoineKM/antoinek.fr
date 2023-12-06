@@ -17,7 +17,10 @@ const Head = () => {
         rel={"apple-touch-icon"}
         href={"/static/images/favicons/favicon.png"}
       />
-      <link rel={"canonical"} href={`https://antoinek.fr/${router.asPath}`} />
+      <link
+        rel={"canonical"}
+        href={`https://antoinek.fr${router.asPath.split("?")[0]}`}
+      />
       {/* add open graph */}
       <meta property={"og:image"} content={"/static/images/open-graph.jpg"} />
       {/* add twitter */}
