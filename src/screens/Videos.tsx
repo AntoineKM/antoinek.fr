@@ -2,51 +2,16 @@ import PageWrapper from "@components/PageWrapper";
 import Video from "@components/Video";
 import VideoChannel from "@components/VideoChannel";
 import VideoSkeleton from "@components/VideoSkeleton";
+import { NextPage, NextPageContext } from "next";
 import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 
-const Presence = () => {
-  const [videos, setVideos] = React.useState([]);
-  const apiCall = React.useCallback((npt?: string) => {
-    fetch(getUrl(npt))
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        if (response.error) {
-          console.log(response.error);
-        } else {
-          responseHandler(response);
-        }
-      });
-  }, []);
+export type VideosProps = {
+  videos: any[];
+};
 
-  React.useEffect(() => {
-    apiCall();
-  }, [apiCall]);
-
-  const getUrl = (pagetoken: string) => {
-    const pt =
-        typeof pagetoken === "undefined" ? "" : `&pageToken=${pagetoken}`,
-      // this api key is restricted
-      mykey = "AIzaSyAwCRe7TDWt3qyHvzIQWMhik8yUy3umHRA",
-      playListID = "UUN0hmDGaj1RAshd3A-x35pA",
-      URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=14&playlistId=${playListID}&key=${mykey}${pt}`;
-    return URL;
-  };
-
-  const responseHandler = (response) => {
-    //if (response.nextPageToken) apiCall(response.nextPageToken);
-
-    setVideos(response.items);
-    // console.log(response.items)
-    // for (var item of response.items) {
-    //      setVideos(prevState => [...prevState, item]);
-    // }
-    //console.log(videos);
-  };
-
+const VideosPage: NextPage<VideosProps> = ({ videos }: VideosProps) => {
   return (
     <PageWrapper>
       <Head>
@@ -88,4 +53,21 @@ const VideosWrapper = styled.div`
   }
 `;
 
-export default Presence;
+VideosPage.getInitialProps = async (ctx: NextPageContext) => {
+  const playListID = "UUN0hmDGaj1RAshd3A-x35pA";
+  const mykey = process.env.NEXT_PUBLIC_YOUTUBE_KEY || "";
+  const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=14&playlistId=${playListID}&key=${mykey}`;
+
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    const videos = data.items;
+
+    return { videos };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { videos: [] };
+  }
+};
+
+export default VideosPage;
