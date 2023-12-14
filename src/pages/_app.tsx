@@ -2,7 +2,6 @@ import Head from "@components/Head";
 import { ChevronsRight } from "@components/Icons";
 import Nav from "@components/Nav";
 import SuccessiveType from "@components/SuccessiveType";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import React from "react";
@@ -29,9 +28,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <GoogleOAuthProvider
-      clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID || ""}
-    >
+    <>
       <Head />
       <Wrapper>
         <SuccessiveTypeContainer
@@ -78,7 +75,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           </ContentWrapper>
         </MainContent>
       </Wrapper>
-    </GoogleOAuthProvider>
+    </>
   );
 };
 
