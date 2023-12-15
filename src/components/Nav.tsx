@@ -152,7 +152,7 @@ const Nav = () => {
             <Page active={pathname === "/how"} href={"/how"}>
               {"how I do it"}
             </Page>
-            <Page active={pathname === "/videos"} href={"/videos"}>
+            <Page active={pathname.startsWith("/videos")} href={"/videos"}>
               {"videos"}
             </Page>
             <Page active={pathname === "/etc"} href={"/etc"}>

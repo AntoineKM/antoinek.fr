@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { animated, useSpring } from "react-spring";
 import styled from "styled-components";
 
@@ -24,7 +25,7 @@ const Video = ({
   }));
 
   return (
-    <A href={url} target={"_blank"} rel={"noopener"}>
+    <A href={url}>
       <Container
         onMouseMove={({
           clientX: x,
@@ -48,7 +49,7 @@ const Video = ({
   );
 };
 
-const A = styled.a`
+const A = styled(Link)`
   text-decoration: none;
   color: inherit;
 

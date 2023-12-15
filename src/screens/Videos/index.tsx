@@ -29,7 +29,7 @@ const VideosPage: NextPage<VideosProps> = ({
           ? videos.map((video, i) => (
               <Video
                 key={i}
-                url={`https://youtu.be/${video.snippet.resourceId.videoId}`}
+                url={`/videos/${video.snippet.resourceId.videoId}`}
                 title={video.snippet.title}
                 thumbnailUrl={video.snippet.thumbnails.medium.url}
               />
@@ -40,12 +40,14 @@ const VideosPage: NextPage<VideosProps> = ({
         <PaginationButton
           href={`/videos${prevPageToken ? `?pageToken=${prevPageToken}` : ""}`}
           disabled={!prevPageToken}
+          rel={"prev"}
         >
           {"⬅️ previous"}
         </PaginationButton>
         <PaginationButton
           href={`/videos${nextPageToken ? `?pageToken=${nextPageToken}` : ""}`}
           disabled={!nextPageToken}
+          rel={"next"}
         >
           {"next ➡️"}
         </PaginationButton>
