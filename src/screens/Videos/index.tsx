@@ -108,10 +108,10 @@ VideosPage.getInitialProps = async (ctx: NextPageContext) => {
   const { query } = ctx;
 
   const pageToken = (query.pageToken as string) || "";
-  const playListID = "UUN0hmDGaj1RAshd3A-x35pA";
+  const playListId = "UUN0hmDGaj1RAshd3A-x35pA";
   const mykey = process.env.NEXT_PUBLIC_YOUTUBE_KEY || "";
   const maxResults = 12;
-  const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playListID}&key=${mykey}&pageToken=${pageToken}`;
+  const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playListId}&key=${mykey}&pageToken=${pageToken}`;
 
   try {
     const response = await fetch(URL);
