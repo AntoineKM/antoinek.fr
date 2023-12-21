@@ -1,3 +1,5 @@
+import("./env.mjs");
+
 const securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
