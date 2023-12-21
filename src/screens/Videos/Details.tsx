@@ -53,7 +53,7 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
 
   const loadMoreComments = async () => {
     if (nextPageToken) {
-      const videoCommentsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/commentThreads?part=snippet,replies&videoId=${videoId}&key=${mykey}&pageToken=${nextPageToken}&order=relevance`;
+      const videoCommentsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/commentThreads?part=snippet,replies&videoId=${videoId}&pageToken=${nextPageToken}&order=relevance`;
 
       try {
         const response = await fetch(videoCommentsURL);
