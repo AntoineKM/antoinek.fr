@@ -92,7 +92,29 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
             />
           )}
         </VideoEmbedWrapper>
+        <VideoInfoContainer>
+          {statistics && (
+            <VideoStatistics>
+              <span>{`${statistics.viewCount} view${
+                statistics.viewCount !== "1" ? "s" : ""
+              }`}</span>
+              {" | "}
+              <span>{`${statistics.likeCount} like${
+                statistics.likeCount !== "1" ? "s" : ""
+              }`}</span>
+            </VideoStatistics>
+          )}
+
+          <a
+            href={`https://youtu.be/${videoId}`}
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+          >
+            {"Watch on YouTube"}
+          </a>
+        </VideoInfoContainer>
         <VideoDescription>{descriptionWithBreaks}</VideoDescription>
+
         {currentComments && currentComments.length > 0 && (
           <CommentsContainer>
             <h2>{`${statistics?.commentCount} comments`}</h2>
@@ -166,6 +188,23 @@ const VideoEmbed = styled.iframe`
   max-width: 800px;
   height: 450px;
   border-radius: 10px;
+`;
+
+const VideoInfoContainer = styled.div`
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  max-width: 800px;
+`;
+
+const VideoStatistics = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  font-weight: 600;
 `;
 
 const VideoDescription = styled.p`
