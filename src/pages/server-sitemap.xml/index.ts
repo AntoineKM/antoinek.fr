@@ -1,17 +1,16 @@
 // pages/server-sitemap.xml/index.tsx
+import { env } from "env.mjs";
 import { GetServerSideProps } from "next";
 import { getServerSideSitemapLegacy } from "next-sitemap";
+import { YOUTUBE } from "src/constants/youtube";
 
-const playListId = "UUN0hmDGaj1RAshd3A-x35pA";
-const mykey = process.env.NEXT_PUBLIC_YOUTUBE_KEY || "";
-const siteUrl = process.env.SITE_URL || "https://antoinek.fr";
 const maxResults = 50;
 
 async function fetchVideos(pageToken?: string) {
   const response = await fetch(
-    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playListId}&key=${mykey}${
-      pageToken ? `&pageToken=${pageToken}` : ""
-    }`,
+    `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${
+      YOUTUBE.PLAYLIST_ID
+    }${pageToken ? `&pageToken=${pageToken}` : ""}`,
   );
   const data = await response.json();
   return {
@@ -31,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   } while (pageToken);
 
   const fields = allVideos.map((video) => ({
-    loc: `${siteUrl}/videos/${video.snippet.resourceId.videoId}`,
+    loc: `${env.NEXT_PUBLIC_APP_URL}/videos/${video.snippet.resourceId.videoId}`,
     lastmod: new Date(video.snippet.publishedAt).toISOString(),
     // You can add more information like changefreq and priority if needed
   }));

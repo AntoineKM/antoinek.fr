@@ -1,6 +1,7 @@
 import PageWrapper from "@components/PageWrapper";
 import Video from "@components/Video";
 import VideoSkeleton from "@components/VideoSkeleton";
+import { env } from "env.mjs";
 import { NextPage, NextPageContext } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -109,12 +110,11 @@ VideosPage.getInitialProps = async (ctx: NextPageContext) => {
 
   const pageToken = (query.pageToken as string) || "";
   const playListId = "UUN0hmDGaj1RAshd3A-x35pA";
-  const mykey = process.env.NEXT_PUBLIC_YOUTUBE_KEY || "";
   const maxResults = 12;
-  const URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playListId}&key=${mykey}&pageToken=${pageToken}`;
+  const url = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${playListId}&pageToken=${pageToken}`;
 
   try {
-    const response = await fetch(URL);
+    const response = await fetch(url);
     const data = await response.json();
     const { nextPageToken, prevPageToken, items: videos } = data;
 

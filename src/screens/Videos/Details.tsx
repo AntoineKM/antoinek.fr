@@ -1,4 +1,5 @@
 import PageWrapper from "@components/PageWrapper";
+import { env } from "env.mjs";
 import { NextPage, NextPageContext } from "next";
 import ErrorPage from "next/error";
 import Head from "next/head";
@@ -20,9 +21,6 @@ export type VideoDetailsProps = {
     statusCode: number;
   };
 };
-
-const mykey = process.env.NEXT_PUBLIC_YOUTUBE_KEY || "";
-const channelId = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID || "";
 
 const VideoDetails: NextPage<VideoDetailsProps> = ({
   videoId,
@@ -54,9 +52,8 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
     ));
 
   const loadMoreComments = async () => {
-    console.log("nextPageToken", nextPageToken);
     if (nextPageToken) {
-      const videoCommentsURL = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${videoId}&key=${mykey}&pageToken=${nextPageToken}&order=relevance`;
+      const videoCommentsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/commentThreads?part=snippet,replies&videoId=${videoId}&key=${mykey}&pageToken=${nextPageToken}&order=relevance`;
 
       try {
         const response = await fetch(videoCommentsURL);
@@ -235,8 +232,8 @@ const LoadMoreButton = styled.button`
 VideoDetails.getInitialProps = async (ctx: NextPageContext) => {
   const { query } = ctx;
   const videoId = query.id as string;
-  const videoDetailsURL = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${mykey}`;
-  const videoCommentsURL = `https://www.googleapis.com/youtube/v3/commentThreads?part=snippet,replies&videoId=${videoId}&key=${mykey}&textFormat=html&order=relevance`;
+  const videoDetailsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/videos?part=snippet,statistics&id=${videoId}`;
+  const videoCommentsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/commentThreads?part=snippet,replies&videoId=${videoId}&textFormat=html&order=relevance`;
 
   try {
     const response = await fetch(videoDetailsURL);
@@ -249,18 +246,10 @@ VideoDetails.getInitialProps = async (ctx: NextPageContext) => {
     const comments = videoCommentsData.items;
     const nextPageToken = videoCommentsData.nextPageToken;
 
-    if (!details) {
-      throw new Error("No details found");
-    }
-
-    if (details.channelId !== channelId) {
-      throw new Error("Video not found");
-    }
-
     return { videoId, details, comments, statistics, nextPageToken };
   } catch (error) {
     console.error("Error fetching video details:", error);
-    ctx.res.statusCode = 404;
+    if (ctx.res) ctx.res.statusCode = 404;
     return {
       videoId,
       err: {
