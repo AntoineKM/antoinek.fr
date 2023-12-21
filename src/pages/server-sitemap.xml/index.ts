@@ -10,7 +10,7 @@ async function fetchVideos(pageToken?: string) {
   const response = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${
       YOUTUBE.PLAYLIST_ID
-    }${pageToken ? `&pageToken=${pageToken}` : ""}`,
+    }&key=${env.YOUTUBE_API_KEY}${pageToken ? `&pageToken=${pageToken}` : ""}`,
   );
   const data = await response.json();
   return {
@@ -32,7 +32,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const fields = allVideos.map((video) => ({
     loc: `${env.NEXT_PUBLIC_APP_URL}/videos/${video.snippet.resourceId.videoId}`,
     lastmod: new Date(video.snippet.publishedAt).toISOString(),
-    // You can add more information like changefreq and priority if needed
   }));
 
   return getServerSideSitemapLegacy(ctx, fields);
