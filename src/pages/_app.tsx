@@ -8,9 +8,14 @@ import React from "react";
 import styled from "styled-components";
 
 import "@styles/app.css";
+import { useLocalStorage } from "usehooks-ts";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const [introEnded, setIntroEnded] = React.useState(false);
+  const [introEnded, setIntroEnded] = useLocalStorage(
+    "v1:intro-completed",
+    false,
+  );
+  const introEndedInitially = React.useRef(introEnded);
 
   React.useEffect(() => {
     const onKeyDown = (e: React.KeyboardEvent<HTMLDocument> & any) => {
@@ -23,7 +28,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [introEnded]);
 
   const onIntroEnd = React.useCallback(() => {
-    localStorage.setItem("v1:intro-completed", "true");
     setIntroEnded(true);
   }, []);
 
@@ -32,7 +36,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head />
       <Wrapper>
         <SuccessiveTypeContainer
-          transition={{ duration: 0.85 }}
+          transition={{ duration: introEndedInitially.current ? 0 : 0.85 }}
           initial={{
             opacity: 0,
           }}
