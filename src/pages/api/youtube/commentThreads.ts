@@ -3,9 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { YOUTUBE } from "src/constants/youtube";
 import urlcat from "urlcat";
 
-type ResponseData = {
-  message: string;
-};
+type ResponseData = any;
 
 export default async function handler(
   req: NextApiRequest,
