@@ -21,7 +21,7 @@ export default async function handler(
 
   if (
     data &&
-    data?.items > 0 &&
+    data?.items.length > 0 &&
     data?.items[0]?.snippet.channelId !== YOUTUBE.CHANNEL_ID
   ) {
     res.status(404).json({
