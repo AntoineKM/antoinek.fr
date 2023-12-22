@@ -105,13 +105,14 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
             </VideoStatistics>
           )}
 
-          <a
+          <Button
             href={`https://youtu.be/${videoId}`}
             target={"_blank"}
             rel={"noopener noreferrer"}
+            as={"a"}
           >
             {"Watch on YouTube"}
-          </a>
+          </Button>
         </VideoInfoContainer>
         <VideoDescription>{descriptionWithBreaks}</VideoDescription>
 
@@ -162,9 +163,7 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
               </Comment>
             ))}
             {currentNextPageToken && (
-              <LoadMoreButton onClick={loadMoreComments}>
-                {"See More Comments"}
-              </LoadMoreButton>
+              <Button onClick={loadMoreComments}>{"See More Comments"}</Button>
             )}
           </CommentsContainer>
         )}
@@ -249,7 +248,7 @@ const CommenterAvatar = styled.img`
   vertical-align: middle;
 `;
 
-const LoadMoreButton = styled.button`
+const Button = styled.button`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -265,6 +264,7 @@ const LoadMoreButton = styled.button`
 
   &:hover {
     background-color: #30302b;
+    text-decoration: none !important;
   }
 `;
 
