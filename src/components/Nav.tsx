@@ -205,6 +205,7 @@ const Container = styled.aside<{ openOnMobile: boolean }>`
     display: ${({ openOnMobile }) => (openOnMobile ? "block" : "none")};
     background-color: rgba(48, 48, 43, 0.8);
     backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
     z-index: 1;
     top: 65px;
     width: 100%;
