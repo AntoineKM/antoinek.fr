@@ -180,12 +180,13 @@ const VideoTitle = styled.h1`
 
 const VideoEmbedWrapper = styled.div`
   margin-bottom: 20px;
+  max-width: 800px;
 `;
 
 const VideoEmbed = styled.iframe`
   width: 100%;
-  max-width: 800px;
-  height: 450px;
+  height: 100%;
+  aspect-ratio: 16 / 9;
   border-radius: 10px;
 `;
 
