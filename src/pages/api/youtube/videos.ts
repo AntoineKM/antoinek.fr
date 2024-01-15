@@ -28,6 +28,11 @@ export default async function handler(
       message: `${data.items[0].snippet.channelId} is not allowed to use this api`,
     });
     return;
+  } else if (data?.items?.length === 0) {
+    res.status(404).json({
+      message: "No data found",
+    });
+    return;
   }
 
   res.status(200).json(data);
