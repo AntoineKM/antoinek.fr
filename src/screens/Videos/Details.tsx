@@ -276,13 +276,16 @@ VideoDetails.getInitialProps = async (ctx: NextPageContext) => {
   const videoCommentsURL = `${env.NEXT_PUBLIC_APP_URL}/api/youtube/commentThreads?part=snippet,replies&videoId=${videoId}&textFormat=html&order=relevance`;
 
   try {
-    const response = await fetch(videoDetailsURL);
-    const data = await response.json();
+    const [detailsResponse, commentsResponse] = await Promise.all([
+      fetch(videoDetailsURL),
+      fetch(videoCommentsURL),
+    ]);
+
+    const data = await detailsResponse.json();
     const details = data.items[0]?.snippet;
     const statistics = data.items[0]?.statistics;
 
-    const videoCommentsResponse = await fetch(videoCommentsURL);
-    const videoCommentsData = await videoCommentsResponse.json();
+    const videoCommentsData = await commentsResponse.json();
     const comments = videoCommentsData.items;
     const nextPageToken = videoCommentsData.nextPageToken;
 
