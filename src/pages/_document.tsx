@@ -62,8 +62,8 @@ export default class MyDocument extends Document {
           <link rel={"manifest"} href={"/manifest.json"} />
           <script
             defer
-            data-domain={"antoinek.fr"}
-            src={"https://plausible.io/js/script.js"}
+            src={"https://analytics.eu.umami.is/script.js"}
+            data-website-id={"0aa1be33-7fae-4cd7-9418-af9aafbb04ee"}
           />
         </Head>
         <body>
