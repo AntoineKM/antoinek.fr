@@ -15,25 +15,27 @@ const Home = () => {
       )} y/o developer, designer and youtuber.`}</p>
       <p>
         {
-          "I design, build and publish projects of quality and reliability. Currently, I'm working on "
+          "I design, build and publish projects of quality and reliability. Currently, I'm working at "
         }
+        <Link href={"https://arkee.fr"}>{"Arkée"}</Link>
+        {" and "}
         <Link href={"https://tonightpass.com"}>{"Tonight Pass"}</Link>
         {"."}
-      </p>
-      <p>
-        {
-          "I'm specialized in reverse engineering, I study the way a platform is made to exploit the flaws of those in my own interest."
-        }
       </p>
       <p>
         {
           "In my free time, I make music as a DJ and post slow motion music on my Youtube Channel and by the way I love bringing people together to create and have fun together! 🥳"
         }
       </p>
-      <h2>{"A note about reverse engineering"}</h2>
+      <h2>{"About Arkée by Jaws"}</h2>
       <p>
         {
-          "I visit a lot of websites every day, and it's always funny to see that humans mainly think that a feature will only be used for its purpose. I study the way the functionality is done, it allows me to evolve by learning different ways of doing things, and then especially to automate our daily workflow, by creating bots or apis that interact like us or with which we can interact!"
+          "SEO is a vast universe that I'd skimmed over during my Bachelor's degree in Web Development, so I really wanted to discover this field in more detail and create tools around it, which is why I joined Arkée."
+        }
+      </p>
+      <p>
+        {
+          "I now wear two hats: that of a technical consultant, helping to resolve the various structural and performance problems encountered by our customers. And as a developer, I create tools that speed up the company's workflow."
         }
       </p>
       <h2>{"About Tonight Pass"}</h2>
@@ -43,7 +45,7 @@ Tonight Pass simplifies the whole organization: find your teams and DJs, create 
       </p>
       <p>
         {
-          "All this is under construction and we should have our minimum viable product from June 2023, it is a challenge in therme of time and technologies used, because we also develop our own open source tools, but also an entrepreneurial challenge since we are young and invest a lot of our time and money in this project. Moreover until today we have not studied the possibility of raising funds to accelerate our development but we are open to anyone who would like to help us!"
+          "All this is under construction and we should have our minimum viable product from August 2024, it is a challenge in therme of time and technologies used, because we also develop our own open source tools, but also an entrepreneurial challenge since we are young and invest a lot of our time and money in this project. Moreover until today we have not studied the possibility of raising funds to accelerate our development but we are open to anyone who would like to help us!"
         }
       </p>
     </PageWrapper>
