@@ -58,7 +58,7 @@ dependencies:
     version: 2.16.0(react@18.2.0)
   web-vitals:
     specifier: ^3.0.0
-    version: 3.0.0
+    version: 3.5.2
   zod:
     specifier: ^3.22.4
     version: 3.22.4
@@ -14585,8 +14585,8 @@ packages:
       defaults: 1.0.4
     dev: false
 
-  /web-vitals@3.0.0:
-    resolution: {integrity: sha512-3Gh6rH5aetFYqfkl9V59KCvjj9vp9U2Tkaep9MO+xpAVg+JULmQfi5zEkcPLkE6iU8pNYVwdjHvIU8RFAchYyQ==}
+  /web-vitals@3.5.2:
+    resolution: {integrity: sha512-c0rhqNcHXRkY/ogGDJQxZ9Im9D19hDihbzSQJrsioex+KnFgmMzBiy57Z1EjkhX/+OjyBpclDCzz2ITtjokFmg==}
     dev: false
 
   /webidl-conversions@3.0.1:
