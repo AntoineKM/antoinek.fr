@@ -9,6 +9,12 @@ const Where = () => {
     <PageWrapper>
       <Head>
         <title>{"where I've done it | Antoine Kingue"}</title>
+        <meta
+          name={"description"}
+          content={
+            "Where I've worked, my diplomas and my open-source contributions."
+          }
+        />
       </Head>
       <h1>{"📍 where I've done it"}</h1>
       <Co />

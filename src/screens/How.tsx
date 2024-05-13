@@ -10,6 +10,7 @@ const How = () => {
     <PageWrapper>
       <Head>
         <title>{"how I do it | Antoine Kingue"}</title>
+        <meta name={"description"} content={"How I build software."} />
       </Head>
       <h1>{"💻 how I do it"}</h1>
       <p>

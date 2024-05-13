@@ -7,6 +7,10 @@ const Presence = () => (
   <PageWrapper forceReadableWidth>
     <Head>
       <title>{"presence | Antoine Kingue"}</title>
+      <meta
+        name={"description"}
+        content={"Learn more about how I display my presence on my site."}
+      />
     </Head>
     <h1>{"👀 Presence"}</h1>
     <p>

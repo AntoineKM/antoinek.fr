@@ -76,6 +76,7 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
     <PageWrapper>
       <Head>
         <title>{details?.title}</title>
+        <meta name={"description"} content={details?.description} />
       </Head>
       <DetailsContainer>
         <VideoTitle>{details?.title}</VideoTitle>

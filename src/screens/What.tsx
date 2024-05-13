@@ -8,6 +8,12 @@ const Home = () => {
     <PageWrapper forceReadableWidth>
       <Head>
         <title>{"what I do | Antoine Kingue"}</title>
+        <meta
+          name={"description"}
+          content={
+            "Learn what Antoine Kingue does as a developer, designer and youtuber."
+          }
+        />
       </Head>
       <h1>{"🤔 what I do"}</h1>
       <p>{`Antoine, ${calculateAge(

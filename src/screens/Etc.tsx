@@ -7,6 +7,10 @@ const Etc = () => (
   <PageWrapper>
     <Head>
       <title>{"contact | Antoine Kingue"}</title>
+      <meta
+        name={"description"}
+        content={"Contact Antoine Kingue via LinkedIn or phone."}
+      />
     </Head>
     <h1>{"/etc"}</h1>
     <h2>{"🤝 Thanks"}</h2>

@@ -23,6 +23,10 @@ const VideosPage: NextPage<VideosProps> = ({
     <PageWrapper>
       <Head>
         <title>{"videos | Antoine Kingue"}</title>
+        <meta
+          name={"description"}
+          content={"Watch the latest videos from my YouTube channel 'ORION'."}
+        />
       </Head>
       <h1>{"🎥 latest videos"}</h1>
       <VideosWrapper>
