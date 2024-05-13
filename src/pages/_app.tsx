@@ -46,10 +46,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           }}
         >
           <ProgressContainer onClick={onIntroEnd}>
-            <h4>
+            <span>
               {"Skip intro "}
               <ChevronsRight />
-            </h4>
+            </span>
           </ProgressContainer>
           <SuccessiveType
             onEnd={onIntroEnd}
@@ -111,6 +111,7 @@ const ProgressContainer = styled.div`
   vertical-align: middle;
   cursor: pointer;
   transition: color 0.2s ease;
+  font-weight: bold;
 
   svg {
     vertical-align: middle;
