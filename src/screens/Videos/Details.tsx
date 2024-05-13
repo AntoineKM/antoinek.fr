@@ -135,6 +135,8 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
                         .authorProfileImageUrl
                     }
                     alt={`${comment.snippet.topLevelComment.snippet.authorDisplayName}'s avatar`}
+                    height={20}
+                    width={20}
                   />
                   <strong>
                     {comment.snippet.topLevelComment.snippet.authorDisplayName}
@@ -154,6 +156,8 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
                         <CommenterAvatar
                           src={reply.snippet.authorProfileImageUrl}
                           alt={`${reply.snippet.authorDisplayName}'s avatar`}
+                          height={20}
+                          width={20}
                         />
                         <strong>{reply.snippet.authorDisplayName}</strong>
                       </CommenterLink>

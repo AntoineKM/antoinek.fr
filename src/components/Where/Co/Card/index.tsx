@@ -40,7 +40,13 @@ const CoCard: React.FC<Props> = ({
         style={{ transform: props.xys.interpolate(trans) }}
       >
         <Header>
-          <img alt={`${name} Logo`} draggable={false} src={image} />
+          <img
+            alt={`${name} Logo`}
+            draggable={false}
+            src={image}
+            height={70}
+            width={70}
+          />
           <div style={{ paddingLeft: "1rem" }}>
             <h3>
               {name} <ExternalLinkIcon />

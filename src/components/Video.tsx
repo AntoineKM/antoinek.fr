@@ -39,7 +39,13 @@ const Video = ({
         style={{ transform: props.xys.interpolate(trans) }}
       >
         <Header>
-          <img alt={title} draggable={false} src={thumbnailUrl} />
+          <img
+            alt={title}
+            draggable={false}
+            src={thumbnailUrl}
+            height={150}
+            width={275}
+          />
         </Header>
         <Content>
           <h3>{title}</h3>
