@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.10.0
-    version: 0.10.1(typescript@5.0.2)(zod@3.22.4)
+    version: 0.10.1(typescript@5.0.2)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
     version: 11.1.9(react-dom@18.3.1)(react@18.3.1)
@@ -61,7 +61,7 @@ dependencies:
     version: 3.5.2
   zod:
     specifier: ^3.22.4
-    version: 3.22.4
+    version: 3.23.8
 
 devDependencies:
   '@types/node':
@@ -4453,7 +4453,7 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /@t3-oss/env-core@0.10.1(typescript@5.0.2)(zod@3.22.4):
+  /@t3-oss/env-core@0.10.1(typescript@5.0.2)(zod@3.23.8):
     resolution: {integrity: sha512-GcKZiCfWks5CTxhezn9k5zWX3sMDIYf6Kaxy2Gx9YEQftFcz8hDRN56hcbylyAO3t4jQnQ5ifLawINsNgCDpOg==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -4463,10 +4463,10 @@ packages:
         optional: true
     dependencies:
       typescript: 5.0.2
-      zod: 3.22.4
+      zod: 3.23.8
     dev: false
 
-  /@t3-oss/env-nextjs@0.10.1(typescript@5.0.2)(zod@3.22.4):
+  /@t3-oss/env-nextjs@0.10.1(typescript@5.0.2)(zod@3.23.8):
     resolution: {integrity: sha512-iy2qqJLnFh1RjEWno2ZeyTu0ufomkXruUsOZludzDIroUabVvHsrSjtkHqwHp1/pgPUzN3yBRHMILW162X7x2Q==}
     peerDependencies:
       typescript: '>=5.0.0'
@@ -4475,9 +4475,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@t3-oss/env-core': 0.10.1(typescript@5.0.2)(zod@3.22.4)
+      '@t3-oss/env-core': 0.10.1(typescript@5.0.2)(zod@3.23.8)
       typescript: 5.0.2
-      zod: 3.22.4
+      zod: 3.23.8
     dev: false
 
   /@tootallnate/once@1.1.2:
@@ -15271,8 +15271,8 @@ packages:
     resolution: {integrity: sha512-raRj6r0gPzopFm5XWBJZr/NuV4EEnT4iE+U3dp5FV5pCb588Gmm3zLIp/j9yqqcMiHH8VNQlerLTgOqL7krh6w==}
     dev: false
 
-  /zod@3.22.4:
-    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
     dev: false
 
   /zustand@3.7.2(react@18.3.1):
