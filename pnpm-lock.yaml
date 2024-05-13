@@ -34,7 +34,7 @@ dependencies:
     version: 18.3.1(react@18.3.1)
   react-router:
     specifier: ^6.9.0
-    version: 6.9.0(react@18.3.1)
+    version: 6.23.1(react@18.3.1)
   react-scripts:
     specifier: ^5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.24.1)(@babel/plugin-transform-react-jsx@7.23.4)(eslint@8.47.0)(react@18.3.1)(typescript@5.0.2)
@@ -4221,9 +4221,9 @@ packages:
       zustand: 3.7.2(react@18.3.1)
     dev: false
 
-  /@remix-run/router@1.4.0:
-    resolution: {integrity: sha512-BJ9SxXux8zAg991UmT8slpwpsd31K1dHHbD3Ba4VzD+liLQ4WAMSxQp2d2ZPRPfN0jN2NPRowcSSoM7lCaF08Q==}
-    engines: {node: '>=14'}
+  /@remix-run/router@1.16.1:
+    resolution: {integrity: sha512-es2g3dq6Nb07iFxGk5GuHN20RwBZOsuDQN7izWIisUcv9r+d2C5jQxqmgkdebXgReWfiyUabcki6Fg77mSNrig==}
+    engines: {node: '>=14.0.0'}
     dev: false
 
   /@rnx-kit/chromium-edge-launcher@1.0.0:
@@ -4268,7 +4268,7 @@ packages:
       builtin-modules: 3.3.0
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.8
+      resolve: 1.22.1
       rollup: 2.79.1
     dev: false
 
@@ -12708,13 +12708,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-router@6.9.0(react@18.3.1):
-    resolution: {integrity: sha512-51lKevGNUHrt6kLuX3e/ihrXoXCa9ixY/nVWRLlob4r/l0f45x3SzBvYJe3ctleLUQQ5fVa4RGgJOTH7D9Umhw==}
-    engines: {node: '>=14'}
+  /react-router@6.23.1(react@18.3.1):
+    resolution: {integrity: sha512-fzcOaRF69uvqbbM7OhvQyBTFDVrrGlsFdS3AL+1KfIBtGETibHzi3FkoTRyiDJnWNc2VxrfvR+657ROHjaNjqQ==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.4.0
+      '@remix-run/router': 1.16.1
       react: 18.3.1
     dev: false
 
