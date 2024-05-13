@@ -173,8 +173,8 @@ const Nav = () => {
               <GitHubLogo />
             </Link>
             <Link
-              aria-label={"Twitter - @AntoineKingue"}
-              href={"https://twitter.com/AntoineKingue"}
+              aria-label={"X - @AntoineKingue"}
+              href={"https://x.com/AntoineKingue"}
             >
               <TwitterLogo />
             </Link>
