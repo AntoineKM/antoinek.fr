@@ -22,6 +22,10 @@ const securityHeaders = [
     value: "nosniff",
   },
   {
+    key: "Referrer-Policy",
+    value: "origin-when-cross-origin",
+  },
+  {
     key: "X-Powered-By",
     value: "Next.js & onRuntime",
   },
