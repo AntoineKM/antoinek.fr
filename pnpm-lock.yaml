@@ -54,8 +54,8 @@ dependencies:
     specifier: ^4.0.1
     version: 4.0.1(react@18.3.1)
   usehooks-ts:
-    specifier: ^2.9.1
-    version: 2.16.0(react@18.3.1)
+    specifier: ^3.0.0
+    version: 3.1.0(react@18.3.1)
   web-vitals:
     specifier: ^3.0.0
     version: 3.5.2
@@ -383,7 +383,7 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.3.5
       lodash.debounce: 4.0.8
-      resolve: 1.22.1
+      resolve: 1.22.8
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -4440,7 +4440,7 @@ packages:
       builtin-modules: 3.3.0
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.8
       rollup: 2.79.1
     dev: false
 
@@ -5322,7 +5322,7 @@ packages:
       debug: 4.3.5
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.6.2
       tsutils: 3.21.0(typescript@5.4.5)
       typescript: 5.4.5
     transitivePeerDependencies:
@@ -5429,7 +5429,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.56.0(typescript@5.4.5)
       eslint: 8.57.0
       eslint-scope: 5.1.1
-      semver: 7.3.8
+      semver: 7.6.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -14658,8 +14658,8 @@ packages:
       react: 18.3.1
     dev: false
 
-  /usehooks-ts@2.16.0(react@18.3.1):
-    resolution: {integrity: sha512-bez95WqYujxp6hFdM/CpRDiVPirZPxlMzOH2QB8yopoKQMXpscyZoxOjpEdaxvV+CAWUDSM62cWnqHE0E/MZ7w==}
+  /usehooks-ts@3.1.0(react@18.3.1):
+    resolution: {integrity: sha512-bBIa7yUyPhE1BCc0GmR96VU/15l/9gP1Ch5mYdLcFBaFGQsdmXkvjV0TtOqW1yUd6VjIwDunm+flSciCQXujiw==}
     engines: {node: '>=16.15.0'}
     peerDependencies:
       react: ^16.8.0  || ^17 || ^18
