@@ -19,7 +19,7 @@
     "next-sitemap": "^4.2.3",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
-    "react-content-loader": "^6.2.1",
+    "react-content-loader": "^7.0.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.9.0",
     "react-scripts": "^5.0.1",
