@@ -27,6 +27,11 @@ const Diplomas: React.FC = () => {
           <p>{"2020 - 2023"}</p>
         </li>
         <li>
+          <strong>{"TOEIC certification"}</strong>
+          <p>{"Need for School, Rouen, France"}</p>
+          <p>{"2022"}</p>
+        </li>
+        <li>
           <strong>
             {
               "Baccalauréat sciences et technologies de l'industrie et du développement durable spécialité Système d'Information et Numérique (high school diploma)"
