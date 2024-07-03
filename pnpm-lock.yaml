@@ -34,13 +34,13 @@ dependencies:
     version: 18.3.1(react@18.3.1)
   react-router:
     specifier: ^6.9.0
-    version: 6.24.0(react@18.3.1)
+    version: 6.24.1(react@18.3.1)
   react-scripts:
     specifier: ^5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.24.7)(@babel/plugin-transform-react-jsx@7.24.7)(eslint@8.57.0)(react@18.3.1)(typescript@5.5.3)
   react-spring:
     specifier: ^9.7.1
-    version: 9.7.3(@react-three/fiber@8.16.8)(konva@9.3.12)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.0)(zdog@1.1.3)
+    version: 9.7.3(@react-three/fiber@8.16.8)(konva@9.3.12)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3)
   styled-components:
     specifier: ^6.0.0
     version: 6.1.11(react-dom@18.3.1)(react@18.3.1)
@@ -4300,7 +4300,7 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@react-spring/three@9.7.3(@react-three/fiber@8.16.8)(react@18.3.1)(three@0.166.0):
+  /@react-spring/three@9.7.3(@react-three/fiber@8.16.8)(react@18.3.1)(three@0.166.1):
     resolution: {integrity: sha512-Q1p512CqUlmMK8UMBF/Rj79qndhOWq4XUTayxMP9S892jiXzWQuj+xC3Xvm59DP/D4JXusXpxxqfgoH+hmOktA==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
@@ -4311,9 +4311,9 @@ packages:
       '@react-spring/core': 9.7.3(react@18.3.1)
       '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      '@react-three/fiber': 8.16.8(react-dom@18.3.1)(react-native@0.74.3)(react@18.3.1)(three@0.166.0)
+      '@react-three/fiber': 8.16.8(react-dom@18.3.1)(react-native@0.74.3)(react@18.3.1)(three@0.166.1)
       react: 18.3.1
-      three: 0.166.0
+      three: 0.166.1
     dev: false
 
   /@react-spring/types@9.7.3:
@@ -4352,7 +4352,7 @@ packages:
       zdog: 1.1.3
     dev: false
 
-  /@react-three/fiber@8.16.8(react-dom@18.3.1)(react-native@0.74.3)(react@18.3.1)(three@0.166.0):
+  /@react-three/fiber@8.16.8(react-dom@18.3.1)(react-native@0.74.3)(react@18.3.1)(three@0.166.1):
     resolution: {integrity: sha512-Lc8fjATtvQEfSd8d5iKdbpHtRm/aPMeFj7jQvp6TNHfpo8IQTW3wwcE1ZMrGGoUH+w2mnyS+0MK1NLPLnuzGkQ==}
     peerDependencies:
       expo: '>=43.0'
@@ -4390,12 +4390,12 @@ packages:
       react-use-measure: 2.1.1(react-dom@18.3.1)(react@18.3.1)
       scheduler: 0.21.0
       suspend-react: 0.1.3(react@18.3.1)
-      three: 0.166.0
+      three: 0.166.1
       zustand: 3.7.2(react@18.3.1)
     dev: false
 
-  /@remix-run/router@1.17.0:
-    resolution: {integrity: sha512-2D6XaHEVvkCn682XBnipbJjgZUU7xjLtA4dGJRBVUKpEaDYOZMENZoZjAOSb7qirxt5RupjzZxz4fK2FO+EFPw==}
+  /@remix-run/router@1.17.1:
+    resolution: {integrity: sha512-mCOMec4BKd6BRGBZeSnGiIgwsbLGp3yhVqAD8H+PxiRNEHgDpZb8J1TnrSDlg97t0ySKMQJTHCWBCmBpSmkF6Q==}
     engines: {node: '>=14.0.0'}
     dev: false
 
@@ -5787,12 +5787,12 @@ packages:
       acorn: 8.12.0
     dev: false
 
-  /acorn-import-attributes@1.9.5(acorn@8.12.0):
+  /acorn-import-attributes@1.9.5(acorn@8.12.1):
     resolution: {integrity: sha512-n02Vykv5uA3eHGM/Z2dQrcD56kL8TyDb2p1+0P83PClMnC/nc+anbQRhIOWnSq4Ke/KvDPrY3C9hDtC/A3eHnQ==}
     peerDependencies:
       acorn: ^8
     dependencies:
-      acorn: 8.12.0
+      acorn: 8.12.1
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.12.0):
@@ -5825,6 +5825,12 @@ packages:
     resolution: {integrity: sha512-RTvkC4w+KNXrM39/lWCUaG0IbRkWdCv7W/IOW9oU6SawyxulvkQy5HQPVTKxEjczcUvapcrw3cFx/60VN/NRNw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+
+  /acorn@8.12.1:
+    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
+    engines: {node: '>=0.4.0'}
+    hasBin: true
+    dev: false
 
   /address@1.2.2:
     resolution: {integrity: sha512-4B/qKCfeE/ODUaAUpSwfzazo5x29WD4r3vXiWsB7I2mSDAihwEqKO+g8GELZUQSSAo5e1XTYh3ZVfLyxBc12nA==}
@@ -6520,10 +6526,10 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001639
+      caniuse-lite: 1.0.30001640
       electron-to-chromium: 1.4.816
       node-releases: 2.0.14
-      update-browserslist-db: 1.0.16(browserslist@4.23.1)
+      update-browserslist-db: 1.1.0(browserslist@4.23.1)
 
   /bser@2.1.1:
     resolution: {integrity: sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ==}
@@ -6646,8 +6652,8 @@ packages:
     resolution: {integrity: sha512-fbBYXQ9q3+yp1q1gBk86tOFs4pyn/yxFm5ZNP18OXJDfA3txImOY9PhfxVggZ4vRHDqoU8NrKU81eN0OtzOgRA==}
     dev: false
 
-  /caniuse-lite@1.0.30001639:
-    resolution: {integrity: sha512-eFHflNTBIlFwP2AIKaYuBQN/apnUoKNhBdza8ZnW/h2di4LCZ4xFqYlxUxo+LQ76KFI1PGcC1QDxMbxTZpSCAg==}
+  /caniuse-lite@1.0.30001640:
+    resolution: {integrity: sha512-lA4VMpW0PSUrFnkmVuEKBUovSWKhj7puyCg8StBChgu298N1AtuF1sKWEvfDuimSEDbhlb/KqPKC3fs1HbuQUA==}
 
   /case-sensitive-paths-webpack-plugin@2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
@@ -12995,13 +13001,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-router@6.24.0(react@18.3.1):
-    resolution: {integrity: sha512-sQrgJ5bXk7vbcC4BxQxeNa5UmboFm35we1AFK0VvQaz9g0LzxEIuLOhHIoZ8rnu9BO21ishGeL9no1WB76W/eg==}
+  /react-router@6.24.1(react@18.3.1):
+    resolution: {integrity: sha512-PTXFXGK2pyXpHzVo3rR9H7ip4lSPZZc0bHG5CARmj65fTT6qG7sTngmb6lcYu1gf3y/8KxORoy9yn59pGpCnpg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       react: '>=16.8'
     dependencies:
-      '@remix-run/router': 1.17.0
+      '@remix-run/router': 1.17.1
       react: 18.3.1
     dev: false
 
@@ -13112,7 +13118,7 @@ packages:
       react-is: 18.3.1
     dev: false
 
-  /react-spring@9.7.3(@react-three/fiber@8.16.8)(konva@9.3.12)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.0)(zdog@1.1.3):
+  /react-spring@9.7.3(@react-three/fiber@8.16.8)(konva@9.3.12)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3):
     resolution: {integrity: sha512-oTxDpFV5gzq7jQX6+bU0SVq+vX8VnuuT5c8Zwn6CpDErOPvCmV+DRkPiEBtaL3Ozgzwiy5yFx83N0h303j/r3A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -13121,7 +13127,7 @@ packages:
       '@react-spring/core': 9.7.3(react@18.3.1)
       '@react-spring/konva': 9.7.3(konva@9.3.12)(react-konva@18.2.10)(react@18.3.1)
       '@react-spring/native': 9.7.3(react-native@0.74.3)(react@18.3.1)
-      '@react-spring/three': 9.7.3(@react-three/fiber@8.16.8)(react@18.3.1)(three@0.166.0)
+      '@react-spring/three': 9.7.3(@react-three/fiber@8.16.8)(react@18.3.1)(three@0.166.1)
       '@react-spring/web': 9.7.3(react-dom@18.3.1)(react@18.3.1)
       '@react-spring/zdog': 9.7.3(react-dom@18.3.1)(react-zdog@1.2.2)(react@18.3.1)(zdog@1.1.3)
       react: 18.3.1
@@ -14387,7 +14393,7 @@ packages:
     hasBin: true
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.12.0
+      acorn: 8.12.1
       commander: 2.20.3
       source-map-support: 0.5.21
     dev: false
@@ -14404,8 +14410,8 @@ packages:
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  /three@0.166.0:
-    resolution: {integrity: sha512-3Gw7oyZ/vCmz3RmNx1xuyNu7Ou/igDtoh953QsJh/QkAoi6B7jpkKwk05N8Y7/9bZeIE44zdC+i2KZNF+KWQ8A==}
+  /three@0.166.1:
+    resolution: {integrity: sha512-LtuafkKHHzm61AQA1be2MAYIw1IjmhOUxhBa0prrLpEMWbV7ijvxCRHjSgHPGp2493wLBzwKV46tA9nivLEgKg==}
     dev: false
 
   /throat@5.0.0:
@@ -14690,8 +14696,8 @@ packages:
       picocolors: 1.0.1
     dev: false
 
-  /update-browserslist-db@1.0.16(browserslist@4.23.1):
-    resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
+  /update-browserslist-db@1.1.0(browserslist@4.23.1):
+    resolution: {integrity: sha512-EdRAaAyk2cUE1wOf2DkEhzxqOQvFOoRJFNS6NeyJ01Gp2beMRpBAINjM2iDXE3KCuKhwnvHIQCJm6ThL2Z+HzQ==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
@@ -15019,8 +15025,8 @@ packages:
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.12.0
-      acorn-import-attributes: 1.9.5(acorn@8.12.0)
+      acorn: 8.12.1
+      acorn-import-attributes: 1.9.5(acorn@8.12.1)
       browserslist: 4.23.1
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.0
