@@ -43,7 +43,7 @@ dependencies:
     version: 9.7.3(@react-three/fiber@8.16.8)(konva@9.3.14)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3)
   styled-components:
     specifier: ^6.0.0
-    version: 6.1.11(react-dom@18.3.1)(react@18.3.1)
+    version: 6.1.12(react-dom@18.3.1)(react@18.3.1)
   url-loader:
     specifier: ^4.1.1
     version: 4.1.1(webpack@5.93.0)
@@ -72,7 +72,7 @@ devDependencies:
     version: 18.3.3
   babel-plugin-styled-components:
     specifier: ^2.0.7
-    version: 2.1.4(@babel/core@7.24.9)(styled-components@6.1.11)
+    version: 2.1.4(@babel/core@7.24.9)(styled-components@6.1.12)
   eslint:
     specifier: ^8.47.0
     version: 8.57.0
@@ -6331,7 +6331,7 @@ packages:
       - supports-color
     dev: false
 
-  /babel-plugin-styled-components@2.1.4(@babel/core@7.24.9)(styled-components@6.1.11):
+  /babel-plugin-styled-components@2.1.4(@babel/core@7.24.9)(styled-components@6.1.12):
     resolution: {integrity: sha512-Xgp9g+A/cG47sUyRwwYxGM4bR/jDRg5N6it/8+HxCnbT5XNKSKDT9xm4oag/osgqjC2It/vH0yXsomOG6k558g==}
     peerDependencies:
       styled-components: '>= 2'
@@ -6341,7 +6341,7 @@ packages:
       '@babel/plugin-syntax-jsx': 7.24.1(@babel/core@7.24.9)
       lodash: 4.17.21
       picomatch: 2.3.1
-      styled-components: 6.1.11(react-dom@18.3.1)(react@18.3.1)
+      styled-components: 6.1.12(react-dom@18.3.1)(react@18.3.1)
     transitivePeerDependencies:
       - '@babel/core'
     dev: true
@@ -11770,6 +11770,7 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+    dev: false
 
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
@@ -12613,7 +12614,7 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   /prelude-ls@1.1.2:
@@ -14118,8 +14119,8 @@ packages:
       webpack: 5.76.3
     dev: false
 
-  /styled-components@6.1.11(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Ui0jXPzbp1phYij90h12ksljKGqF8ncGx+pjrNPsSPhbUUjWT2tD1FwGo2LF6USCnbrsIhNngDfodhxbegfEOA==}
+  /styled-components@6.1.12(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-n/O4PzRPhbYI0k1vKKayfti3C/IGcPf+DqcrOB7O/ab9x4u/zjqraneT5N45+sIe87cxrCApXM8Bna7NYxwoTA==}
     engines: {node: '>= 16'}
     peerDependencies:
       react: '>= 16.8.0'
