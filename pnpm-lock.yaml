@@ -10,7 +10,7 @@ dependencies:
     version: 0.10.1(typescript@5.5.3)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.3.3(react-dom@18.3.1)(react@18.3.1)
+    version: 11.3.5(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.9.0(@types/react@18.3.3)(react@18.3.1)
@@ -40,7 +40,7 @@ dependencies:
     version: 5.0.1(@babel/plugin-syntax-flow@7.24.7)(@babel/plugin-transform-react-jsx@7.24.7)(eslint@8.57.0)(react@18.3.1)(typescript@5.5.3)
   react-spring:
     specifier: ^9.7.1
-    version: 9.7.3(@react-three/fiber@8.16.8)(konva@9.3.13)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3)
+    version: 9.7.3(@react-three/fiber@8.16.8)(konva@9.3.14)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3)
   styled-components:
     specifier: ^6.0.0
     version: 6.1.11(react-dom@18.3.1)(react@18.3.1)
@@ -3934,7 +3934,7 @@ packages:
       hermes-profile-transformer: 0.0.6
       node-stream-zip: 1.15.0
       ora: 5.4.1
-      semver: 7.6.2
+      semver: 7.6.3
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
       yaml: 2.4.5
@@ -4017,7 +4017,7 @@ packages:
       node-fetch: 2.7.0
       open: 6.4.0
       ora: 5.4.1
-      semver: 7.6.2
+      semver: 7.6.3
       shell-quote: 1.8.1
       sudo-prompt: 9.2.1
     transitivePeerDependencies:
@@ -4051,7 +4051,7 @@ packages:
       fs-extra: 8.1.0
       graceful-fs: 4.2.11
       prompts: 2.4.2
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -4268,7 +4268,7 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@react-spring/konva@9.7.3(konva@9.3.13)(react-konva@18.2.10)(react@18.3.1):
+  /@react-spring/konva@9.7.3(konva@9.3.14)(react-konva@18.2.10)(react@18.3.1):
     resolution: {integrity: sha512-R9sY6SiPGYqz1383P5qppg5z57YfChVknOC1UxxaGxpw+WiZa8fZ4zmZobslrw+os3/+HAXZv8O+EvU/nQpf7g==}
     peerDependencies:
       konva: '>=2.6'
@@ -4279,9 +4279,9 @@ packages:
       '@react-spring/core': 9.7.3(react@18.3.1)
       '@react-spring/shared': 9.7.3(react@18.3.1)
       '@react-spring/types': 9.7.3
-      konva: 9.3.13
+      konva: 9.3.14
       react: 18.3.1
-      react-konva: 18.2.10(konva@9.3.13)(react-dom@18.3.1)(react@18.3.1)
+      react-konva: 18.2.10(konva@9.3.14)(react-dom@18.3.1)(react@18.3.1)
     dev: false
 
   /@react-spring/native@9.7.3(react-native@0.74.3)(react@18.3.1):
@@ -5064,7 +5064,7 @@ packages:
       graphemer: 1.4.0
       ignore: 5.3.1
       natural-compare: 1.4.0
-      semver: 7.6.2
+      semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
@@ -5372,7 +5372,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.6.2
+      semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
@@ -5416,7 +5416,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.6.2
+      semver: 7.6.3
       ts-api-utils: 1.3.0(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
@@ -5476,7 +5476,7 @@ packages:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.5.3)
       eslint: 8.57.0
-      semver: 7.6.2
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6534,8 +6534,8 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001642
-      electron-to-chromium: 1.4.828
-      node-releases: 2.0.14
+      electron-to-chromium: 1.4.829
+      node-releases: 2.0.17
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
 
   /bser@2.1.1:
@@ -7646,8 +7646,8 @@ packages:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
     dev: false
 
-  /electron-to-chromium@1.4.828:
-    resolution: {integrity: sha512-QOIJiWpQJDHAVO4P58pwb133Cwee0nbvy/MV1CwzZVGpkH1RX33N3vsaWRCpR6bF63AAq366neZrRTu7Qlsbbw==}
+  /electron-to-chromium@1.4.829:
+    resolution: {integrity: sha512-5qp1N2POAfW0u1qGAxXEtz6P7bO1m6gpZr5hdf5ve6lxpLM7MpiM4jIPz7xcrNlClQMafbyUDDWjlIQZ1Mw0Rw==}
 
   /emittery@0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -8914,8 +8914,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.3.3(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Z+fwgwKveyjDXPpnNP0invAt0W8y2kYk7FHH3Vk2DxLtNVzBg8qhEvGapVeWZgcuvVnKvTKhJLX091mYdMzQBg==}
+  /framer-motion@11.3.5(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-x4rZl+D7EDVGo3Iww6+iunqymvvo2Ih7zsgMiNnhmF4L8zNS4wvSPaay45k0OsFs/fcwdyxn5Kn29u84YzoPGA==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -10688,8 +10688,8 @@ packages:
     engines: {node: '>= 8'}
     dev: false
 
-  /konva@9.3.13:
-    resolution: {integrity: sha512-hs0ysHnqjK9noZ/rkfDNJINfbNhkXMgjgkJ8uc6vU0amu05mSDtRlukz5kKHOaSnWHA6miXcHJydvPABh18Y8A==}
+  /konva@9.3.14:
+    resolution: {integrity: sha512-Gmm5lyikGYJyogKQA7Fy6dKkfNh350V6DwfZkid0RVrGYP2cfCsxuMxgF5etKeCv7NjXYpJxKqi1dYkIkX/dcA==}
     dev: false
 
   /language-subtag-registry@0.3.23:
@@ -11387,8 +11387,8 @@ packages:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: false
 
-  /node-releases@2.0.14:
-    resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
+  /node-releases@2.0.17:
+    resolution: {integrity: sha512-Ww6ZlOiEQfPfXM45v17oabk77Z7mg5bOt7AjDyzy7RjK9OrLrLC8dyZQoAPEOtFX9SaNf1Tdvr5gRJWdTJj7GA==}
 
   /node-stream-zip@1.15.0:
     resolution: {integrity: sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==}
@@ -12889,7 +12889,7 @@ packages:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: false
 
-  /react-konva@18.2.10(konva@9.3.13)(react-dom@18.3.1)(react@18.3.1):
+  /react-konva@18.2.10(konva@9.3.14)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-ohcX1BJINL43m4ynjZ24MxFI1syjBdrXhqVxYVDw2rKgr3yuS0x/6m1Y2Z4sl4T/gKhfreBx8KHisd0XC6OT1g==}
     peerDependencies:
       konva: ^8.0.1 || ^7.2.5 || ^9.0.0
@@ -12898,7 +12898,7 @@ packages:
     dependencies:
       '@types/react-reconciler': 0.28.8
       its-fine: 1.2.5(react@18.3.1)
-      konva: 9.3.13
+      konva: 9.3.14
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-reconciler: 0.29.2(react@18.3.1)
@@ -13113,14 +13113,14 @@ packages:
       react-is: 18.3.1
     dev: false
 
-  /react-spring@9.7.3(@react-three/fiber@8.16.8)(konva@9.3.13)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3):
+  /react-spring@9.7.3(@react-three/fiber@8.16.8)(konva@9.3.14)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.74.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.166.1)(zdog@1.1.3):
     resolution: {integrity: sha512-oTxDpFV5gzq7jQX6+bU0SVq+vX8VnuuT5c8Zwn6CpDErOPvCmV+DRkPiEBtaL3Ozgzwiy5yFx83N0h303j/r3A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@react-spring/core': 9.7.3(react@18.3.1)
-      '@react-spring/konva': 9.7.3(konva@9.3.13)(react-konva@18.2.10)(react@18.3.1)
+      '@react-spring/konva': 9.7.3(konva@9.3.14)(react-konva@18.2.10)(react@18.3.1)
       '@react-spring/native': 9.7.3(react-native@0.74.3)(react@18.3.1)
       '@react-spring/three': 9.7.3(@react-three/fiber@8.16.8)(react@18.3.1)(three@0.166.1)
       '@react-spring/web': 9.7.3(react-dom@18.3.1)(react@18.3.1)
@@ -13635,6 +13635,12 @@ packages:
 
   /semver@7.6.2:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dev: true
+
+  /semver@7.6.3:
+    resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
     hasBin: true
 
