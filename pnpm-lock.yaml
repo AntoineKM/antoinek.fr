@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.0(typescript@5.5.4)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.3.16(react-dom@18.3.1)(react@18.3.1)
+    version: 11.3.17(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.9.1(@types/react@18.3.3)(react@18.3.1)
@@ -8917,8 +8917,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.3.16(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-wn5Jf+3o5JdrNy/Xik6dBSWB0uOFPJaeDs7W7QuXnEw877OFoa5/HtoCfM3bdGxyUW8rP97dP0xE4cEJaqECBw==}
+  /framer-motion@11.3.17(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-LZcckvZL8Rjod03bud8LQcp+R0PLmWIlOSu+NVc+v6Uh43fQr4IBsEAX7sSn7CdBQ1L0fZ/IqSXZVPnGFSMxHw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
