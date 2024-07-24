@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.0(typescript@5.5.4)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.3.9(react-dom@18.3.1)(react@18.3.1)
+    version: 11.3.16(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.9.1(@types/react@18.3.3)(react@18.3.1)
@@ -3937,7 +3937,7 @@ packages:
       semver: 7.6.3
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
-      yaml: 2.4.5
+      yaml: 2.5.0
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -8917,8 +8917,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.3.9(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-6oW/GDxuLBZqWJJeC8+zkEQeYDe6BYXPaNDUiJNCbzj4KDfVpcScWpM+6A7YoQGCfbtL7Q3ZqAZDYXPUF5r54w==}
+  /framer-motion@11.3.16(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-wn5Jf+3o5JdrNy/Xik6dBSWB0uOFPJaeDs7W7QuXnEw877OFoa5/HtoCfM3bdGxyUW8rP97dP0xE4cEJaqECBw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -15480,8 +15480,8 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /yaml@2.4.5:
-    resolution: {integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==}
+  /yaml@2.5.0:
+    resolution: {integrity: sha512-2wWLbGbYDiSqqIKoPjar3MPgB94ErzCtrNE1FdqGuaO0pi2JGjmE8aW8TDZwzU7vuxcGRdL/4gPQwQ7hD5AMSw==}
     engines: {node: '>= 14'}
     hasBin: true
     dev: false
