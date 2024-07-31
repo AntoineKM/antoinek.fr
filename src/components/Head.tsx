@@ -7,6 +7,7 @@ const Head = () => {
   const params = new URLSearchParams(url.search);
   const pageToken = params.get("pageToken");
 
+  url.hash = "";
   if (pageToken) {
     url.search = `?pageToken=${pageToken}`;
   } else {
