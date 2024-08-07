@@ -13,7 +13,7 @@ dependencies:
     version: 11.3.22(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
-    version: 2.9.1(@types/react@18.3.3)(react@18.3.1)
+    version: 2.9.2(@types/react@18.3.3)(react@18.3.1)
   next:
     specifier: ^14.0.0
     version: 14.2.5(@babel/core@7.25.2)(react-dom@18.3.1)(react@18.3.1)
@@ -10483,8 +10483,8 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: false
 
-  /jotai@2.9.1(@types/react@18.3.3)(react@18.3.1):
-    resolution: {integrity: sha512-t4Q7FIqQB3N/1art4OcqdlEtPmQ2h4DNIzTFhvt06WE0kCpQ1QoG+1A1IGTaQBi2KdDRsnywj+ojmHHKgw6PDA==}
+  /jotai@2.9.2(@types/react@18.3.3)(react@18.3.1):
+    resolution: {integrity: sha512-jIBXEadOHCziOuMY6HAy2KQcHipGhnsbF+twqh8Lcmcz/Yei0gdBtW5mOYdKmbQxGqkvfvXM3w/oHtJ2WNGSFg==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -11004,7 +11004,7 @@ packages:
     resolution: {integrity: sha512-FEeCeFbkvvPuhjixZ1FYrXtO0araTpV6UbcnGgDUpH7s7eR5FG/PiJz3TsuuPP/HwCK19cZtQydcA2QrCw446A==}
     engines: {node: '>=18'}
     dependencies:
-      terser: 5.31.3
+      terser: 5.31.4
     dev: false
 
   /metro-resolver@0.80.9:
@@ -14359,7 +14359,7 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.31.3
+      terser: 5.31.4
       webpack: 5.93.0
     dev: false
 
@@ -14398,8 +14398,8 @@ packages:
       source-map-support: 0.5.21
     dev: false
 
-  /terser@5.31.3:
-    resolution: {integrity: sha512-pAfYn3NIZLyZpa83ZKigvj6Rn9c/vd5KfYGX7cN1mnzqgDcxWvrU5ZtAfIKhEXz9nRecw4z3LXkjaq96/qZqAA==}
+  /terser@5.31.4:
+    resolution: {integrity: sha512-3OU03GgblDgu0g+sdnsVzhBPxnjV+WJuMmocN1qBBZDQ3ia7jZQSAkePeKbPlYAejGXUTYe1CmSaUeV51mvaIw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
