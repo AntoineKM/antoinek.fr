@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.1(typescript@5.5.4)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.5.0(react-dom@18.3.1)(react@18.3.1)
+    version: 11.5.3(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.9.3(@types/react@18.3.5)(react@18.3.1)
@@ -6498,7 +6498,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001655
+      caniuse-lite: 1.0.30001657
       electron-to-chromium: 1.5.14
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
@@ -6618,6 +6618,10 @@ packages:
 
   /caniuse-lite@1.0.30001655:
     resolution: {integrity: sha512-jRGVy3iSGO5Uutn2owlb5gR6qsGngTw9ZTb4ali9f3glshcNmJ2noam4Mo9zia5P9Dk3jNNydy7vQjuE5dQmfg==}
+    dev: false
+
+  /caniuse-lite@1.0.30001657:
+    resolution: {integrity: sha512-DPbJAlP8/BAXy3IgiWmZKItubb3TYGP0WscQQlVGIfT4s/YlFYVuJgyOsQNP7rJRChx/qdMeLJQJP0Sgg2yjNA==}
 
   /case-sensitive-paths-webpack-plugin@2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
@@ -8890,8 +8894,8 @@ packages:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
     dev: false
 
-  /flow-parser@0.245.1:
-    resolution: {integrity: sha512-KaVIjRdCY+APtxQijfV1c7GN1bofByIlR7E6omQLW0sghkA8hh8uufQOqTf3oAAVTExsSLafmdL/QwyvE/gdEg==}
+  /flow-parser@0.245.2:
+    resolution: {integrity: sha512-FU4yuqC1j2IeWWicpzG0YJrXHJgKjK/AU8QKK/7MvQaNhcoGisDoE7FJLGCtbvnifzsgDWdm9/jtTF7Mp+PJXQ==}
     engines: {node: '>=0.4.0'}
     dev: false
 
@@ -8968,8 +8972,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.5.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-Br0sk5vVf4/dCwK+K7keLzE67ZSoQO7OeAVSQRY72mA4GEjPYJgedAaRzXHkq/ilB87Z1YiJLjhvk5+U4Kz8Yg==}
+  /framer-motion@11.5.3(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-SvoshQ/iH2oaZrkmIcAht2Ko76DsZtD2f6SNMIVLe2N1l1RNDkCkyuygF8FkUGN7TXrhhH7UYDNwhRB94wCCfA==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -10597,7 +10601,7 @@ packages:
       '@babel/register': 7.24.6(@babel/core@7.25.2)
       babel-core: 7.0.0-bridge.0(@babel/core@7.25.2)
       chalk: 4.1.2
-      flow-parser: 0.245.1
+      flow-parser: 0.245.2
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
