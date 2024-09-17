@@ -13,7 +13,7 @@ dependencies:
     version: 11.5.4(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
-    version: 2.9.3(@types/react@18.3.6)(react@18.3.1)
+    version: 2.9.3(@types/react@18.3.7)(react@18.3.1)
   next:
     specifier: ^14.0.0
     version: 14.2.11(@babel/core@7.25.2)(react-dom@18.3.1)(react@18.3.1)
@@ -69,7 +69,7 @@ devDependencies:
     version: 20.16.5
   '@types/react':
     specifier: ^18.0.29
-    version: 18.3.6
+    version: 18.3.7
   babel-plugin-styled-components:
     specifier: ^2.0.7
     version: 2.1.4(@babel/core@7.25.2)(styled-components@6.1.13)
@@ -4105,7 +4105,7 @@ packages:
     resolution: {integrity: sha512-3mhF8AJFfIN0E5bEs/DQ4U2LzMJYm+FPSwY5bJ1DZhrxW1PFAh24bAPrSd8PwS0iarQ7biLdr1lWf/8LFv8pDA==}
     dev: false
 
-  /@react-native/virtualized-lists@0.75.3(@types/react@18.3.6)(react-native@0.75.3)(react@18.3.1):
+  /@react-native/virtualized-lists@0.75.3(@types/react@18.3.7)(react-native@0.75.3)(react@18.3.1):
     resolution: {integrity: sha512-cTLm7k7Y//SvV8UK8esrDHEw5OrwwSJ4Fqc3x52Imi6ROuhshfGIPFwhtn4pmAg9nWHzHwwqiJ+9hCSVnXXX+g==}
     engines: {node: '>=18'}
     peerDependencies:
@@ -4116,11 +4116,11 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
       invariant: 2.2.4
       nullthrows: 1.1.1
       react: 18.3.1
-      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.6)(react@18.3.1)(typescript@5.6.2)
+      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.7)(react@18.3.1)(typescript@5.6.2)
     dev: false
 
   /@react-spring/animated@9.7.4(react@18.3.1):
@@ -4171,7 +4171,7 @@ packages:
       '@react-spring/shared': 9.7.4(react@18.3.1)
       '@react-spring/types': 9.7.4
       react: 18.3.1
-      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.6)(react@18.3.1)(typescript@5.6.2)
+      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.7)(react@18.3.1)(typescript@5.6.2)
     dev: false
 
   /@react-spring/rafz@9.7.4:
@@ -4275,7 +4275,7 @@ packages:
       its-fine: 1.2.5(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.6)(react@18.3.1)(typescript@5.6.2)
+      react-native: 0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.7)(react@18.3.1)(typescript@5.6.2)
       react-reconciler: 0.27.0(react@18.3.1)
       scheduler: 0.21.0
       suspend-react: 0.1.3(react@18.3.1)
@@ -4747,8 +4747,8 @@ packages:
     resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
     dev: false
 
-  /@types/prop-types@15.7.12:
-    resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+  /@types/prop-types@15.7.13:
+    resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
 
   /@types/q@1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
@@ -4765,19 +4765,19 @@ packages:
   /@types/react-reconciler@0.26.7:
     resolution: {integrity: sha512-mBDYl8x+oyPX/VBb3E638N0B7xG+SPk/EAMcVPeexqus/5aTpTphQi0curhhshOqRrc9t6OPoJfEUkbymse/lQ==}
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
     dev: false
 
   /@types/react-reconciler@0.28.8:
     resolution: {integrity: sha512-SN9c4kxXZonFhbX4hJrZy37yw9e7EIxcpHCxQv5JUS18wDE5ovkQKlqQEkufdJCCMfuI9BnjUJvhYeJ9x5Ra7g==}
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
     dev: false
 
-  /@types/react@18.3.6:
-    resolution: {integrity: sha512-CnGaRYNu2iZlkGXGrOYtdg5mLK8neySj0woZ4e2wF/eli2E6Sazmq5X+Nrj6OBrrFVQfJWTUFeqAzoRhWQXYvg==}
+  /@types/react@18.3.7:
+    resolution: {integrity: sha512-KUnDCJF5+AiZd8owLIeVHqmW9yM4sqmDVf2JRJiBMFkGvkoZ4/WyV2lL4zVsoinmRS/W3FeEdZLEWFRofnT2FQ==}
     dependencies:
-      '@types/prop-types': 15.7.12
+      '@types/prop-types': 15.7.13
       csstype: 3.1.3
 
   /@types/resolve@1.17.1:
@@ -6446,7 +6446,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001660
-      electron-to-chromium: 1.5.23
+      electron-to-chromium: 1.5.24
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -7579,8 +7579,8 @@ packages:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
     dev: false
 
-  /electron-to-chromium@1.5.23:
-    resolution: {integrity: sha512-mBhODedOXg4v5QWwl21DjM5amzjmI1zw9EPrPK/5Wx7C8jt33bpZNrC7OhHUG3pxRtbLpr3W2dXT+Ph1SsfRZA==}
+  /electron-to-chromium@1.5.24:
+    resolution: {integrity: sha512-0x0wLCmpdKFCi9ulhvYZebgcPmHTkFVUfU2wzDykadkslKwT4oAmDTHEKLnlrDsMGZe4B+ksn8quZfZjYsBetA==}
 
   /emittery@0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -10479,7 +10479,7 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: false
 
-  /jotai@2.9.3(@types/react@18.3.6)(react@18.3.1):
+  /jotai@2.9.3(@types/react@18.3.7)(react@18.3.1):
     resolution: {integrity: sha512-IqMWKoXuEzWSShjd9UhalNsRGbdju5G2FrqNLQJT+Ih6p41VNYe2sav5hnwQx4HJr25jq9wRqvGSWGviGG6Gjw==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
@@ -10491,7 +10491,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.3.6
+      '@types/react': 18.3.7
       react: 18.3.1
     dev: false
 
@@ -12905,7 +12905,7 @@ packages:
       scheduler: 0.23.2
     dev: false
 
-  /react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.6)(react@18.3.1)(typescript@5.6.2):
+  /react-native@0.75.3(@babel/core@7.25.2)(@babel/preset-env@7.25.4)(@types/react@18.3.7)(react@18.3.1)(typescript@5.6.2):
     resolution: {integrity: sha512-+Ne6u5H+tPo36sme19SCd1u2UID2uo0J/XzAJarxmrDj4Nsdi44eyUDKtQHmhgxjRGsuVJqAYrMK0abLSq8AHw==}
     engines: {node: '>=18'}
     hasBin: true
@@ -12926,8 +12926,8 @@ packages:
       '@react-native/gradle-plugin': 0.75.3
       '@react-native/js-polyfills': 0.75.3
       '@react-native/normalize-colors': 0.75.3
-      '@react-native/virtualized-lists': 0.75.3(@types/react@18.3.6)(react-native@0.75.3)(react@18.3.1)
-      '@types/react': 18.3.6
+      '@react-native/virtualized-lists': 0.75.3(@types/react@18.3.7)(react-native@0.75.3)(react@18.3.1)
+      '@types/react': 18.3.7
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
