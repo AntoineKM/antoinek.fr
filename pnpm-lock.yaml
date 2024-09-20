@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.5.5(react-dom@18.3.1)(react@18.3.1)
+    version: 11.5.6(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.10.0(@types/react@18.3.8)(react@18.3.1)
@@ -6314,7 +6314,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001662
-      electron-to-chromium: 1.5.25
+      electron-to-chromium: 1.5.26
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -7447,8 +7447,8 @@ packages:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
     dev: false
 
-  /electron-to-chromium@1.5.25:
-    resolution: {integrity: sha512-kMb204zvK3PsSlgvvwzI3wBIcAw15tRkYk+NQdsjdDtcQWTp2RABbMQ9rUBy8KNEOM+/E6ep+XC3AykiWZld4g==}
+  /electron-to-chromium@1.5.26:
+    resolution: {integrity: sha512-Z+OMe9M/V6Ep9n/52+b7lkvYEps26z4Yz3vjWL1V61W0q+VLF1pOHhMY17sa4roz4AWmULSI8E6SAojZA5L0YQ==}
 
   /emittery@0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -8781,8 +8781,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.5.5(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-4srkT940jYA3bdQRglxod0KoqDvcghYri1A6bTjT02IXvq/EAd6A0tgUnJc5Q2ahhf8n959aLD3yO+XmLmE8OQ==}
+  /framer-motion@11.5.6(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-JMwUpAxv/DWgul9vPgX0ElKn0G66sUc6O9tOXsYwn3zxwvhxFljSXC0XT2QCzuTYBshwC8nyDAa1SYcV0Ldbhw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
