@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.1(typescript@5.6.2)(zod@3.23.8)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.7.0(react-dom@18.3.1)(react@18.3.1)
+    version: 11.8.0(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.10.0(@types/react@18.3.9)(react@18.3.1)
@@ -40,7 +40,7 @@ dependencies:
     version: 5.0.1(@babel/plugin-syntax-flow@7.24.7)(@babel/plugin-transform-react-jsx@7.25.2)(eslint@8.57.1)(react@18.3.1)(typescript@5.6.2)
   react-spring:
     specifier: ^9.7.1
-    version: 9.7.4(@react-three/fiber@8.17.8)(konva@9.3.15)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.75.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.168.0)(zdog@1.1.3)
+    version: 9.7.4(@react-three/fiber@8.17.8)(konva@9.3.15)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.75.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.169.0)(zdog@1.1.3)
   styled-components:
     specifier: ^6.0.0
     version: 6.1.13(react-dom@18.3.1)(react@18.3.1)
@@ -4188,7 +4188,7 @@ packages:
       react: 18.3.1
     dev: false
 
-  /@react-spring/three@9.7.4(@react-three/fiber@8.17.8)(react@18.3.1)(three@0.168.0):
+  /@react-spring/three@9.7.4(@react-three/fiber@8.17.8)(react@18.3.1)(three@0.169.0):
     resolution: {integrity: sha512-HKUhrrvWW7F/MAroObOloqcYyFqsUHp1ANIDvPVxk9cSh7veW7gQbJm2Sc7Ka+L4gVJEwSkS+MRfr8kk+sRZBw==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
@@ -4199,9 +4199,9 @@ packages:
       '@react-spring/core': 9.7.4(react@18.3.1)
       '@react-spring/shared': 9.7.4(react@18.3.1)
       '@react-spring/types': 9.7.4
-      '@react-three/fiber': 8.17.8(react-dom@18.3.1)(react-native@0.75.3)(react@18.3.1)(three@0.168.0)
+      '@react-three/fiber': 8.17.8(react-dom@18.3.1)(react-native@0.75.3)(react@18.3.1)(three@0.169.0)
       react: 18.3.1
-      three: 0.168.0
+      three: 0.169.0
     dev: false
 
   /@react-spring/types@9.7.4:
@@ -4240,7 +4240,7 @@ packages:
       zdog: 1.1.3
     dev: false
 
-  /@react-three/fiber@8.17.8(react-dom@18.3.1)(react-native@0.75.3)(react@18.3.1)(three@0.168.0):
+  /@react-three/fiber@8.17.8(react-dom@18.3.1)(react-native@0.75.3)(react@18.3.1)(three@0.169.0):
     resolution: {integrity: sha512-L2r8n4Ebg7YMTMaPHx1soxplgfia7SpAJUA1bS4C1ApRG9KKAjK8Kjhx3ODX3f6fyYfQZju2JyE8Q7OJHv1DNA==}
     peerDependencies:
       expo: '>=43.0'
@@ -4279,7 +4279,7 @@ packages:
       react-reconciler: 0.27.0(react@18.3.1)
       scheduler: 0.21.0
       suspend-react: 0.1.3(react@18.3.1)
-      three: 0.168.0
+      three: 0.169.0
       zustand: 3.7.2(react@18.3.1)
     dev: false
 
@@ -6319,8 +6319,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001663
-      electron-to-chromium: 1.5.28
+      caniuse-lite: 1.0.30001664
+      electron-to-chromium: 1.5.29
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.24.0)
 
@@ -6441,8 +6441,8 @@ packages:
     resolution: {integrity: sha512-sgMUVwLmGseH8ZIrm1d51UbrhqMCH3jvS7gF/M6byuHOnKyLOBL7W8yz5V02OHwgLGA36o/AFhWzzh4uc5aqTA==}
     dev: false
 
-  /caniuse-lite@1.0.30001663:
-    resolution: {integrity: sha512-o9C3X27GLKbLeTYZ6HBOLU1tsAcBZsLis28wrVzddShCS16RujjHp9GDHKZqrB3meE0YjhawvMFsGb/igqiPzA==}
+  /caniuse-lite@1.0.30001664:
+    resolution: {integrity: sha512-AmE7k4dXiNKQipgn7a2xg558IRqPN3jMQY/rOsbxDhrd0tyChwbITBfiwtnqz8bi2M5mIWbxAYBvk7W7QBUS2g==}
 
   /case-sensitive-paths-webpack-plugin@2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
@@ -7457,8 +7457,8 @@ packages:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
     dev: false
 
-  /electron-to-chromium@1.5.28:
-    resolution: {integrity: sha512-VufdJl+rzaKZoYVUijN13QcXVF5dWPZANeFTLNy+OSpHdDL5ynXTF35+60RSBbaQYB1ae723lQXHCrf4pyLsMw==}
+  /electron-to-chromium@1.5.29:
+    resolution: {integrity: sha512-PF8n2AlIhCKXQ+gTpiJi0VhcHDb69kYX4MtCiivctc2QD3XuNZ/XIOlbGzt7WAjjEev0TtaH6Cu3arZExm5DOw==}
 
   /emittery@0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -8791,8 +8791,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.7.0(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-m+1E3mMzDIQ5DsVghMvXyC+jSkZSm5RHBLA2gHa/LczcXwW6JbQK4Uz48LsuCTGV8bZFVUezcauHj3M33tY/5w==}
+  /framer-motion@11.8.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-q/axN/PFRdKmzPK6PO2OhbLUMWXXZuiejdM1/3FhC2hm4YIetc+qeco2EvWm4u1/UTFmevclE492wGFNfSZ4eQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
@@ -10886,7 +10886,7 @@ packages:
     engines: {node: '>=18'}
     dependencies:
       flow-enums-runtime: 0.0.6
-      terser: 5.33.0
+      terser: 5.34.0
     dev: false
 
   /metro-resolver@0.80.12:
@@ -12984,7 +12984,7 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /react-spring@9.7.4(@react-three/fiber@8.17.8)(konva@9.3.15)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.75.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.168.0)(zdog@1.1.3):
+  /react-spring@9.7.4(@react-three/fiber@8.17.8)(konva@9.3.15)(react-dom@18.3.1)(react-konva@18.2.10)(react-native@0.75.3)(react-zdog@1.2.2)(react@18.3.1)(three@0.169.0)(zdog@1.1.3):
     resolution: {integrity: sha512-ypxdsOwmCfbDZGTBRyBo7eLjF55xNFN86e/QkflZ1Rfo8QMzVjCAWocrEEbsuFKkQAg2RRdhNkinWJ6BpCvJoQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -12993,7 +12993,7 @@ packages:
       '@react-spring/core': 9.7.4(react@18.3.1)
       '@react-spring/konva': 9.7.4(konva@9.3.15)(react-konva@18.2.10)(react@18.3.1)
       '@react-spring/native': 9.7.4(react-native@0.75.3)(react@18.3.1)
-      '@react-spring/three': 9.7.4(@react-three/fiber@8.17.8)(react@18.3.1)(three@0.168.0)
+      '@react-spring/three': 9.7.4(@react-three/fiber@8.17.8)(react@18.3.1)(three@0.169.0)
       '@react-spring/web': 9.7.4(react-dom@18.3.1)(react@18.3.1)
       '@react-spring/zdog': 9.7.4(react-dom@18.3.1)(react-zdog@1.2.2)(react@18.3.1)(zdog@1.1.3)
       react: 18.3.1
@@ -14244,7 +14244,7 @@ packages:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.33.0
+      terser: 5.34.0
       webpack: 5.95.0
     dev: false
 
@@ -14283,8 +14283,8 @@ packages:
       source-map-support: 0.5.21
     dev: false
 
-  /terser@5.33.0:
-    resolution: {integrity: sha512-JuPVaB7s1gdFKPKTelwUyRq5Sid2A3Gko2S0PncwdBq7kN9Ti9HPWDQ06MPsEDGsZeVESjKEnyGy68quBk1w6g==}
+  /terser@5.34.0:
+    resolution: {integrity: sha512-y5NUX+U9HhVsK/zihZwoq4r9dICLyV2jXGOriDAVOeKhq3LKVjgJbGO90FisozXLlJfvjHqgckGmJFBb9KYoWQ==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -14306,8 +14306,8 @@ packages:
   /text-table@0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
 
-  /three@0.168.0:
-    resolution: {integrity: sha512-6m6jXtDwMJEK/GGMbAOTSAmxNdzKvvBzgd7q8bE/7Tr6m7PaBh5kKLrN7faWtlglXbzj7sVba48Idwx+NRsZXw==}
+  /three@0.169.0:
+    resolution: {integrity: sha512-Ed906MA3dR4TS5riErd4QBsRGPcx+HBDX2O5yYE5GqJeFQTPU+M56Va/f/Oph9X7uZo3W3o4l2ZhBZ6f6qUv0w==}
     dev: false
 
   /throat@5.0.0:
