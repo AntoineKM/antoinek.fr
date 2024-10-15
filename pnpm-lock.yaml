@@ -13,7 +13,7 @@ dependencies:
     version: 11.11.9(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
-    version: 2.10.0(@types/react@18.3.11)(react@18.3.1)
+    version: 2.10.1(@types/react@18.3.11)(react@18.3.1)
   next:
     specifier: ^14.0.0
     version: 14.2.15(@babel/core@7.25.8)(react-dom@18.3.1)(react@18.3.1)
@@ -10244,8 +10244,8 @@ packages:
       '@sideway/pinpoint': 2.0.0
     dev: false
 
-  /jotai@2.10.0(@types/react@18.3.11)(react@18.3.1):
-    resolution: {integrity: sha512-8W4u0aRlOIwGlLQ0sqfl/c6+eExl5D8lZgAUolirZLktyaj4WnxO/8a0HEPmtriQAB6X5LMhXzZVmw02X0P0qQ==}
+  /jotai@2.10.1(@types/react@18.3.11)(react@18.3.1):
+    resolution: {integrity: sha512-4FycO+BOTl2auLyF2Chvi6KTDqdsdDDtpaL/WHQMs8f3KS1E3loiUShQzAzFA/sMU5cJ0hz/RT1xum9YbG/zaA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
