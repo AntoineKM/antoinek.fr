@@ -13,7 +13,7 @@ dependencies:
     version: 11.11.17(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
-    version: 2.10.2(@types/react@18.3.12)(react@18.3.1)
+    version: 2.10.3(@types/react@18.3.12)(react@18.3.1)
   next:
     specifier: ^15.0.0
     version: 15.0.3(@babel/core@7.26.0)(react-dom@18.3.1)(react@18.3.1)
@@ -8686,8 +8686,8 @@ packages:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
     dev: false
 
-  /flow-parser@0.253.0:
-    resolution: {integrity: sha512-EbxtzRIzp8dDSzTloPhsc6uOvrEFIyu08cqQzXBWLAgxK+i2d/5qOos9ryQHRmk+RyDDXfnz/7qteh3jnAlc4w==}
+  /flow-parser@0.254.0:
+    resolution: {integrity: sha512-FhO64nGWlkrCxMWRDL1Wbok+ep4iSw2t6EtuyYOFZRzBh902iynZ/GMDU/3RSbiKTmALkcmCmKQLe0eOWdMA8Q==}
     engines: {node: '>=0.4.0'}
     dev: false
 
@@ -10298,8 +10298,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /jotai@2.10.2(@types/react@18.3.12)(react@18.3.1):
-    resolution: {integrity: sha512-DqsBTlRglIBviuJLfK6JxZzpd6vKfbuJ4IqRCz70RFEDeZf46Fcteb/FXxNr1UnoxR5oUy3oq7IE8BrEq0G5DQ==}
+  /jotai@2.10.3(@types/react@18.3.12)(react@18.3.1):
+    resolution: {integrity: sha512-Nnf4IwrLhNfuz2JOQLI0V/AgwcpxvVy8Ec8PidIIDeRi4KCFpwTFIpHAAcU+yCgnw/oASYElq9UY0YdUUegsSA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -10357,7 +10357,7 @@ packages:
       '@babel/register': 7.25.9(@babel/core@7.26.0)
       babel-core: 7.0.0-bridge.0(@babel/core@7.26.0)
       chalk: 4.1.2
-      flow-parser: 0.253.0
+      flow-parser: 0.254.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
