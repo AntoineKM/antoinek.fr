@@ -22,7 +22,7 @@ dependencies:
     version: 4.2.3(next@15.1.4)
   papaparse:
     specifier: ^5.4.1
-    version: 5.4.1
+    version: 5.5.0
   react:
     specifier: ^18.2.0
     version: 18.3.1
@@ -11521,8 +11521,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /papaparse@5.4.1:
-    resolution: {integrity: sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==}
+  /papaparse@5.5.0:
+    resolution: {integrity: sha512-rlVJyYL5QMvue8f/RNGpchWAiTc42GzJD/dqD/YgxJxmQ7TWQh5/7aN3p/aqxkYTRl/BkODi6Qsau1r2bt42JQ==}
     dev: false
 
   /param-case@3.0.4:
