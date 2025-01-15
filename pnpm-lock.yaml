@@ -33,8 +33,8 @@ dependencies:
     specifier: ^18.2.0
     version: 18.3.1(react@18.3.1)
   react-router:
-    specifier: ^6.9.0
-    version: 6.28.1(react@18.3.1)
+    specifier: ^7.0.0
+    version: 7.1.0(react-dom@18.3.1)(react@18.3.1)
   react-scripts:
     specifier: ^5.0.1
     version: 5.0.1(@babel/plugin-syntax-flow@7.26.0)(@babel/plugin-transform-react-jsx@7.25.9)(eslint@8.57.1)(react@18.3.1)(typescript@5.7.3)
@@ -4254,11 +4254,6 @@ packages:
       - '@types/react'
     dev: false
 
-  /@remix-run/router@1.21.0:
-    resolution: {integrity: sha512-xfSkCAchbdG5PnbrKqFWwia4Bi61nH+wm8wLEqfHDyp7Y3dZzgqS2itV8i4gAq9pC2HsTpwyBC6Ds8VHZ96JlA==}
-    engines: {node: '>=14.0.0'}
-    dev: false
-
   /@rollup/plugin-babel@5.3.1(@babel/core@7.21.3)(rollup@2.79.1):
     resolution: {integrity: sha512-WFfdLWU/xVWKeRQnKmIAQULUI7Il0gZnBIH/ZFO069wYIfPu+8zrfp/KMW0atmELoRDq8FbiP3VCss9MhCut7Q==}
     engines: {node: '>= 10.0.0'}
@@ -4598,6 +4593,10 @@ packages:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
       '@types/node': 22.10.6
+    dev: false
+
+  /@types/cookie@0.6.0:
+    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: false
 
   /@types/debounce@1.2.4:
@@ -6800,6 +6799,11 @@ packages:
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /cookie@1.0.2:
+    resolution: {integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==}
+    engines: {node: '>=18'}
     dev: false
 
   /core-js-compat@3.29.1:
@@ -12821,14 +12825,22 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /react-router@6.28.1(react@18.3.1):
-    resolution: {integrity: sha512-2omQTA3rkMljmrvvo6WtewGdVh45SpL9hGiCI9uUrwGGfNFDIvGK4gYJsKlJoNVi6AQZcopSCballL+QGOm7fA==}
-    engines: {node: '>=14.0.0'}
+  /react-router@7.1.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-VcFhWqkNIcojDRYaUO8qV0Jib52s9ULpCp3nkBbmrvtoCVFRp6tmk3tJ2w9BZauVctA1YRnJlFYDn9iJRuCpGA==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      react: '>=16.8'
+      react: '>=18'
+      react-dom: '>=18'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
     dependencies:
-      '@remix-run/router': 1.21.0
+      '@types/cookie': 0.6.0
+      cookie: 1.0.2
       react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      set-cookie-parser: 2.7.1
+      turbo-stream: 2.4.0
     dev: false
 
   /react-scripts@5.0.1(@babel/plugin-syntax-flow@7.26.0)(@babel/plugin-transform-react-jsx@7.25.9)(eslint@8.57.1)(react@18.3.1)(typescript@5.7.3):
@@ -13585,6 +13597,10 @@ packages:
       send: 0.19.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /set-cookie-parser@2.7.1:
+    resolution: {integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==}
     dev: false
 
   /set-function-length@1.2.2:
@@ -14458,6 +14474,10 @@ packages:
     dependencies:
       tslib: 1.14.1
       typescript: 5.7.3
+    dev: false
+
+  /turbo-stream@2.4.0:
+    resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
     dev: false
 
   /type-check@0.3.2:
