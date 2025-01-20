@@ -10,7 +10,7 @@ dependencies:
     version: 0.11.1(typescript@5.7.3)(zod@3.24.1)
   framer-motion:
     specifier: ^11.0.0
-    version: 11.18.1(react-dom@18.3.1)(react@18.3.1)
+    version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
   jotai:
     specifier: ^2.0.0
     version: 2.11.0(@types/react@18.3.18)(react@18.3.1)
@@ -6352,7 +6352,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001692
+      caniuse-lite: 1.0.30001695
       electron-to-chromium: 1.5.83
       node-releases: 2.0.19
       update-browserslist-db: 1.1.2(browserslist@4.24.4)
@@ -6478,6 +6478,10 @@ packages:
 
   /caniuse-lite@1.0.30001692:
     resolution: {integrity: sha512-A95VKan0kdtrsnMubMKxEKUKImOPSuCpYgxSQBo036P5YYgVIcOYJEgt/txJWqObiRQeISNCfef9nvlQ0vbV7A==}
+    dev: false
+
+  /caniuse-lite@1.0.30001695:
+    resolution: {integrity: sha512-vHyLade6wTgI2u1ec3WQBxv+2BrTERV28UXQu9LO6lZ9pYeMk34vjXFLOxo1A4UBA8XTL4njRQZdno/yYaSmWw==}
 
   /case-sensitive-paths-webpack-plugin@2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
@@ -7866,7 +7870,7 @@ packages:
       eslint: 8.57.1
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
       fast-glob: 3.3.3
-      get-tsconfig: 4.8.1
+      get-tsconfig: 4.9.0
       is-bun-module: 1.3.0
       is-glob: 4.0.3
       stable-hash: 0.0.4
@@ -8766,8 +8770,8 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
-  /framer-motion@11.18.1(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-EQa8c9lWVOm4zlz14MsBJWr8woq87HsNmsBnQNvcS0hs8uzw6HtGAxZyIU7EGTVpHD1C1n01ufxRyarXcNzpPg==}
+  /framer-motion@11.18.2(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-5F5Och7wrvtLVElIpclDT0CBzMVg3dL22B64aZwHtsIY8RB4mXICLrkajK4G9R+ieSAGcgrLeae2SeUTg2pr6w==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -8896,8 +8900,8 @@ packages:
       es-errors: 1.3.0
       get-intrinsic: 1.2.7
 
-  /get-tsconfig@4.8.1:
-    resolution: {integrity: sha512-k9PN+cFBmaLWtVz29SkUoqU5O0slLuHJXt/2P+tMVFT+phsSGXGkp9t3rQIqdz0e+06EHNGs3oM6ZX1s2zHxRg==}
+  /get-tsconfig@4.9.0:
+    resolution: {integrity: sha512-52n24W52sIueosRe0XZ8Ex5Yle+WbhfCKnV/gWXpbVR8FXNTfqdKEKUSypKso66VRHTvvcQxL44UTZbJRlCTnw==}
     dependencies:
       resolve-pkg-maps: 1.0.0
     dev: true
