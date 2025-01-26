@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@t3-oss/env-nextjs':
-    specifier: ^0.11.0
-    version: 0.11.1(typescript@5.7.3)(zod@3.24.1)
+    specifier: ^0.12.0
+    version: 0.12.0(typescript@5.7.3)(zod@3.24.1)
   framer-motion:
     specifier: ^11.0.0
     version: 11.18.2(react-dom@18.3.1)(react@18.3.1)
@@ -340,7 +340,7 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.4.0
       lodash.debounce: 4.0.8
-      resolve: 1.22.1
+      resolve: 1.22.10
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -4225,7 +4225,7 @@ packages:
       builtin-modules: 3.3.0
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.10
       rollup: 2.79.1
     dev: false
 
@@ -4417,29 +4417,39 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /@t3-oss/env-core@0.11.1(typescript@5.7.3)(zod@3.24.1):
-    resolution: {integrity: sha512-MaxOwEoG1ntCFoKJsS7nqwgcxLW1SJw238AJwfJeaz3P/8GtkxXZsPPolsz1AdYvUTbe3XvqZ/VCdfjt+3zmKw==}
+  /@t3-oss/env-core@0.12.0(typescript@5.7.3)(zod@3.24.1):
+    resolution: {integrity: sha512-lOPj8d9nJJTt81mMuN9GMk8x5veOt7q9m11OSnCBJhwp1QrL/qR+M8Y467ULBSm9SunosryWNbmQQbgoiMgcdw==}
     peerDependencies:
       typescript: '>=5.0.0'
-      zod: ^3.0.0
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0
     peerDependenciesMeta:
       typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
         optional: true
     dependencies:
       typescript: 5.7.3
       zod: 3.24.1
     dev: false
 
-  /@t3-oss/env-nextjs@0.11.1(typescript@5.7.3)(zod@3.24.1):
-    resolution: {integrity: sha512-rx2XL9+v6wtOqLNJbD5eD8OezKlQD1BtC0WvvtHwBgK66jnF5+wGqtgkKK4Ygie1LVmoDClths2T4tdFmRvGrQ==}
+  /@t3-oss/env-nextjs@0.12.0(typescript@5.7.3)(zod@3.24.1):
+    resolution: {integrity: sha512-rFnvYk1049RnNVUPvY8iQ55AuQh1Rr+qZzQBh3t++RttCGK4COpXGNxS4+45afuQq02lu+QAOy/5955aU8hRKw==}
     peerDependencies:
       typescript: '>=5.0.0'
-      zod: ^3.0.0
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0
     peerDependenciesMeta:
       typescript:
         optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
     dependencies:
-      '@t3-oss/env-core': 0.11.1(typescript@5.7.3)(zod@3.24.1)
+      '@t3-oss/env-core': 0.12.0(typescript@5.7.3)(zod@3.24.1)
       typescript: 5.7.3
       zod: 3.24.1
     dev: false
@@ -5097,7 +5107,7 @@ packages:
       debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.6.3
       tsutils: 3.21.0(typescript@5.7.3)
       typescript: 5.7.3
     transitivePeerDependencies:
@@ -5971,7 +5981,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.7
       cosmiconfig: 7.1.0
-      resolve: 1.22.1
+      resolve: 1.22.10
     dev: false
 
   /babel-plugin-named-asset-import@0.3.8(@babel/core@7.21.3):
@@ -8676,7 +8686,7 @@ packages:
       memfs: 3.4.13
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.3.8
+      semver: 7.6.3
       tapable: 1.1.3
       typescript: 5.7.3
       webpack: 5.76.3
@@ -10102,7 +10112,7 @@ packages:
       jest-util: 27.5.1
       natural-compare: 1.4.0
       pretty-format: 27.5.1
-      semver: 7.3.8
+      semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -10462,7 +10472,7 @@ packages:
       array-includes: 3.1.8
       array.prototype.flat: 1.3.3
       object.assign: 4.1.7
-      object.values: 1.2.0
+      object.values: 1.2.1
 
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -11284,6 +11294,7 @@ packages:
       call-bind: 1.0.8
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
+    dev: true
 
   /object.values@1.2.1:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
@@ -11818,7 +11829,7 @@ packages:
       postcss: 8.4.21
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
-      resolve: 1.22.1
+      resolve: 1.22.10
     dev: false
 
   /postcss-initial@4.0.1(postcss@8.4.21):
