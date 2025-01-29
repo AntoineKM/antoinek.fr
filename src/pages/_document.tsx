@@ -42,6 +42,21 @@ export default class MyDocument extends Document {
     return (
       <Html lang={"en"}>
         <Head>
+          {/* Preconnect */}
+          <link
+            rel={"preconnect"}
+            href={"https://api.fontshare.com"}
+            crossOrigin={"anonymous"}
+          />
+
+          <link
+            rel={"stylesheet"}
+            href={
+              "https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&f[]=panchang@400&display=swap"
+            }
+          />
+
+          {/* Favicon */}
           <link
             rel={"apple-touch-icon"}
             sizes={"180x180"}
@@ -59,6 +74,8 @@ export default class MyDocument extends Document {
             sizes={"16x16"}
             href={"/static/images/favicon/favicon-16x16.png"}
           />
+
+          {/* Manifest */}
           <link rel={"manifest"} href={"/manifest.json"} />
           <script
             defer

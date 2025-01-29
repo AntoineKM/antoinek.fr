@@ -1,3 +1,4 @@
+import GlobalStyle from "@components/GlobalStyle";
 import Head from "@components/Head";
 import { ChevronsRight } from "@components/Icons";
 import Nav from "@components/Nav";
@@ -6,8 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import React from "react";
 import styled from "styled-components";
-
-import "@styles/app.css";
 import { useLocalStorage } from "usehooks-ts";
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -33,6 +32,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <>
+      <GlobalStyle />
       <Head />
       <Wrapper>
         <SuccessiveTypeContainer
