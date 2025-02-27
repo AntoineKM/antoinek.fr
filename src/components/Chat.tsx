@@ -7,6 +7,7 @@ const Chat = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isRateLimited, setIsRateLimited] = useState(false);
   const [lastMessageTime, setLastMessageTime] = useState(0);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
     useChat();
 
@@ -20,17 +21,24 @@ const Chat = () => {
     }
   }, [messages]);
 
-  // Make sure input gets focus back after sending a message
+  // Make sure input gets focus back after sending a message or opening chat
   useEffect(() => {
     // Small delay to ensure the DOM is updated
     const timeoutId = setTimeout(() => {
-      if (inputRef.current) {
+      if (inputRef.current && isChatOpen) {
         inputRef.current.focus();
       }
     }, 100);
 
     return () => clearTimeout(timeoutId);
-  }, [messages]);
+  }, [messages, isChatOpen]);
+
+  // Focus input when chat is opened
+  useEffect(() => {
+    if (isChatOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isChatOpen]);
 
   // Handle rate limiting
   const handleRateLimitedSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -55,67 +63,121 @@ const Chat = () => {
     handleSubmit(event);
   };
 
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
   return (
-    <ChatContainer>
-      <ChatHeader>
-        <h3>{"Ask me anything"}</h3>
-      </ChatHeader>
+    <>
+      {/* Chat toggle button for smaller screens - only shown when chat is closed */}
+      {!isChatOpen && (
+        <ChatToggleButton onClick={toggleChat}>{"Chat"}</ChatToggleButton>
+      )}
 
-      <MessagesContainer ref={chatContainerRef}>
-        {messages.length === 0 ? (
-          <WelcomeMessage>
-            <p>
-              {
-                "Ask me anything about Antoine, his projects, skills, or experiences."
-              }
-            </p>
-          </WelcomeMessage>
-        ) : (
-          messages.map((m) => (
-            <Message key={m.id}>
-              <MessageSender>
-                {m.role === "user" ? "You" : "Antoine AI"}
-              </MessageSender>
-              <MessageContent>{m.content}</MessageContent>
-            </Message>
-          ))
-        )}
-        {isLoading &&
-          (!messages.length ||
-            messages[messages.length - 1].role !== "assistant" ||
-            messages[messages.length - 1].content === "") && (
-            <TypingIndicator>{"thinking..."}</TypingIndicator>
+      <ChatContainer $isOpen={isChatOpen}>
+        <ChatHeader>
+          <h3>{"Ask me anything"}</h3>
+          <CloseButton onClick={toggleChat}>{"✕"}</CloseButton>
+        </ChatHeader>
+
+        <MessagesContainer ref={chatContainerRef}>
+          {messages.length === 0 ? (
+            <WelcomeMessage>
+              <p>
+                {
+                  "Ask me anything about Antoine, his projects, skills, or experiences."
+                }
+              </p>
+            </WelcomeMessage>
+          ) : (
+            messages.map((m) => (
+              <Message key={m.id}>
+                <MessageSender>
+                  {m.role === "user" ? "You" : "Antoine AI"}
+                </MessageSender>
+                <MessageContent>{m.content}</MessageContent>
+              </Message>
+            ))
           )}
-        {isRateLimited && (
-          <RateLimitMessage>
-            {"Please wait a moment before sending another message"}
-          </RateLimitMessage>
-        )}
-      </MessagesContainer>
+          {isLoading &&
+            (!messages.length ||
+              messages[messages.length - 1].role !== "assistant" ||
+              messages[messages.length - 1].content === "") && (
+              <TypingIndicator>{"thinking..."}</TypingIndicator>
+            )}
+          {isRateLimited && (
+            <RateLimitMessage>
+              {"Please wait a moment before sending another message"}
+            </RateLimitMessage>
+          )}
+        </MessagesContainer>
 
-      <form onSubmit={handleRateLimitedSubmit}>
-        <ChatInputContainer>
-          <ChatInput
-            ref={inputRef}
-            value={input}
-            onChange={handleInputChange}
-            placeholder={"Ask me anything..."}
-            disabled={isLoading || isRateLimited}
-          />
-          <SendButton
-            type={"submit"}
-            disabled={isLoading || isRateLimited || !input.trim()}
-          >
-            {"Send"}
-          </SendButton>
-        </ChatInputContainer>
-      </form>
-    </ChatContainer>
+        <form onSubmit={handleRateLimitedSubmit}>
+          <ChatInputContainer>
+            <ChatInput
+              ref={inputRef}
+              value={input}
+              onChange={handleInputChange}
+              placeholder={"Ask me anything..."}
+              disabled={isLoading || isRateLimited}
+            />
+            <SendButton
+              type={"submit"}
+              disabled={isLoading || isRateLimited || !input.trim()}
+            >
+              {"Send"}
+            </SendButton>
+          </ChatInputContainer>
+        </form>
+      </ChatContainer>
+    </>
   );
 };
 
 // Styled Components
-const ChatContainer = styled.div`
+const ChatToggleButton = styled.button`
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #1e1e1a;
+  color: #ffffe3;
+  border: 1px solid #30302b;
+  cursor: pointer;
+  z-index: 51;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #30302b;
+  }
+
+  @media (max-width: 1200px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const CloseButton = styled.button`
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffe3;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+  margin-left: auto;
+
+  @media (max-width: 1200px) {
+    display: block;
+  }
+`;
+
+const ChatContainer = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
@@ -126,9 +188,18 @@ const ChatContainer = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 50;
+  transition: transform 0.3s ease;
 
   @media (max-width: 1200px) {
-    display: none; /* Hide on mobile/tablet */
+    transform: ${({ $isOpen }) =>
+      $isOpen ? "translateX(0)" : "translateX(100%)"};
+    width: 100%;
+    max-width: 450px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
   }
 `;
 
