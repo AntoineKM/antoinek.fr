@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Diplomas = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const diplomas = [
     {
