@@ -119,6 +119,8 @@ const Chat = () => {
               value={input}
               onChange={handleInputChange}
               placeholder={"Ask me anything..."}
+              autoComplete={"off"}
+              autoFocus
               disabled={isLoading || isRateLimited}
             />
             <SendButton
