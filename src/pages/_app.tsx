@@ -140,7 +140,7 @@ const MainContent = styled(motion.div)`
 const ContentWrapper = styled.div`
   margin-left: 15rem;
   padding: 2rem;
-  width: 100%;
+  width: calc(100% - 15rem);
   box-sizing: border-box;
   font-size: 1rem;
   transition: all 0.2s;
@@ -153,6 +153,8 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 850px) {
     margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
     padding-top: 65px;
   }
 `;

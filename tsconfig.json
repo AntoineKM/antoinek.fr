@@ -30,13 +30,20 @@
         "./src/screens/*"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/custom.d.ts"
+    "next-env.d.ts",
+    "src/custom.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
