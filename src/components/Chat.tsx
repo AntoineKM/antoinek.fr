@@ -2,18 +2,31 @@ import { useChat } from "@ai-sdk/react";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
+const SUGGESTED_MESSAGES = [
+  "What is your experience?",
+  "What technologies do you use?",
+  "What are your current projects?",
+  "How can I contact you?",
+];
+
 const Chat = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [isRateLimited, setIsRateLimited] = useState(false);
   const [lastMessageTime, setLastMessageTime] = useState(0);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  const { messages, input, handleInputChange, handleSubmit, isLoading } =
-    useChat();
 
-  const RATE_LIMIT_COOLDOWN = 3000; // 3 seconds cooldown between messages
+  const {
+    messages,
+    input,
+    handleInputChange,
+    handleSubmit,
+    isLoading,
+    append,
+  } = useChat();
 
-  // Auto-scroll to the bottom of the chat when new messages arrive
+  const RATE_LIMIT_COOLDOWN = 3000;
+
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop =
@@ -21,9 +34,7 @@ const Chat = () => {
     }
   }, [messages]);
 
-  // Make sure input gets focus back after sending a message or opening chat
   useEffect(() => {
-    // Small delay to ensure the DOM is updated
     const timeoutId = setTimeout(() => {
       if (inputRef.current && isChatOpen) {
         inputRef.current.focus();
@@ -33,7 +44,6 @@ const Chat = () => {
     return () => clearTimeout(timeoutId);
   }, [messages, isChatOpen]);
 
-  // Focus input when chat is opened
   useEffect(() => {
     if (isChatOpen && inputRef.current) {
       inputRef.current.focus();
@@ -66,6 +76,19 @@ const Chat = () => {
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
+
+  const handleSuggestionClick = (text: string) => {
+    if (isLoading || isRateLimited) return;
+
+    append({
+      role: "user",
+      content: text,
+    });
+
+    setLastMessageTime(Date.now());
+  };
+
+  const showSuggestions = messages.length === 0;
 
   return (
     <>
@@ -111,6 +134,21 @@ const Chat = () => {
             </RateLimitMessage>
           )}
         </MessagesContainer>
+
+        {showSuggestions && (
+          <SuggestionsContainer>
+            {SUGGESTED_MESSAGES.map((suggestion, index) => (
+              <SuggestionChip
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+                disabled={isLoading || isRateLimited}
+                type={"button"}
+              >
+                {suggestion}
+              </SuggestionChip>
+            ))}
+          </SuggestionsContainer>
+        )}
 
         <form onSubmit={handleRateLimitedSubmit}>
           <ChatInputContainer>
@@ -269,6 +307,57 @@ const MessagesContainer = styled.div`
     border: 1px solid #30302b;
     border-radius: 10px;
     height: 10px;
+  }
+`;
+
+const SuggestionsContainer = styled.div`
+  display: flex;
+  padding: 0.75rem;
+  justify-content: flex-start;
+  background-color: #10100e;
+  border-top: 1px solid #30302b;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  /* Add space between items */
+  & > button {
+    margin-right: 0.5rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;
+
+const SuggestionChip = styled.button`
+  background-color: #1e1e1a;
+  color: #bdbdb2;
+  border: 1px solid #30302b;
+  border-radius: 15px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #30302b;
+    color: #ffffe3;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 `;
 
