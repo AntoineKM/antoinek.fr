@@ -12,7 +12,10 @@
     "export": "next build && next-sitemap"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^1.1.11",
+    "@ai-sdk/react": "^1.1.18",
     "@t3-oss/env-nextjs": "^0.12.0",
+    "ai": "^4.1.46",
     "framer-motion": "^12.0.0",
     "jotai": "^2.0.0",
     "next": "^15.0.0",
