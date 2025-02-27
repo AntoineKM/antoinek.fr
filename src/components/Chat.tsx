@@ -128,6 +128,9 @@ const Chat = () => {
               {"Send"}
             </SendButton>
           </ChatInputContainer>
+          <DisclaimerText>
+            {"Antoine AI is doing its best but may occasionally make mistakes."}
+          </DisclaimerText>
         </form>
       </ChatContainer>
     </>
@@ -298,7 +301,7 @@ const TypingIndicator = styled.div`
 
 const ChatInputContainer = styled.div`
   display: flex;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
   position: relative;
   background-color: #10100e;
 
@@ -378,6 +381,14 @@ const RateLimitMessage = styled.div`
   border-top: 1px solid #30302b;
   border-bottom: 1px solid #30302b;
   margin: 0.5rem 0;
+`;
+
+const DisclaimerText = styled.div`
+  text-align: center;
+  color: #6c6c63;
+  font-size: 0.7rem;
+  font-style: italic;
+  padding: 0.5rem 0.5rem 1rem;
 `;
 
 export default Chat;
