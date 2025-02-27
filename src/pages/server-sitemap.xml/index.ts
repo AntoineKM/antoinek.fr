@@ -6,7 +6,7 @@ import { YOUTUBE } from "src/constants/youtube";
 
 const maxResults = 50;
 
-async function fetchVideos(pageToken?: string) {
+async function fetchVideos(pageToken?: string | null) {
   const response = await fetch(
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=${maxResults}&playlistId=${
       YOUTUBE.PLAYLIST_ID
@@ -20,8 +20,8 @@ async function fetchVideos(pageToken?: string) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  let pageToken = null;
-  let allVideos = [];
+  let pageToken: null | string = null;
+  let allVideos: any[] = [];
 
   do {
     const { videos, nextPageToken } = await fetchVideos(pageToken);
