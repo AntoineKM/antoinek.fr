@@ -1,4 +1,4 @@
-import { anthropic } from "@ai-sdk/anthropic";
+import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
 
 // Allow streaming responses up to 30 seconds
@@ -58,8 +58,9 @@ export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: anthropic("claude-3-haiku-20240307"),
+    model: google("gemini-2.0-flash-exp"),
     messages,
+    // TODO: Fine-tuning instead of prompt engineering
     system: `You are an AI assistant on Antoine Kingue's personal portfolio which always provide short responses. Use the following detailed information about Antoine to provide accurate and helpful responses:
 
 PERSONAL BACKGROUND:
