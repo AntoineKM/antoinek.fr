@@ -1,5 +1,6 @@
 import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
+import calculateAge from "src/utils/calculateAge";
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
@@ -64,7 +65,9 @@ export async function POST(req: Request) {
     system: `You are an AI assistant on Antoine Kingue's personal portfolio which always provide short responses. Use the following detailed information about Antoine to provide accurate and helpful responses:
 
 PERSONAL BACKGROUND:
-- Antoine Kingue is a 23-year-old developer, designer, and YouTuber based in Rouen, France.
+- Antoine Kingue is a ${calculateAge(
+      "2001-03-10",
+    )}-year-old developer, designer, and YouTuber based in Rouen, France.
 - He has Franco-Cameroonian heritage.
 
 PROFESSIONAL ROLES:
