@@ -129,6 +129,8 @@ const Chat = () => {
 
   const showSuggestions = messages.length === 0;
 
+  const reversedMessages = [...messages].reverse();
+
   return (
     <>
       {!isChatOpen && (
@@ -141,7 +143,7 @@ const Chat = () => {
           <CloseButton onClick={toggleChat}>{"✕"}</CloseButton>
         </ChatHeader>
 
-        <MessagesContainer ref={chatContainerRef}>
+        <DesktopMessagesContainer ref={chatContainerRef}>
           {messages.length === 0 ? (
             <WelcomeMessage>
               <p>
@@ -173,7 +175,42 @@ const Chat = () => {
               {`Please wait ${cooldownRemaining}s before sending another message`}
             </RateLimitMessage>
           )}
-        </MessagesContainer>
+        </DesktopMessagesContainer>
+
+        {/* Mobile-specific messages container that shows messages from bottom up */}
+        <MobileMessagesContainer>
+          {cooldownRemaining > 0 && (
+            <RateLimitMessage>
+              {`Please wait ${cooldownRemaining}s before sending another message`}
+            </RateLimitMessage>
+          )}
+          {isLoading &&
+            (!messages.length ||
+              messages[messages.length - 1].role !== "assistant" ||
+              messages[messages.length - 1].content === "") && (
+              <TypingIndicator>{"thinking..."}</TypingIndicator>
+            )}
+          {messages.length === 0 ? (
+            <WelcomeMessage>
+              <p>
+                {
+                  "Ask me anything about Antoine, his projects, skills, or experiences."
+                }
+              </p>
+            </WelcomeMessage>
+          ) : (
+            reversedMessages.slice(0, 3).map((m) => (
+              <Message key={m.id}>
+                <MessageSender>
+                  {m.role === "user" ? "You" : "Antoine AI"}
+                </MessageSender>
+                <MessageContent
+                  dangerouslySetInnerHTML={renderMarkdown(m.content)}
+                />
+              </Message>
+            ))
+          )}
+        </MobileMessagesContainer>
 
         {showSuggestions && (
           <SuggestionsContainer>
@@ -260,7 +297,7 @@ const ChatContainer = styled.div<{ $isOpen: boolean }>`
   top: 0;
   right: 0;
   width: 350px;
-  height: 100vh;
+  height: 100%;
   background-color: #10100e;
   border-left: 1px solid #30302b;
   display: flex;
@@ -312,7 +349,8 @@ const ChatHeader = styled.div`
   }
 `;
 
-const MessagesContainer = styled.div`
+// Desktop messages container that scrolls naturally
+const DesktopMessagesContainer = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 1rem;
@@ -342,6 +380,25 @@ const MessagesContainer = styled.div`
     border: 1px solid #30302b;
     border-radius: 10px;
     height: 10px;
+  }
+
+  /* Hide on mobile */
+  @media (max-width: 1200px) {
+    display: none;
+  }
+`;
+
+const MobileMessagesContainer = styled.div`
+  display: none;
+  flex-direction: column-reverse;
+  padding: 1rem;
+  gap: 0.5rem;
+  margin-top: auto;
+
+  /* Only show on mobile */
+  @media (max-width: 1200px) {
+    display: flex;
+    flex: 1;
   }
 `;
 
