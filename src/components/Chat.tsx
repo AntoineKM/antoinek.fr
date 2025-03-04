@@ -12,9 +12,9 @@ const SUGGESTED_MESSAGES = [
 const Chat = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const [isRateLimited, setIsRateLimited] = useState(false);
   const [lastMessageTime, setLastMessageTime] = useState(0);
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [cooldownRemaining, setCooldownRemaining] = useState(0);
 
   const {
     messages,
@@ -50,21 +50,35 @@ const Chat = () => {
     }
   }, [isChatOpen]);
 
-  // Handle rate limiting
+  // Handle form submission - silently cancel if rate limited or AI is loading
   const handleRateLimitedSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const now = Date.now();
-    if (now - lastMessageTime < RATE_LIMIT_COOLDOWN) {
-      setIsRateLimited(true);
+    // Silently cancel submission if AI is still responding
+    if (isLoading) {
+      return;
+    }
 
-      // Reset rate limit after cooldown
-      setTimeout(
-        () => {
-          setIsRateLimited(false);
-        },
-        RATE_LIMIT_COOLDOWN - (now - lastMessageTime),
+    const now = Date.now();
+    const timeSinceLastMessage = now - lastMessageTime;
+
+    // Check if within rate limit cooldown period
+    if (timeSinceLastMessage < RATE_LIMIT_COOLDOWN) {
+      const remaining = Math.ceil(
+        (RATE_LIMIT_COOLDOWN - timeSinceLastMessage) / 1000,
       );
+      setCooldownRemaining(remaining);
+
+      // Start the countdown timer
+      const timer = setInterval(() => {
+        setCooldownRemaining((prev) => {
+          if (prev <= 1) {
+            clearInterval(timer);
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
 
       return;
     }
@@ -78,7 +92,7 @@ const Chat = () => {
   };
 
   const handleSuggestionClick = (text: string) => {
-    if (isLoading || isRateLimited) return;
+    if (isLoading) return;
 
     append({
       role: "user",
@@ -128,9 +142,9 @@ const Chat = () => {
               messages[messages.length - 1].content === "") && (
               <TypingIndicator>{"thinking..."}</TypingIndicator>
             )}
-          {isRateLimited && (
+          {cooldownRemaining > 0 && (
             <RateLimitMessage>
-              {"Please wait a moment before sending another message"}
+              {`Please wait ${cooldownRemaining}s before sending another message`}
             </RateLimitMessage>
           )}
         </MessagesContainer>
@@ -141,7 +155,7 @@ const Chat = () => {
               <SuggestionChip
                 key={index}
                 onClick={() => handleSuggestionClick(suggestion)}
-                disabled={isLoading || isRateLimited}
+                disabled={isLoading}
                 type={"button"}
               >
                 {suggestion}
@@ -159,12 +173,8 @@ const Chat = () => {
               placeholder={"Ask me anything..."}
               autoComplete={"off"}
               autoFocus
-              disabled={isLoading || isRateLimited}
             />
-            <SendButton
-              type={"submit"}
-              disabled={isLoading || isRateLimited || !input.trim()}
-            >
+            <SendButton type={"submit"} disabled={!input.trim()}>
               {"Send"}
             </SendButton>
           </ChatInputContainer>
