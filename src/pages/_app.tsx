@@ -6,7 +6,7 @@ import SuccessiveType from "@components/SuccessiveType";
 import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import React from "react";
-import styled from "styled-components";
+import styled, { StyleSheetManager } from "styled-components";
 import { useLocalStorage } from "usehooks-ts";
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -31,7 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, []);
 
   return (
-    <>
+    <StyleSheetManager enableVendorPrefixes>
       <GlobalStyle />
       <Head />
       <Wrapper>
@@ -79,7 +79,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           </ContentWrapper>
         </MainContent>
       </Wrapper>
-    </>
+    </StyleSheetManager>
   );
 };
 
