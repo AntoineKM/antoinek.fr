@@ -1,4 +1,5 @@
 import { useChat } from "@ai-sdk/react";
+import { marked } from "marked";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -50,11 +51,37 @@ const Chat = () => {
     }
   }, [isChatOpen]);
 
-  // Handle form submission - silently cancel if rate limited or AI is loading
+  useEffect(() => {
+    marked.setOptions({
+      breaks: true,
+      gfm: true,
+    });
+  }, []);
+
+  const renderMarkdown = (content: string) => {
+    try {
+      const parsed = marked.parse(content);
+
+      if (parsed instanceof Promise) {
+        return { __html: content };
+      }
+
+      // eslint-disable-next-line prettier/prettier
+      const html = (parsed as string).replace(/<a\s+(?:[^>]*?\s+)?href=([^>]*)>/gi, 
+        // eslint-disable-next-line quotes
+        '<a href=$1 target="_blank" rel="noopener noreferrer">',
+      );
+
+      return { __html: html };
+    } catch (error) {
+      console.error("Error parsing markdown:", error);
+      return { __html: content };
+    }
+  };
+
   const handleRateLimitedSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    // Silently cancel submission if AI is still responding
     if (isLoading) {
       return;
     }
@@ -62,14 +89,12 @@ const Chat = () => {
     const now = Date.now();
     const timeSinceLastMessage = now - lastMessageTime;
 
-    // Check if within rate limit cooldown period
     if (timeSinceLastMessage < RATE_LIMIT_COOLDOWN) {
       const remaining = Math.ceil(
         (RATE_LIMIT_COOLDOWN - timeSinceLastMessage) / 1000,
       );
       setCooldownRemaining(remaining);
 
-      // Start the countdown timer
       const timer = setInterval(() => {
         setCooldownRemaining((prev) => {
           if (prev <= 1) {
@@ -106,7 +131,6 @@ const Chat = () => {
 
   return (
     <>
-      {/* Chat toggle button for smaller screens - only shown when chat is closed */}
       {!isChatOpen && (
         <ChatToggleButton onClick={toggleChat}>{"Chat"}</ChatToggleButton>
       )}
@@ -132,7 +156,9 @@ const Chat = () => {
                 <MessageSender>
                   {m.role === "user" ? "You" : "Antoine AI"}
                 </MessageSender>
-                <MessageContent>{m.content}</MessageContent>
+                <MessageContent
+                  dangerouslySetInnerHTML={renderMarkdown(m.content)}
+                />
               </Message>
             ))
           )}
@@ -187,7 +213,6 @@ const Chat = () => {
   );
 };
 
-// Styled Components
 const ChatToggleButton = styled.button`
   display: none;
   position: fixed;
@@ -387,9 +412,106 @@ const MessageSender = styled.div`
 
 const MessageContent = styled.div`
   color: #bdbdb2;
-  white-space: pre-wrap;
   text-align: left;
   font-size: 0.9rem;
+
+  /* Markdown styles */
+  a {
+    color: #ffffe3;
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  p {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  code {
+    background-color: #1e1e1a;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.85em;
+  }
+
+  pre {
+    background-color: #1e1e1a;
+    padding: 0.5rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+
+    code {
+      background-color: transparent;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+
+  /* Markdown list styling */
+  ul,
+  ol {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  blockquote {
+    border-left: 3px solid #30302b;
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    color: #8e8e83;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.5rem 0;
+    color: #ffffe3;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #30302b;
+    margin: 0.5rem 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    th,
+    td {
+      border: 1px solid #30302b;
+      padding: 0.3rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1e1e1a;
+    }
+  }
 `;
 
 const TypingIndicator = styled.div`
