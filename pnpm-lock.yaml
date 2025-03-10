@@ -25,7 +25,7 @@ importers:
         version: 12.4.11(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jotai:
         specifier: ^2.0.0
-        version: 2.12.1(@types/react@18.3.18)(react@18.3.1)
+        version: 2.12.2(@types/react@18.3.18)(react@18.3.1)
       marked:
         specifier: ^15.0.7
         version: 15.0.7
@@ -5064,8 +5064,8 @@ packages:
       node-notifier:
         optional: true
 
-  jotai@2.12.1:
-    resolution: {integrity: sha512-VUW0nMPYIru5g89tdxwr9ftiVdc/nGV9jvHISN8Ucx+m1vI9dBeHemfqYzEuw5XSkmYjD/MEyApN9k6yrATsZQ==}
+  jotai@2.12.2:
+    resolution: {integrity: sha512-oN8715y7MkjXlSrpyjlR887TOuc/NLZMs9gvgtfWH/JP47ChwO0lR2ijSwBvPMYyXRAPT+liIAhuBavluKGgtA==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -14185,7 +14185,7 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  jotai@2.12.1(@types/react@18.3.18)(react@18.3.1):
+  jotai@2.12.2(@types/react@18.3.18)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.18
       react: 18.3.1
