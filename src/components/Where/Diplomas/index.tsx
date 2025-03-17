@@ -166,7 +166,7 @@ const Dot = styled.div<{ isHovered: boolean }>`
   background-color: ${({ isHovered }) => (isHovered ? "#ffffe3" : "#10100e")};
   transform: translate(-50%, -50%);
   transition: all 0.2s ease;
-  z-index: 1;
+  z-index: 0;
   top: 50%;
 `;
 

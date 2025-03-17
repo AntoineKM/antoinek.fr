@@ -200,13 +200,14 @@ const Container = styled.aside<{ openOnMobile: boolean }>`
   width: 15rem;
   border-right: 1px solid #30302b;
   height: 100vh;
+  z-index: 10;
 
   @media (max-width: 850px) {
     display: ${({ openOnMobile }) => (openOnMobile ? "block" : "none")};
     background-color: rgba(48, 48, 43, 0.8);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
-    z-index: 1;
+    z-index: 10;
     top: 65px;
     width: 100%;
     height: calc(100% - 65px);
