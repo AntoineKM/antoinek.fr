@@ -19,7 +19,7 @@ importers:
         version: 0.12.0(typescript@5.8.2)(zod@3.24.2)
       ai:
         specifier: ^4.1.46
-        version: 4.2.6(react@18.3.1)(zod@3.24.2)
+        version: 4.2.8(react@18.3.1)(zod@3.24.2)
       framer-motion:
         specifier: ^12.0.0
         version: 12.6.2(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -118,16 +118,6 @@ packages:
     resolution: {integrity: sha512-0M+qjp+clUD0R1E5eWQFhxEvWLNaOtGQRUaBn8CUABnSKredagq92hUS9VjOzGsTm37xLfpaxl97AVtbeOsHew==}
     engines: {node: '>=18'}
 
-  '@ai-sdk/react@1.2.2':
-    resolution: {integrity: sha512-rxyNTFjUd3IilVOJFuUJV5ytZBYAIyRi50kFS2gNmSEiG4NHMBBm31ddrxI/i86VpY8gzZVp1/igtljnWBihUA==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      react: ^18 || ^19 || ^19.0.0-rc
-      zod: ^3.23.8
-    peerDependenciesMeta:
-      zod:
-        optional: true
-
   '@ai-sdk/react@1.2.3':
     resolution: {integrity: sha512-EQ6nmmQBBAal1yg72GB/Q7QnmDXMfgYvCo9Gym2mESXUHTqwpXU0JFHtk5Kq3EEkk7CVMf1oBWlNFNvU5ckQBg==}
     engines: {node: '>=18'}
@@ -137,12 +127,6 @@ packages:
     peerDependenciesMeta:
       zod:
         optional: true
-
-  '@ai-sdk/ui-utils@1.2.1':
-    resolution: {integrity: sha512-BzvMbYm7LHBlbWuLlcG1jQh4eu14MGpz7L+wrGO1+F4oQ+O0fAjgUSNwPWGlZpKmg4NrcVq/QLmxiVJrx2R4Ew==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      zod: ^3.23.8
 
   '@ai-sdk/ui-utils@1.2.2':
     resolution: {integrity: sha512-6rCx2jSEPuiF6fytfMNscSOinHQZp52aFCHyPVpPPkcWnOur1jPWhol+0TFCUruDl7dCfcSIfTexQUq2ioLwaA==}
@@ -1531,11 +1515,14 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^6.0.10
 
-  '@emnapi/core@1.3.1':
-    resolution: {integrity: sha512-pVGjBIt1Y6gg3EJN8jTcfpP/+uuRksIo055oE/OBkDNcjZqVbfkWCksG1Jp4yZnj3iKWyWX8fdG/j6UDYPbFog==}
+  '@emnapi/core@1.4.0':
+    resolution: {integrity: sha512-H+N/FqT07NmLmt6OFFtDfwe8PNygprzBikrEMyQfgqSmT0vzE515Pz7R8izwB9q/zsH/MA64AKoul3sA6/CzVg==}
 
   '@emnapi/runtime@1.3.1':
     resolution: {integrity: sha512-kEBmG8KyqtxJZv+ygbEim+KCGtIq1fC22Ms3S4ziXmYKm8uyoLX0MHONVKwp+9opg390VaKRNt4a7A9NwmpNhw==}
+
+  '@emnapi/runtime@1.4.0':
+    resolution: {integrity: sha512-64WYIf4UYcdLnbKn/umDlNjQDSS8AgZrI/R9+x5ilkUVFxXcA1Ebl+gQLc/6mERA4407Xof0R7wEyEuj091CVw==}
 
   '@emnapi/wasi-threads@1.0.1':
     resolution: {integrity: sha512-iIBu7mwkq4UQGeMEM8bLwNK962nXdhodeScX4slfQnRhEMMzvYivHhutCIk8uojvmASXXPC2WNEjwxFWk72Oqw==}
@@ -2853,8 +2840,8 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
 
-  ai@4.2.6:
-    resolution: {integrity: sha512-vw0tGCUvnmOmzFm4rZI0o+sKx3Lcp7Fo5MrK3T+0ZVws/6+3CtB9ANmaC7DhJfdZFYm+wJuWMylsSEiJMjhJZQ==}
+  ai@4.2.8:
+    resolution: {integrity: sha512-0gwfPZAuuQ+uTfk/GssrfnNTYxliCFKojbSQoEhzpbpSVaPao9NoU3iuE8vwBjWuDKqILRGzYGFE4+vTak0Oxg==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18 || ^19 || ^19.0.0-rc
@@ -7872,16 +7859,6 @@ snapshots:
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.2.2(react@18.3.1)(zod@3.24.2)':
-    dependencies:
-      '@ai-sdk/provider-utils': 2.2.1(zod@3.24.2)
-      '@ai-sdk/ui-utils': 1.2.1(zod@3.24.2)
-      react: 18.3.1
-      swr: 2.3.3(react@18.3.1)
-      throttleit: 2.1.0
-    optionalDependencies:
-      zod: 3.24.2
-
   '@ai-sdk/react@1.2.3(react@18.3.1)(zod@3.24.2)':
     dependencies:
       '@ai-sdk/provider-utils': 2.2.1(zod@3.24.2)
@@ -7891,13 +7868,6 @@ snapshots:
       throttleit: 2.1.0
     optionalDependencies:
       zod: 3.24.2
-
-  '@ai-sdk/ui-utils@1.2.1(zod@3.24.2)':
-    dependencies:
-      '@ai-sdk/provider': 1.1.0
-      '@ai-sdk/provider-utils': 2.2.1(zod@3.24.2)
-      zod: 3.24.2
-      zod-to-json-schema: 3.24.5(zod@3.24.2)
 
   '@ai-sdk/ui-utils@1.2.2(zod@3.24.2)':
     dependencies:
@@ -9717,13 +9687,18 @@ snapshots:
     dependencies:
       postcss-selector-parser: 6.0.11
 
-  '@emnapi/core@1.3.1':
+  '@emnapi/core@1.4.0':
     dependencies:
       '@emnapi/wasi-threads': 1.0.1
       tslib: 2.8.1
     optional: true
 
   '@emnapi/runtime@1.3.1':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
+  '@emnapi/runtime@1.4.0':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -10146,8 +10121,8 @@ snapshots:
 
   '@napi-rs/wasm-runtime@0.2.7':
     dependencies:
-      '@emnapi/core': 1.3.1
-      '@emnapi/runtime': 1.3.1
+      '@emnapi/core': 1.4.0
+      '@emnapi/runtime': 1.4.0
       '@tybys/wasm-util': 0.9.0
     optional: true
 
@@ -11323,12 +11298,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@4.2.6(react@18.3.1)(zod@3.24.2):
+  ai@4.2.8(react@18.3.1)(zod@3.24.2):
     dependencies:
       '@ai-sdk/provider': 1.1.0
       '@ai-sdk/provider-utils': 2.2.1(zod@3.24.2)
-      '@ai-sdk/react': 1.2.2(react@18.3.1)(zod@3.24.2)
-      '@ai-sdk/ui-utils': 1.2.1(zod@3.24.2)
+      '@ai-sdk/react': 1.2.3(react@18.3.1)(zod@3.24.2)
+      '@ai-sdk/ui-utils': 1.2.2(zod@3.24.2)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
       zod: 3.24.2
