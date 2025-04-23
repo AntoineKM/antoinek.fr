@@ -5,6 +5,7 @@ import Nav from "@components/Nav";
 import SuccessiveType from "@components/SuccessiveType";
 import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
+import NextHead from "next/head";
 import React from "react";
 import styled, { StyleSheetManager } from "styled-components";
 import { useLocalStorage } from "usehooks-ts";
@@ -32,6 +33,12 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   return (
     <StyleSheetManager enableVendorPrefixes>
+      <NextHead>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+      </NextHead>
       <GlobalStyle />
       <Head />
       <Wrapper>
