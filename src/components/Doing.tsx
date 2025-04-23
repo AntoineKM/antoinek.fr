@@ -155,7 +155,7 @@ const Doing = (
   );
 };
 
-const Container = styled(motion(Link))`
+const Container = styled(motion.create(Link))`
   width: calc(100% + 2rem);
   margin-left: -2rem;
   background-color: transparent;
