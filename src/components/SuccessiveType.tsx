@@ -11,7 +11,7 @@ const Word = ({ word }: { word: string }) => {
     }, 65);
   }, []);
 
-  return <WordSC filled={filled}>{word}</WordSC>;
+  return <WordSC $filled={filled}>{word}</WordSC>;
 };
 
 interface Props {
@@ -75,8 +75,8 @@ const Container = styled.div`
   font-size: 20pt;
 `;
 
-const WordSC = styled.span<{ filled: boolean }>`
-  color: ${({ filled }) => (filled ? "#bdbdb2" : "#ffffe3")};
+const WordSC = styled.span<{ $filled: boolean }>`
+  color: ${({ $filled }) => ($filled ? "#bdbdb2" : "#ffffe3")};
   margin-right: 4pt;
   transition: color 2s ease;
   display: inline-block;

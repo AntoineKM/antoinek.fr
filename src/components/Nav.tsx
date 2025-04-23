@@ -89,7 +89,7 @@ const Nav = () => {
           <MenuIcon onClick={toggleMobileMenu} />
         )}
       </MobileHeader>
-      <Container openOnMobile={openOnMobile}>
+      <Container $openOnMobile={openOnMobile}>
         {!openOnMobile ? (
           <PageIndicator
             whileHover={{ width: 3 }}
@@ -143,19 +143,19 @@ const Nav = () => {
             </Location>
           </Row>
           <div ref={dragConstraintsRef}>
-            <Page active={pathname === "/"} href={"/"}>
+            <Page $active={pathname === "/"} href={"/"}>
               {"what I do"}
             </Page>
-            <Page active={pathname === "/where"} href={"/where"}>
+            <Page $active={pathname === "/where"} href={"/where"}>
               {"where I've done it"}
             </Page>
-            <Page active={pathname === "/how"} href={"/how"}>
+            <Page $active={pathname === "/how"} href={"/how"}>
               {"how I do it"}
             </Page>
-            <Page active={pathname.startsWith("/videos")} href={"/videos"}>
+            <Page $active={pathname.startsWith("/videos")} href={"/videos"}>
               {"videos"}
             </Page>
-            <Page active={pathname === "/etc"} href={"/etc"}>
+            <Page $active={pathname === "/etc"} href={"/etc"}>
               {"more + contact"}
             </Page>
           </div>
@@ -189,7 +189,7 @@ const Nav = () => {
   );
 };
 
-const Container = styled.aside<{ openOnMobile: boolean }>`
+const Container = styled.aside<{ $openOnMobile: boolean }>`
   display: inline-block;
   box-sizing: border-box;
   flex-direction: column;
@@ -203,7 +203,7 @@ const Container = styled.aside<{ openOnMobile: boolean }>`
   z-index: 10;
 
   @media (max-width: 850px) {
-    display: ${({ openOnMobile }) => (openOnMobile ? "block" : "none")};
+    display: ${({ $openOnMobile }) => ($openOnMobile ? "block" : "none")};
     background-color: rgba(48, 48, 43, 0.8);
     backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px);
@@ -293,8 +293,8 @@ const Location = styled(Link)`
   }
 `;
 
-const Page = styled(Link)<{ active: boolean }>`
-  color: ${({ active }) => (active ? "#ffffe3" : "#bdbdb2")};
+const Page = styled(Link)<{ $active: boolean }>`
+  color: ${({ $active }) => ($active ? "#ffffe3" : "#bdbdb2")};
   padding: 10px 0px;
   display: flex;
 
