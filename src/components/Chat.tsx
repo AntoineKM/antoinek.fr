@@ -13,9 +13,12 @@ const SUGGESTED_MESSAGES = [
 const Chat = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionsContainerRef = useRef<HTMLDivElement>(null);
   const [lastMessageTime, setLastMessageTime] = useState(0);
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [cooldownRemaining, setCooldownRemaining] = useState(0);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
 
   const {
     messages,
@@ -27,6 +30,31 @@ const Chat = () => {
   } = useChat();
 
   const RATE_LIMIT_COOLDOWN = 3000;
+
+  // Check scroll position of suggestions container
+  const checkScrollPosition = () => {
+    if (!suggestionsContainerRef.current) return;
+    
+    const { scrollLeft, scrollWidth, clientWidth } = suggestionsContainerRef.current;
+    
+    // Show left arrow if scrolled right
+    setShowLeftArrow(scrollLeft > 0);
+    
+    // Show right arrow if there's more content to scroll to
+    setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10); // Small buffer
+  };
+
+  // Scroll suggestion container left
+  const scrollSuggestionsLeft = () => {
+    if (!suggestionsContainerRef.current) return;
+    suggestionsContainerRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  };
+
+  // Scroll suggestion container right
+  const scrollSuggestionsRight = () => {
+    if (!suggestionsContainerRef.current) return;
+    suggestionsContainerRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
 
   useEffect(() => {
     if (chatContainerRef.current) {
@@ -56,6 +84,35 @@ const Chat = () => {
       breaks: true,
       gfm: true,
     });
+  }, []);
+
+  // Setup scroll event listeners for suggestions
+  useEffect(() => {
+    const container = suggestionsContainerRef.current;
+    if (container) {
+      // Initial check
+      checkScrollPosition();
+      
+      // Add event listener
+      container.addEventListener("scroll", checkScrollPosition);
+      
+      // Clean up
+      return () => {
+        container.removeEventListener("scroll", checkScrollPosition);
+      };
+    }
+  }, []);
+
+  // Check scroll on window resize and when component mounts
+  useEffect(() => {
+    // Initial check after component mounts and content is rendered
+    setTimeout(checkScrollPosition, 100);
+    
+    window.addEventListener("resize", checkScrollPosition);
+    
+    return () => {
+      window.removeEventListener("resize", checkScrollPosition);
+    };
   }, []);
 
   const renderMarkdown = (content: string) => {
@@ -213,18 +270,52 @@ const Chat = () => {
         </MobileMessagesContainer>
 
         {showSuggestions && (
-          <SuggestionsContainer>
-            {SUGGESTED_MESSAGES.map((suggestion, index) => (
-              <SuggestionChip
-                key={index}
-                onClick={() => handleSuggestionClick(suggestion)}
-                disabled={isLoading}
-                type={"button"}
-              >
-                {suggestion}
-              </SuggestionChip>
-            ))}
-          </SuggestionsContainer>
+          <SuggestionsWrapper>
+            {showLeftArrow && (
+              <ScrollArrow onClick={scrollSuggestionsLeft} position="left">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </ScrollArrow>
+            )}
+            
+            <SuggestionsContainer ref={suggestionsContainerRef}>
+              {SUGGESTED_MESSAGES.map((suggestion, index) => (
+                <SuggestionChip
+                  key={index}
+                  onClick={() => handleSuggestionClick(suggestion)}
+                  disabled={isLoading}
+                  type={"button"}
+                >
+                  {suggestion}
+                </SuggestionChip>
+              ))}
+            </SuggestionsContainer>
+            
+            {showRightArrow && (
+              <ScrollArrow onClick={scrollSuggestionsRight} position="right">
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+              </ScrollArrow>
+            )}
+          </SuggestionsWrapper>
         )}
 
         <form onSubmit={handleRateLimitedSubmit}>
@@ -402,6 +493,13 @@ const MobileMessagesContainer = styled.div`
   }
 `;
 
+// New wrapper for suggestions with scroll arrows
+const SuggestionsWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+// Modified suggestions container
 const SuggestionsContainer = styled.div`
   display: flex;
   padding: 0.75rem;
@@ -411,6 +509,7 @@ const SuggestionsContainer = styled.div`
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
   &::-webkit-scrollbar {
@@ -428,6 +527,39 @@ const SuggestionsContainer = styled.div`
     &:last-child {
       margin-right: 0;
     }
+  }
+`;
+
+// Amélioré avec SVG pour un meilleur centrage
+const ScrollArrow = styled.button<{ position: 'left' | 'right' }>`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  ${({ position }) => position === 'left' ? 'left: 5px;' : 'right: 5px;'}
+  z-index: 5;
+  background-color: #1e1e1a;
+  color: #bdbdb2;
+  border: 1px solid #30302b;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0; /* Supprime tout padding par défaut */
+
+  &:hover {
+    background-color: #30302b;
+    color: #ffffe3;
+  }
+  
+  /* SVG à l'intérieur du bouton */
+  svg {
+    width: 12px;
+    height: 12px;
+    display: block; /* Élimine l'espace supplémentaire */
   }
 `;
 
