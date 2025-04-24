@@ -22,7 +22,6 @@ import {
 const LOCATION_LOADER_ID = "location-loader";
 
 const Nav = () => {
-  const router = useRouter();
   const { pathname } = useRouter();
 
   const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
