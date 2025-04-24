@@ -1,8 +1,8 @@
 import Link from "@components/Link";
-import { motion, PanInfo } from "framer-motion";
+import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { useRouter } from "next/router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
 import { doingAtom } from "src/states/lanyard";
 import styled from "styled-components";
@@ -18,67 +18,27 @@ import {
   XIcon,
 } from "./Icons";
 
-const pathnameOffsets: { [key: string]: number } = {
-  "/": 0,
-  "/where": 42,
-  "/how": 84,
-  "/videos": 126,
-  "/etc": 168,
-};
-
 const Nav = () => {
   const router = useRouter();
   const { pathname } = useRouter();
 
   const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
-
-  const [dragYOffset, setDragYOffset] = useState(0);
   const [openOnMobile, setOpenOnMobile] = useState(true);
   const [presenceActive, setPresenceActive] = useState(false);
 
   const [doing] = useAtom(doingAtom);
 
-  const dragConstraintsRef = useRef(null);
-
+  // Reset mobile menu when changing pages
   useEffect(() => {
     if (openOnMobile) setOpenOnMobile(false);
     playSwitchPageSound();
-  }, [pathname]);
-
-  const pageIndicatorOffset = useMemo(
-    () => (pathname ? pathnameOffsets[pathname] ?? -180 : 0),
-    [pathname],
-  );
-
-  const pageIndicatorOffsetWithDecoration = useMemo(
-    () => 71 + 36 + pageIndicatorOffset - dragYOffset,
-    [pageIndicatorOffset, dragYOffset],
-  );
-
-  const onPageIndicatorDragEnd = useCallback(
-    (_event, info: PanInfo) => {
-      const goal = pageIndicatorOffset + info.offset.y;
-
-      const closest = Object.entries(pathnameOffsets).reduce(
-        ([prevPath, prevOffset], [curPath, curOffset]) => {
-          return Math.abs(curOffset - goal) < Math.abs(prevOffset - goal)
-            ? [curPath, curOffset]
-            : [prevPath, prevOffset];
-        },
-      );
-
-      if (closest[0] === pathname) return;
-
-      setDragYOffset(dragYOffset + info.offset.y + info.velocity.y);
-      router.push(closest[0]);
-    },
-    [router, pageIndicatorOffset, dragYOffset, pathname],
-  );
+  }, [pathname, playSwitchPageSound, openOnMobile]);
 
   const toggleMobileMenu = useCallback(() => {
     setOpenOnMobile(!openOnMobile);
   }, [openOnMobile]);
 
+  // Instead of dynamic positioning, we'll use CSS-based indicators
   return (
     <>
       <MobileHeader>
@@ -90,22 +50,10 @@ const Nav = () => {
         )}
       </MobileHeader>
       <Container $openOnMobile={openOnMobile}>
-        {!openOnMobile ? (
-          <PageIndicator
-            whileHover={{ width: 3 }}
-            drag={"y"}
-            onDragEnd={onPageIndicatorDragEnd}
-            dragConstraints={dragConstraintsRef}
-            animate={{ top: pageIndicatorOffsetWithDecoration }}
-          />
-        ) : null}
         <Items>
           {!openOnMobile ? (
             <Row>
               <Title>{"Antoine Kingue"}</Title>
-              {/* <IconButton>
-              <ChevronDown />
-            </IconButton> */}
             </Row>
           ) : null}{" "}
           <Row>
@@ -124,7 +72,6 @@ const Nav = () => {
               ) : (
                 <ContentLoader
                   speed={2}
-                  // width={"auto"}
                   height={19}
                   viewBox={"0 0 160 25"}
                   backgroundColor={"#121212"}
@@ -142,23 +89,23 @@ const Nav = () => {
               )}
             </Location>
           </Row>
-          <div ref={dragConstraintsRef}>
-            <Page $active={pathname === "/"} href={"/"}>
-              {"what I do"}
-            </Page>
-            <Page $active={pathname === "/where"} href={"/where"}>
-              {"where I've done it"}
-            </Page>
-            <Page $active={pathname === "/how"} href={"/how"}>
-              {"how I do it"}
-            </Page>
-            <Page $active={pathname.startsWith("/videos")} href={"/videos"}>
-              {"videos"}
-            </Page>
-            <Page $active={pathname === "/etc"} href={"/etc"}>
-              {"more + contact"}
-            </Page>
-          </div>
+          <NavMenu>
+            <NavItem $active={pathname === "/"}>
+              <Page href={"/"}>{"what I do"}</Page>
+            </NavItem>
+            <NavItem $active={pathname === "/where"}>
+              <Page href={"/where"}>{"where I've done it"}</Page>
+            </NavItem>
+            <NavItem $active={pathname === "/how"}>
+              <Page href={"/how"}>{"how I do it"}</Page>
+            </NavItem>
+            <NavItem $active={pathname.startsWith("/videos")}>
+              <Page href={"/videos"}>{"videos"}</Page>
+            </NavItem>
+            <NavItem $active={pathname === "/etc"}>
+              <Page href={"/etc"}>{"more + contact"}</Page>
+            </NavItem>
+          </NavMenu>
           <Icons>
             <Link
               aria-label={"LinkedIn - @antoinekm"}
@@ -242,19 +189,36 @@ const MobileHeader = styled.div`
   }
 `;
 
-const PageIndicator = styled(motion.div)`
-  width: 1px;
-  height: 42px;
-  background-color: #ffffe3;
-  position: absolute;
-  right: -1px;
-  cursor: pointer;
-`;
-
 const Items = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+`;
+
+const NavMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`;
+
+const NavItem = styled.div<{ $active: boolean }>`
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    right: -2rem; /* Align with the right edge of the container */
+    top: 50%;
+    transform: translateY(-50%);
+    width: ${({ $active }) => ($active ? "1px" : "0")};
+    height: 42px;
+    background-color: #ffffe3;
+    transition: width 0.2s ease;
+  }
+  
+  &:hover::after {
+    width: ${({ $active }) => ($active ? "3px" : "0")};
+  }
 `;
 
 const Row = styled.div`
@@ -293,13 +257,12 @@ const Location = styled(Link)`
   }
 `;
 
-const Page = styled(Link)<{ $active: boolean }>`
-  color: ${({ $active }) => ($active ? "#ffffe3" : "#bdbdb2")};
+const Page = styled(Link)`
   padding: 10px 0px;
   display: flex;
+  color: inherit;
 
   &:hover {
-    /* background-color: #ffffe3; */
     color: #ffffe3;
   }
 `;
