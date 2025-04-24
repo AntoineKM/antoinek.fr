@@ -18,6 +18,9 @@ import {
   XIcon,
 } from "./Icons";
 
+// Fixed unique ID for ContentLoader to avoid hydration mismatch
+const LOCATION_LOADER_ID = "location-loader";
+
 const Nav = () => {
   const router = useRouter();
   const { pathname } = useRouter();
@@ -76,6 +79,7 @@ const Nav = () => {
                   viewBox={"0 0 160 25"}
                   backgroundColor={"#121212"}
                   foregroundColor={"#2e2e2e"}
+                  uniqueKey={LOCATION_LOADER_ID}
                 >
                   <rect
                     x={"0"}
