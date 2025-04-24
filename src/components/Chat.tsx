@@ -184,7 +184,7 @@ const Chat = () => {
     setLastMessageTime(Date.now());
   };
 
-  const showSuggestions = messages.length === 0;
+  const showSuggestions = messages.length < 3;
 
   const reversedMessages = [...messages].reverse();
 
