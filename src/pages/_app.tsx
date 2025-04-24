@@ -11,10 +11,12 @@ import styled, { StyleSheetManager } from "styled-components";
 import { useLocalStorage } from "usehooks-ts";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const [introEnded, setIntroEnded] = useLocalStorage(
+  const [introCompleted, setIntroCompleted] = useLocalStorage(
     "v1:intro-completed",
-    false,
+    false
   );
+  
+  const [introEnded, setIntroEnded] = React.useState(introCompleted);
   const introEndedInitially = React.useRef(introEnded);
   const [isMounted, setIsMounted] = React.useState(false);
 
@@ -34,7 +36,8 @@ const App = ({ Component, pageProps }: AppProps) => {
 
   const onIntroEnd = React.useCallback(() => {
     setIntroEnded(true);
-  }, []);
+    setIntroCompleted(true);
+  }, [setIntroCompleted]);
 
   const mainContentInitialY = isMounted ? (introEnded ? 0 : window.innerHeight) : 0;
   const successiveTypeInitialY = 0;
