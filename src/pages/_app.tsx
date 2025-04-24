@@ -16,6 +16,11 @@ const App = ({ Component, pageProps }: AppProps) => {
     false,
   );
   const introEndedInitially = React.useRef(introEnded);
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   React.useEffect(() => {
     const onKeyDown = (e: React.KeyboardEvent<HTMLDocument> & any) => {
@@ -30,6 +35,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   const onIntroEnd = React.useCallback(() => {
     setIntroEnded(true);
   }, []);
+
+  const mainContentInitialY = isMounted ? (introEnded ? 0 : window.innerHeight) : 0;
+  const successiveTypeInitialY = 0;
+  const successiveTypeAnimateY = isMounted && introEnded ? -window.innerHeight : 0;
 
   return (
     <StyleSheetManager enableVendorPrefixes>
@@ -46,9 +55,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           transition={{ duration: introEndedInitially.current ? 0 : 0.85 }}
           initial={{
             opacity: 0,
+            y: successiveTypeInitialY,
           }}
           animate={{
-            y: introEnded && process.browser ? -window.innerHeight : 0,
+            y: successiveTypeAnimateY,
             opacity: 1,
           }}
         >
@@ -67,24 +77,24 @@ const App = ({ Component, pageProps }: AppProps) => {
           />
         </SuccessiveTypeContainer>
 
-        <MainContent
-          transition={{ duration: 0.85 }}
-          initial={false}
-          animate={{
-            y: process.browser
-              ? !introEnded
-                ? window.innerHeight
-                : 0
-              : "100%",
-          }}
-        >
-          <Nav />
-          <ContentWrapper>
-            <AnimatePresence>
-              <Component {...pageProps} />
-            </AnimatePresence>
-          </ContentWrapper>
-        </MainContent>
+        {isMounted && (
+          <MainContent
+            transition={{ duration: 0.85 }}
+            initial={{
+              y: mainContentInitialY,
+            }}
+            animate={{
+              y: introEnded ? 0 : window.innerHeight,
+            }}
+          >
+            <Nav />
+            <ContentWrapper>
+              <AnimatePresence>
+                <Component {...pageProps} />
+              </AnimatePresence>
+            </ContentWrapper>
+          </MainContent>
+        )}
       </Wrapper>
     </StyleSheetManager>
   );
