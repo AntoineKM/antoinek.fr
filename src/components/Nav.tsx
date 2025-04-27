@@ -94,7 +94,10 @@ const Nav = () => {
           </Row>
           <NavMenu>
             <NavItem $active={pathname === "/"}>
-              <Page href={"/"}>{"what I do"}</Page>
+              <Page href={"/"}>{"chat"}</Page>
+            </NavItem>
+            <NavItem $active={pathname === "/what"}>
+              <Page href={"/what"}>{"what I do"}</Page>
             </NavItem>
             <NavItem $active={pathname === "/where"}>
               <Page href={"/where"}>{"where I've done it"}</Page>

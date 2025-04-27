@@ -1,3 +1,3 @@
-import What from "@screens/What";
+import Chat from "@screens/Chat";
 
-export default What;
+export default Chat;

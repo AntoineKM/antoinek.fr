@@ -165,6 +165,11 @@ const ContentWrapper = styled.div`
   font-size: 1rem;
   transition: all 0.2s;
 
+  & [data-no-padding="true"] {
+    margin: -2rem;
+    width: calc(100% + 4rem);
+  }
+
   a {
     &:hover {
       text-decoration: underline;
@@ -176,6 +181,12 @@ const ContentWrapper = styled.div`
     margin-right: 0px;
     width: 100%;
     padding-top: 65px;
+    
+    & [data-no-padding="true"] {
+      margin: -2rem;
+      margin-top: -65px;
+      width: calc(100% + 4rem);
+    }
   }
 `;
 

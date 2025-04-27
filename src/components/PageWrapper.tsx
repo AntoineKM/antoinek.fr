@@ -21,11 +21,13 @@ const pageTransition = {
 
 export type PageWrapperProps = {
   forceReadableWidth?: boolean;
+  noPadding?: boolean;
 } & React.PropsWithChildren;
 
 const PageWrapper: React.FC<PageWrapperProps> = ({
   children,
   forceReadableWidth,
+  noPadding,
 }: PageWrapperProps) => {
   return (
     <motion.div
@@ -34,10 +36,11 @@ const PageWrapper: React.FC<PageWrapperProps> = ({
       exit={"out"}
       variants={pageVariants}
       transition={pageTransition}
+      data-no-padding={noPadding ? "true" : undefined}
       style={{
         maxWidth: forceReadableWidth ? "65ch" : undefined,
         minWidth: 0,
-        paddingBottom: "15px",
+        paddingBottom: noPadding ? "0" : "2rem",
       }}
     >
       {children}
