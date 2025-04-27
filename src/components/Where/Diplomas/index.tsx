@@ -6,6 +6,18 @@ const Diplomas = () => {
 
   const diplomas = [
     {
+      year: "2025",
+      title: "AWS Educate Getting Started with Storage",
+      subtitle: "Amazon Web Services Training and Certification",
+      icon: "☁️",
+    },
+    {
+      year: "2025",
+      title: "AWS Educate Getting Started with Compute",
+      subtitle: "Amazon Web Services Training and Certification",
+      icon: "☁️",
+    },
+    {
       year: "2023",
       title: "onCrawl certification",
       location: null,
