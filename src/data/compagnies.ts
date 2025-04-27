@@ -23,7 +23,7 @@ const compagnies: Compagny[] = [
     type: "Travel compagny",
     description: "I designed Expats Facilities to help people move abroad.",
     role: "CTO & Lead developer",
-    url: "https://expatfacilities.co",
+    url: "https://www.linkedin.com/company/expatfacilities",
     image: "/static/images/expatsfacilities-icon.jpeg",
   },
   {
@@ -32,7 +32,7 @@ const compagnies: Compagny[] = [
     description:
       "I had the honor of being able to create a social hub that educates people about ecology, here I was able to gain experience both back and front.",
     role: "Developer",
-    url: "https://challengeforearth.com",
+    url: "https://www.linkedin.com/company/challengeforearth",
     image: "/static/images/challengeforearth-icon.png",
   },
   {
