@@ -3,6 +3,7 @@ import { useAtom } from "jotai";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 import ContentLoader from "react-content-loader";
+import { NAV_ITEMS } from "src/constants/nav-items";
 import { doingAtom } from "src/states/lanyard";
 import styled from "styled-components";
 import useSound from "use-sound";
@@ -16,7 +17,6 @@ import {
   TwitterLogo,
   XIcon,
 } from "./Icons";
-import { NAV_ITEMS } from "src/constants/nav-items";
 
 // Fixed unique ID for ContentLoader to avoid hydration mismatch
 const LOCATION_LOADER_ID = "location-loader";
@@ -95,9 +95,7 @@ const Nav = () => {
           <NavMenu>
             {NAV_ITEMS.map((item) => (
               <NavItem key={item.name} $active={pathname === item.href}>
-                <Page href={item.href}>
-                  {item.name}
-                </Page>
+                <Page href={item.href}>{item.name}</Page>
               </NavItem>
             ))}
           </NavMenu>
