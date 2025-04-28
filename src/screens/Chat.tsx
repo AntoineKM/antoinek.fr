@@ -308,6 +308,8 @@ const Container = styled.div`
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  padding: 0 1rem;
+  box-sizing: border-box;
   background-color: #10100e;
 `;
 
