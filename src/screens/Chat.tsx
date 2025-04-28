@@ -342,7 +342,7 @@ const MessagesContainer = styled.div<{ hasMessages: boolean }>`
   flex-direction: column;
   gap: 1rem;
   padding-bottom: ${({ hasMessages }) => (hasMessages ? "150px" : "1rem")};
-  
+
   @media (max-width: 850px) {
     padding-top: calc(65px + 10px);
   }
