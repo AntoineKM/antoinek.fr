@@ -230,7 +230,7 @@ export default function Home() {
                   onKeyDown={handleKeyDown}
                   placeholder={"Ask me anything..."}
                   autoComplete={"off"}
-                  disabled={isLoading}
+                  isLoading={isLoading}
                   rows={messages.length === 0 ? 2 : 1}
                 />
                 <ChatToolbar>
@@ -633,7 +633,7 @@ const ChatInputContainer = styled.div`
   box-sizing: border-box;
 `;
 
-const ChatInput = styled.textarea`
+const ChatInput = styled.textarea<{ isLoading: boolean }>`
   flex: 1;
   padding: 0;
   background-color: transparent;
@@ -646,14 +646,10 @@ const ChatInput = styled.textarea`
   overflow: hidden;
   min-height: auto;
   line-height: 1.5;
+  ${({ isLoading }) => (isLoading ? "opacity: 0.7;" : "")}
 
   &::placeholder {
     color: #505050;
-  }
-
-  &:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
   }
 `;
 
