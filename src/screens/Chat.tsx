@@ -86,12 +86,12 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+    if (messages.length > 0 && messagesEndRef.current) {
+      const timer = setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
 
-    if (textareaRef.current && messages.length === 0) {
-      textareaRef.current.focus();
+      return () => clearTimeout(timer);
     }
   }, [messages]);
 
@@ -341,6 +341,7 @@ const MessagesContainer = styled.div<{ hasMessages: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding-top: calc(2rem + 10px);
   padding-bottom: ${({ hasMessages }) => (hasMessages ? "150px" : "1rem")};
 
   @media (max-width: 850px) {
