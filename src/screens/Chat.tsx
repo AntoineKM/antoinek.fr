@@ -308,6 +308,7 @@ const Container = styled.div`
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
   padding: 0 16px;
   box-sizing: border-box;
   background-color: #10100e;
@@ -321,6 +322,11 @@ const ChatContainer = styled.div`
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
+
+  @media (min-width: 851px) {
+    margin: 0 auto;
+  }
 `;
 
 const WelcomeHeader = styled.div`
@@ -473,7 +479,6 @@ const TypingIndicator = styled.div`
   font-size: 0.8rem;
 `;
 
-// New wrapper for suggestions with scroll arrows and gradient effects
 const SuggestionsWrapper = styled.div<{
   showLeftArrow: boolean;
   showRightArrow: boolean;
@@ -481,8 +486,8 @@ const SuggestionsWrapper = styled.div<{
   position: relative;
   width: 100%;
   margin-top: 1rem;
+  box-sizing: border-box;
 
-  /* Gradient à gauche - visible uniquement quand showLeftArrow est true */
   &::before {
     content: "";
     position: absolute;
@@ -497,7 +502,6 @@ const SuggestionsWrapper = styled.div<{
     transition: opacity 0.2s ease;
   }
 
-  /* Gradient à droite - visible uniquement quand showRightArrow est true */
   &::after {
     content: "";
     position: absolute;
@@ -520,16 +524,13 @@ const SuggestionsContainer = styled.div`
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 
-  /* Hide scrollbar for a cleaner look since we have arrow buttons */
   &::-webkit-scrollbar {
     display: none;
   }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
 
-  /* Espace entre les suggestions */
   & > button {
     margin-right: 0.5rem;
     flex-shrink: 0;
@@ -545,7 +546,7 @@ const ScrollArrow = styled.button<{ position: "left" | "right" }>`
   top: 50%;
   transform: translateY(-50%);
   ${({ position }) => (position === "left" ? "left: 5px;" : "right: 5px;")}
-  z-index: 5; /* Au-dessus des gradients */
+  z-index: 5;
   background-color: #1e1e1a;
   color: #bdbdb2;
   border: 1px solid #30302b;
@@ -595,10 +596,29 @@ const ChatInputWrapper = styled.div<{ isEmpty?: boolean }>`
   bottom: ${({ isEmpty }) => (isEmpty ? "50%" : "0")};
   transform: translateY(${({ isEmpty }) => (isEmpty ? "50%" : "0")});
   transition: all 0.2s ease;
-  width: 100%;
-  max-width: 800px;
   background-color: #10100e;
   padding-bottom: ${({ isEmpty }) => (isEmpty ? "0" : "8px")};
+  box-sizing: border-box;
+
+  @media (min-width: 851px) {
+    width: calc(100% - 15rem - 32px);
+    max-width: 800px;
+    right: auto;
+
+    @media (max-width: 1250px) {
+      left: calc(15rem + 16px);
+      right: 16px;
+      max-width: calc(100% - 15rem - 32px);
+    }
+  }
+
+  @media (max-width: 850px) {
+    width: calc(100% - 32px);
+    max-width: 800px;
+    left: 16px;
+    right: 16px;
+    margin: 0 auto;
+  }
 `;
 
 const ChatInputContainer = styled.div`
@@ -623,7 +643,7 @@ const ChatInput = styled.textarea`
   outline: none;
   border: none;
   resize: none;
-  overflow: hidden; /* Prevents scrollbar from appearing */
+  overflow: hidden;
   min-height: auto;
   line-height: 1.5;
 
