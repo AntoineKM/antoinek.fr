@@ -7,7 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import NextHead from "next/head";
 import React from "react";
-import { i } from "react-router/dist/development/fog-of-war-D4x86-Xc";
 import styled, { StyleSheetManager } from "styled-components";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -47,14 +46,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     setIntroCompleted(true);
   }, [setIntroCompleted]);
 
-  const mainContentInitialY = isMounted
-    ? introEnded
-      ? 0
-      : windowHeight
-    : 0;
+  const mainContentInitialY = isMounted ? (introEnded ? 0 : windowHeight) : 0;
   const successiveTypeInitialY = 0;
-  const successiveTypeAnimateY =
-    isMounted && introEnded ? -windowHeight : 0;
+  const successiveTypeAnimateY = isMounted && introEnded ? -windowHeight : 0;
 
   return (
     <StyleSheetManager enableVendorPrefixes>
@@ -70,7 +64,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Head />
       <Wrapper $isMounted={isMounted}>
         <SuccessiveTypeContainer
-          transition={{ duration: introEndedInitially.current || !introCompleted ? 0 : 0.85 }}
+          transition={{
+            duration: introEndedInitially.current || !introCompleted ? 0 : 0.85,
+          }}
           initial={{
             opacity: 0,
             y: successiveTypeInitialY,
