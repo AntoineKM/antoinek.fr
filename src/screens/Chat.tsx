@@ -195,7 +195,7 @@ export default function Home() {
         </Head>
 
         <ChatContainer>
-          <MessagesContainer>
+          <MessagesContainer hasMessages={messages.length > 0}>
             {messages.map((m) => (
               <Message key={m.id} $role={m.role}>
                 <MessageSender>
@@ -335,13 +335,13 @@ const WelcomeHeader = styled.div`
   }
 `;
 
-const MessagesContainer = styled.div`
+const MessagesContainer = styled.div<{ hasMessages: boolean }>`
   flex: 1;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: ${({ hasMessages }) => (hasMessages ? "150px" : "1rem")};
 `;
 
 const Message = styled.div<{ $role: string }>`
@@ -586,11 +586,14 @@ const SuggestionChip = styled.button`
 const ChatInputWrapper = styled.div<{ isEmpty?: boolean }>`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: ${({ isEmpty }) => (isEmpty ? "50%" : "8px")};
+  position: fixed;
+  bottom: ${({ isEmpty }) => (isEmpty ? "50%" : "0")};
   transform: translateY(${({ isEmpty }) => (isEmpty ? "50%" : "0")});
   transition: all 0.2s ease;
   width: 100%;
+  max-width: 800px;
+  background-color: #10100e;
+  padding-bottom: ${({ isEmpty }) => (isEmpty ? "0" : "8px")};
 `;
 
 const ChatInputContainer = styled.div`
