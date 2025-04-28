@@ -1,5 +1,9 @@
 import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
+import { NAV_ITEMS } from "src/constants/nav-items";
+import compagnies from "src/data/compagnies";
+import { diplomas } from "src/data/diplomas";
+import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";
 
 // Allow streaming responses up to 30 seconds
@@ -123,7 +127,16 @@ When responding to queries:
 - Personalize responses as if reflecting Antoine's professional persona.
 - For topics not related to Antoine or his work, politely redirect the conversation to his professional expertise.
 - Emphasize his technical skills, entrepreneurial ventures, and creative projects.
-- Highlight his dual role as a technical consultant and tool developer.`,
+- Highlight his dual role as a technical consultant and tool developer.
+
+DATA SOURCES:
+- You can use the following data to answer questions:
+  - Compagnies: ${JSON.stringify(compagnies)}
+  - Technologies: ${JSON.stringify(technologies)}
+  - Diplomas: ${JSON.stringify(diplomas)}
+  - Current website: https://antoinek.fr
+  - Website sitemap: ${JSON.stringify(NAV_ITEMS)}
+`,
   });
 
   return result.toDataStreamResponse();

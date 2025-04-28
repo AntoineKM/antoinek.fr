@@ -16,6 +16,7 @@ import {
   TwitterLogo,
   XIcon,
 } from "./Icons";
+import { NAV_ITEMS } from "src/constants/nav-items";
 
 // Fixed unique ID for ContentLoader to avoid hydration mismatch
 const LOCATION_LOADER_ID = "location-loader";
@@ -92,24 +93,13 @@ const Nav = () => {
             </Location>
           </Row>
           <NavMenu>
-            <NavItem $active={pathname === "/"}>
-              <Page href={"/"}>{"chat"}</Page>
-            </NavItem>
-            <NavItem $active={pathname === "/what"}>
-              <Page href={"/what"}>{"what I do"}</Page>
-            </NavItem>
-            <NavItem $active={pathname === "/where"}>
-              <Page href={"/where"}>{"where I've done it"}</Page>
-            </NavItem>
-            <NavItem $active={pathname === "/how"}>
-              <Page href={"/how"}>{"how I do it"}</Page>
-            </NavItem>
-            <NavItem $active={pathname.startsWith("/videos")}>
-              <Page href={"/videos"}>{"videos"}</Page>
-            </NavItem>
-            <NavItem $active={pathname === "/etc"}>
-              <Page href={"/etc"}>{"more + contact"}</Page>
-            </NavItem>
+            {NAV_ITEMS.map((item) => (
+              <NavItem key={item.name} $active={pathname === item.href}>
+                <Page href={item.href}>
+                  {item.name}
+                </Page>
+              </NavItem>
+            ))}
           </NavMenu>
           <Icons>
             <Link
