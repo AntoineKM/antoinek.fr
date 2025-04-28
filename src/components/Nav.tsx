@@ -1,5 +1,4 @@
 import Link from "@components/Link";
-import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
@@ -209,7 +208,7 @@ const NavMenu = styled.div`
 
 const NavItem = styled.div<{ $active: boolean }>`
   position: relative;
-  
+
   &::after {
     content: "";
     position: absolute;
@@ -221,7 +220,7 @@ const NavItem = styled.div<{ $active: boolean }>`
     background-color: #ffffe3;
     transition: width 0.2s ease;
   }
-  
+
   &:hover::after {
     width: ${({ $active }) => ($active ? "3px" : "0")};
   }

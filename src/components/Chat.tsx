@@ -34,12 +34,13 @@ const Chat = () => {
   // Check scroll position of suggestions container
   const checkScrollPosition = () => {
     if (!suggestionsContainerRef.current) return;
-    
-    const { scrollLeft, scrollWidth, clientWidth } = suggestionsContainerRef.current;
-    
+
+    const { scrollLeft, scrollWidth, clientWidth } =
+      suggestionsContainerRef.current;
+
     // Show left arrow if scrolled right
     setShowLeftArrow(scrollLeft > 0);
-    
+
     // Show right arrow if there's more content to scroll to
     setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10); // Small buffer
   };
@@ -47,7 +48,10 @@ const Chat = () => {
   // Scroll suggestion container left
   const scrollSuggestionsLeft = () => {
     if (!suggestionsContainerRef.current) return;
-    suggestionsContainerRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    suggestionsContainerRef.current.scrollBy({
+      left: -200,
+      behavior: "smooth",
+    });
   };
 
   // Scroll suggestion container right
@@ -92,10 +96,10 @@ const Chat = () => {
     if (container) {
       // Initial check
       checkScrollPosition();
-      
+
       // Add event listener
       container.addEventListener("scroll", checkScrollPosition);
-      
+
       // Clean up
       return () => {
         container.removeEventListener("scroll", checkScrollPosition);
@@ -107,9 +111,9 @@ const Chat = () => {
   useEffect(() => {
     // Initial check after component mounts and content is rendered
     setTimeout(checkScrollPosition, 100);
-    
+
     window.addEventListener("resize", checkScrollPosition);
-    
+
     return () => {
       window.removeEventListener("resize", checkScrollPosition);
     };
@@ -272,21 +276,21 @@ const Chat = () => {
         {showSuggestions && (
           <SuggestionsWrapper>
             {showLeftArrow && (
-              <ScrollArrow onClick={scrollSuggestionsLeft} position="left">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
+              <ScrollArrow onClick={scrollSuggestionsLeft} position={"left"}>
+                <svg
+                  xmlns={"http://www.w3.org/2000/svg"}
+                  viewBox={"0 0 24 24"}
+                  fill={"none"}
+                  stroke={"currentColor"}
+                  strokeWidth={"2"}
+                  strokeLinecap={"round"}
+                  strokeLinejoin={"round"}
                 >
-                  <path d="M15 18l-6-6 6-6" />
+                  <path d={"M15 18l-6-6 6-6"} />
                 </svg>
               </ScrollArrow>
             )}
-            
+
             <SuggestionsContainer ref={suggestionsContainerRef}>
               {SUGGESTED_MESSAGES.map((suggestion, index) => (
                 <SuggestionChip
@@ -299,19 +303,19 @@ const Chat = () => {
                 </SuggestionChip>
               ))}
             </SuggestionsContainer>
-            
+
             {showRightArrow && (
-              <ScrollArrow onClick={scrollSuggestionsRight} position="right">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
+              <ScrollArrow onClick={scrollSuggestionsRight} position={"right"}>
+                <svg
+                  xmlns={"http://www.w3.org/2000/svg"}
+                  viewBox={"0 0 24 24"}
+                  fill={"none"}
+                  stroke={"currentColor"}
+                  strokeWidth={"2"}
+                  strokeLinecap={"round"}
+                  strokeLinejoin={"round"}
                 >
-                  <path d="M9 18l6-6-6-6" />
+                  <path d={"M9 18l6-6-6-6"} />
                 </svg>
               </ScrollArrow>
             )}
@@ -531,11 +535,11 @@ const SuggestionsContainer = styled.div`
 `;
 
 // Amélioré avec SVG pour un meilleur centrage
-const ScrollArrow = styled.button<{ position: 'left' | 'right' }>`
+const ScrollArrow = styled.button<{ position: "left" | "right" }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  ${({ position }) => position === 'left' ? 'left: 5px;' : 'right: 5px;'}
+  ${({ position }) => (position === "left" ? "left: 5px;" : "right: 5px;")}
   z-index: 5;
   background-color: #1e1e1a;
   color: #bdbdb2;
@@ -554,7 +558,7 @@ const ScrollArrow = styled.button<{ position: 'left' | 'right' }>`
     background-color: #30302b;
     color: #ffffe3;
   }
-  
+
   /* SVG à l'intérieur du bouton */
   svg {
     width: 12px;

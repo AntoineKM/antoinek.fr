@@ -1,11 +1,11 @@
 import { useChat } from "@ai-sdk/react";
+import Link from "@components/Link";
+import PageWrapper from "@components/PageWrapper";
+import { ArrowRight, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { marked } from "marked";
+import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import Head from "next/head";
-import { marked } from "marked";
-import Link from "@components/Link";
-import { ArrowRight, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
-import PageWrapper from "@components/PageWrapper";
 
 const SUGGESTED_MESSAGES = [
   "What is your experience?",
@@ -33,12 +33,13 @@ export default function Home() {
   // Check scroll position of suggestions container
   const checkScrollPosition = () => {
     if (!suggestionsContainerRef.current) return;
-    
-    const { scrollLeft, scrollWidth, clientWidth } = suggestionsContainerRef.current;
-    
+
+    const { scrollLeft, scrollWidth, clientWidth } =
+      suggestionsContainerRef.current;
+
     // Show left arrow if scrolled right
     setShowLeftArrow(scrollLeft > 0);
-    
+
     // Show right arrow if there's more content to scroll to
     setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10); // Small buffer
   };
@@ -46,7 +47,10 @@ export default function Home() {
   // Scroll suggestion container left
   const scrollSuggestionsLeft = () => {
     if (!suggestionsContainerRef.current) return;
-    suggestionsContainerRef.current.scrollBy({ left: -200, behavior: "smooth" });
+    suggestionsContainerRef.current.scrollBy({
+      left: -200,
+      behavior: "smooth",
+    });
   };
 
   // Scroll suggestion container right
@@ -58,14 +62,14 @@ export default function Home() {
   // Auto-resize text area based on content
   const adjustTextareaHeight = () => {
     if (textareaRef.current) {
-      textareaRef.current.style.height = 'auto';
+      textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   };
 
   // Handle key press for text area
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       if (input.trim()) {
         handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
@@ -74,7 +78,9 @@ export default function Home() {
   };
 
   // Handle custom input change to adjust height
-  const handleCustomInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleCustomInputChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     handleInputChange(e);
     adjustTextareaHeight();
   };
@@ -121,10 +127,10 @@ export default function Home() {
     if (container) {
       // Initial check
       checkScrollPosition();
-      
+
       // Add event listener
       container.addEventListener("scroll", checkScrollPosition);
-      
+
       // Clean up
       return () => {
         container.removeEventListener("scroll", checkScrollPosition);
@@ -136,9 +142,9 @@ export default function Home() {
   useEffect(() => {
     // Initial check after component mounts and content is rendered
     setTimeout(checkScrollPosition, 100);
-    
+
     window.addEventListener("resize", checkScrollPosition);
-    
+
     return () => {
       window.removeEventListener("resize", checkScrollPosition);
     };
@@ -156,7 +162,7 @@ export default function Home() {
       const html = (parsed as string).replace(
         /<a\s+(?:[^>]*?\s+)?href=([^>]*)>/gi,
         // eslint-disable-next-line quotes
-        '<a href=$1 target="_blank" rel="noopener noreferrer">'
+        '<a href=$1 target="_blank" rel="noopener noreferrer">',
       );
 
       return { __html: html };
@@ -181,8 +187,10 @@ export default function Home() {
         <Head>
           <title>{"Antoine Kingue - Developer, Designer & YouTuber"}</title>
           <meta
-            name="description"
-            content="Antoine Kingue is a developer, designer and YouTuber based in Rouen, France. Ask me anything about Antoine, his projects, skills, or experiences."
+            name={"description"}
+            content={
+              "Antoine Kingue is a developer, designer and YouTuber based in Rouen, France. Ask me anything about Antoine, his projects, skills, or experiences."
+            }
           />
         </Head>
 
@@ -199,9 +207,9 @@ export default function Home() {
               </Message>
             ))}
             {isLoading && (
-              <Message $role="assistant">
-                <MessageSender>Antoine AI</MessageSender>
-                <TypingIndicator>thinking...</TypingIndicator>
+              <Message $role={"assistant"}>
+                <MessageSender>{"Antoine AI"}</MessageSender>
+                <TypingIndicator>{"thinking..."}</TypingIndicator>
               </Message>
             )}
             <div ref={messagesEndRef} />
@@ -211,7 +219,7 @@ export default function Home() {
             <ChatInputWrapper isEmpty={messages.length === 0}>
               {messages.length === 0 && (
                 <WelcomeHeader>
-                  <h1>my future is yours, i develop for us.</h1>
+                  <h1>{"my future is yours, i develop for us."}</h1>
                 </WelcomeHeader>
               )}
               <ChatInputContainer>
@@ -226,11 +234,12 @@ export default function Home() {
                   rows={messages.length === 0 ? 2 : 1}
                 />
                 <ChatToolbar>
-                  <AboutLink href={"/what"}>Learn more about me <ArrowRight size={12} /></AboutLink>
+                  <AboutLink href={"/what"}>
+                    {"Learn more about me "}
+                    <ArrowRight size={12} />
+                  </AboutLink>
                   <ActionsContainer>
-                    <ChatModel>
-                      Antoine AI
-                    </ChatModel>
+                    <ChatModel>{"Antoine AI"}</ChatModel>
                     <SendButton
                       type={"submit"}
                       disabled={!input.trim() || isLoading}
@@ -247,13 +256,19 @@ export default function Home() {
                   }
                 </DisclaimerText>
               ) : (
-                <SuggestionsWrapper showLeftArrow={showLeftArrow} showRightArrow={showRightArrow}>
+                <SuggestionsWrapper
+                  showLeftArrow={showLeftArrow}
+                  showRightArrow={showRightArrow}
+                >
                   {showLeftArrow && (
-                    <ScrollArrow onClick={scrollSuggestionsLeft} position="left">
+                    <ScrollArrow
+                      onClick={scrollSuggestionsLeft}
+                      position={"left"}
+                    >
                       <ChevronLeft size={16} />
                     </ScrollArrow>
                   )}
-                  
+
                   <SuggestionsContainer ref={suggestionsContainerRef}>
                     {SUGGESTED_MESSAGES.map((suggestion, index) => (
                       <SuggestionChip
@@ -266,9 +281,12 @@ export default function Home() {
                       </SuggestionChip>
                     ))}
                   </SuggestionsContainer>
-                  
+
                   {showRightArrow && (
-                    <ScrollArrow onClick={scrollSuggestionsRight} position="right">
+                    <ScrollArrow
+                      onClick={scrollSuggestionsRight}
+                      position={"right"}
+                    >
                       <ChevronRight size={16} />
                     </ScrollArrow>
                   )}
@@ -450,14 +468,17 @@ const TypingIndicator = styled.div`
 `;
 
 // New wrapper for suggestions with scroll arrows and gradient effects
-const SuggestionsWrapper = styled.div<{ showLeftArrow: boolean; showRightArrow: boolean }>`
+const SuggestionsWrapper = styled.div<{
+  showLeftArrow: boolean;
+  showRightArrow: boolean;
+}>`
   position: relative;
   width: 100%;
   margin-top: 1rem;
-  
+
   /* Gradient à gauche - visible uniquement quand showLeftArrow est true */
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -465,14 +486,14 @@ const SuggestionsWrapper = styled.div<{ showLeftArrow: boolean; showRightArrow: 
     width: 40px;
     background: linear-gradient(to right, #10100e, rgba(16, 16, 14, 0));
     z-index: 4;
-    opacity: ${({ showLeftArrow }) => (showLeftArrow ? '1' : '0')};
+    opacity: ${({ showLeftArrow }) => (showLeftArrow ? "1" : "0")};
     pointer-events: none;
     transition: opacity 0.2s ease;
   }
-  
+
   /* Gradient à droite - visible uniquement quand showRightArrow est true */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 0;
@@ -480,7 +501,7 @@ const SuggestionsWrapper = styled.div<{ showLeftArrow: boolean; showRightArrow: 
     width: 40px;
     background: linear-gradient(to left, #10100e, rgba(16, 16, 14, 0));
     z-index: 4;
-    opacity: ${({ showRightArrow }) => (showRightArrow ? '1' : '0')};
+    opacity: ${({ showRightArrow }) => (showRightArrow ? "1" : "0")};
     pointer-events: none;
     transition: opacity 0.2s ease;
   }
@@ -492,12 +513,12 @@ const SuggestionsContainer = styled.div`
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-  
+
   /* Hide scrollbar for a cleaner look since we have arrow buttons */
   &::-webkit-scrollbar {
     display: none;
   }
-  
+
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -513,11 +534,11 @@ const SuggestionsContainer = styled.div`
   }
 `;
 
-const ScrollArrow = styled.button<{ position: 'left' | 'right' }>`
+const ScrollArrow = styled.button<{ position: "left" | "right" }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  ${({ position }) => position === 'left' ? 'left: 5px;' : 'right: 5px;'}
+  ${({ position }) => (position === "left" ? "left: 5px;" : "right: 5px;")}
   z-index: 5; /* Au-dessus des gradients */
   background-color: #1e1e1a;
   color: #bdbdb2;
@@ -620,7 +641,9 @@ const AboutLink = styled(Link)`
 
   svg {
     opacity: 0;
-    transition: margin-left 0.2s ease, opacity 0.1s ease;
+    transition:
+      margin-left 0.2s ease,
+      opacity 0.1s ease;
   }
 
   &:hover svg {

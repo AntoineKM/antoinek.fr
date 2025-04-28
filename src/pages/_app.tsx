@@ -13,9 +13,9 @@ import { useLocalStorage } from "usehooks-ts";
 const App = ({ Component, pageProps }: AppProps) => {
   const [introCompleted, setIntroCompleted] = useLocalStorage(
     "v1:intro-completed",
-    false
+    false,
   );
-  
+
   const [introEnded, setIntroEnded] = React.useState(introCompleted);
   const introEndedInitially = React.useRef(introEnded);
   const [isMounted, setIsMounted] = React.useState(false);
@@ -39,16 +39,23 @@ const App = ({ Component, pageProps }: AppProps) => {
     setIntroCompleted(true);
   }, [setIntroCompleted]);
 
-  const mainContentInitialY = isMounted ? (introEnded ? 0 : window.innerHeight) : 0;
+  const mainContentInitialY = isMounted
+    ? introEnded
+      ? 0
+      : window.innerHeight
+    : 0;
   const successiveTypeInitialY = 0;
-  const successiveTypeAnimateY = isMounted && introEnded ? -window.innerHeight : 0;
+  const successiveTypeAnimateY =
+    isMounted && introEnded ? -window.innerHeight : 0;
 
   return (
     <StyleSheetManager enableVendorPrefixes>
       <NextHead>
         <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          name={"viewport"}
+          content={
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          }
         />
       </NextHead>
       <GlobalStyle />
@@ -181,7 +188,7 @@ const ContentWrapper = styled.div`
     margin-right: 0px;
     width: 100%;
     padding-top: 65px;
-    
+
     & [data-no-padding="true"] {
       margin: -2rem;
       margin-top: -65px;
