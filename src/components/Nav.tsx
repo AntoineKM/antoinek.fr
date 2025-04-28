@@ -24,16 +24,16 @@ const Nav = () => {
   const { pathname } = useRouter();
 
   const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
-  const [openOnMobile, setOpenOnMobile] = useState(true);
+  const [openOnMobile, setOpenOnMobile] = useState(false);
   const [presenceActive, setPresenceActive] = useState(false);
 
   const [doing] = useAtom(doingAtom);
 
-  // Reset mobile menu when changing pages
+  // Reset mobile menu when changing pages, but DON'T include openOnMobile in dependencies
   useEffect(() => {
-    if (openOnMobile) setOpenOnMobile(false);
+    setOpenOnMobile(false);
     playSwitchPageSound();
-  }, [pathname, playSwitchPageSound, openOnMobile]);
+  }, [pathname, playSwitchPageSound]);
 
   const toggleMobileMenu = useCallback(() => {
     setOpenOnMobile(!openOnMobile);
