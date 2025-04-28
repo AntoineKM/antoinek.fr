@@ -308,7 +308,7 @@ const Container = styled.div`
   height: 100vh;
   width: 100%;
   overflow-x: hidden;
-  padding: 0 1rem;
+  padding: 0 16px;
   box-sizing: border-box;
   background-color: #10100e;
 `;
@@ -462,7 +462,6 @@ const MessageContent = styled.div`
 `;
 
 const TypingIndicator = styled.div`
-  padding: 0.5rem;
   color: #bdbdb2;
   font-style: italic;
   text-align: left;
