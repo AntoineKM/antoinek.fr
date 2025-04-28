@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { AppProps } from "next/app";
 import NextHead from "next/head";
 import React from "react";
+import { i } from "react-router/dist/development/fog-of-war-D4x86-Xc";
 import styled, { StyleSheetManager } from "styled-components";
 import { useLocalStorage } from "usehooks-ts";
 
@@ -19,19 +20,26 @@ const App = ({ Component, pageProps }: AppProps) => {
   const [introEnded, setIntroEnded] = React.useState(introCompleted);
   const introEndedInitially = React.useRef(introEnded);
   const [isMounted, setIsMounted] = React.useState(false);
+  const [windowHeight, setWindowHeight] = React.useState(0);
 
   React.useEffect(() => {
     setIsMounted(true);
+    if (typeof window !== "undefined") {
+      setWindowHeight(window.innerHeight);
+    }
   }, []);
 
   React.useEffect(() => {
-    const onKeyDown = (e: React.KeyboardEvent<HTMLDocument> & any) => {
+    const onKeyDown = (e: KeyboardEvent) => {
       if ((e.keyCode === 9 || e.which === 9) && !introEnded) {
         e.preventDefault();
       }
     };
 
     document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
   }, [introEnded]);
 
   const onIntroEnd = React.useCallback(() => {
@@ -42,11 +50,11 @@ const App = ({ Component, pageProps }: AppProps) => {
   const mainContentInitialY = isMounted
     ? introEnded
       ? 0
-      : window.innerHeight
+      : windowHeight
     : 0;
   const successiveTypeInitialY = 0;
   const successiveTypeAnimateY =
-    isMounted && introEnded ? -window.innerHeight : 0;
+    isMounted && introEnded ? -windowHeight : 0;
 
   return (
     <StyleSheetManager enableVendorPrefixes>
@@ -60,9 +68,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       </NextHead>
       <GlobalStyle />
       <Head />
-      <Wrapper>
+      <Wrapper $isMounted={isMounted}>
         <SuccessiveTypeContainer
-          transition={{ duration: introEndedInitially.current ? 0 : 0.85 }}
+          transition={{ duration: introEndedInitially.current || !introCompleted ? 0 : 0.85 }}
           initial={{
             opacity: 0,
             y: successiveTypeInitialY,
@@ -87,34 +95,36 @@ const App = ({ Component, pageProps }: AppProps) => {
           />
         </SuccessiveTypeContainer>
 
-        {isMounted && (
-          <MainContent
-            transition={{ duration: 0.85 }}
-            initial={{
-              y: mainContentInitialY,
-            }}
-            animate={{
-              y: introEnded ? 0 : window.innerHeight,
-            }}
-          >
-            <Nav />
-            <ContentWrapper>
-              <AnimatePresence>
-                <Component {...pageProps} />
-              </AnimatePresence>
-            </ContentWrapper>
-          </MainContent>
-        )}
+        <MainContent
+          transition={{ duration: introEnded ? 0.85 : 0 }}
+          initial={{
+            y: mainContentInitialY,
+          }}
+          animate={{
+            y: introEnded ? 0 : windowHeight,
+          }}
+        >
+          <Nav />
+          <ContentWrapper>
+            <AnimatePresence>
+              <Component {...pageProps} />
+            </AnimatePresence>
+          </ContentWrapper>
+        </MainContent>
       </Wrapper>
     </StyleSheetManager>
   );
 };
 
-const Wrapper = styled.div`
+// --- Styled components
+
+const Wrapper = styled.div<{ $isMounted: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  opacity: ${({ $isMounted }) => ($isMounted ? 1 : 0)};
+  transition: opacity 0.2s ease;
 
   canvas {
     position: fixed;
@@ -160,7 +170,6 @@ const MainContent = styled(motion.div)`
 
   @media (max-width: 850px) {
     flex-direction: column;
-    /* padding-top: 65px; */
   }
 `;
 
