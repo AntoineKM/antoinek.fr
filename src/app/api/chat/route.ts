@@ -46,41 +46,49 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-async function sendToDiscordWebhook(message: string, ip: string, userAgent: string | null) {
+async function sendToDiscordWebhook(
+  message: string,
+  ip: string,
+  userAgent: string | null,
+) {
   const webhookUrl = env.DISCORD_WEBHOOK_URL;
-  
+
   if (!webhookUrl) {
     console.warn("Discord webhook URL not configured. Skipping message send.");
     return;
   }
-  
+
   try {
     const Hook = new webhook.Webhook(webhookUrl);
-    
+
     // Anonymize IP by removing the last octet (for IPv4) or significant portion (for IPv6)
     let anonymizedIp = "Unknown";
     if (ip && ip !== "unknown") {
       if (ip.includes(".")) {
         // IPv4
-        anonymizedIp = ip.split('.').slice(0, 3).join('.') + ".xxx";
+        anonymizedIp = ip.split(".").slice(0, 3).join(".") + ".xxx";
       } else if (ip.includes(":")) {
         // IPv6
-        anonymizedIp = ip.split(':').slice(0, 4).join(':') + ":xxxx:xxxx:xxxx";
+        anonymizedIp = ip.split(":").slice(0, 4).join(":") + ":xxxx:xxxx:xxxx";
       }
     }
-    
+
     let deviceInfo = "Unknown";
     if (userAgent) {
       // Extract just the browser name and OS
-      const browserMatch = userAgent.match(/(Chrome|Firefox|Safari|Edge|MSIE|Trident)[\/\s](\d+)/i);
-      const osMatch = userAgent.match(/(Windows|Mac|iOS|Android|Linux)[\/\s]?([^;)]*)/i);
-      
+      const browserMatch = userAgent.match(
+        /(Chrome|Firefox|Safari|Edge|MSIE|Trident)[\/\s](\d+)/i,
+      );
+      const osMatch = userAgent.match(
+        /(Windows|Mac|iOS|Android|Linux)[\/\s]?([^;)]*)/i,
+      );
+
       const browserInfo = browserMatch ? browserMatch[1] : "Unknown browser";
       const osInfo = osMatch ? osMatch[1] : "Unknown OS";
-      
+
       deviceInfo = `${browserInfo} on ${osInfo}`;
     }
-    
+
     const msg = new webhook.MessageBuilder()
       .setName("Antoine AI")
       .setColor("#fff")
@@ -89,7 +97,7 @@ async function sendToDiscordWebhook(message: string, ip: string, userAgent: stri
       .addField("Region", anonymizedIp)
       .addField("Device", deviceInfo)
       .setTime();
-    
+
     await Hook.send(msg);
   } catch (error) {
     console.error("Error sending to Discord webhook:", error);
@@ -98,7 +106,10 @@ async function sendToDiscordWebhook(message: string, ip: string, userAgent: stri
 
 export async function POST(req: Request) {
   // Get client IP and user agent
-  const ip = req.headers.get("x-forwarded-for") || req.headers.get("cf-connecting-ip") || "unknown";
+  const ip =
+    req.headers.get("x-forwarded-for") ||
+    req.headers.get("cf-connecting-ip") ||
+    "unknown";
   const userAgent = req.headers.get("user-agent");
 
   // Check rate limit
@@ -115,11 +126,11 @@ export async function POST(req: Request) {
   }
 
   const { messages } = await req.json();
-  
+
   // Send the most recent user message to Discord webhook in a GDPR-compliant way
   // Note: We only collect anonymized data for the legitimate purpose of monitoring chat usage
   if (messages && messages.length > 0) {
-    const lastUserMessage = messages.filter(m => m.role === "user").pop();
+    const lastUserMessage = messages.filter((m) => m.role === "user").pop();
     if (lastUserMessage) {
       await sendToDiscordWebhook(lastUserMessage.content, ip, userAgent);
     }
