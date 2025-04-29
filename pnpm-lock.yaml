@@ -77,6 +77,9 @@ importers:
       web-vitals:
         specifier: ^4.0.0
         version: 4.2.4
+      webhook-discord:
+        specifier: ^3.7.8
+        version: 3.7.8
       zod:
         specifier: ^3.22.4
         version: 3.24.3
@@ -6971,6 +6974,10 @@ packages:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
 
+  snekfetch@3.6.4:
+    resolution: {integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==}
+    deprecated: use node-fetch instead
+
   sockjs@0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==}
 
@@ -7597,6 +7604,9 @@ packages:
 
   web-vitals@4.2.4:
     resolution: {integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==}
+
+  webhook-discord@3.7.8:
+    resolution: {integrity: sha512-IDEvKmu83SIAPZD0efpEXj3ZEm+X8Q68iRuKEKtyXlGN9S9lVtdL7cp4I0AXqTapVj+eh+Wby7y9DaxP01Yk2g==}
 
   webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
@@ -16560,6 +16570,8 @@ snapshots:
 
   slash@4.0.0: {}
 
+  snekfetch@3.6.4: {}
+
   sockjs@0.3.24:
     dependencies:
       faye-websocket: 0.11.4
@@ -17238,6 +17250,10 @@ snapshots:
       minimalistic-assert: 1.0.1
 
   web-vitals@4.2.4: {}
+
+  webhook-discord@3.7.8:
+    dependencies:
+      snekfetch: 3.6.4
 
   webidl-conversions@4.0.2: {}
 
