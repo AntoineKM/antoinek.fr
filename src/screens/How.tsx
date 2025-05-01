@@ -9,7 +9,7 @@ const How = () => {
   return (
     <PageWrapper>
       <NextSeo
-        title={"how I do it | Antoine Kingue"}
+        title={"Technical skills & modern technologies for development"}
         description={
           "I highly leverage new bleeding-edge technologies and languages like Typescript or Go to stay on top of the game."
         }

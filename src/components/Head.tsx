@@ -59,6 +59,7 @@ const Head = () => {
           href: "/static/images/favicons/favicon.png",
         },
       ]}
+      titleTemplate="%s | Antoine Kingue"
     />
   );
 };

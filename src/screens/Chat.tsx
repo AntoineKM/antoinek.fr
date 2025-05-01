@@ -185,9 +185,9 @@ export default function Home() {
     <PageWrapper noPadding>
       <Container>
         <NextSeo
-          title={"Antoine Kingue - Developer, Designer & YouTuber"}
+          title={"Developer, designer & youtuber based in Rouen, France"}
           description={
-            "Antoine Kingue is a developer, designer and YouTuber based in Rouen, France. Ask anything about Antoine, his projects, skills, or experiences."
+            "Connect with a skilled developer specializing in TypeScript, React and digital design. Ask questions about projects, experience, and expertise."
           }
         />
 

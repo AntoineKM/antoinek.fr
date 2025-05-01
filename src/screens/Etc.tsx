@@ -6,8 +6,8 @@ import PageWrapper from "../components/PageWrapper";
 const Etc = () => (
   <PageWrapper>
     <NextSeo
-      title={"contact | Antoine Kingue"}
-      description={"Contact Antoine Kingue via LinkedIn or phone."}
+      title={"Contact for development projects & collaborations"}
+      description={"Get in touch for collaboration, questions, or opportunities. Connect via LinkedIn or direct contact methods for web development projects."}
     />
     <h1>{"/etc"}</h1>
     <h2>{"🤝 Thanks"}</h2>

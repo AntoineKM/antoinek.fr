@@ -6,8 +6,8 @@ import PageWrapper from "../components/PageWrapper";
 const Presence = () => (
   <PageWrapper forceReadableWidth>
     <NextSeo
-      title={"presence | Antoine Kingue"}
-      description={"Learn more about how I display my presence on my site."}
+      title={"Real-time activity tracking with Discord integration"}
+      description={"Learn about how I share real-time activities on this website using Lanyard integration with Discord's presence system."}
     />
     <h1>{"👀 Presence"}</h1>
     <p>

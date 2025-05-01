@@ -2,8 +2,8 @@ import { Button } from "@components/Button";
 import PageWrapper from "@components/PageWrapper";
 import { env } from "env.mjs";
 import { NextPage, NextPageContext } from "next";
+import { NextSeo } from "next-seo";
 import ErrorPage from "next/error";
-import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 
@@ -75,10 +75,16 @@ const VideoDetails: NextPage<VideoDetailsProps> = ({
 
   return (
     <PageWrapper>
-      <Head>
-        <title>{details?.title}</title>
-        <meta name={"description"} content={details?.description} />
-      </Head>
+      <NextSeo
+        title={details?.title}
+        description={details?.description}
+        openGraph={{
+          type: "video.other",
+          url: `https://youtu.be/${videoId}`,
+          title: details?.title,
+          description: details?.description,
+        }}
+      />
       <DetailsContainer>
         <VideoTitle>{details?.title}</VideoTitle>
         <VideoEmbedWrapper>
