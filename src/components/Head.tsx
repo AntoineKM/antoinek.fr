@@ -1,5 +1,5 @@
-import NextHead from "next/head";
 import { useRouter } from "next/router";
+import { DefaultSeo } from "next-seo";
 
 const Head = () => {
   const router = useRouter();
@@ -15,30 +15,51 @@ const Head = () => {
   }
 
   return (
-    <NextHead>
-      <meta charSet={"utf-8"} />
-      <link rel={"icon"} href={"/static/images/favicons/favicon.ico"} />
-      <meta name={"viewport"} content={"width=device-width, initial-scale=1"} />
-      <meta name={"theme-color"} content={"#10100e"} />
-      <meta
-        name={"description"}
-        content={"Antoine Kingue: developer, designer and youtuber"}
-      />
-      <link
-        rel={"apple-touch-icon"}
-        href={"/static/images/favicons/favicon.png"}
-      />
-      <link rel={"canonical"} href={url.href} />
-      {/* add open graph */}
-      <meta property={"og:image"} content={"/static/images/open-graph.jpg"} />
-      {/* add twitter */}
-      <meta name={"twitter:card"} content={"summary_large_image"} />
-      <meta name={"twitter:site"} content={"@AntoineKingue"} />
-      <meta name={"twitter:creator"} content={"@AntoineKingue"} />
-      <meta name={"twitter:image"} content={"/static/images/open-graph.jpg"} />
-
-      <title>{"Antoine Kingue"}</title>
-    </NextHead>
+    <DefaultSeo
+      title={"Antoine Kingue"}
+      description={"Antoine Kingue: developer, designer and youtuber"}
+      canonical={url.href}
+      openGraph={{
+        type: "website",
+        locale: "en_US",
+        url: url.href,
+        site_name: "Antoine Kingue",
+        images: [
+          {
+            url: "/static/images/open-graph.jpg",
+            width: 1500,
+            height: 500,
+            alt: "Antoine Kingue",
+          },
+        ],
+      }}
+      twitter={{
+        handle: "@AntoineKingue",
+        site: "@AntoineKingue",
+        cardType: "summary_large_image",
+      }}
+      additionalMetaTags={[
+        {
+          name: "theme-color",
+          content: "#10100e",
+        },
+        {
+          name: "viewport",
+          content:
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+        },
+      ]}
+      additionalLinkTags={[
+        {
+          rel: "icon",
+          href: "/static/images/favicons/favicon.ico",
+        },
+        {
+          rel: "apple-touch-icon",
+          href: "/static/images/favicons/favicon.png",
+        },
+      ]}
+    />
   );
 };
 

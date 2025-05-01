@@ -1,20 +1,17 @@
 import Link from "@components/Link";
 import PageWrapper from "@components/PageWrapper";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import calculateAge from "src/utils/calculateAge";
 
 const What = () => {
   return (
     <PageWrapper forceReadableWidth>
-      <Head>
-        <title>{"what I do | Antoine Kingue"}</title>
-        <meta
-          name={"description"}
-          content={
-            "Learn what Antoine Kingue does as a developer, designer and youtuber."
-          }
-        />
-      </Head>
+      <NextSeo
+        title={"what I do | Antoine Kingue"}
+        description={
+          "Learn what Antoine Kingue does as a developer, designer and youtuber."
+        }
+      />
       <h1>{"🤔 what I do"}</h1>
       <p>{`Antoine, ${calculateAge(
         "2001-03-10",

@@ -1,17 +1,14 @@
 import Link from "@components/Link";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 import PageWrapper from "../components/PageWrapper";
 
 const Presence = () => (
   <PageWrapper forceReadableWidth>
-    <Head>
-      <title>{"presence | Antoine Kingue"}</title>
-      <meta
-        name={"description"}
-        content={"Learn more about how I display my presence on my site."}
-      />
-    </Head>
+    <NextSeo
+      title={"presence | Antoine Kingue"}
+      description={"Learn more about how I display my presence on my site."}
+    />
     <h1>{"👀 Presence"}</h1>
     <p>
       {

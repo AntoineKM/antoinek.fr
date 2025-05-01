@@ -1,17 +1,14 @@
 import Link from "@components/Link";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 
 import PageWrapper from "../components/PageWrapper";
 
 const Etc = () => (
   <PageWrapper>
-    <Head>
-      <title>{"contact | Antoine Kingue"}</title>
-      <meta
-        name={"description"}
-        content={"Contact Antoine Kingue via LinkedIn or phone."}
-      />
-    </Head>
+    <NextSeo
+      title={"contact | Antoine Kingue"}
+      description={"Contact Antoine Kingue via LinkedIn or phone."}
+    />
     <h1>{"/etc"}</h1>
     <h2>{"🤝 Thanks"}</h2>
     <p>{"Thanks for visiting. I hope you enjoyed your stay."}</p>

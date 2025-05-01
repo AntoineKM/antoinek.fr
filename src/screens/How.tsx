@@ -1,5 +1,5 @@
 import Link from "@components/Link";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { technologies } from "src/data/technologies";
 
 import PageWrapper from "../components/PageWrapper";
@@ -8,10 +8,12 @@ import Technology from "../components/Technology";
 const How = () => {
   return (
     <PageWrapper>
-      <Head>
-        <title>{"how I do it | Antoine Kingue"}</title>
-        <meta name={"description"} content={"How I build software."} />
-      </Head>
+      <NextSeo
+        title={"how I do it | Antoine Kingue"}
+        description={
+          "I highly leverage new bleeding-edge technologies and languages like Typescript or Go to stay on top of the game."
+        }
+      />
       <h1>{"💻 how I do it"}</h1>
       <p>
         {

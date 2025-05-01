@@ -3,7 +3,7 @@ import Link from "@components/Link";
 import PageWrapper from "@components/PageWrapper";
 import { ArrowRight, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { marked } from "marked";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -184,15 +184,12 @@ export default function Home() {
   return (
     <PageWrapper noPadding>
       <Container>
-        <Head>
-          <title>{"Antoine Kingue - Developer, Designer & YouTuber"}</title>
-          <meta
-            name={"description"}
-            content={
-              "Antoine Kingue is a developer, designer and YouTuber based in Rouen, France. Ask me anything about Antoine, his projects, skills, or experiences."
-            }
-          />
-        </Head>
+        <NextSeo
+          title={"Antoine Kingue - Developer, Designer & YouTuber"}
+          description={
+            "Antoine Kingue is a developer, designer and YouTuber based in Rouen, France. Ask anything about Antoine, his projects, skills, or experiences."
+          }
+        />
 
         <ChatContainer>
           <MessagesContainer hasMessages={messages.length > 0}>
