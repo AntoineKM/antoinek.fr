@@ -9,10 +9,9 @@ const What = () => {
     <PageWrapper forceReadableWidth>
       <NextSeo
         title={`Developer & digital Creator at ${compagnies[0].name} and ${compagnies[1].name}`}
-        description={
-          `Learn about my work at ${compagnies[0].name} and ${compagnies[1].name}. Discover projects and passion for technology and digital creation.`
-        }
+        description={`Learn about my work at ${compagnies[0].name} and ${compagnies[1].name}. Discover projects and passion for technology and digital creation.`}
       />
+
       <h1>{"🤔 what I do"}</h1>
       <p>{`Antoine, ${calculateAge(
         "2001-03-10",

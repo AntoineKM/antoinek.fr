@@ -3,7 +3,7 @@ import Link from "@components/Link";
 import PageWrapper from "@components/PageWrapper";
 import { ArrowRight, ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { marked } from "marked";
-import { NextSeo } from "next-seo";
+import { NextSeo, WebPageJsonLd } from "next-seo";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -189,6 +189,10 @@ export default function Home() {
           description={
             "Connect with a skilled developer specializing in TypeScript, React and digital design. Ask questions about projects, experience, and expertise."
           }
+        />
+        <WebPageJsonLd
+          description={"Developer, designer & youtuber based in Rouen, France"}
+          id={"https://antoinek.fr"}
         />
 
         <ChatContainer>

@@ -2,8 +2,8 @@ import { Button } from "@components/Button";
 import PageWrapper from "@components/PageWrapper";
 import { env } from "env.mjs";
 import { NextPage, NextPageContext } from "next";
-import { NextSeo } from "next-seo";
 import ErrorPage from "next/error";
+import { NextSeo } from "next-seo";
 import React from "react";
 import styled from "styled-components";
 

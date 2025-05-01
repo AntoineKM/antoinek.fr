@@ -25,7 +25,9 @@ const VideosPage: NextPage<VideosProps> = ({
         <title>{"Creative video projects & youtube content"}</title>
         <meta
           name={"description"}
-          content={"Watch my latest creative video content. Explore YouTube channel featuring music, slow motion videos, and digital creation."}
+          content={
+            "Watch my latest creative video content. Explore YouTube channel featuring music, slow motion videos, and digital creation."
+          }
         />
       </Head>
       <h1>{"🎥 latest videos"}</h1>

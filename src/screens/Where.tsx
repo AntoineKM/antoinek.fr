@@ -10,9 +10,7 @@ const Where = () => {
     <PageWrapper>
       <NextSeo
         title={"Professional experience, companies & educational background"}
-        description={
-          `Explore my career journey, including work at ${compagnies[0].name}, ${compagnies[1].name}, and educational qualifications. View projects and professional certifications.`
-        }
+        description={`Explore my career journey, including work at ${compagnies[0].name}, ${compagnies[1].name}, and educational qualifications. View projects and professional certifications.`}
       />
       <h1>{"📍 where I've done it"}</h1>
       <Co />

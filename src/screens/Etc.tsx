@@ -7,8 +7,11 @@ const Etc = () => (
   <PageWrapper>
     <NextSeo
       title={"Contact for development projects & collaborations"}
-      description={"Get in touch for collaboration, questions, or opportunities. Connect via LinkedIn or direct contact methods for web development projects."}
+      description={
+        "Get in touch for collaboration, questions, or opportunities. Connect via LinkedIn or direct contact methods for web development projects."
+      }
     />
+    
     <h1>{"/etc"}</h1>
     <h2>{"🤝 Thanks"}</h2>
     <p>{"Thanks for visiting. I hope you enjoyed your stay."}</p>
