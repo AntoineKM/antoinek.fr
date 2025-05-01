@@ -17,6 +17,7 @@ import {
   RedisLogo,
   MySQLLogo,
   RustLogo,
+  AstroLogo,
 } from "../components/Icons";
 
 export const technologies: Technology[] = [
@@ -126,6 +127,14 @@ export const technologies: Technology[] = [
       "Next.js is a React framework that provides an easy way to build static and server-rendered applications.",
   },
   {
+    color: "#881abd",
+    icon: AstroLogo,
+    name: "Astro",
+    type: "Web Framework",
+    useCase:
+      "A modern framework for building fast, content-focused websites with less client-side JavaScript.",
+  },
+  {
     color: "#181a1c",
     icon: NestLogo,
     name: "NestJS",
@@ -148,4 +157,29 @@ export const technologies: Technology[] = [
     type: "PHP Framework",
     useCase: "High Performance PHP Framework for Web Development.",
   },
+  // // Protocols - We waiting for svg icons
+  // {
+  //   color: "#65C2CB",
+  //   icon: FastifyLogo,
+  //   name: "IPFS",
+  //   type: "Protocol",
+  //   useCase:
+  //     "Peer-to-peer distributed file system that aims to make the web faster, safer, and more open.",
+  // },
+  // {
+  //   color: "#9016FE",
+  //   icon: FastifyLogo,
+  //   name: "Nostr",
+  //   type: "Protocol",
+  //   useCase:
+  //     "Decentralized social networking protocol for censorship-resistant and privacy-focused communications.",
+  // },
+  // {
+  //   color: "#5C2D91",
+  //   icon: FastifyLogo,
+  //   name: "MCP",
+  //   type: "Protocol",
+  //   useCase:
+  //     "Model Context Protocol enabling AI applications to interact with external tools, data sources and systems.",
+  // },
 ];

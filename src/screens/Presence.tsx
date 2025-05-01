@@ -11,7 +11,7 @@ const Presence = () => (
         "Learn about how I share real-time activities on this website using Lanyard integration with Discord's presence system."
       }
     />
-    
+
     <h1>{"👀 Presence"}</h1>
     <p>
       {

@@ -15,14 +15,12 @@ const How = () => {
         }
       />
       <CollectionPageJsonLd
-        name="Technical skills & technologies"
-        hasPart={
-          technologies.map(tech => ({
-            about: tech.useCase,
-            name: tech.name,
-            description: tech.type
-          }))
-        }
+        name={"Technical skills & technologies"}
+        hasPart={technologies.map((tech) => ({
+          about: tech.useCase,
+          name: tech.name,
+          description: tech.type,
+        }))}
       />
 
       <h1>{"💻 how I do it"}</h1>
