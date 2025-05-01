@@ -1,5 +1,5 @@
 import Link from "@components/Link";
-import { NextSeo } from "next-seo";
+import { CollectionPageJsonLd, NextSeo } from "next-seo";
 import { technologies } from "src/data/technologies";
 
 import PageWrapper from "../components/PageWrapper";
@@ -14,6 +14,17 @@ const How = () => {
           "I highly leverage new bleeding-edge technologies and languages like Typescript or Go to stay on top of the game."
         }
       />
+      <CollectionPageJsonLd
+        name="Technical skills & technologies"
+        hasPart={
+          technologies.map(tech => ({
+            about: tech.useCase,
+            name: tech.name,
+            description: tech.type
+          }))
+        }
+      />
+
       <h1>{"💻 how I do it"}</h1>
       <p>
         {
