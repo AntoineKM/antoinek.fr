@@ -21,6 +21,7 @@
     "lucide-react": "^0.503.0",
     "marked": "^15.0.7",
     "next": "^15.0.0",
+    "next-seo": "^6.6.0",
     "next-sitemap": "^4.2.3",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
