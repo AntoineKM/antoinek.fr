@@ -18,6 +18,9 @@ import {
   MySQLLogo,
   RustLogo,
   AstroLogo,
+  McpLogo,
+  NostrLogo,
+  IpfsLogo,
 } from "../components/Icons";
 
 export const technologies: Technology[] = [
@@ -158,28 +161,28 @@ export const technologies: Technology[] = [
     useCase: "High Performance PHP Framework for Web Development.",
   },
   // // Protocols - We waiting for svg icons
-  // {
-  //   color: "#65C2CB",
-  //   icon: FastifyLogo,
-  //   name: "IPFS",
-  //   type: "Protocol",
-  //   useCase:
-  //     "Peer-to-peer distributed file system that aims to make the web faster, safer, and more open.",
-  // },
-  // {
-  //   color: "#9016FE",
-  //   icon: FastifyLogo,
-  //   name: "Nostr",
-  //   type: "Protocol",
-  //   useCase:
-  //     "Decentralized social networking protocol for censorship-resistant and privacy-focused communications.",
-  // },
-  // {
-  //   color: "#5C2D91",
-  //   icon: FastifyLogo,
-  //   name: "MCP",
-  //   type: "Protocol",
-  //   useCase:
-  //     "Model Context Protocol enabling AI applications to interact with external tools, data sources and systems.",
-  // },
+  {
+    color: "#65C2CB",
+    icon: IpfsLogo,
+    name: "IPFS",
+    type: "Protocol",
+    useCase:
+      "Peer-to-peer distributed file system that aims to make the web faster, safer, and more open.",
+  },
+  {
+    color: "#A915FF",
+    icon: NostrLogo,
+    name: "Nostr",
+    type: "Protocol",
+    useCase:
+      "Decentralized social networking protocol for censorship-resistant and privacy-focused communications.",
+  },
+  {
+    color: "#5C2D91",
+    icon: McpLogo,
+    name: "MCP",
+    type: "Protocol",
+    useCase:
+      "Model Context Protocol enabling AI applications to interact with external tools, data sources and systems.",
+  },
 ];
