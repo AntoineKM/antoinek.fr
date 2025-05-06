@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@ai-sdk/google':
         specifier: ^1.1.17
-        version: 1.2.14(zod@3.24.4)
+        version: 1.2.15(zod@3.24.4)
       '@ai-sdk/react':
         specifier: ^1.1.18
         version: 1.2.11(react@18.3.1)(zod@3.24.4)
@@ -22,10 +22,10 @@ importers:
         version: 4.3.13(react@18.3.1)(zod@3.24.4)
       framer-motion:
         specifier: ^12.0.0
-        version: 12.9.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 12.10.0(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jotai:
         specifier: ^2.0.0
-        version: 2.12.3(@types/react@18.3.21)(react@18.3.1)
+        version: 2.12.4(@types/react@18.3.21)(react@18.3.1)
       lucide-react:
         specifier: ^0.507.0
         version: 0.507.0(react@18.3.1)
@@ -89,7 +89,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
-        version: 22.15.11
+        version: 22.15.12
       '@types/react':
         specifier: ^18.0.29
         version: 18.3.21
@@ -111,8 +111,8 @@ importers:
 
 packages:
 
-  '@ai-sdk/google@1.2.14':
-    resolution: {integrity: sha512-r3FSyyWl0KVjUlKn5o+vMl+Nk8Z/mV6xrqW+49g7fMoRVr/wkRxJZtHorrdDGRreCJubZyAk8ziSQSLpgv2H6w==}
+  '@ai-sdk/google@1.2.15':
+    resolution: {integrity: sha512-NYHzLz+HBnf7onEJIZkFFGKLnD3LTIw7REULDjVAUe1z5cXRu2igGV4xv4kb/lSEKLxef+urxhKpDAOfbIASCQ==}
     engines: {node: '>=18'}
     peerDependencies:
       zod: ^3.0.0
@@ -2373,8 +2373,8 @@ packages:
   '@types/node-forge@1.3.11':
     resolution: {integrity: sha512-FQx220y22OKNTqaByeBGqHWYz4cl94tpcxeFdvBo3wjG6XPBuZ0BNgNZRV5J5TFmmcsJ4IzsLkmGRiQbnYsBEQ==}
 
-  '@types/node@22.15.11':
-    resolution: {integrity: sha512-rlyK0vuU7VLEYQfXuC7QTFxDvkb6tKhDI7wR4r6ZzM0k8BJd44W0jxo6xmUjqSs4AlYmiYfLJU2f0pAG/FtCRw==}
+  '@types/node@22.15.12':
+    resolution: {integrity: sha512-K0fpC/ZVeb8G9rm7bH7vI0KAec4XHEhBam616nVJCV51bKzJ6oA3luG4WdKoaztxe70QaNjS/xBmcDLmr4PiGw==}
 
   '@types/parse-json@4.0.0':
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -4432,8 +4432,8 @@ packages:
   fraction.js@4.2.0:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
 
-  framer-motion@12.9.7:
-    resolution: {integrity: sha512-Eo5TYU6sEPPy82GDx32PJm++G+AkBCrzxtEQOWLnpQX896Q3LFrsYhMZ5YO5ct4wL7wyHU6hqlrpYXeexKAevg==}
+  framer-motion@12.10.0:
+    resolution: {integrity: sha512-fce/SPS/lrIHYLGfRNytdvzwotc43hBGnEGjXAS304xB+uX9iAm0BpPDx9SuO3TatJkQMm9mglVu94wIPdOTjw==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -5189,8 +5189,8 @@ packages:
       node-notifier:
         optional: true
 
-  jotai@2.12.3:
-    resolution: {integrity: sha512-DpoddSkmPGXMFtdfnoIHfueFeGP643nqYUWC6REjUcME+PG2UkAtYnLbffRDw3OURI9ZUTcRWkRGLsOvxuWMCg==}
+  jotai@2.12.4:
+    resolution: {integrity: sha512-eFXLJol4oOLM8BS1+QV+XwaYQITG8n1tatBCFl4F5HE3zR5j2WIK8QpMt7VJIYmlogNUZfvB7wjwLoVk+umB9Q==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -5473,61 +5473,61 @@ packages:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
 
-  metro-babel-transformer@0.81.4:
-    resolution: {integrity: sha512-WW0yswWrW+eTVK9sYD+b1HwWOiUlZlUoomiw9TIOk0C+dh2V90Wttn/8g62kYi0Y4i+cJfISerB2LbV4nuRGTA==}
+  metro-babel-transformer@0.81.5:
+    resolution: {integrity: sha512-oKCQuajU5srm+ZdDcFg86pG/U8hkSjBlkyFjz380SZ4TTIiI5F+OQB830i53D8hmqmcosa4wR/pnKv8y4Q3dLw==}
     engines: {node: '>=18.18'}
 
-  metro-cache-key@0.81.4:
-    resolution: {integrity: sha512-3SaWQybvf1ivasjBegIxzVKLJzOpcz+KsnGwXFOYADQq0VN4cnM7tT+u2jkOhk6yJiiO1WIjl68hqyMOQJRRLg==}
+  metro-cache-key@0.81.5:
+    resolution: {integrity: sha512-lGWnGVm1UwO8faRZ+LXQUesZSmP1LOg14OVR+KNPBip8kbMECbQJ8c10nGesw28uQT7AE0lwQThZPXlxDyCLKQ==}
     engines: {node: '>=18.18'}
 
-  metro-cache@0.81.4:
-    resolution: {integrity: sha512-sxCPH3gowDxazSaZZrwdNPEpnxR8UeXDnvPjBF9+5btDBNN2DpWvDAXPvrohkYkFImhc0LajS2V7eOXvu9PnvQ==}
+  metro-cache@0.81.5:
+    resolution: {integrity: sha512-wOsXuEgmZMZ5DMPoz1pEDerjJ11AuMy9JifH4yNW7NmWS0ghCRqvDxk13LsElzLshey8C+my/tmXauXZ3OqZgg==}
     engines: {node: '>=18.18'}
 
-  metro-config@0.81.4:
-    resolution: {integrity: sha512-QnhMy3bRiuimCTy7oi5Ug60javrSa3lPh0gpMAspQZHY9h6y86jwHtZPLtlj8hdWQESIlrbeL8inMSF6qI/i9Q==}
+  metro-config@0.81.5:
+    resolution: {integrity: sha512-oDRAzUvj6RNRxratFdcVAqtAsg+T3qcKrGdqGZFUdwzlFJdHGR9Z413sW583uD2ynsuOjA2QB6US8FdwiBdNKg==}
     engines: {node: '>=18.18'}
 
-  metro-core@0.81.4:
-    resolution: {integrity: sha512-GdL4IgmgJhrMA/rTy2lRqXKeXfC77Rg+uvhUEkbhyfj/oz7PrdSgvIFzziapjdHwk1XYq0KyFh/CcVm8ZawG6A==}
+  metro-core@0.81.5:
+    resolution: {integrity: sha512-+2R0c8ByfV2N7CH5wpdIajCWa8escUFd8TukfoXyBq/vb6yTCsznoA25FhNXJ+MC/cz1L447Zj3vdUfCXIZBwg==}
     engines: {node: '>=18.18'}
 
-  metro-file-map@0.81.4:
-    resolution: {integrity: sha512-qUIBzkiqOi3qEuscu4cJ83OYQ4hVzjON19FAySWqYys9GKCmxlKa7LkmwqdpBso6lQl+JXZ7nCacX90w5wQvPA==}
+  metro-file-map@0.81.5:
+    resolution: {integrity: sha512-mW1PKyiO3qZvjeeVjj1brhkmIotObA3/9jdbY1fQQYvEWM6Ml7bN/oJCRDGn2+bJRlG+J8pwyJ+DgdrM4BsKyg==}
     engines: {node: '>=18.18'}
 
-  metro-minify-terser@0.81.4:
-    resolution: {integrity: sha512-oVvq/AGvqmbhuijJDZZ9npeWzaVyeBwQKtdlnjcQ9fH7nR15RiBr5y2zTdgTEdynqOIb1Kc16l8CQIUSzOWVFA==}
+  metro-minify-terser@0.81.5:
+    resolution: {integrity: sha512-/mn4AxjANnsSS3/Bb+zA1G5yIS5xygbbz/OuPaJYs0CPcZCaWt66D+65j4Ft/nJkffUxcwE9mk4ubpkl3rjgtw==}
     engines: {node: '>=18.18'}
 
-  metro-resolver@0.81.4:
-    resolution: {integrity: sha512-Ng7G2mXjSExMeRzj6GC19G6IJ0mfIbOLgjArsMWJgtt9ViZiluCwgWsMW9juBC5NSwjJxUMK2x6pC5NIMFLiHA==}
+  metro-resolver@0.81.5:
+    resolution: {integrity: sha512-6BX8Nq3g3go3FxcyXkVbWe7IgctjDTk6D9flq+P201DfHHQ28J+DWFpVelFcrNTn4tIfbP/Bw7u/0g2BGmeXfQ==}
     engines: {node: '>=18.18'}
 
-  metro-runtime@0.81.4:
-    resolution: {integrity: sha512-fBoRgqkF69CwyPtBNxlDi5ha26Zc8f85n2THXYoh13Jn/Bkg8KIDCdKPp/A1BbSeNnkH/++H2EIIfnmaff4uRg==}
+  metro-runtime@0.81.5:
+    resolution: {integrity: sha512-M/Gf71ictUKP9+77dV/y8XlAWg7xl76uhU7ggYFUwEdOHHWPG6gLBr1iiK0BmTjPFH8yRo/xyqMli4s3oGorPQ==}
     engines: {node: '>=18.18'}
 
-  metro-source-map@0.81.4:
-    resolution: {integrity: sha512-IOwVQ7mLqoqvsL70RZtl1EyE3f9jp43kVsAsb/B/zoWmu0/k4mwEhGLTxmjdXRkLJqPqPrh7WmFChAEf9trW4Q==}
+  metro-source-map@0.81.5:
+    resolution: {integrity: sha512-Jz+CjvCKLNbJZYJTBeN3Kq9kIJf6b61MoLBdaOQZJ5Ajhw6Pf95Nn21XwA8BwfUYgajsi6IXsp/dTZsYJbN00Q==}
     engines: {node: '>=18.18'}
 
-  metro-symbolicate@0.81.4:
-    resolution: {integrity: sha512-rWxTmYVN6/BOSaMDUHT8HgCuRf6acd0AjHkenYlHpmgxg7dqdnAG1hLq999q2XpW5rX+cMamZD5W5Ez2LqGaag==}
+  metro-symbolicate@0.81.5:
+    resolution: {integrity: sha512-X3HV3n3D6FuTE11UWFICqHbFMdTavfO48nXsSpnNGFkUZBexffu0Xd+fYKp+DJLNaQr3S+lAs8q9CgtDTlRRuA==}
     engines: {node: '>=18.18'}
     hasBin: true
 
-  metro-transform-plugins@0.81.4:
-    resolution: {integrity: sha512-nlP069nDXm4v28vbll4QLApAlvVtlB66rP6h+ml8Q/CCQCPBXu2JLaoxUmkIOJQjLhMRUcgTyQHq+TXWJhydOQ==}
+  metro-transform-plugins@0.81.5:
+    resolution: {integrity: sha512-MmHhVx/1dJC94FN7m3oHgv5uOjKH8EX8pBeu1pnPMxbJrx6ZuIejO0k84zTSaQTZ8RxX1wqwzWBpXAWPjEX8mA==}
     engines: {node: '>=18.18'}
 
-  metro-transform-worker@0.81.4:
-    resolution: {integrity: sha512-lKAeRZ8EUMtx2cA/Y4KvICr9bIr5SE03iK3lm+l9wyn2lkjLUuPjYVep159inLeDqC6AtSubsA8MZLziP7c03g==}
+  metro-transform-worker@0.81.5:
+    resolution: {integrity: sha512-lUFyWVHa7lZFRSLJEv+m4jH8WrR5gU7VIjUlg4XmxQfV8ngY4V10ARKynLhMYPeQGl7Qvf+Ayg0eCZ272YZ4Mg==}
     engines: {node: '>=18.18'}
 
-  metro@0.81.4:
-    resolution: {integrity: sha512-78f0aBNPuwXW7GFnSc+Y0vZhbuQorXxdgqQfvSRqcSizqwg9cwF27I05h47tL8AzQcizS1JZncvq4xf5u/Qykw==}
+  metro@0.81.5:
+    resolution: {integrity: sha512-YpFF0DDDpDVygeca2mAn7K0+us+XKmiGk4rIYMz/CRdjFoCGqAei/IQSpV0UrGfQbToSugpMQeQJveaWSH88Hg==}
     engines: {node: '>=18.18'}
     hasBin: true
 
@@ -5592,8 +5592,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  motion-dom@12.9.6:
-    resolution: {integrity: sha512-IK9pm5zU8BIp3FCoUGF3T7AHVLVOlXxlwco/bIbcnpBtyYb2gDQhdOzUh2KSDJVjYl1MZ9vdq8tnFTTahX2lfg==}
+  motion-dom@12.10.0:
+    resolution: {integrity: sha512-TbRFEjQmRIDEFXJFIHfvM3VW8PuQ8bSWwwYxWA5Elq+GCghzqYUQ1FDQK/K6PmtmOoLiQY3ttJE6CrOedRrGgw==}
 
   motion-utils@12.9.4:
     resolution: {integrity: sha512-BW3I65zeM76CMsfh3kHid9ansEJk9Qvl+K5cu4DVHKGsI52n76OJ4z2CUJUV+Mn3uEP9k1JJA3tClG0ggSrRcg==}
@@ -5710,8 +5710,8 @@ packages:
   nwsapi@2.2.2:
     resolution: {integrity: sha512-90yv+6538zuvUMnN+zCr8LuV6bPFdq50304114vJYJ8RDyK8D5O9Phpbd6SZWgI7PwzmmfN1upeOJlvybDSgCw==}
 
-  ob1@0.81.4:
-    resolution: {integrity: sha512-EZLYM8hfPraC2SYOR5EWLFAPV5e6g+p83m2Jth9bzCpFxP1NDQJYXdmXRB2bfbaWQSmm6NkIQlbzk7uU5lLfgg==}
+  ob1@0.81.5:
+    resolution: {integrity: sha512-iNpbeXPLmaiT9I5g16gFFFjsF3sGxLpYG2EGP3dfFB4z+l9X60mp/yRzStHhMtuNt8qmf7Ww80nOPQHngHhnIQ==}
     engines: {node: '>=18.18'}
 
   object-assign@4.1.1:
@@ -7915,7 +7915,7 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/google@1.2.14(zod@3.24.4)':
+  '@ai-sdk/google@1.2.15(zod@3.24.4)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       '@ai-sdk/provider-utils': 2.2.7(zod@3.24.4)
@@ -9915,7 +9915,7 @@ snapshots:
   '@jest/console@27.5.1':
     dependencies:
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       jest-message-util: 27.5.1
       jest-util: 27.5.1
@@ -9924,7 +9924,7 @@ snapshots:
   '@jest/console@28.1.3':
     dependencies:
       '@jest/types': 28.1.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       jest-message-util: 28.1.3
       jest-util: 28.1.3
@@ -9937,7 +9937,7 @@ snapshots:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.8.1
@@ -9975,21 +9975,21 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-mock: 27.5.1
 
   '@jest/environment@29.7.0':
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-mock: 29.7.0
 
   '@jest/fake-timers@27.5.1':
     dependencies:
       '@jest/types': 27.5.1
       '@sinonjs/fake-timers': 8.1.0
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-message-util: 27.5.1
       jest-mock: 27.5.1
       jest-util: 27.5.1
@@ -9998,7 +9998,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -10016,7 +10016,7 @@ snapshots:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       collect-v8-coverage: 1.0.1
       exit: 0.1.2
@@ -10120,7 +10120,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       '@types/yargs': 16.0.5
       chalk: 4.1.2
 
@@ -10129,7 +10129,7 @@ snapshots:
       '@jest/schemas': 28.1.3
       '@types/istanbul-lib-coverage': 2.0.4
       '@types/istanbul-reports': 3.0.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       '@types/yargs': 17.0.23
       chalk: 4.1.2
 
@@ -10138,7 +10138,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -10352,9 +10352,9 @@ snapshots:
       chalk: 4.1.2
       debug: 2.6.9
       invariant: 2.2.4
-      metro: 0.81.4
-      metro-config: 0.81.4
-      metro-core: 0.81.4
+      metro: 0.81.5
+      metro-config: 0.81.5
+      metro-core: 0.81.5
       readline: 1.3.0
       semver: 7.7.1
     transitivePeerDependencies:
@@ -10709,20 +10709,20 @@ snapshots:
   '@types/body-parser@1.19.2':
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/bonjour@3.5.10':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/connect-history-api-fallback@1.3.5':
     dependencies:
       '@types/express-serve-static-core': 4.17.33
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/connect@3.4.35':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/debounce@1.2.4': {}
 
@@ -10755,7 +10755,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.17.33':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
 
@@ -10768,17 +10768,17 @@ snapshots:
 
   '@types/graceful-fs@4.1.6':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/html-minifier-terser@6.1.0': {}
 
   '@types/http-proxy@1.17.10':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/istanbul-lib-coverage@2.0.4': {}
 
@@ -10810,9 +10810,9 @@ snapshots:
 
   '@types/node-forge@1.3.11':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
-  '@types/node@22.15.11':
+  '@types/node@22.15.12':
     dependencies:
       undici-types: 6.21.0
 
@@ -10843,7 +10843,7 @@ snapshots:
 
   '@types/resolve@1.17.1':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/retry@0.12.0': {}
 
@@ -10856,11 +10856,11 @@ snapshots:
   '@types/serve-static@1.15.1':
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/sockjs@0.3.33':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/stack-utils@2.0.1': {}
 
@@ -10874,7 +10874,7 @@ snapshots:
 
   '@types/ws@8.5.4':
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   '@types/yargs-parser@21.0.0': {}
 
@@ -11999,7 +11999,7 @@ snapshots:
 
   chrome-launcher@0.15.2:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -12010,7 +12010,7 @@ snapshots:
 
   chromium-edge-launcher@0.2.0:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 1.4.2
@@ -12738,7 +12738,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.2.0(eslint@8.57.1)
@@ -12829,7 +12829,7 @@ snapshots:
       tinyglobby: 0.2.13
       unrs-resolver: 1.7.2
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -12924,7 +12924,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -13401,9 +13401,9 @@ snapshots:
 
   fraction.js@4.2.0: {}
 
-  framer-motion@12.9.7(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  framer-motion@12.10.0(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      motion-dom: 12.9.6
+      motion-dom: 12.10.0
       motion-utils: 12.9.4
       tslib: 2.8.1
     optionalDependencies:
@@ -13987,7 +13987,7 @@ snapshots:
       '@jest/environment': 27.5.1
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       co: 4.6.0
       dedent: 0.7.0
@@ -14083,7 +14083,7 @@ snapshots:
       '@jest/environment': 27.5.1
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-mock: 27.5.1
       jest-util: 27.5.1
       jsdom: 16.7.0
@@ -14098,7 +14098,7 @@ snapshots:
       '@jest/environment': 27.5.1
       '@jest/fake-timers': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-mock: 27.5.1
       jest-util: 27.5.1
 
@@ -14107,7 +14107,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -14119,7 +14119,7 @@ snapshots:
     dependencies:
       '@jest/types': 27.5.1
       '@types/graceful-fs': 4.1.6
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -14136,7 +14136,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -14154,7 +14154,7 @@ snapshots:
       '@jest/source-map': 27.5.1
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       co: 4.6.0
       expect: 27.5.1
@@ -14221,12 +14221,12 @@ snapshots:
   jest-mock@27.5.1:
     dependencies:
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
 
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-util: 29.7.0
 
   jest-pnp-resolver@1.2.3(jest-resolve@27.5.1):
@@ -14267,7 +14267,7 @@ snapshots:
       '@jest/test-result': 27.5.1
       '@jest/transform': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       emittery: 0.8.1
       graceful-fs: 4.2.11
@@ -14318,7 +14318,7 @@ snapshots:
 
   jest-serializer@27.5.1:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       graceful-fs: 4.2.11
 
   jest-snapshot@27.5.1:
@@ -14351,7 +14351,7 @@ snapshots:
   jest-util@27.5.1:
     dependencies:
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       ci-info: 3.8.0
       graceful-fs: 4.2.11
@@ -14360,7 +14360,7 @@ snapshots:
   jest-util@28.1.3:
     dependencies:
       '@jest/types': 28.1.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       ci-info: 3.8.0
       graceful-fs: 4.2.11
@@ -14369,7 +14369,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -14408,7 +14408,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 27.5.1
       '@jest/types': 27.5.1
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       jest-util: 27.5.1
@@ -14418,7 +14418,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 28.1.3
       '@jest/types': 28.1.3
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.10.2
@@ -14427,25 +14427,25 @@ snapshots:
 
   jest-worker@26.6.2:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       merge-stream: 2.0.0
       supports-color: 7.2.0
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@28.1.3:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.15.11
+      '@types/node': 22.15.12
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -14462,7 +14462,7 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  jotai@2.12.3(@types/react@18.3.21)(react@18.3.1):
+  jotai@2.12.4(@types/react@18.3.21)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.21
       react: 18.3.1
@@ -14736,7 +14736,7 @@ snapshots:
 
   methods@1.1.2: {}
 
-  metro-babel-transformer@0.81.4:
+  metro-babel-transformer@0.81.5:
     dependencies:
       '@babel/core': 7.26.7
       flow-enums-runtime: 0.0.6
@@ -14745,38 +14745,38 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  metro-cache-key@0.81.4:
+  metro-cache-key@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
 
-  metro-cache@0.81.4:
+  metro-cache@0.81.5:
     dependencies:
       exponential-backoff: 3.1.2
       flow-enums-runtime: 0.0.6
-      metro-core: 0.81.4
+      metro-core: 0.81.5
 
-  metro-config@0.81.4:
+  metro-config@0.81.5:
     dependencies:
       connect: 3.7.0
       cosmiconfig: 5.2.1
       flow-enums-runtime: 0.0.6
       jest-validate: 29.7.0
-      metro: 0.81.4
-      metro-cache: 0.81.4
-      metro-core: 0.81.4
-      metro-runtime: 0.81.4
+      metro: 0.81.5
+      metro-cache: 0.81.5
+      metro-core: 0.81.5
+      metro-runtime: 0.81.5
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  metro-core@0.81.4:
+  metro-core@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
       lodash.throttle: 4.1.1
-      metro-resolver: 0.81.4
+      metro-resolver: 0.81.5
 
-  metro-file-map@0.81.4:
+  metro-file-map@0.81.5:
     dependencies:
       debug: 2.6.9
       fb-watchman: 2.0.2
@@ -14790,47 +14790,47 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  metro-minify-terser@0.81.4:
+  metro-minify-terser@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
       terser: 5.39.0
 
-  metro-resolver@0.81.4:
+  metro-resolver@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
 
-  metro-runtime@0.81.4:
+  metro-runtime@0.81.5:
     dependencies:
       '@babel/runtime': 7.27.1
       flow-enums-runtime: 0.0.6
 
-  metro-source-map@0.81.4:
+  metro-source-map@0.81.5:
     dependencies:
       '@babel/traverse': 7.27.1
       '@babel/traverse--for-generate-function-map': '@babel/traverse@7.27.1'
       '@babel/types': 7.27.1
       flow-enums-runtime: 0.0.6
       invariant: 2.2.4
-      metro-symbolicate: 0.81.4
+      metro-symbolicate: 0.81.5
       nullthrows: 1.1.1
-      ob1: 0.81.4
+      ob1: 0.81.5
       source-map: 0.5.7
       vlq: 1.0.1
     transitivePeerDependencies:
       - supports-color
 
-  metro-symbolicate@0.81.4:
+  metro-symbolicate@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
       invariant: 2.2.4
-      metro-source-map: 0.81.4
+      metro-source-map: 0.81.5
       nullthrows: 1.1.1
       source-map: 0.5.7
       vlq: 1.0.1
     transitivePeerDependencies:
       - supports-color
 
-  metro-transform-plugins@0.81.4:
+  metro-transform-plugins@0.81.5:
     dependencies:
       '@babel/core': 7.26.7
       '@babel/generator': 7.27.1
@@ -14841,27 +14841,27 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  metro-transform-worker@0.81.4:
+  metro-transform-worker@0.81.5:
     dependencies:
       '@babel/core': 7.26.7
       '@babel/generator': 7.27.1
       '@babel/parser': 7.27.1
       '@babel/types': 7.27.1
       flow-enums-runtime: 0.0.6
-      metro: 0.81.4
-      metro-babel-transformer: 0.81.4
-      metro-cache: 0.81.4
-      metro-cache-key: 0.81.4
-      metro-minify-terser: 0.81.4
-      metro-source-map: 0.81.4
-      metro-transform-plugins: 0.81.4
+      metro: 0.81.5
+      metro-babel-transformer: 0.81.5
+      metro-cache: 0.81.5
+      metro-cache-key: 0.81.5
+      metro-minify-terser: 0.81.5
+      metro-source-map: 0.81.5
+      metro-transform-plugins: 0.81.5
       nullthrows: 1.1.1
     transitivePeerDependencies:
       - bufferutil
       - supports-color
       - utf-8-validate
 
-  metro@0.81.4:
+  metro@0.81.5:
     dependencies:
       '@babel/code-frame': 7.27.1
       '@babel/core': 7.26.7
@@ -14884,18 +14884,18 @@ snapshots:
       jest-worker: 29.7.0
       jsc-safe-url: 0.2.4
       lodash.throttle: 4.1.1
-      metro-babel-transformer: 0.81.4
-      metro-cache: 0.81.4
-      metro-cache-key: 0.81.4
-      metro-config: 0.81.4
-      metro-core: 0.81.4
-      metro-file-map: 0.81.4
-      metro-resolver: 0.81.4
-      metro-runtime: 0.81.4
-      metro-source-map: 0.81.4
-      metro-symbolicate: 0.81.4
-      metro-transform-plugins: 0.81.4
-      metro-transform-worker: 0.81.4
+      metro-babel-transformer: 0.81.5
+      metro-cache: 0.81.5
+      metro-cache-key: 0.81.5
+      metro-config: 0.81.5
+      metro-core: 0.81.5
+      metro-file-map: 0.81.5
+      metro-resolver: 0.81.5
+      metro-runtime: 0.81.5
+      metro-source-map: 0.81.5
+      metro-symbolicate: 0.81.5
+      metro-transform-plugins: 0.81.5
+      metro-transform-worker: 0.81.5
       mime-types: 2.1.35
       nullthrows: 1.1.1
       serialize-error: 2.1.0
@@ -14959,7 +14959,7 @@ snapshots:
 
   mkdirp@1.0.4: {}
 
-  motion-dom@12.9.6:
+  motion-dom@12.10.0:
     dependencies:
       motion-utils: 12.9.4
 
@@ -15061,7 +15061,7 @@ snapshots:
 
   nwsapi@2.2.2: {}
 
-  ob1@0.81.4:
+  ob1@0.81.5:
     dependencies:
       flow-enums-runtime: 0.0.6
 
@@ -15931,8 +15931,8 @@ snapshots:
       jest-environment-node: 29.7.0
       jsc-android: 250231.0.0
       memoize-one: 5.2.1
-      metro-runtime: 0.81.4
-      metro-source-map: 0.81.4
+      metro-runtime: 0.81.5
+      metro-source-map: 0.81.5
       nullthrows: 1.1.1
       pretty-format: 29.7.0
       promise: 8.3.0
