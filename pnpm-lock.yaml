@@ -27,8 +27,8 @@ importers:
         specifier: ^2.0.0
         version: 2.12.4(@types/react@18.3.21)(react@18.3.1)
       lucide-react:
-        specifier: ^0.509.0
-        version: 0.509.0(react@18.3.1)
+        specifier: ^0.510.0
+        version: 0.510.0(react@18.3.1)
       marked:
         specifier: ^15.0.7
         version: 15.0.11
@@ -5408,8 +5408,8 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
-  lucide-react@0.509.0:
-    resolution: {integrity: sha512-xCJHn6Uh5qF6PGml25vveCTrHJZcqS1G1MVzWZK54ZQsOiCVJk4fwY3oyo5EXS2S+aqvTpWYIfJN+PesJ0quxg==}
+  lucide-react@0.510.0:
+    resolution: {integrity: sha512-p8SQRAMVh7NhsAIETokSqDrc5CHnDLbV29mMnzaXx+Vc/hnqQzwI2r0FMWCcoTXnbw2KEjy48xwpGdEL+ck06Q==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -8137,7 +8137,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.4.0
       lodash.debounce: 4.0.8
-      resolve: 1.22.1
+      resolve: 1.22.10
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -11061,7 +11061,7 @@ snapshots:
       debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.8
+      semver: 7.7.1
       tsutils: 3.21.0(typescript@5.8.3)
     optionalDependencies:
       typescript: 5.8.3
@@ -11122,7 +11122,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.56.0(typescript@5.8.3)
       eslint: 8.57.1
       eslint-scope: 5.1.1
-      semver: 7.3.8
+      semver: 7.7.1
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -14682,7 +14682,7 @@ snapshots:
     dependencies:
       yallist: 4.0.0
 
-  lucide-react@0.509.0(react@18.3.1):
+  lucide-react@0.510.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
