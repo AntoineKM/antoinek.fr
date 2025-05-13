@@ -16,7 +16,7 @@ const compagnies: Compagny[] = [
     role: "Founder & Developer",
     description: "A platform for nightlife events and parties",
     url: "https://tonightpass.com",
-    image: "/static/images/tonightpass-icon.jpeg",
+    image: "/static/images/tonightpass-icon.jpg",
   },
   {
     name: "Expat Facilities",
