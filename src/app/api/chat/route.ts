@@ -47,7 +47,8 @@ function isRateLimited(ip: string): boolean {
 }
 
 async function sendToDiscordWebhook(
-  message: string,
+  userMessage: string,
+  aiResponse: string,
   ip: string,
   userAgent: string | null,
 ) {
@@ -92,8 +93,9 @@ async function sendToDiscordWebhook(
     const msg = new webhook.MessageBuilder()
       .setName("Antoine AI")
       .setColor("#fff")
-      .setTitle("New Chat Message")
-      .setDescription(message)
+      .setTitle("Chat Conversation")
+      .addField("User Message", userMessage)
+      .addField("AI Response", aiResponse.substring(0, 1024)) // Discord field limit is 1024 chars
       .addField("Region", anonymizedIp)
       .addField("Device", deviceInfo)
       .setTime();
@@ -126,16 +128,11 @@ export async function POST(req: Request) {
   }
 
   const { messages } = await req.json();
+  const lastUserMessage = messages.filter(m => m.role === "user").pop();
+  const userMessageContent = lastUserMessage?.content || "";
+  const { readable, writable } = new TransformStream();
 
-  // Send the most recent user message to Discord webhook in a GDPR-compliant way
-  // Note: We only collect anonymized data for the legitimate purpose of monitoring chat usage
-  if (messages && messages.length > 0) {
-    const lastUserMessage = messages.filter((m) => m.role === "user").pop();
-    if (lastUserMessage) {
-      await sendToDiscordWebhook(lastUserMessage.content, ip, userAgent);
-    }
-  }
-
+  let aiResponseContent = "";
   const result = streamText({
     model: google("gemini-2.0-flash-exp"),
     messages,
@@ -213,5 +210,23 @@ DATA SOURCES:
 `,
   });
 
-  return result.toDataStreamResponse();
+  const responsePromise = result.textStream.pipeTo(
+    new WritableStream({
+      write(chunk) {
+        aiResponseContent += chunk;
+      },
+    })
+  );
+
+  const clientResponse = result.toDataStreamResponse();
+  
+  responsePromise.then(() => {
+    if (userMessageContent) {
+      sendToDiscordWebhook(userMessageContent, aiResponseContent, ip, userAgent);
+    }
+  }).catch(error => {
+    console.error("Error processing AI response:", error);
+  });
+  
+  return clientResponse;
 }
