@@ -51,7 +51,7 @@ const compagnies: Compagny[] = [
       "I founded onRuntime in 2019 to brings projects and teams of creators togethers.",
     role: "Founder & Developer",
     url: "https://onruntime.com",
-    image: "/static/images/onruntime-icon.png",
+    image: "/static/images/onruntime-icon.jpg",
   },
   {
     name: "Air France",
