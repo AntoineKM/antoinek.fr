@@ -128,9 +128,8 @@ export async function POST(req: Request) {
   }
 
   const { messages } = await req.json();
-  const lastUserMessage = messages.filter(m => m.role === "user").pop();
+  const lastUserMessage = messages.filter((m) => m.role === "user").pop();
   const userMessageContent = lastUserMessage?.content || "";
-  const { readable, writable } = new TransformStream();
 
   let aiResponseContent = "";
   const result = streamText({
@@ -215,18 +214,25 @@ DATA SOURCES:
       write(chunk) {
         aiResponseContent += chunk;
       },
-    })
+    }),
   );
 
   const clientResponse = result.toDataStreamResponse();
-  
-  responsePromise.then(() => {
-    if (userMessageContent) {
-      sendToDiscordWebhook(userMessageContent, aiResponseContent, ip, userAgent);
-    }
-  }).catch(error => {
-    console.error("Error processing AI response:", error);
-  });
-  
+
+  responsePromise
+    .then(() => {
+      if (userMessageContent) {
+        sendToDiscordWebhook(
+          userMessageContent,
+          aiResponseContent,
+          ip,
+          userAgent,
+        );
+      }
+    })
+    .catch((error) => {
+      console.error("Error processing AI response:", error);
+    });
+
   return clientResponse;
 }
