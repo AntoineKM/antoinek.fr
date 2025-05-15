@@ -1,4 +1,3 @@
-// Updated src/app/api/chat/route.ts
 import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
 import { env } from "env.mjs";
@@ -9,10 +8,8 @@ import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";
 import webhook from "webhook-discord";
 
-// Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
-// Simple rate limiting
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute window
 const MAX_REQUESTS_PER_WINDOW = 10; // 10 requests per minute
 
@@ -26,29 +23,24 @@ function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const windowStart = now - RATE_LIMIT_WINDOW;
 
-  // Initialize if needed
   if (!rateLimitTracker[ip]) {
     rateLimitTracker[ip] = [];
   }
 
-  // Clean old requests
   rateLimitTracker[ip] = rateLimitTracker[ip].filter(
     (time) => time > windowStart,
   );
 
-  // Check if rate limited
   if (rateLimitTracker[ip].length >= MAX_REQUESTS_PER_WINDOW) {
     return true;
   }
 
-  // Add current request
   rateLimitTracker[ip].push(now);
   return false;
 }
 
 async function sendToDiscordWebhook(
-  userMessage: string,
-  aiResponse: string,
+  message: string,
   ip: string,
   userAgent: string | null,
 ) {
@@ -62,21 +54,17 @@ async function sendToDiscordWebhook(
   try {
     const Hook = new webhook.Webhook(webhookUrl);
 
-    // Anonymize IP by removing the last octet (for IPv4) or significant portion (for IPv6)
     let anonymizedIp = "Unknown";
     if (ip && ip !== "unknown") {
       if (ip.includes(".")) {
-        // IPv4
         anonymizedIp = ip.split(".").slice(0, 3).join(".") + ".xxx";
       } else if (ip.includes(":")) {
-        // IPv6
         anonymizedIp = ip.split(":").slice(0, 4).join(":") + ":xxxx:xxxx:xxxx";
       }
     }
 
     let deviceInfo = "Unknown";
     if (userAgent) {
-      // Extract just the browser name and OS
       const browserMatch = userAgent.match(
         /(Chrome|Firefox|Safari|Edge|MSIE|Trident)[\/\s](\d+)/i,
       );
@@ -93,9 +81,8 @@ async function sendToDiscordWebhook(
     const msg = new webhook.MessageBuilder()
       .setName("Antoine AI")
       .setColor("#fff")
-      .setTitle("Chat Conversation")
-      .addField("User Message", userMessage)
-      .addField("AI Response", aiResponse.substring(0, 1024)) // Discord field limit is 1024 chars
+      .setTitle("New Chat Message")
+      .setDescription(message)
       .addField("Region", anonymizedIp)
       .addField("Device", deviceInfo)
       .setTime();
@@ -107,14 +94,12 @@ async function sendToDiscordWebhook(
 }
 
 export async function POST(req: Request) {
-  // Get client IP and user agent
   const ip =
     req.headers.get("x-forwarded-for") ||
     req.headers.get("cf-connecting-ip") ||
     "unknown";
   const userAgent = req.headers.get("user-agent");
 
-  // Check rate limit
   if (isRateLimited(ip)) {
     return new Response(
       JSON.stringify({
@@ -128,10 +113,14 @@ export async function POST(req: Request) {
   }
 
   const { messages } = await req.json();
-  const lastUserMessage = messages.filter((m) => m.role === "user").pop();
-  const userMessageContent = lastUserMessage?.content || "";
 
-  let aiResponseContent = "";
+  if (messages && messages.length > 0) {
+    const lastUserMessage = messages.filter((m) => m.role === "user").pop();
+    if (lastUserMessage) {
+      await sendToDiscordWebhook(lastUserMessage.content, ip, userAgent);
+    }
+  }
+
   const result = streamText({
     model: google("gemini-2.0-flash-exp"),
     messages,
@@ -209,30 +198,5 @@ DATA SOURCES:
 `,
   });
 
-  const responsePromise = result.textStream.pipeTo(
-    new WritableStream({
-      write(chunk) {
-        aiResponseContent += chunk;
-      },
-    }),
-  );
-
-  const clientResponse = result.toDataStreamResponse();
-
-  responsePromise
-    .then(() => {
-      if (userMessageContent) {
-        sendToDiscordWebhook(
-          userMessageContent,
-          aiResponseContent,
-          ip,
-          userAgent,
-        );
-      }
-    })
-    .catch((error) => {
-      console.error("Error processing AI response:", error);
-    });
-
-  return clientResponse;
+  return result.toDataStreamResponse();
 }
