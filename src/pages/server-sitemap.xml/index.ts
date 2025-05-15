@@ -1,4 +1,3 @@
-// pages/server-sitemap.xml/index.tsx
 import { env } from "env.mjs";
 import { GetServerSideProps } from "next";
 import { getServerSideSitemapLegacy } from "next-sitemap";
@@ -37,5 +36,4 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   return getServerSideSitemapLegacy(ctx, fields);
 };
 
-// Default export to prevent next.js errors
 export default function Sitemap() {}

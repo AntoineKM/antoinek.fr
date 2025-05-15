@@ -55,7 +55,6 @@ const Link = styled(
 
     if (isString(href)) {
       href = href as string;
-      // regex to check if the href is internal or external
 
       const internal = href.match(/^(\/(?!\/)[^#]*|#.*)$/);
       if (!internal) {

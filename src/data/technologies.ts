@@ -160,7 +160,6 @@ export const technologies: Technology[] = [
     type: "PHP Framework",
     useCase: "High Performance PHP Framework for Web Development.",
   },
-  // // Protocols - We waiting for svg icons
   {
     color: "#65C2CB",
     icon: IpfsLogo,

@@ -103,8 +103,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-// --- Styled components
-
 const Wrapper = styled.div<{ $isMounted: boolean }>`
   display: flex;
   align-items: center;

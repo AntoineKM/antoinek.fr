@@ -18,7 +18,6 @@ import {
   XIcon,
 } from "./Icons";
 
-// Fixed unique ID for ContentLoader to avoid hydration mismatch
 const LOCATION_LOADER_ID = "location-loader";
 
 const Nav = () => {
@@ -30,7 +29,6 @@ const Nav = () => {
 
   const [doing] = useAtom(doingAtom);
 
-  // Reset mobile menu when changing pages, but DON'T include openOnMobile in dependencies
   useEffect(() => {
     setOpenOnMobile(false);
     playSwitchPageSound();
@@ -40,7 +38,6 @@ const Nav = () => {
     setOpenOnMobile(!openOnMobile);
   }, [openOnMobile]);
 
-  // Instead of dynamic positioning, we'll use CSS-based indicators
   return (
     <>
       <MobileHeader>

@@ -30,21 +30,17 @@ export default function Home() {
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(false);
 
-  // Check scroll position of suggestions container
   const checkScrollPosition = () => {
     if (!suggestionsContainerRef.current) return;
 
     const { scrollLeft, scrollWidth, clientWidth } =
       suggestionsContainerRef.current;
 
-    // Show left arrow if scrolled right
     setShowLeftArrow(scrollLeft > 0);
 
-    // Show right arrow if there's more content to scroll to
-    setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10); // Small buffer
+    setShowRightArrow(scrollLeft + clientWidth < scrollWidth - 10);
   };
 
-  // Scroll suggestion container left
   const scrollSuggestionsLeft = () => {
     if (!suggestionsContainerRef.current) return;
     suggestionsContainerRef.current.scrollBy({
@@ -53,21 +49,18 @@ export default function Home() {
     });
   };
 
-  // Scroll suggestion container right
   const scrollSuggestionsRight = () => {
     if (!suggestionsContainerRef.current) return;
     suggestionsContainerRef.current.scrollBy({ left: 200, behavior: "smooth" });
   };
 
-  // Auto-resize text area based on content
   const adjustTextareaHeight = () => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   };
-
-  // Handle key press for text area
+  
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -77,7 +70,6 @@ export default function Home() {
     }
   };
 
-  // Handle custom input change to adjust height
   const handleCustomInputChange = (
     e: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
@@ -95,19 +87,15 @@ export default function Home() {
     }
   }, [messages]);
 
-  // Adjust textarea height when input changes
   useEffect(() => {
     adjustTextareaHeight();
   }, [input]);
 
-  // Set initial height based on message state
   useEffect(() => {
     if (textareaRef.current) {
       if (messages.length === 0) {
-        // Set to default 2 lines when no messages
         textareaRef.current.rows = 2;
       } else {
-        // Set to 1 line after conversation starts
         textareaRef.current.rows = 1;
       }
       adjustTextareaHeight();
@@ -121,26 +109,20 @@ export default function Home() {
     });
   }, []);
 
-  // Setup scroll event listeners for suggestions
   useEffect(() => {
     const container = suggestionsContainerRef.current;
     if (container) {
-      // Initial check
       checkScrollPosition();
 
-      // Add event listener
       container.addEventListener("scroll", checkScrollPosition);
 
-      // Clean up
       return () => {
         container.removeEventListener("scroll", checkScrollPosition);
       };
     }
   }, []);
 
-  // Check scroll on window resize and when component mounts
   useEffect(() => {
-    // Initial check after component mounts and content is rendered
     setTimeout(checkScrollPosition, 100);
 
     window.addEventListener("resize", checkScrollPosition);

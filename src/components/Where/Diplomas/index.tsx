@@ -62,7 +62,7 @@ const Description = styled.p`
 
 const TimelineContainer = styled.div`
   position: relative;
-  margin-left: 4rem; // Space for years
+  margin-left: 4rem;
 `;
 
 const VerticalLine = styled.div`
