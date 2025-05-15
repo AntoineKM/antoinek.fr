@@ -60,7 +60,7 @@ export default function Home() {
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
     }
   };
-  
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
