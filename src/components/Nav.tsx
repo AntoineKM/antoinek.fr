@@ -56,19 +56,50 @@ const Nav = () => {
             </Row>
           ) : null}{" "}
           <Row>
-            <Location
-              href={
-                doing
-                  ? `https://google.com/maps/search/${encodeURIComponent(
+            {doing?.kv.location && (
+              <>
+                <LocationIconWrapper>
+                  <LocationIcon>
+                    <NavigationIcon />
+                  </LocationIcon>
+                </LocationIconWrapper>
+                {doing.kv.futureLocation ? (
+                  <RelocationContainer>
+                    <LocationLink
+                      href={`https://google.com/maps/search/${encodeURIComponent(
+                        doing.kv.location,
+                      )}`}
+                    >
+                      {doing.kv.location}
+                    </LocationLink>
+                    <TransitionArrow>{"→"}</TransitionArrow>
+                    <LocationLink
+                      href={`https://google.com/maps/search/${encodeURIComponent(
+                        doing.kv.futureLocation,
+                      )}`}
+                    >
+                      {doing.kv.futureLocation}
+                    </LocationLink>
+                    <PulsingDot />
+                  </RelocationContainer>
+                ) : (
+                  <Location
+                    href={`https://google.com/maps/search/${encodeURIComponent(
                       doing.kv.location,
-                    )}`
-                  : "#"
-              }
-            >
-              <NavigationIcon />
-              {doing?.kv.location ? (
-                doing.kv.location
-              ) : (
+                    )}`}
+                  >
+                    {doing.kv.location}
+                  </Location>
+                )}
+              </>
+            )}
+            {!doing?.kv.location && (
+              <>
+                <LocationIconWrapper>
+                  <LocationIcon>
+                    <NavigationIcon />
+                  </LocationIcon>
+                </LocationIconWrapper>
                 <ContentLoader
                   speed={2}
                   height={19}
@@ -86,8 +117,8 @@ const Nav = () => {
                     height={"19"}
                   />
                 </ContentLoader>
-              )}
-            </Location>
+              </>
+            )}
           </Row>
           <NavMenu>
             {NAV_ITEMS.map((item) => (
@@ -215,7 +246,8 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
 `;
 
 const Title = styled.div`
@@ -223,27 +255,148 @@ const Title = styled.div`
   padding: 10px 0px;
 `;
 
-const Location = styled(Link)`
-  width: 100%;
+const LocationIconWrapper = styled.div`
   display: flex;
   align-items: center;
-  font-weight: 500;
+  justify-content: center;
+`;
+
+const LocationIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  position: relative;
+  width: 28px;
+  height: 28px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(255, 255, 227, 0.05);
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::before {
+    transform: scale(1);
+  }
+
+  svg {
+    height: 18px;
+    width: 18px;
+    color: #ffffe3;
+  }
+`;
+
+const RelocationContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   height: 19px;
   font-size: 14px;
-  margin-bottom: 15px;
-  user-select: none;
+`;
 
+const TransitionArrow = styled.span`
+  color: #bdbdb2;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  will-change: transform;
+
+  ${RelocationContainer}:hover & {
+    color: #ffffe3;
+    transform: translateX(2px);
+  }
+`;
+
+const LocationLink = styled(Link)`
   color: rgba(255, 255, 227, 1);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
 
   &:hover {
     color: rgba(255, 255, 227, 0.8);
   }
 
-  svg:first-child {
-    height: 18px;
-    width: 18px;
-    margin-right: 10px;
-    color: #ffffe3;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgba(255, 255, 227, 0.8);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
+
+const Location = styled(Link)`
+  color: rgba(255, 255, 227, 1);
+  text-decoration: none;
+  font-weight: 500;
+  height: 19px;
+  font-size: 14px;
+  position: relative;
+
+  &:hover {
+    color: rgba(255, 255, 227, 0.8);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgba(255, 255, 227, 0.8);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+`;
+
+const PulsingDot = styled.span`
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffe3;
+  margin-left: 3px;
+  animation: pulse 2s infinite;
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 227, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px rgba(255, 255, 227, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 255, 227, 0);
+    }
   }
 `;
 
