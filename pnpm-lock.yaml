@@ -10,22 +10,22 @@ importers:
     dependencies:
       '@ai-sdk/google':
         specifier: ^1.1.17
-        version: 1.2.18(zod@3.25.12)
+        version: 1.2.18(zod@3.25.17)
       '@ai-sdk/react':
         specifier: ^1.1.18
-        version: 1.2.12(react@18.3.1)(zod@3.25.12)
+        version: 1.2.12(react@18.3.1)(zod@3.25.17)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
-        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.12)
+        version: 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.17)
       ai:
         specifier: ^4.1.46
-        version: 4.3.16(react@18.3.1)(zod@3.25.12)
+        version: 4.3.16(react@18.3.1)(zod@3.25.17)
       framer-motion:
         specifier: ^12.0.0
         version: 12.12.1(@emotion/is-prop-valid@1.2.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       jotai:
         specifier: ^2.0.0
-        version: 2.12.4(@types/react@18.3.21)(react@18.3.1)
+        version: 2.12.4(@types/react@18.3.22)(react@18.3.1)
       lucide-react:
         specifier: ^0.511.0
         version: 0.511.0(react@18.3.1)
@@ -61,7 +61,7 @@ importers:
         version: 5.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.21.3))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.21.3))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@18.3.1)(type-fest@0.21.3)(typescript@5.8.3)
       react-spring:
         specifier: ^9.7.1
-        version: 9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0))(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react-konva@18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react-zdog@1.2.2)(react@18.3.1)(three@0.172.0)(zdog@1.1.3)
+        version: 9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0))(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react-konva@18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react-zdog@1.2.2)(react@18.3.1)(three@0.172.0)(zdog@1.1.3)
       styled-components:
         specifier: ^6.0.0
         version: 6.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -85,14 +85,14 @@ importers:
         version: 3.7.8
       zod:
         specifier: ^3.22.4
-        version: 3.25.12
+        version: 3.25.17
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
         version: 22.15.21
       '@types/react':
         specifier: ^18.0.29
-        version: 18.3.21
+        version: 18.3.22
       babel-plugin-styled-components:
         specifier: ^2.0.7
         version: 2.1.4(@babel/core@7.21.3)(styled-components@6.1.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -2402,8 +2402,8 @@ packages:
     peerDependencies:
       '@types/react': '*'
 
-  '@types/react@18.3.21':
-    resolution: {integrity: sha512-gXLBtmlcRJeT09/sI4PxVwyrku6SaNUj/6cMubjE6T6XdY1fDmBL7r0nX0jbSZPU/Xr0KuwLLZh6aOYY5d91Xw==}
+  '@types/react@18.3.22':
+    resolution: {integrity: sha512-vUhG0YmQZ7kL/tmKLrD3g5zXbXXreZXB3pmROW8bg3CnLnpjkRVwUlLne7Ufa2r9yJ8+/6B73RzhAek5TBKh2Q==}
 
   '@types/resolve@1.17.1':
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -7912,8 +7912,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.12:
-    resolution: {integrity: sha512-A8e9eiwm2L5YEupdjn1YcxL1ZDWuL3Bc4JKvLwUrpKZZtRUDOijR7XXsV5WMuUCZPc1tFYO5yfH14STI08MquA==}
+  zod@3.25.17:
+    resolution: {integrity: sha512-8hQzQ/kMOIFbwOgPrm9Sf9rtFHpFUMy4HvN0yEB0spw14aYi0uT5xG5CE2DB9cd51GWNsz+DNO7se1kztHMKnw==}
 
   zustand@3.7.2:
     resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
@@ -7926,39 +7926,39 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/google@1.2.18(zod@3.25.12)':
+  '@ai-sdk/google@1.2.18(zod@3.25.17)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.12)
-      zod: 3.25.12
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.17)
+      zod: 3.25.17
 
-  '@ai-sdk/provider-utils@2.2.8(zod@3.25.12)':
+  '@ai-sdk/provider-utils@2.2.8(zod@3.25.17)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       nanoid: 3.3.11
       secure-json-parse: 2.7.0
-      zod: 3.25.12
+      zod: 3.25.17
 
   '@ai-sdk/provider@1.1.3':
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.2.12(react@18.3.1)(zod@3.25.12)':
+  '@ai-sdk/react@1.2.12(react@18.3.1)(zod@3.25.17)':
     dependencies:
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.12)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.12)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.17)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.17)
       react: 18.3.1
       swr: 2.3.3(react@18.3.1)
       throttleit: 2.1.0
     optionalDependencies:
-      zod: 3.25.12
+      zod: 3.25.17
 
-  '@ai-sdk/ui-utils@1.2.11(zod@3.25.12)':
+  '@ai-sdk/ui-utils@1.2.11(zod@3.25.17)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.12)
-      zod: 3.25.12
-      zod-to-json-schema: 3.24.5(zod@3.25.12)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.17)
+      zod: 3.25.17
+      zod-to-json-schema: 3.24.5(zod@3.25.17)
 
   '@ampproject/remapping@2.2.0':
     dependencies:
@@ -10412,14 +10412,14 @@ snapshots:
 
   '@react-native/normalize-colors@0.77.0': {}
 
-  '@react-native/virtualized-lists@0.77.0(@types/react@18.3.21)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)':
+  '@react-native/virtualized-lists@0.77.0(@types/react@18.3.22)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)':
     dependencies:
       invariant: 2.2.4
       nullthrows: 1.1.1
       react: 18.3.1
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1)
     optionalDependencies:
-      '@types/react': 18.3.21
+      '@types/react': 18.3.22
 
   '@react-spring/animated@9.7.5(react@18.3.1)':
     dependencies:
@@ -10434,7 +10434,7 @@ snapshots:
       '@react-spring/types': 9.7.5
       react: 18.3.1
 
-  '@react-spring/konva@9.7.5(konva@9.3.18)(react-konva@18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@react-spring/konva@9.7.5(konva@9.3.18)(react-konva@18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-spring/animated': 9.7.5(react@18.3.1)
       '@react-spring/core': 9.7.5(react@18.3.1)
@@ -10442,16 +10442,16 @@ snapshots:
       '@react-spring/types': 9.7.5
       konva: 9.3.18
       react: 18.3.1
-      react-konva: 18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-konva: 18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
-  '@react-spring/native@9.7.5(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)':
+  '@react-spring/native@9.7.5(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-spring/animated': 9.7.5(react@18.3.1)
       '@react-spring/core': 9.7.5(react@18.3.1)
       '@react-spring/shared': 9.7.5(react@18.3.1)
       '@react-spring/types': 9.7.5
       react: 18.3.1
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1)
 
   '@react-spring/rafz@9.7.5': {}
 
@@ -10461,13 +10461,13 @@ snapshots:
       '@react-spring/types': 9.7.5
       react: 18.3.1
 
-  '@react-spring/three@9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0))(react@18.3.1)(three@0.172.0)':
+  '@react-spring/three@9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0))(react@18.3.1)(three@0.172.0)':
     dependencies:
       '@react-spring/animated': 9.7.5(react@18.3.1)
       '@react-spring/core': 9.7.5(react@18.3.1)
       '@react-spring/shared': 9.7.5(react@18.3.1)
       '@react-spring/types': 9.7.5
-      '@react-three/fiber': 8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0)
+      '@react-three/fiber': 8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0)
       react: 18.3.1
       three: 0.172.0
 
@@ -10493,7 +10493,7 @@ snapshots:
       react-zdog: 1.2.2
       zdog: 1.1.3
 
-  '@react-three/fiber@8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0)':
+  '@react-three/fiber@8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0)':
     dependencies:
       '@babel/runtime': 7.27.1
       '@types/debounce': 1.2.4
@@ -10502,7 +10502,7 @@ snapshots:
       base64-js: 1.5.1
       buffer: 6.0.3
       debounce: 1.2.1
-      its-fine: 1.2.5(@types/react@18.3.21)(react@18.3.1)
+      its-fine: 1.2.5(@types/react@18.3.22)(react@18.3.1)
       react: 18.3.1
       react-reconciler: 0.27.0(react@18.3.1)
       scheduler: 0.21.0
@@ -10511,7 +10511,7 @@ snapshots:
       zustand: 3.7.2(react@18.3.1)
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -10651,19 +10651,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.12)':
+  '@t3-oss/env-core@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.17)':
     dependencies:
       arktype: 2.1.20
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.25.12
+      zod: 3.25.17
 
-  '@t3-oss/env-nextjs@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.12)':
+  '@t3-oss/env-nextjs@0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.17)':
     dependencies:
-      '@t3-oss/env-core': 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.12)
+      '@t3-oss/env-core': 0.13.4(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.17)
     optionalDependencies:
       typescript: 5.8.3
-      zod: 3.25.12
+      zod: 3.25.17
     transitivePeerDependencies:
       - arktype
 
@@ -10842,13 +10842,13 @@ snapshots:
 
   '@types/react-reconciler@0.26.7':
     dependencies:
-      '@types/react': 18.3.21
+      '@types/react': 18.3.22
 
-  '@types/react-reconciler@0.28.9(@types/react@18.3.21)':
+  '@types/react-reconciler@0.28.9(@types/react@18.3.22)':
     dependencies:
-      '@types/react': 18.3.21
+      '@types/react': 18.3.22
 
-  '@types/react@18.3.21':
+  '@types/react@18.3.22':
     dependencies:
       '@types/prop-types': 15.7.14
       csstype: 3.1.3
@@ -11390,15 +11390,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@4.3.16(react@18.3.1)(zod@3.25.12):
+  ai@4.3.16(react@18.3.1)(zod@3.25.17):
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.12)
-      '@ai-sdk/react': 1.2.12(react@18.3.1)(zod@3.25.12)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.12)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.17)
+      '@ai-sdk/react': 1.2.12(react@18.3.1)(zod@3.25.17)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.17)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
-      zod: 3.25.12
+      zod: 3.25.17
     optionalDependencies:
       react: 18.3.1
 
@@ -12754,7 +12754,7 @@ snapshots:
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.5(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.2.0(eslint@8.57.1)
@@ -12845,7 +12845,7 @@ snapshots:
       tinyglobby: 0.2.13
       unrs-resolver: 1.7.2
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -12940,7 +12940,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@5.62.0(eslint@8.57.1)(typescript@5.8.3))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -13978,9 +13978,9 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  its-fine@1.2.5(@types/react@18.3.21)(react@18.3.1):
+  its-fine@1.2.5(@types/react@18.3.22)(react@18.3.1):
     dependencies:
-      '@types/react-reconciler': 0.28.9(@types/react@18.3.21)
+      '@types/react-reconciler': 0.28.9(@types/react@18.3.22)
       react: 18.3.1
     transitivePeerDependencies:
       - '@types/react'
@@ -14478,9 +14478,9 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  jotai@2.12.4(@types/react@18.3.21)(react@18.3.1):
+  jotai@2.12.4(@types/react@18.3.22)(react@18.3.1):
     optionalDependencies:
-      '@types/react': 18.3.21
+      '@types/react': 18.3.22
       react: 18.3.1
 
   js-tokens@4.0.0: {}
@@ -15910,10 +15910,10 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-konva@18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-konva@18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
-      '@types/react-reconciler': 0.28.9(@types/react@18.3.21)
-      its-fine: 1.2.5(@types/react@18.3.21)(react@18.3.1)
+      '@types/react-reconciler': 0.28.9(@types/react@18.3.22)
+      its-fine: 1.2.5(@types/react@18.3.22)(react@18.3.1)
       konva: 9.3.18
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -15922,7 +15922,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1):
+  react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1):
     dependencies:
       '@jest/create-cache-key-function': 29.7.0
       '@react-native/assets-registry': 0.77.0
@@ -15931,7 +15931,7 @@ snapshots:
       '@react-native/gradle-plugin': 0.77.0
       '@react-native/js-polyfills': 0.77.0
       '@react-native/normalize-colors': 0.77.0
-      '@react-native/virtualized-lists': 0.77.0(@types/react@18.3.21)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)
+      '@react-native/virtualized-lists': 0.77.0(@types/react@18.3.22)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
@@ -15963,7 +15963,7 @@ snapshots:
       ws: 6.2.3
       yargs: 17.7.2
     optionalDependencies:
-      '@types/react': 18.3.21
+      '@types/react': 18.3.22
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/preset-env'
@@ -16082,12 +16082,12 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
 
-  react-spring@9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0))(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react-konva@18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react-zdog@1.2.2)(react@18.3.1)(three@0.172.0)(zdog@1.1.3):
+  react-spring@9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0))(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react-konva@18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react-zdog@1.2.2)(react@18.3.1)(three@0.172.0)(zdog@1.1.3):
     dependencies:
       '@react-spring/core': 9.7.5(react@18.3.1)
-      '@react-spring/konva': 9.7.5(konva@9.3.18)(react-konva@18.2.10(@types/react@18.3.21)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      '@react-spring/native': 9.7.5(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)
-      '@react-spring/three': 9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.21)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.21)(react@18.3.1))(react@18.3.1)(three@0.172.0))(react@18.3.1)(three@0.172.0)
+      '@react-spring/konva': 9.7.5(konva@9.3.18)(react-konva@18.2.10(@types/react@18.3.22)(konva@9.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+      '@react-spring/native': 9.7.5(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)
+      '@react-spring/three': 9.7.5(@react-three/fiber@8.17.12(@types/react@18.3.22)(react-dom@18.3.1(react@18.3.1))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@18.3.22)(react@18.3.1))(react@18.3.1)(three@0.172.0))(react@18.3.1)(three@0.172.0)
       '@react-spring/web': 9.7.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-spring/zdog': 9.7.5(react-dom@18.3.1(react@18.3.1))(react-zdog@1.2.2)(react@18.3.1)(zdog@1.1.3)
       react: 18.3.1
@@ -17662,11 +17662,11 @@ snapshots:
 
   zdog@1.1.3: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.12):
+  zod-to-json-schema@3.24.5(zod@3.25.17):
     dependencies:
-      zod: 3.25.12
+      zod: 3.25.17
 
-  zod@3.25.12: {}
+  zod@3.25.17: {}
 
   zustand@3.7.2(react@18.3.1):
     optionalDependencies:
