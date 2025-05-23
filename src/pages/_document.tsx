@@ -38,7 +38,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render(): JSX.Element {
+  render(): React.JSX.Element {
     return (
       <Html lang={"en"}>
         <Head>
