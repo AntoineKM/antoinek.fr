@@ -1,6 +1,30 @@
 export const diplomas = [
   {
     year: "2025",
+    title: "Next.js SEO Fundamentals",
+    subtitle: "Vercel",
+    icon: "▲",
+  },
+  {
+    year: "2025",
+    title: "Next.js Pages Router Fundamentals",
+    subtitle: "Vercel",
+    icon: "▲",
+  },
+  {
+    year: "2025",
+    title: "Next.js App Router Fundamentals",
+    subtitle: "Vercel",
+    icon: "▲",
+  },
+  {
+    year: "2025",
+    title: "React Foundations for Next.js",
+    subtitle: "Vercel",
+    icon: "▲",
+  },
+  {
+    year: "2025",
     title: "AWS Educate Getting Started with Storage",
     subtitle: "Amazon Web Services Training and Certification",
     icon: "☁️",
@@ -14,7 +38,7 @@ export const diplomas = [
   {
     year: "2023",
     title: "onCrawl certification",
-    location: null,
+    location: "onCrawl",
     icon: "🎯",
   },
   {
