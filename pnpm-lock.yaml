@@ -10,16 +10,16 @@ importers:
     dependencies:
       '@ai-sdk/google':
         specifier: ^1.1.17
-        version: 1.2.18(zod@3.25.32)
+        version: 1.2.18(zod@3.25.34)
       '@ai-sdk/react':
         specifier: ^1.1.18
-        version: 1.2.12(react@19.1.0)(zod@3.25.32)
+        version: 1.2.12(react@19.1.0)(zod@3.25.34)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
-        version: 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.32)
+        version: 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.34)
       ai:
         specifier: ^4.1.46
-        version: 4.3.16(react@19.1.0)(zod@3.25.32)
+        version: 4.3.16(react@19.1.0)(zod@3.25.34)
       framer-motion:
         specifier: ^12.0.0
         version: 12.15.0(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -85,7 +85,7 @@ importers:
         version: 3.7.8
       zod:
         specifier: ^3.22.4
-        version: 3.25.32
+        version: 3.25.34
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
@@ -3217,8 +3217,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
-  browserslist@4.24.5:
-    resolution: {integrity: sha512-FDToo4Wo82hIdgc1CQ+NQD0hEhmpPjrZ3hiUgwgOG6IuTdlpr8jdjyG24P6cNP1yJpTLzS5OcGgSw0xmDU1/Tw==}
+  browserslist@4.25.0:
+    resolution: {integrity: sha512-PJ8gYKeS5e/whHBh8xrwYK+dAvEj7JXtz6uTucnMRB8OiGTsKccFekoRrjajPBHV8oOY+2tI4uxeceSimKwMFA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
@@ -3889,8 +3889,8 @@ packages:
   electron-to-chromium@1.4.340:
     resolution: {integrity: sha512-zx8hqumOqltKsv/MF50yvdAlPF9S/4PXbyfzJS6ZGhbddGkRegdwImmfSVqCkEziYzrIGZ/TlrzBND4FysfkDg==}
 
-  electron-to-chromium@1.5.159:
-    resolution: {integrity: sha512-CEvHptWAMV5p6GJ0Lq8aheyvVbfzVrv5mmidu1D3pidoVNkB3tTBsTMVtPJ+rzRK5oV229mCLz9Zj/hNvU8GBA==}
+  electron-to-chromium@1.5.161:
+    resolution: {integrity: sha512-hwtetwfKNZo/UlwHIVBlKZVdy7o8bIZxxKs0Mv/ROPiQQQmDgdm5a+KvKtBsxM8ZjFzTaCeLoodZ8jiBE3o9rA==}
 
   emittery@0.10.2:
     resolution: {integrity: sha512-aITqOwnLanpHLNXZJENbOgjUBeHocD+xsSJmNrjovKBW5HbSpW3d1pEls7GFQPUWXiwG9+0P4GtHfEqC/4M0Iw==}
@@ -7924,8 +7924,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.32:
-    resolution: {integrity: sha512-OSm2xTIRfW8CV5/QKgngwmQW/8aPfGdaQFlrGoErlgg/Epm7cjb6K6VEyExfe65a3VybUOnu381edLb0dfJl0g==}
+  zod@3.25.34:
+    resolution: {integrity: sha512-lZHvSc2PpWdcfpHlyB33HA9nqP16GpC9IpiG4lYq9jZCJVLZNnWd6Y1cj79bcLSBKTkxepfpjckPv5Y5VOPlwA==}
 
   zustand@3.7.2:
     resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
@@ -7938,39 +7938,39 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/google@1.2.18(zod@3.25.32)':
+  '@ai-sdk/google@1.2.18(zod@3.25.34)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.32)
-      zod: 3.25.32
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.34)
+      zod: 3.25.34
 
-  '@ai-sdk/provider-utils@2.2.8(zod@3.25.32)':
+  '@ai-sdk/provider-utils@2.2.8(zod@3.25.34)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       nanoid: 3.3.11
       secure-json-parse: 2.7.0
-      zod: 3.25.32
+      zod: 3.25.34
 
   '@ai-sdk/provider@1.1.3':
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.2.12(react@19.1.0)(zod@3.25.32)':
+  '@ai-sdk/react@1.2.12(react@19.1.0)(zod@3.25.34)':
     dependencies:
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.32)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.32)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.34)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.34)
       react: 19.1.0
       swr: 2.3.3(react@19.1.0)
       throttleit: 2.1.0
     optionalDependencies:
-      zod: 3.25.32
+      zod: 3.25.34
 
-  '@ai-sdk/ui-utils@1.2.11(zod@3.25.32)':
+  '@ai-sdk/ui-utils@1.2.11(zod@3.25.34)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.32)
-      zod: 3.25.32
-      zod-to-json-schema: 3.24.5(zod@3.25.32)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.34)
+      zod: 3.25.34
+      zod-to-json-schema: 3.24.5(zod@3.25.34)
 
   '@ampproject/remapping@2.2.0':
     dependencies:
@@ -8104,7 +8104,7 @@ snapshots:
     dependencies:
       '@babel/compat-data': 7.27.3
       '@babel/helper-validator-option': 7.27.1
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       lru-cache: 5.1.1
       semver: 6.3.1
 
@@ -10668,19 +10668,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.32)':
+  '@t3-oss/env-core@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.34)':
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.32
+      zod: 3.25.34
 
-  '@t3-oss/env-nextjs@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.32)':
+  '@t3-oss/env-nextjs@0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.34)':
     dependencies:
-      '@t3-oss/env-core': 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.32)
+      '@t3-oss/env-core': 0.13.6(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.34)
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.32
+      zod: 3.25.34
 
   '@tootallnate/once@1.1.2': {}
 
@@ -11402,15 +11402,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@4.3.16(react@19.1.0)(zod@3.25.32):
+  ai@4.3.16(react@19.1.0)(zod@3.25.34):
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.32)
-      '@ai-sdk/react': 1.2.12(react@19.1.0)(zod@3.25.32)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.32)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.34)
+      '@ai-sdk/react': 1.2.12(react@19.1.0)(zod@3.25.34)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.34)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
-      zod: 3.25.32
+      zod: 3.25.34
     optionalDependencies:
       react: 19.1.0
 
@@ -11898,12 +11898,12 @@ snapshots:
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
 
-  browserslist@4.24.5:
+  browserslist@4.25.0:
     dependencies:
       caniuse-lite: 1.0.30001718
-      electron-to-chromium: 1.5.159
+      electron-to-chromium: 1.5.161
       node-releases: 2.0.19
-      update-browserslist-db: 1.1.3(browserslist@4.24.5)
+      update-browserslist-db: 1.1.3(browserslist@4.25.0)
 
   bser@2.1.1:
     dependencies:
@@ -12183,7 +12183,7 @@ snapshots:
 
   core-js-compat@3.42.0:
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
 
   core-js-pure@3.29.1: {}
 
@@ -12560,7 +12560,7 @@ snapshots:
 
   electron-to-chromium@1.4.340: {}
 
-  electron-to-chromium@1.5.159: {}
+  electron-to-chromium@1.5.161: {}
 
   emittery@0.10.2: {}
 
@@ -17201,9 +17201,9 @@ snapshots:
       escalade: 3.1.1
       picocolors: 1.1.1
 
-  update-browserslist-db@1.1.3(browserslist@4.24.5):
+  update-browserslist-db@1.1.3(browserslist@4.25.0):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       escalade: 3.2.0
       picocolors: 1.1.1
 
@@ -17681,11 +17681,11 @@ snapshots:
 
   zdog@1.1.3: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.32):
+  zod-to-json-schema@3.24.5(zod@3.25.34):
     dependencies:
-      zod: 3.25.32
+      zod: 3.25.34
 
-  zod@3.25.32: {}
+  zod@3.25.34: {}
 
   zustand@3.7.2(react@19.1.0):
     optionalDependencies:
