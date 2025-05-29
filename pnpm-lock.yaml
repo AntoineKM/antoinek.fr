@@ -79,7 +79,7 @@ importers:
         version: 3.1.1(react@19.1.0)
       web-vitals:
         specifier: ^5.0.0
-        version: 5.0.1
+        version: 5.0.2
       webhook-discord:
         specifier: ^3.7.8
         version: 3.7.8
@@ -7635,8 +7635,8 @@ packages:
   wbuf@1.7.3:
     resolution: {integrity: sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==}
 
-  web-vitals@5.0.1:
-    resolution: {integrity: sha512-BsULPWaCKAAtNntUz0aJq1cu1wyuWmDzf4N6vYNMbYA6zzQAf2pzCYbyClf+Ui2MI54bt225AwugXIfL1W+Syg==}
+  web-vitals@5.0.2:
+    resolution: {integrity: sha512-nhl+fujoz9Io6MdDSyGSiiUSR1DLMvD3Mde1sNaRKrNwsEFYQICripmEIyUvE2DPKDkW1BbHa4saEDo1U/2D/Q==}
 
   webhook-discord@3.7.8:
     resolution: {integrity: sha512-IDEvKmu83SIAPZD0efpEXj3ZEm+X8Q68iRuKEKtyXlGN9S9lVtdL7cp4I0AXqTapVj+eh+Wby7y9DaxP01Yk2g==}
@@ -17294,7 +17294,7 @@ snapshots:
     dependencies:
       minimalistic-assert: 1.0.1
 
-  web-vitals@5.0.1: {}
+  web-vitals@5.0.2: {}
 
   webhook-discord@3.7.8:
     dependencies:
