@@ -1,20 +1,15 @@
 import { env } from "env.mjs";
-import type { NextApiRequest, NextApiResponse } from "next";
 import { YOUTUBE } from "src/constants/youtube";
 import urlcat from "urlcat";
+import { type NextRequest, NextResponse } from "next/server";
 
-type ResponseData = any;
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>,
-) {
+export async function GET(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams;
   const enpoint = "https://www.googleapis.com/youtube/v3/videos";
   const url = urlcat(enpoint, {
-    ...req.query,
-    playlistId: YOUTUBE.PLAYLIST_ID,
+    id: searchParams.get("id"),
     key: env.YOUTUBE_API_KEY,
-    part: req.query.part || "snippet,statistics",
+    part: searchParams.get("part") || "snippet,statistics",
   });
   const response = await fetch(url);
   const data = await response.json();
@@ -24,16 +19,14 @@ export default async function handler(
     data?.items?.length > 0 &&
     data?.items[0]?.snippet.channelId !== YOUTUBE.CHANNEL_ID
   ) {
-    res.status(404).json({
+    return NextResponse.json({
       message: `${data.items[0].snippet.channelId} is not allowed to use this api`,
-    });
-    return;
+    }, { status: 404 });
   } else if (data?.items?.length === 0) {
-    res.status(404).json({
+    return NextResponse.json({
       message: "No data found",
-    });
-    return;
+    }, { status: 404 });
   }
 
-  res.status(200).json(data);
+  return NextResponse.json(data);
 }

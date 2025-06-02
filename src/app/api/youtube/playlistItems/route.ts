@@ -1,23 +1,19 @@
 import { env } from "env.mjs";
-import type { NextApiRequest, NextApiResponse } from "next";
 import { YOUTUBE } from "src/constants/youtube";
 import urlcat from "urlcat";
+import { type NextRequest, NextResponse } from "next/server";
 
-type ResponseData = any;
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>,
-) {
+export async function GET(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams;
   const enpoint = "https://www.googleapis.com/youtube/v3/playlistItems";
   const url = urlcat(enpoint, {
-    ...req.query,
     playlistId: YOUTUBE.PLAYLIST_ID,
     key: env.YOUTUBE_API_KEY,
-    part: req.query.part || "snippet",
-    maxResults: req.query.maxResults || 12,
+    part: searchParams.get("part") || "snippet",
+    maxResults: searchParams.get("maxResults") || 12,
+    pageToken: searchParams.get("pageToken") || "",
   });
   const response = await fetch(url);
   const data = await response.json();
-  res.status(200).json(data);
+  return NextResponse.json(data);
 }
