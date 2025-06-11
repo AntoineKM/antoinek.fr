@@ -25,7 +25,7 @@ importers:
         version: 12.16.0(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       jotai:
         specifier: ^2.0.0
-        version: 2.12.5(@types/react@19.1.7)(react@19.1.0)
+        version: 2.12.5(@types/react@19.1.8)(react@19.1.0)
       lucide-react:
         specifier: ^0.514.0
         version: 0.514.0(react@19.1.0)
@@ -61,7 +61,7 @@ importers:
         version: 5.0.1(@babel/plugin-syntax-flow@7.27.1(@babel/core@7.21.3))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.21.3))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.1.0)(type-fest@0.21.3)(typescript@5.8.3)
       react-spring:
         specifier: ^10.0.0
-        version: 10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0))(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react-konva@18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react-zdog@1.2.2)(react@19.1.0)(three@0.172.0)(zdog@1.1.3)
+        version: 10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0))(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react-konva@18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react-zdog@1.2.2)(react@19.1.0)(three@0.172.0)(zdog@1.1.3)
       styled-components:
         specifier: ^6.0.0
         version: 6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -92,7 +92,7 @@ importers:
         version: 22.15.31
       '@types/react':
         specifier: ^19.0.0
-        version: 19.1.7
+        version: 19.1.8
       babel-plugin-styled-components:
         specifier: ^2.0.7
         version: 2.1.4(@babel/core@7.21.3)(styled-components@6.1.18(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
@@ -2410,8 +2410,8 @@ packages:
     peerDependencies:
       '@types/react': '*'
 
-  '@types/react@19.1.7':
-    resolution: {integrity: sha512-BnsPLV43ddr05N71gaGzyZ5hzkCmGwhMvYc8zmvI8Ci1bRkkDSzDDVfAXfN2tk748OwI7ediiPX6PfT9p0QGVg==}
+  '@types/react@19.1.8':
+    resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
 
   '@types/resolve@1.17.1':
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -2674,88 +2674,88 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@unrs/resolver-binding-darwin-arm64@1.7.13':
-    resolution: {integrity: sha512-LIKeCzNSkTWwGHjtiUIfvS96+7kpuyrKq2pzw/0XT2S8ykczj40Hh27oLTbXguCX8tGrCoaD2yXxzwqMMhAzhA==}
+  '@unrs/resolver-binding-darwin-arm64@1.8.1':
+    resolution: {integrity: sha512-OKuBTQdOb4Kjbe+y4KgbRhn+nu47hNyNU2K3qjD+SA/bnQouvZnRzEiR85xZAIyZ6z1C+O1Zg1dK4hGH1RPdYA==}
     cpu: [arm64]
     os: [darwin]
 
-  '@unrs/resolver-binding-darwin-x64@1.7.13':
-    resolution: {integrity: sha512-GB5G3qUNrdo2l6xaZehpz1ln4wCQ75tr51HZ8OQEcX6XkBIFVL9E4ikCZvCmRmUgKGR+zP5ogyFib7ZbIMWKWA==}
+  '@unrs/resolver-binding-darwin-x64@1.8.1':
+    resolution: {integrity: sha512-inaphBsOqqzauNvx6kSHrgqDLShicPg3+fInBcEdD7Ut8sUUbm2z19LL+S9ccGpHnYoNiJ+Qrf7/B8hRsCUvBw==}
     cpu: [x64]
     os: [darwin]
 
-  '@unrs/resolver-binding-freebsd-x64@1.7.13':
-    resolution: {integrity: sha512-rb8gzoBgqVhDkQiKaq+MrFPhNK3x8XkSFhgU55LfgOa5skv7KIdM3dELKzQVNZNlY49DuZmm0FsEfHK5xPKKiA==}
+  '@unrs/resolver-binding-freebsd-x64@1.8.1':
+    resolution: {integrity: sha512-LkGw7jDoLKEZO6yYwTKUlrboD6Qmy9Jkq7ZDPlJReq/FnCnNh0k1Z1hjtevpqPCMLz9hGW0ITMb04jdDZ796Cg==}
     cpu: [x64]
     os: [freebsd]
 
-  '@unrs/resolver-binding-linux-arm-gnueabihf@1.7.13':
-    resolution: {integrity: sha512-bqdzngbTGzhsqhTV3SWECyZUAyvtewKtrCW4E8QPcK6yHSaN0k1h9gKwNOBxFwIqkQRsAibpm18XDum8M5AiCw==}
+  '@unrs/resolver-binding-linux-arm-gnueabihf@1.8.1':
+    resolution: {integrity: sha512-6vhu22scv64dynXTVmeClenn3OPI8cwdhtydLFDkoW4UJzNwcgJ5mVtzbtikDGM9PmIQa+ekpH6tdvKt0ToK3A==}
     cpu: [arm]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-arm-musleabihf@1.7.13':
-    resolution: {integrity: sha512-vkoL3DSS5tsUNLhNtBJWaqDJNNEQsMCr0o2N02sLCSpe5S8TQHz+klQT42Qgj4PqATMwnG3OF0QQ5BH0oAKIPg==}
+  '@unrs/resolver-binding-linux-arm-musleabihf@1.8.1':
+    resolution: {integrity: sha512-SrQ286JVFWlnZSm1/TJwulTgJVOdb1x8BWW2ecOK0Sx+acdRpoMf4WSxH+/+R4LyE/YYyekcEtUrPhSEgJ748g==}
     cpu: [arm]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-arm64-gnu@1.7.13':
-    resolution: {integrity: sha512-uNpLKxlDF+NF6aUztbAVhhFSF65zf/6QEfk5NifUgYFbpBObzvMnl2ydEsXV96spwPcmeNTpG9byvq+Twwd3HQ==}
+  '@unrs/resolver-binding-linux-arm64-gnu@1.8.1':
+    resolution: {integrity: sha512-I2s4L27V+2kAee43x/qAkFjTZJgmDvSd9vtnyINOdBEdz5+QqiG6ccd5pgOw06MsUwygkrhB4jOe4ZN4SA6IwA==}
     cpu: [arm64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-arm64-musl@1.7.13':
-    resolution: {integrity: sha512-mEFL6q7vtxA6YJ9sLbxCnKOBynOvClVOcqwUErmaCxA94hgP11rlstouySxJCGeFAb8KfUX9mui82waYrqoBlQ==}
+  '@unrs/resolver-binding-linux-arm64-musl@1.8.1':
+    resolution: {integrity: sha512-Drq80e/EQbdSVyJpheF65qVmfYy8OaDdQqoWV+09tZHz/P1SdSulvVtgtYrk216D++9hbx3c1bwVXwR5PZ2TzA==}
     cpu: [arm64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-ppc64-gnu@1.7.13':
-    resolution: {integrity: sha512-MjJaNk8HK3rCOIPS6AQPJXlrDfG1LaePum+CZddHZygPqDNZyVrVdWTadT+U51vIx5QOdEE0oXcgTY+7VYsU1g==}
+  '@unrs/resolver-binding-linux-ppc64-gnu@1.8.1':
+    resolution: {integrity: sha512-EninHQHw8Zkq8K5qB6KWNDqjCtUzTDsCRQ6LzAtQWIxic/VQxR5Kl36V/GCXNvQaR7W0AB5gvJLyQtJwkf+AJA==}
     cpu: [ppc64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-riscv64-gnu@1.7.13':
-    resolution: {integrity: sha512-9gAuT1+ed2eIuOXHSu4SdJOe7SUEzPTpOTEuTjGePvMEoWHywY5pvlcY7xMn3d8rhKHpwMzEhl8F8Oy+rkudzA==}
+  '@unrs/resolver-binding-linux-riscv64-gnu@1.8.1':
+    resolution: {integrity: sha512-s7Xu5PS4vWhsb5ZFAi+UBguTn0g8qDhN+BbB1t9APX23AdAI7TS4DRrJV5dBVdQ6a8MiergGr1Cjb0Q1V/sW8w==}
     cpu: [riscv64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-riscv64-musl@1.7.13':
-    resolution: {integrity: sha512-CNrJythJN9jC8SIJGoawebYylzGNJuWAWTKxxxx5Fr3DGEXbex/We4U7N4u6/dQAK3cLVOuAE/9a4D2JH35JIA==}
+  '@unrs/resolver-binding-linux-riscv64-musl@1.8.1':
+    resolution: {integrity: sha512-Ca+bVzOJtgQ3OrMkRSeDLYWJIjRmEylDHSZuSKqqPmZI2vgX6yZgzrKY28I6hjjG9idlW4DcJzLv/TjFXev+4Q==}
     cpu: [riscv64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-s390x-gnu@1.7.13':
-    resolution: {integrity: sha512-J0MVXXPvM2Bv+f+gzOZHLHEmXUJNKwJqkfMDTwE763w/tD+OA7UlTMLQihrcYRXwW5jZ8nbM2cEWTeFsTiH2JQ==}
+  '@unrs/resolver-binding-linux-s390x-gnu@1.8.1':
+    resolution: {integrity: sha512-ut1vBBFs6AC5EcerH8HorcmS/9wAy6iI1tfpzT7jy+SKnMgmPth/psc3W5V04njble7cyLPjFHwYJTlxmozQ/g==}
     cpu: [s390x]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-x64-gnu@1.7.13':
-    resolution: {integrity: sha512-Ii2WhtIpeWUe6XG/YhPUX3JNL3PiyXe56PJzqAYDUyB0gctkk/nngpuPnNKlLMcN9FID0T39mIJPhA6YpRcGDQ==}
+  '@unrs/resolver-binding-linux-x64-gnu@1.8.1':
+    resolution: {integrity: sha512-w5agLxesvrYKrCOlAsUkwRDogjnyRBi4/vEaujZRkXbeRCupJ9dFD0qUhLXZyIed+GSzJJIsJocUZIVzcTHYXQ==}
     cpu: [x64]
     os: [linux]
 
-  '@unrs/resolver-binding-linux-x64-musl@1.7.13':
-    resolution: {integrity: sha512-8F5E9EhtGYkfEM1OhyVgq76+SnMF5NfZS4v5Rq9JlfuqPnqXWgUjg903hxnG54PQr4I3jmG5bEeT77pGAA3Vvg==}
+  '@unrs/resolver-binding-linux-x64-musl@1.8.1':
+    resolution: {integrity: sha512-vk5htmWYCLRpfjn2wmCUne6pLvlcYUFDAAut4g02/2iWeGeZO/3GmSLmiZ9fcn9oH0FUzgetg0/zSo8oZ7liIg==}
     cpu: [x64]
     os: [linux]
 
-  '@unrs/resolver-binding-wasm32-wasi@1.7.13':
-    resolution: {integrity: sha512-7RXGTyDtyR/5o1FlBcjEaQQmQ2rKvu5Jq0Uhvce3PsbreZ61M4LQ5Mey2OMomIq4opphAkfDdm/lkHhWJNKNrw==}
+  '@unrs/resolver-binding-wasm32-wasi@1.8.1':
+    resolution: {integrity: sha512-RcsLTcrqDT5XW/TnhhIeM7lVLgUv/gvPEC4WaH+OhkLCkRfH6EEuhprwrcp1WhdlrtL/U5FkHh4NtFLnMXoeXA==}
     engines: {node: '>=14.0.0'}
     cpu: [wasm32]
 
-  '@unrs/resolver-binding-win32-arm64-msvc@1.7.13':
-    resolution: {integrity: sha512-MomJVcaVZe3j+CvkcfIVEcQyOOzauKpJYGY8d6PoKXn1FalMVGHX9/c0kXCI0WCK+CRGMExAiQhD8jkhyUVKxg==}
+  '@unrs/resolver-binding-win32-arm64-msvc@1.8.1':
+    resolution: {integrity: sha512-XbSRLZY/gEi5weYv/aCkiUiSWvrNKkvec3m6/bDypDI+ZACwMllPH7smeOW/fdnIGhf9YtPATNliJHAS2GyMUA==}
     cpu: [arm64]
     os: [win32]
 
-  '@unrs/resolver-binding-win32-ia32-msvc@1.7.13':
-    resolution: {integrity: sha512-pnHfzbFj6e4gUARI1Yvz0TUhmFZae248O7JOMCSmSBN3R35RJiKyHmsMuIiPrUYWDzm5jUMPTxSs+b3Ipawusw==}
+  '@unrs/resolver-binding-win32-ia32-msvc@1.8.1':
+    resolution: {integrity: sha512-SbCJMKOmqOsIBCklT5c+t0DjVbOkseE7ZN0OtMxRnraLKdj1AAv7d3cjJMYkPd9ZGKosHoMXo66gBs02YM8KeA==}
     cpu: [ia32]
     os: [win32]
 
-  '@unrs/resolver-binding-win32-x64-msvc@1.7.13':
-    resolution: {integrity: sha512-tI0+FTntE3BD0UxhTP12F/iTtkeMK+qh72/2aSxPZnTlOcMR9CTJid8CdppbSjj9wenq7PNcqScLtpPENH3Lvg==}
+  '@unrs/resolver-binding-win32-x64-msvc@1.8.1':
+    resolution: {integrity: sha512-DdHqo7XbeUa/ZOcxq+q5iuO4sSxhwX9HR1JPL0JMOKEzgkIO4OKF2TPjqmo6UCCGZUXIMwrAycFXj/40sICagw==}
     cpu: [x64]
     os: [win32]
 
@@ -3307,8 +3307,8 @@ packages:
   caniuse-lite@1.0.30001718:
     resolution: {integrity: sha512-AflseV1ahcSunK53NfEs9gFWgOEmzr0f+kaMFA4xiLZlr9Hzt7HxcSpIFcnNCUkz6R6dWKa54rUz3HUmI3nVcw==}
 
-  caniuse-lite@1.0.30001721:
-    resolution: {integrity: sha512-cOuvmUVtKrtEaoKiO0rSc29jcjwMwX5tOHDy4MgVFEWiUXj4uBMJkwI8MDySkgXidpMiHUcviogAvFi4pA2hDQ==}
+  caniuse-lite@1.0.30001722:
+    resolution: {integrity: sha512-DCQHBBZtiK6JVkAGw7drvAMK0Q0POD/xZvEmDp6baiMMP6QXXk9HpD6mNYBZWhOPG6LvIDb82ITqtWjhDckHCA==}
 
   case-sensitive-paths-webpack-plugin@2.4.0:
     resolution: {integrity: sha512-roIFONhcxog0JSSWbvVAh3OocukmSgpqOH6YpMkCvav/ySIV3JKg4Dc8vYtQjYi/UxpNE36r/9v+VqTQqgkYmw==}
@@ -7535,8 +7535,8 @@ packages:
   unquote@1.1.1:
     resolution: {integrity: sha512-vRCqFv6UhXpWxZPyGDh/F3ZpNv8/qo7w6iufLpQg9aKnQ71qM4B5KiI7Mia9COcjEhrO9LueHpMYjYzsWH3OIg==}
 
-  unrs-resolver@1.7.13:
-    resolution: {integrity: sha512-QUjCYKAgrdJpf3wA73zWjOrO7ra19lfnwQ8HRkNOLah5AVDqOS38UunnyhzsSL8AE+2/AGnAHxlr8cGshCP35A==}
+  unrs-resolver@1.8.1:
+    resolution: {integrity: sha512-M5++xH5Tu/m3NNAc0+dBHidXfF6bTC08mfhQ3AB5UTonEzQSH9ASC/a7EbZN3WU5m0OWMTvf12GHVJZ3uUmPtA==}
 
   upath@1.2.0:
     resolution: {integrity: sha512-aZwGpamFO61g3OlfT7OQCHqhGnW43ieH9WZeP7QxN/G/jS4jfqUkZxoryvJgVPEcrl5NL/ggHsSmLMHuH64Lhg==}
@@ -10432,14 +10432,14 @@ snapshots:
 
   '@react-native/normalize-colors@0.77.0': {}
 
-  '@react-native/virtualized-lists@0.77.0(@types/react@19.1.7)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)':
+  '@react-native/virtualized-lists@0.77.0(@types/react@19.1.8)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)':
     dependencies:
       invariant: 2.2.4
       nullthrows: 1.1.1
       react: 19.1.0
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0)
     optionalDependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
 
   '@react-spring/animated@10.0.1(react@19.1.0)':
     dependencies:
@@ -10454,7 +10454,7 @@ snapshots:
       '@react-spring/types': 10.0.1
       react: 19.1.0
 
-  '@react-spring/konva@10.0.1(konva@9.3.18)(react-konva@18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
+  '@react-spring/konva@10.0.1(konva@9.3.18)(react-konva@18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@react-spring/animated': 10.0.1(react@19.1.0)
       '@react-spring/core': 10.0.1(react@19.1.0)
@@ -10462,16 +10462,16 @@ snapshots:
       '@react-spring/types': 10.0.1
       konva: 9.3.18
       react: 19.1.0
-      react-konva: 18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-konva: 18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
 
-  '@react-spring/native@10.0.1(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)':
+  '@react-spring/native@10.0.1(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@react-spring/animated': 10.0.1(react@19.1.0)
       '@react-spring/core': 10.0.1(react@19.1.0)
       '@react-spring/shared': 10.0.1(react@19.1.0)
       '@react-spring/types': 10.0.1
       react: 19.1.0
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0)
 
   '@react-spring/rafz@10.0.1': {}
 
@@ -10481,13 +10481,13 @@ snapshots:
       '@react-spring/types': 10.0.1
       react: 19.1.0
 
-  '@react-spring/three@10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0))(react@19.1.0)(three@0.172.0)':
+  '@react-spring/three@10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0))(react@19.1.0)(three@0.172.0)':
     dependencies:
       '@react-spring/animated': 10.0.1(react@19.1.0)
       '@react-spring/core': 10.0.1(react@19.1.0)
       '@react-spring/shared': 10.0.1(react@19.1.0)
       '@react-spring/types': 10.0.1
-      '@react-three/fiber': 8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0)
+      '@react-three/fiber': 8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0)
       react: 19.1.0
       three: 0.172.0
 
@@ -10513,7 +10513,7 @@ snapshots:
       react-zdog: 1.2.2
       zdog: 1.1.3
 
-  '@react-three/fiber@8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0)':
+  '@react-three/fiber@8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0)':
     dependencies:
       '@babel/runtime': 7.27.6
       '@types/debounce': 1.2.4
@@ -10522,7 +10522,7 @@ snapshots:
       base64-js: 1.5.1
       buffer: 6.0.3
       debounce: 1.2.1
-      its-fine: 1.2.5(@types/react@19.1.7)(react@19.1.0)
+      its-fine: 1.2.5(@types/react@19.1.8)(react@19.1.0)
       react: 19.1.0
       react-reconciler: 0.27.0(react@19.1.0)
       scheduler: 0.21.0
@@ -10531,7 +10531,7 @@ snapshots:
       zustand: 3.7.2(react@19.1.0)
     optionalDependencies:
       react-dom: 19.1.0(react@19.1.0)
-      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0)
+      react-native: 0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0)
     transitivePeerDependencies:
       - '@types/react'
 
@@ -10858,13 +10858,13 @@ snapshots:
 
   '@types/react-reconciler@0.26.7':
     dependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
 
-  '@types/react-reconciler@0.28.9(@types/react@19.1.7)':
+  '@types/react-reconciler@0.28.9(@types/react@19.1.8)':
     dependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
 
-  '@types/react@19.1.7':
+  '@types/react@19.1.8':
     dependencies:
       csstype: 3.1.3
 
@@ -11221,57 +11221,57 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@unrs/resolver-binding-darwin-arm64@1.7.13':
+  '@unrs/resolver-binding-darwin-arm64@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-darwin-x64@1.7.13':
+  '@unrs/resolver-binding-darwin-x64@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-freebsd-x64@1.7.13':
+  '@unrs/resolver-binding-freebsd-x64@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-arm-gnueabihf@1.7.13':
+  '@unrs/resolver-binding-linux-arm-gnueabihf@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-arm-musleabihf@1.7.13':
+  '@unrs/resolver-binding-linux-arm-musleabihf@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-arm64-gnu@1.7.13':
+  '@unrs/resolver-binding-linux-arm64-gnu@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-arm64-musl@1.7.13':
+  '@unrs/resolver-binding-linux-arm64-musl@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-ppc64-gnu@1.7.13':
+  '@unrs/resolver-binding-linux-ppc64-gnu@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-riscv64-gnu@1.7.13':
+  '@unrs/resolver-binding-linux-riscv64-gnu@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-riscv64-musl@1.7.13':
+  '@unrs/resolver-binding-linux-riscv64-musl@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-s390x-gnu@1.7.13':
+  '@unrs/resolver-binding-linux-s390x-gnu@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-x64-gnu@1.7.13':
+  '@unrs/resolver-binding-linux-x64-gnu@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-linux-x64-musl@1.7.13':
+  '@unrs/resolver-binding-linux-x64-musl@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-wasm32-wasi@1.7.13':
+  '@unrs/resolver-binding-wasm32-wasi@1.8.1':
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.11
     optional: true
 
-  '@unrs/resolver-binding-win32-arm64-msvc@1.7.13':
+  '@unrs/resolver-binding-win32-arm64-msvc@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-win32-ia32-msvc@1.7.13':
+  '@unrs/resolver-binding-win32-ia32-msvc@1.8.1':
     optional: true
 
-  '@unrs/resolver-binding-win32-x64-msvc@1.7.13':
+  '@unrs/resolver-binding-win32-x64-msvc@1.8.1':
     optional: true
 
   '@webassemblyjs/ast@1.11.1':
@@ -11903,7 +11903,7 @@ snapshots:
 
   browserslist@4.25.0:
     dependencies:
-      caniuse-lite: 1.0.30001721
+      caniuse-lite: 1.0.30001722
       electron-to-chromium: 1.5.166
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.0)
@@ -11990,7 +11990,7 @@ snapshots:
 
   caniuse-lite@1.0.30001718: {}
 
-  caniuse-lite@1.0.30001721: {}
+  caniuse-lite@1.0.30001722: {}
 
   case-sensitive-paths-webpack-plugin@2.4.0: {}
 
@@ -12859,7 +12859,7 @@ snapshots:
       is-bun-module: 2.0.0
       stable-hash: 0.0.5
       tinyglobby: 0.2.14
-      unrs-resolver: 1.7.13
+      unrs-resolver: 1.8.1
     optionalDependencies:
       eslint-plugin-import: 2.31.0(@typescript-eslint/parser@7.13.0(eslint@8.57.1)(typescript@5.8.3))(eslint-import-resolver-typescript@3.10.1)(eslint@8.57.1)
     transitivePeerDependencies:
@@ -13994,9 +13994,9 @@ snapshots:
       has-symbols: 1.1.0
       set-function-name: 2.0.2
 
-  its-fine@1.2.5(@types/react@19.1.7)(react@19.1.0):
+  its-fine@1.2.5(@types/react@19.1.8)(react@19.1.0):
     dependencies:
-      '@types/react-reconciler': 0.28.9(@types/react@19.1.7)
+      '@types/react-reconciler': 0.28.9(@types/react@19.1.8)
       react: 19.1.0
     transitivePeerDependencies:
       - '@types/react'
@@ -14494,9 +14494,9 @@ snapshots:
       - ts-node
       - utf-8-validate
 
-  jotai@2.12.5(@types/react@19.1.7)(react@19.1.0):
+  jotai@2.12.5(@types/react@19.1.8)(react@19.1.0):
     optionalDependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
       react: 19.1.0
 
   js-tokens@4.0.0: {}
@@ -15931,10 +15931,10 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-konva@18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-konva@18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      '@types/react-reconciler': 0.28.9(@types/react@19.1.7)
-      its-fine: 1.2.5(@types/react@19.1.7)(react@19.1.0)
+      '@types/react-reconciler': 0.28.9(@types/react@19.1.8)
+      its-fine: 1.2.5(@types/react@19.1.8)(react@19.1.0)
       konva: 9.3.18
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
@@ -15943,7 +15943,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0):
+  react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0):
     dependencies:
       '@jest/create-cache-key-function': 29.7.0
       '@react-native/assets-registry': 0.77.0
@@ -15952,7 +15952,7 @@ snapshots:
       '@react-native/gradle-plugin': 0.77.0
       '@react-native/js-polyfills': 0.77.0
       '@react-native/normalize-colors': 0.77.0
-      '@react-native/virtualized-lists': 0.77.0(@types/react@19.1.7)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)
+      '@react-native/virtualized-lists': 0.77.0(@types/react@19.1.8)(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
       abort-controller: 3.0.0
       anser: 1.4.10
       ansi-regex: 5.0.1
@@ -15984,7 +15984,7 @@ snapshots:
       ws: 6.2.3
       yargs: 17.7.2
     optionalDependencies:
-      '@types/react': 19.1.7
+      '@types/react': 19.1.8
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/preset-env'
@@ -16103,12 +16103,12 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
 
-  react-spring@10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0))(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react-konva@18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react-zdog@1.2.2)(react@19.1.0)(three@0.172.0)(zdog@1.1.3):
+  react-spring@10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0))(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react-konva@18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react-zdog@1.2.2)(react@19.1.0)(three@0.172.0)(zdog@1.1.3):
     dependencies:
       '@react-spring/core': 10.0.1(react@19.1.0)
-      '@react-spring/konva': 10.0.1(konva@9.3.18)(react-konva@18.2.10(@types/react@19.1.7)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
-      '@react-spring/native': 10.0.1(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)
-      '@react-spring/three': 10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.7)(react@19.1.0))(react@19.1.0)(three@0.172.0))(react@19.1.0)(three@0.172.0)
+      '@react-spring/konva': 10.0.1(konva@9.3.18)(react-konva@18.2.10(@types/react@19.1.8)(konva@9.3.18)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+      '@react-spring/native': 10.0.1(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)
+      '@react-spring/three': 10.0.1(@react-three/fiber@8.17.12(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react-native@0.77.0(@babel/core@7.21.3)(@babel/preset-env@7.26.7(@babel/core@7.21.3))(@types/react@19.1.8)(react@19.1.0))(react@19.1.0)(three@0.172.0))(react@19.1.0)(three@0.172.0)
       '@react-spring/web': 10.0.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@react-spring/zdog': 10.0.1(react-dom@19.1.0(react@19.1.0))(react-zdog@1.2.2)(react@19.1.0)(zdog@1.1.3)
       react: 19.1.0
@@ -17176,27 +17176,27 @@ snapshots:
 
   unquote@1.1.1: {}
 
-  unrs-resolver@1.7.13:
+  unrs-resolver@1.8.1:
     dependencies:
       napi-postinstall: 0.2.4
     optionalDependencies:
-      '@unrs/resolver-binding-darwin-arm64': 1.7.13
-      '@unrs/resolver-binding-darwin-x64': 1.7.13
-      '@unrs/resolver-binding-freebsd-x64': 1.7.13
-      '@unrs/resolver-binding-linux-arm-gnueabihf': 1.7.13
-      '@unrs/resolver-binding-linux-arm-musleabihf': 1.7.13
-      '@unrs/resolver-binding-linux-arm64-gnu': 1.7.13
-      '@unrs/resolver-binding-linux-arm64-musl': 1.7.13
-      '@unrs/resolver-binding-linux-ppc64-gnu': 1.7.13
-      '@unrs/resolver-binding-linux-riscv64-gnu': 1.7.13
-      '@unrs/resolver-binding-linux-riscv64-musl': 1.7.13
-      '@unrs/resolver-binding-linux-s390x-gnu': 1.7.13
-      '@unrs/resolver-binding-linux-x64-gnu': 1.7.13
-      '@unrs/resolver-binding-linux-x64-musl': 1.7.13
-      '@unrs/resolver-binding-wasm32-wasi': 1.7.13
-      '@unrs/resolver-binding-win32-arm64-msvc': 1.7.13
-      '@unrs/resolver-binding-win32-ia32-msvc': 1.7.13
-      '@unrs/resolver-binding-win32-x64-msvc': 1.7.13
+      '@unrs/resolver-binding-darwin-arm64': 1.8.1
+      '@unrs/resolver-binding-darwin-x64': 1.8.1
+      '@unrs/resolver-binding-freebsd-x64': 1.8.1
+      '@unrs/resolver-binding-linux-arm-gnueabihf': 1.8.1
+      '@unrs/resolver-binding-linux-arm-musleabihf': 1.8.1
+      '@unrs/resolver-binding-linux-arm64-gnu': 1.8.1
+      '@unrs/resolver-binding-linux-arm64-musl': 1.8.1
+      '@unrs/resolver-binding-linux-ppc64-gnu': 1.8.1
+      '@unrs/resolver-binding-linux-riscv64-gnu': 1.8.1
+      '@unrs/resolver-binding-linux-riscv64-musl': 1.8.1
+      '@unrs/resolver-binding-linux-s390x-gnu': 1.8.1
+      '@unrs/resolver-binding-linux-x64-gnu': 1.8.1
+      '@unrs/resolver-binding-linux-x64-musl': 1.8.1
+      '@unrs/resolver-binding-wasm32-wasi': 1.8.1
+      '@unrs/resolver-binding-win32-arm64-msvc': 1.8.1
+      '@unrs/resolver-binding-win32-ia32-msvc': 1.8.1
+      '@unrs/resolver-binding-win32-x64-msvc': 1.8.1
 
   upath@1.2.0: {}
 
