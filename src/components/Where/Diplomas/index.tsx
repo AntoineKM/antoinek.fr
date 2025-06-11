@@ -15,7 +15,7 @@ const Diplomas = () => {
           "Education and certifications are important to me, they are the proof of my knowledge and my ability to learn, adapt to new technologies and achieve my goals."
         }
       </Description>
-      
+
       <SubSection>
         <SubTitle>{`Diplomas ${diplomas.length > 0 && ` (${diplomas.length})`}`}</SubTitle>
         <TimelineContainer>

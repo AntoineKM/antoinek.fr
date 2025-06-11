@@ -330,7 +330,9 @@ const Tooltip = styled.div<{ visible: boolean }>`
   white-space: nowrap;
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
   z-index: 1000;
   margin-bottom: 5px;
   border: 1px solid #505050;

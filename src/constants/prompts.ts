@@ -1,5 +1,5 @@
-import compagnies from "src/data/compagnies";
 import { certifications } from "src/data/certifications";
+import compagnies from "src/data/compagnies";
 import { diplomas } from "src/data/diplomas";
 import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";

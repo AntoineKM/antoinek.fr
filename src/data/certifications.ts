@@ -57,7 +57,8 @@ export const certifications = [
   },
   {
     year: "2025",
-    title: "GitHub Copilot Across Environments: IDE, Chat, and Command Line Techniques",
+    title:
+      "GitHub Copilot Across Environments: IDE, Chat, and Command Line Techniques",
     subtitle: "Microsoft Learn",
     icon: "🤖",
   },
