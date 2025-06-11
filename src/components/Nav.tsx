@@ -26,6 +26,7 @@ const Nav = () => {
   const [playSwitchPageSound] = useSound("/static/sounds/switch-page.mp3");
   const [openOnMobile, setOpenOnMobile] = useState(false);
   const [presenceActive, setPresenceActive] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const [doing] = useAtom(doingAtom);
 
@@ -64,24 +65,32 @@ const Nav = () => {
                   </LocationIcon>
                 </LocationIconWrapper>
                 {doing.kv.futureLocation ? (
-                  <RelocationContainer>
-                    <LocationLink
-                      href={`https://google.com/maps/search/${encodeURIComponent(
-                        doing.kv.location,
-                      )}`}
+                  <TooltipWrapper>
+                    <RelocationContainer
+                      onMouseEnter={() => setShowTooltip(true)}
+                      onMouseLeave={() => setShowTooltip(false)}
                     >
-                      {doing.kv.location}
-                    </LocationLink>
-                    <TransitionArrow>{"→"}</TransitionArrow>
-                    <LocationLink
-                      href={`https://google.com/maps/search/${encodeURIComponent(
-                        doing.kv.futureLocation,
-                      )}`}
-                    >
-                      {doing.kv.futureLocation}
-                    </LocationLink>
-                    <PulsingDot />
-                  </RelocationContainer>
+                      <LocationLink
+                        href={`https://google.com/maps/search/${encodeURIComponent(
+                          doing.kv.location,
+                        )}`}
+                      >
+                        {doing.kv.location}
+                      </LocationLink>
+                      <TransitionArrow>{"→"}</TransitionArrow>
+                      <LocationLink
+                        href={`https://google.com/maps/search/${encodeURIComponent(
+                          doing.kv.futureLocation,
+                        )}`}
+                      >
+                        {doing.kv.futureLocation}
+                      </LocationLink>
+                      <PulsingDot />
+                    </RelocationContainer>
+                    <Tooltip visible={showTooltip}>
+                      {"Planned relocation"}
+                    </Tooltip>
+                  </TooltipWrapper>
                 ) : (
                   <Location
                     href={`https://google.com/maps/search/${encodeURIComponent(
@@ -293,12 +302,48 @@ const LocationIcon = styled.div`
   }
 `;
 
+const TooltipWrapper = styled.div`
+  position: relative;
+  display: inline-flex;
+`;
+
 const RelocationContainer = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 5px;
   height: 19px;
   font-size: 14px;
+  cursor: help;
+`;
+
+const Tooltip = styled.div<{ visible: boolean }>`
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #30302b;
+  color: #ffffe3;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  visibility: ${({ visible }) => (visible ? "visible" : "hidden")};
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 1000;
+  margin-bottom: 5px;
+  border: 1px solid #505050;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #30302b;
+  }
 `;
 
 const TransitionArrow = styled.span`

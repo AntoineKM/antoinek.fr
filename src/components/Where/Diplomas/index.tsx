@@ -53,7 +53,6 @@ const Diplomas = () => {
         </TimelineContainer>
       </SubSection>
 
-      {/* Section Certifications */}
       <SubSection>
         <SubTitle>{`Certifications ${certifications.length > 0 && ` (${certifications.length})`}`}</SubTitle>
         <TimelineContainer>
