@@ -10,16 +10,16 @@ importers:
     dependencies:
       '@ai-sdk/google':
         specifier: ^1.1.17
-        version: 1.2.19(zod@3.25.57)
+        version: 1.2.19(zod@3.25.58)
       '@ai-sdk/react':
         specifier: ^1.1.18
-        version: 1.2.12(react@19.1.0)(zod@3.25.57)
+        version: 1.2.12(react@19.1.0)(zod@3.25.58)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
-        version: 0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.57)
+        version: 0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.58)
       ai:
         specifier: ^4.1.46
-        version: 4.3.16(react@19.1.0)(zod@3.25.57)
+        version: 4.3.16(react@19.1.0)(zod@3.25.58)
       framer-motion:
         specifier: ^12.0.0
         version: 12.16.0(@emotion/is-prop-valid@1.2.2)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -85,7 +85,7 @@ importers:
         version: 3.7.8
       zod:
         specifier: ^3.22.4
-        version: 3.25.57
+        version: 3.25.58
     devDependencies:
       '@types/node':
         specifier: ^22.0.0
@@ -7927,8 +7927,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.57:
-    resolution: {integrity: sha512-6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==}
+  zod@3.25.58:
+    resolution: {integrity: sha512-DVLmMQzSZwNYzQoMaM3MQWnxr2eq+AtM9Hx3w1/Yl0pH8sLTSjN4jGP7w6f7uand6Hw44tsnSu1hz1AOA6qI2Q==}
 
   zustand@3.7.2:
     resolution: {integrity: sha512-PIJDIZKtokhof+9+60cpockVOq05sJzHCriyvaLBmEJixseQ1a5Kdov6fWZfWOu5SK9c+FhH1jU0tntLxRJYMA==}
@@ -7941,39 +7941,39 @@ packages:
 
 snapshots:
 
-  '@ai-sdk/google@1.2.19(zod@3.25.57)':
+  '@ai-sdk/google@1.2.19(zod@3.25.58)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.57)
-      zod: 3.25.57
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.58)
+      zod: 3.25.58
 
-  '@ai-sdk/provider-utils@2.2.8(zod@3.25.57)':
+  '@ai-sdk/provider-utils@2.2.8(zod@3.25.58)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
       nanoid: 3.3.11
       secure-json-parse: 2.7.0
-      zod: 3.25.57
+      zod: 3.25.58
 
   '@ai-sdk/provider@1.1.3':
     dependencies:
       json-schema: 0.4.0
 
-  '@ai-sdk/react@1.2.12(react@19.1.0)(zod@3.25.57)':
+  '@ai-sdk/react@1.2.12(react@19.1.0)(zod@3.25.58)':
     dependencies:
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.57)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.57)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.58)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.58)
       react: 19.1.0
       swr: 2.3.3(react@19.1.0)
       throttleit: 2.1.0
     optionalDependencies:
-      zod: 3.25.57
+      zod: 3.25.58
 
-  '@ai-sdk/ui-utils@1.2.11(zod@3.25.57)':
+  '@ai-sdk/ui-utils@1.2.11(zod@3.25.58)':
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.57)
-      zod: 3.25.57
-      zod-to-json-schema: 3.24.5(zod@3.25.57)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.58)
+      zod: 3.25.58
+      zod-to-json-schema: 3.24.5(zod@3.25.58)
 
   '@ampproject/remapping@2.2.0':
     dependencies:
@@ -8171,7 +8171,7 @@ snapshots:
       '@babel/helper-plugin-utils': 7.22.5
       debug: 4.4.1
       lodash.debounce: 4.0.8
-      resolve: 1.22.10
+      resolve: 1.22.1
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -10551,7 +10551,7 @@ snapshots:
       builtin-modules: 3.3.0
       deepmerge: 4.3.1
       is-module: 1.0.0
-      resolve: 1.22.10
+      resolve: 1.22.1
       rollup: 2.79.1
 
   '@rollup/plugin-replace@2.4.2(rollup@2.79.1)':
@@ -10671,19 +10671,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@t3-oss/env-core@0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.57)':
+  '@t3-oss/env-core@0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.58)':
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.57
+      zod: 3.25.58
 
-  '@t3-oss/env-nextjs@0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.57)':
+  '@t3-oss/env-nextjs@0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.58)':
     dependencies:
-      '@t3-oss/env-core': 0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.57)
+      '@t3-oss/env-core': 0.13.8(arktype@2.1.20)(typescript@5.8.3)(zod@3.25.58)
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.8.3
-      zod: 3.25.57
+      zod: 3.25.58
 
   '@tootallnate/once@1.1.2': {}
 
@@ -11093,7 +11093,7 @@ snapshots:
       debug: 4.4.1
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.7.2
+      semver: 7.3.8
       tsutils: 3.21.0(typescript@5.8.3)
     optionalDependencies:
       typescript: 5.8.3
@@ -11104,7 +11104,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 5.62.0
       '@typescript-eslint/visitor-keys': 5.62.0
-      debug: 4.4.1
+      debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.3.8
@@ -11118,7 +11118,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/visitor-keys': 6.21.0
-      debug: 4.4.1
+      debug: 4.4.0
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
@@ -11133,7 +11133,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.13.0
       '@typescript-eslint/visitor-keys': 7.13.0
-      debug: 4.4.1
+      debug: 4.3.7
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.5
@@ -11154,7 +11154,7 @@ snapshots:
       '@typescript-eslint/typescript-estree': 5.56.0(typescript@5.8.3)
       eslint: 8.57.1
       eslint-scope: 5.1.1
-      semver: 7.7.2
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -11405,15 +11405,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ai@4.3.16(react@19.1.0)(zod@3.25.57):
+  ai@4.3.16(react@19.1.0)(zod@3.25.58):
     dependencies:
       '@ai-sdk/provider': 1.1.3
-      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.57)
-      '@ai-sdk/react': 1.2.12(react@19.1.0)(zod@3.25.57)
-      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.57)
+      '@ai-sdk/provider-utils': 2.2.8(zod@3.25.58)
+      '@ai-sdk/react': 1.2.12(react@19.1.0)(zod@3.25.58)
+      '@ai-sdk/ui-utils': 1.2.11(zod@3.25.58)
       '@opentelemetry/api': 1.9.0
       jsondiffpatch: 0.6.0
-      zod: 3.25.57
+      zod: 3.25.58
     optionalDependencies:
       react: 19.1.0
 
@@ -17686,11 +17686,11 @@ snapshots:
 
   zdog@1.1.3: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.57):
+  zod-to-json-schema@3.24.5(zod@3.25.58):
     dependencies:
-      zod: 3.25.57
+      zod: 3.25.58
 
-  zod@3.25.57: {}
+  zod@3.25.58: {}
 
   zustand@3.7.2(react@19.1.0):
     optionalDependencies:
