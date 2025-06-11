@@ -1,51 +1,95 @@
 import { useState } from "react";
+import { certifications } from "src/data/certifications";
 import { diplomas } from "src/data/diplomas";
 import styled from "styled-components";
 
 const Diplomas = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredCertIndex, setHoveredCertIndex] = useState<number | null>(null);
 
   return (
     <Container>
-      <h3>{"🎓 Diplomas"}</h3>
+      <h3>{"🎓 Education & Certifications"}</h3>
       <Description>
         {
-          "Diplomas and certifications are important to me, they are the proof of my knowledge and my ability to learn, adapt to new technologies and achieve my goals."
+          "Education and certifications are important to me, they are the proof of my knowledge and my ability to learn, adapt to new technologies and achieve my goals."
         }
       </Description>
-      <TimelineContainer>
-        <VerticalLine />
-        <Timeline>
-          {diplomas.map((diploma, index) => (
-            <TimelineItem
-              key={index}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <Year>
-                {diploma.year.includes("-") ? (
-                  <>
-                    <YearText>{diploma.year.split("-")[1]}</YearText>
-                    <YearSeparator />
-                    <YearText>{diploma.year.split("-")[0]}</YearText>
-                  </>
-                ) : (
-                  <YearText>{diploma.year}</YearText>
-                )}
-              </Year>
-              <Dot isHovered={hoveredIndex === index} />
-              <Content isHovered={hoveredIndex === index}>
-                <TitleRow>
-                  <Icon>{diploma.icon}</Icon>
-                  <Title>{diploma.title}</Title>
-                </TitleRow>
-                {diploma.subtitle && <Subtitle>{diploma.subtitle}</Subtitle>}
-                {diploma.location && <Location>{diploma.location}</Location>}
-              </Content>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </TimelineContainer>
+      
+      <SubSection>
+        <SubTitle>{`Diplomas ${diplomas.length > 0 && ` (${diplomas.length})`}`}</SubTitle>
+        <TimelineContainer>
+          <VerticalLine />
+          <Timeline>
+            {diplomas.map((diploma, index) => (
+              <TimelineItem
+                key={index}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                <Year>
+                  {diploma.year.includes("-") ? (
+                    <>
+                      <YearText>{diploma.year.split("-")[1]}</YearText>
+                      <YearSeparator />
+                      <YearText>{diploma.year.split("-")[0]}</YearText>
+                    </>
+                  ) : (
+                    <YearText>{diploma.year}</YearText>
+                  )}
+                </Year>
+                <Dot isHovered={hoveredIndex === index} />
+                <Content isHovered={hoveredIndex === index}>
+                  <TitleRow>
+                    <Icon>{diploma.icon}</Icon>
+                    <Title>{diploma.title}</Title>
+                  </TitleRow>
+                  {diploma.subtitle && <Subtitle>{diploma.subtitle}</Subtitle>}
+                  {diploma.location && <Location>{diploma.location}</Location>}
+                </Content>
+              </TimelineItem>
+            ))}
+          </Timeline>
+        </TimelineContainer>
+      </SubSection>
+
+      {/* Section Certifications */}
+      <SubSection>
+        <SubTitle>{`Certifications ${certifications.length > 0 && ` (${certifications.length})`}`}</SubTitle>
+        <TimelineContainer>
+          <VerticalLine />
+          <Timeline>
+            {certifications.map((cert, index) => (
+              <TimelineItem
+                key={index}
+                onMouseEnter={() => setHoveredCertIndex(index)}
+                onMouseLeave={() => setHoveredCertIndex(null)}
+              >
+                <Year>
+                  {cert.year.includes("-") ? (
+                    <>
+                      <YearText>{cert.year.split("-")[1]}</YearText>
+                      <YearSeparator />
+                      <YearText>{cert.year.split("-")[0]}</YearText>
+                    </>
+                  ) : (
+                    <YearText>{cert.year}</YearText>
+                  )}
+                </Year>
+                <Dot isHovered={hoveredCertIndex === index} />
+                <Content isHovered={hoveredCertIndex === index}>
+                  <TitleRow>
+                    <Icon>{cert.icon}</Icon>
+                    <Title>{cert.title}</Title>
+                  </TitleRow>
+                  {cert.subtitle && <Subtitle>{cert.subtitle}</Subtitle>}
+                  {cert.location && <Location>{cert.location}</Location>}
+                </Content>
+              </TimelineItem>
+            ))}
+          </Timeline>
+        </TimelineContainer>
+      </SubSection>
     </Container>
   );
 };
@@ -58,6 +102,21 @@ const Container = styled.div`
 
 const Description = styled.p`
   margin-bottom: 2rem;
+`;
+
+const SubSection = styled.div`
+  margin-bottom: 3rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const SubTitle = styled.h4`
+  color: #ffffe3;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 `;
 
 const TimelineContainer = styled.div`

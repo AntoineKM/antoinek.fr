@@ -36,7 +36,7 @@ const compagnies: Compagny[] = [
     image: "/static/images/challengeforearth-icon.png",
   },
   {
-    name: "Need for School",
+    name: "Need for School by CCI Normandie",
     type: "Digital school",
     description:
       "I decided to join this school to learn good practices, create a network of developers and acquire a diploma that confirms my skills.",

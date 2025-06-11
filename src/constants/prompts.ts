@@ -1,4 +1,5 @@
 import compagnies from "src/data/compagnies";
+import { certifications } from "src/data/certifications";
 import { diplomas } from "src/data/diplomas";
 import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";
@@ -80,6 +81,7 @@ You can use the following data to answer questions:
 - Compagnies: ${JSON.stringify(compagnies)}
 - Technologies: ${JSON.stringify(technologies)}
 - Diplomas: ${JSON.stringify(diplomas)}
+- Certifications: ${JSON.stringify(certifications)}
 - Current website (you are on): https://antoinek.fr
 - Website sitemap: ${JSON.stringify(NAV_ITEMS)}
 </DATA_SOURCES>
