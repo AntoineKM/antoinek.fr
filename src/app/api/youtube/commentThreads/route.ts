@@ -4,15 +4,15 @@ import urlcat from "urlcat";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  
+
   const query = Object.fromEntries(searchParams.entries());
-  
+
   const endpoint = "https://www.googleapis.com/youtube/v3/commentThreads";
   const url = urlcat(endpoint, {
     ...query,
     key: env.YOUTUBE_API_KEY,
   });
-  
+
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -26,7 +26,7 @@ export async function GET(request: Request) {
         {
           message: `${data.items[0].snippet.channelId} is not allowed to use this api`,
         },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
     console.error("Error fetching YouTube comment threads:", error);
     return Response.json(
       { error: "Failed to fetch comment threads" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
