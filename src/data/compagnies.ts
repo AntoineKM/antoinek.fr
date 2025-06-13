@@ -4,9 +4,9 @@ const compagnies: Compagny[] = [
   {
     name: "Arkée by Jaws",
     type: "Agency",
-    role: "Consultant & Developer",
+    role: "R&D Developer",
     description:
-      "I have to make internal workflow faster and help companies to improve their SEO.",
+      "I work in the R&D department developing internal tools and helping companies improve their SEO and performance.",
     url: "https://arkee.fr",
     image: "/static/images/arkee-icon.jpg",
   },
@@ -48,8 +48,8 @@ const compagnies: Compagny[] = [
     name: "onRuntime",
     type: "Creative studio",
     description:
-      "I founded onRuntime in 2019 to brings projects and teams of creators togethers.",
-    role: "Founder & Developer",
+      "I co-founded onRuntime in 2015 with friends to bring projects and teams of creators together.",
+    role: "Co-founder & Developer",
     url: "https://onruntime.com",
     image: "/static/images/onruntime-icon.jpg",
   },

@@ -18,29 +18,55 @@ const What = () => {
       )} y/o developer, designer and youtuber.`}</p>
       <p>
         {
-          "I design, build and publish projects of quality and reliability. Currently, I'm working at "
+          "I'm based in Rouen and I'm a big fan of cars and motorcycles - a perfect balance to decompress after long coding sessions! I design, build and publish projects of quality and reliability."
+        }
+      </p>
+      <p>
+        {
+          "My coding journey started at 11 years old when I created custom plugins for my Minecraft server in Java. This early passion for problem-solving through code naturally evolved into a professional career. Currently, I'm working in the R&D department at "
         }
         <Link href={"https://arkee.fr"}>{"Arkée"}</Link>
-        {" and "}
+        {", co-founded "}
+        <Link href={"https://onruntime.com"}>{"onRuntime Studio"}</Link>
+        {" with friends, and building "}
         <Link href={"https://tonightpass.com"}>{"Tonight Pass"}</Link>
         {"."}
       </p>
       <p>
         {
-          "In my free time, I make music as a DJ and post slow motion music on my Youtube Channel and by the way I love bringing people together to create and have fun together! 🥳"
+          "In my free time, I make music as a DJ and post slow motion music on my Youtube Channel. I love bringing people together to create and have fun together! 🥳"
         }
       </p>
+      
       <h2>{"About Arkée by Jaws"}</h2>
       <p>
         {
-          "SEO is a vast universe that I'd skimmed over during my Bachelor's degree in Web Development, so I really wanted to discover this field in more detail and create tools around it, which is why I joined Arkée."
+          "I work in Arkée's R&D department, where I wear multiple hats: developing internal tools that dramatically improve our workflow efficiency, and acting as a technical consultant to help resolve structural and performance problems for our clients."
         }
       </p>
       <p>
         {
-          "I now wear two hats: that of a technical consultant, helping to resolve the various structural and performance problems encountered by our customers. And as a developer, I create tools that speed up the company's workflow."
+          "Through automation and optimization, we've been able to deliver significant cost reductions and performance improvements for our clients. SEO was a vast universe I'd only skimmed during my studies, but joining Arkée allowed me to dive deep and create meaningful tools around it."
         }
       </p>
+      <p>
+        {
+          "The expertise I've gained at Arkée has been invaluable for my own projects too - for example, applying SEO strategies to Tonight Pass helped it grow from 0 to 100k impressions in less than 3 months, just by working on it during weekends."
+        }
+      </p>
+
+      <h2>{"About onRuntime Studio"}</h2>
+      <p>
+        {
+          "In 2015, I co-founded onRuntime Studio with friends - a development and design agency focused on bringing projects and teams of creators together. Over the years, we've delivered dozens of projects, from web applications to mobile apps and complete digital experiences."
+        }
+      </p>
+      <p>
+        {
+          "What started as a group of passionate friends wanting to create impactful digital solutions has grown into a recognized agency. We specialize in modern technologies and always aim to deliver solutions that make a real difference for our clients."
+        }
+      </p>
+
       <h2>{"About Tonight Pass"}</h2>
       <p>
         {`I often go out to nightclubs and parties, and I have seen that this world is not very technologically advanced. Most companies only think about pre-selling tickets for events, but in reality the organization of a party is much more complex.
@@ -48,7 +74,7 @@ Tonight Pass simplifies the whole organization: find your teams and DJs, create 
       </p>
       <p>
         {
-          "All this is under construction and we should have our minimum viable product from August 2024, it is a challenge in therme of time and technologies used, because we also develop our own open source tools, but also an entrepreneurial challenge since we are young and invest a lot of our time and money in this project. Moreover until today we have not studied the possibility of raising funds to accelerate our development but we are open to anyone who would like to help us!"
+          "This platform represents the intersection of my technical expertise and real-world problem solving - using adaptive algorithms and modern web technologies to revolutionize how people discover and experience nightlife events."
         }
       </p>
     </PageWrapper>
