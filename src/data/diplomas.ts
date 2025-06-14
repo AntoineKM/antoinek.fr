@@ -1,7 +1,8 @@
 export const diplomas = [
   {
     year: "2025",
-    title: "Permis A2 (motorcycle license)",
+    title: "Permis A2",
+    subtitle: "Motorcycle license",
     location: "Rouen, France",
     icon: "🏍️",
   },
@@ -21,7 +22,8 @@ export const diplomas = [
   },
   {
     year: "2021",
-    title: "Permis B (driving license)",
+    title: "Permis B",
+    subtitle: "Driving license",
     location: "Rouen, France",
     icon: "🚗",
   },
