@@ -9,7 +9,7 @@ import styled from "styled-components";
 
 const SUGGESTED_MESSAGES = [
   "What is your experience?",
-  "What technologies do you use?",
+  "Which technologies do you use?",
   "What are your current projects?",
   "How can I contact you?",
 ];
