@@ -9,7 +9,7 @@ const Diplomas = () => {
 
   return (
     <Container>
-      <h3>{"🎓 Education & Certifications"}</h3>
+      <h2>{"🎓 Education & Certifications"}</h2>
       <Description>
         {
           "Education and certifications are important to me, they are the proof of my knowledge and my ability to learn, adapt to new technologies and achieve my goals."
@@ -111,7 +111,7 @@ const SubSection = styled.div`
   }
 `;
 
-const SubTitle = styled.h4`
+const SubTitle = styled.h3`
   color: #ffffe3;
   font-weight: 600;
   margin-bottom: 1.5rem;

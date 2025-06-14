@@ -99,10 +99,10 @@ const Doing = (
     <>
       {doing?.listening_to_spotify ? (
         <Container ref={ref} href={"/presence"} {...props}>
-          <h5>
+          <Title>
             {"Listening to Spotify "}
             <LiveDot />
-          </h5>
+          </Title>
           <>
             <ActivityRow>
               <ActivityImageContainer>
@@ -111,7 +111,7 @@ const Doing = (
               </ActivityImageContainer>
 
               <ActivityInfo>
-                <h5>{doing.spotify.song}</h5>
+                <span>{doing.spotify.song}</span>
                 <p>
                   {"by "}
                   {doing.spotify.artist}
@@ -129,7 +129,7 @@ const Doing = (
       ) : null}
       {currentActivity ? (
         <Container href={"/presence"} {...props}>
-          <h5>{"Doing something"}</h5>
+          <Title>{"Doing something"}</Title>
           <ActivityRow>
             {currentActivity.assets ? (
               <ActivityImageContainer>
@@ -142,7 +142,7 @@ const Doing = (
               </ActivityImageContainer>
             ) : null}
             <ActivityInfo>
-              <h5>{currentActivity.name}</h5>
+              <span>{currentActivity.name}</span>
               {currentActivity.details ? (
                 <p>{currentActivity.details}</p>
               ) : null}
@@ -168,11 +168,14 @@ const Container = styled(motion.create(Link))`
     background-color: #30302b;
     color: #ffffe3;
   }
+`;
 
-  h5 {
-    margin: 0;
-    margin-bottom: 10px;
-  }
+const Title = styled.p`
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: rgb(189, 189, 178);
 `;
 
 const fadeInOut = keyframes`
@@ -230,9 +233,12 @@ const ActivitySecondaryImage = styled.img`
 const ActivityInfo = styled.div`
   margin-left: 1rem;
 
-  h5 {
+  span {
     color: #ffffe3;
     margin: 0;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #ffffe3;
   }
 
   p {

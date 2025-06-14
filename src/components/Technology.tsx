@@ -21,15 +21,15 @@ const Technology: React.FC<TechnologyProps> = ({
       <Head color={color}>{icon}</Head>
 
       <Column forceWidth={110}>
-        <h5>{"name"}</h5>
+        <span>{"name"}</span>
         <p>{name}</p>
       </Column>
       <Column forceWidth={200}>
-        <h5>{"type"}</h5>
+        <span>{"type"}</span>
         <p>{type}</p>
       </Column>
       <Column noBorder>
-        <h5>{"use case"}</h5>
+        <span>{"use case"}</span>
         <p>{useCase}</p>
       </Column>
     </Container>
@@ -106,7 +106,7 @@ const Column = styled.div<{ forceWidth?: number; noBorder?: boolean }>`
     box-sizing: content-box;
   }
 
-  h5 {
+  span {
     font-family: "Panchang";
     margin: 0;
     color: #ffffe3;

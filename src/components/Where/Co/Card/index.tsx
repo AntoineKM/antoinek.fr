@@ -55,9 +55,9 @@ const CoCard: React.FC<Props> = ({
           </div>
         </Header>
         <Content>
-          <h3>{"Role"}</h3>
+          <h4>{"Role"}</h4>
           <p>{role}</p>
-          <h3>{"What"}</h3>
+          <h4>{"What"}</h4>
           <p>{description}</p>
         </Content>
       </Container>

@@ -6,7 +6,7 @@ import CoCard from "./Card";
 const Co: React.FC = () => {
   return (
     <>
-      <h3>{"🏢 Companies"}</h3>
+      <h2>{`🏢 Companies (${compagnies.length})`}</h2>
       <Container>
         {compagnies.map((compagny) => (
           <CoCard key={compagny.name} data={compagny} />
