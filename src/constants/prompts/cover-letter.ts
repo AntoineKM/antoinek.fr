@@ -96,7 +96,8 @@ Technologies: ${JSON.stringify(technologies)}
 - Be concrete and specific with numbers and results
 - 70% about Antoine's story and value, 30% company connection
 - Professional but authentic tone (not overly formal)
-- No headers, dates, or contact info
+- No headers, dates, contact info, or signature lines
+- Do not end with any signature
 - Length: 250-350 words
 - Respond in ${language}
 </CRITICAL_RULES>
