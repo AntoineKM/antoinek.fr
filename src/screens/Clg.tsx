@@ -1,8 +1,8 @@
-// src/screens/Clg.tsx
 import { Button } from "@components/Button";
 import PageWrapper from "@components/PageWrapper";
 import { NextSeo } from "next-seo";
 import React, { useState } from "react";
+import generatePDFClient from "src/utils/generatePDFClient";
 import styled from "styled-components";
 
 interface FormData {
@@ -35,7 +35,9 @@ const Clg: React.FC = () => {
     jobTitle: "",
     jobDescription: "",
   });
-  const [companySummary, setCompanySummary] = useState<CompanySummary | null>(null);
+  const [companySummary, setCompanySummary] = useState<CompanySummary | null>(
+    null,
+  );
   const [coverLetter, setCoverLetter] = useState<CoverLetter | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -97,37 +99,12 @@ const Clg: React.FC = () => {
 
     try {
       setIsLoading(true);
-      const response = await fetch("/api/clg/generate-pdf", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          coverLetter: coverLetter.content,
-          companyName: formData.companyName,
-          jobTitle: formData.jobTitle,
-          language: formData.language,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to generate PDF");
-      }
-
-      const htmlContent = await response.text();
-      
-      // Open the HTML content in a new window for printing
-      const printWindow = window.open("", "_blank");
-      if (printWindow) {
-        printWindow.document.write(htmlContent);
-        printWindow.document.close();
-        
-        // Focus the new window
-        printWindow.focus();
-        
-        // Note: The HTML includes auto-print functionality
-        // Users can use Ctrl+P to print to PDF manually if the auto-print doesn't work
-      } else {
-        throw new Error("Unable to open print window. Please allow popups for this site.");
-      }
+      await generatePDFClient(
+        coverLetter.content,
+        formData.companyName,
+        formData.jobTitle,
+        formData.language,
+      );
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to generate PDF");
     } finally {
@@ -137,11 +114,11 @@ const Clg: React.FC = () => {
 
   const resetForm = () => {
     setCurrentStep("form");
-    setFormData({ 
-      language: "english", 
-      companyName: "", 
-      jobTitle: "", 
-      jobDescription: "" 
+    setFormData({
+      language: "english",
+      companyName: "",
+      jobTitle: "",
+      jobDescription: "",
     });
     setCompanySummary(null);
     setCoverLetter(null);
@@ -164,46 +141,61 @@ const Clg: React.FC = () => {
   };
 
   const isFormValid = () => {
-    return formData.companyName.trim() && 
-           formData.jobTitle.trim() && 
-           formData.jobDescription.trim();
+    return (
+      formData.companyName.trim() &&
+      formData.jobTitle.trim() &&
+      formData.jobDescription.trim()
+    );
   };
 
   return (
     <PageWrapper forceReadableWidth>
       <NextSeo
-        title="Cover Letter Generator - Development Tool"
-        description="Generate personalized cover letters using AI - Development tool for Antoine Kingue"
+        title={"Cover Letter Generator - Development Tool"}
+        description={
+          "Generate personalized cover letters using AI - Development tool for Antoine Kingue"
+        }
       />
 
       <Container>
         <Header>
-          <DevNotice>⚠️ Development Tool - Hidden Page</DevNotice>
+          <DevNotice>{"⚠️ Development Tool - Hidden Page"}</DevNotice>
           <h1>{getStepTitle()}</h1>
           <StepsIndicator>
-            <Step $active={currentStep === "form"} $completed={currentStep !== "form"}>
-              1
+            <Step
+              $active={currentStep === "form"}
+              $completed={currentStep !== "form"}
+            >
+              {"1"}
             </Step>
             <StepConnector />
-            <Step $active={currentStep === "company-analysis"} $completed={["letter-generation", "download"].includes(currentStep)}>
-              2
+            <Step
+              $active={currentStep === "company-analysis"}
+              $completed={["letter-generation", "download"].includes(
+                currentStep,
+              )}
+            >
+              {"2"}
             </Step>
             <StepConnector />
-            <Step $active={currentStep === "letter-generation"} $completed={currentStep === "download"}>
-              3
+            <Step
+              $active={currentStep === "letter-generation"}
+              $completed={currentStep === "download"}
+            >
+              {"3"}
             </Step>
             <StepConnector />
             <Step $active={currentStep === "download"} $completed={false}>
-              4
+              {"4"}
             </Step>
           </StepsIndicator>
         </Header>
 
         {error && (
           <ErrorMessage>
-            <strong>Error:</strong> {error}
+            <strong>{"Error:"}</strong> {error}
             <Button onClick={resetForm} style={{ marginTop: "1rem" }}>
-              Try Again
+              {"Try Again"}
             </Button>
           </ErrorMessage>
         )}
@@ -212,65 +204,72 @@ const Clg: React.FC = () => {
           <FormContainer>
             <form onSubmit={handleFormSubmit}>
               <FormGroup>
-                <Label htmlFor="language">Language</Label>
+                <Label htmlFor={"language"}>{"Language"}</Label>
                 <Select
-                  id="language"
+                  id={"language"}
                   value={formData.language}
                   onChange={(e) =>
-                    setFormData({ ...formData, language: e.target.value as "french" | "english" })
+                    setFormData({
+                      ...formData,
+                      language: e.target.value as "french" | "english",
+                    })
                   }
                 >
-                  <option value="english">English</option>
-                  <option value="french">Français</option>
+                  <option value={"english"}>{"English"}</option>
+                  <option value={"french"}>{"Français"}</option>
                 </Select>
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="companyName">Company Name *</Label>
+                <Label htmlFor={"companyName"}>{"Company Name *"}</Label>
                 <Input
-                  id="companyName"
-                  type="text"
+                  id={"companyName"}
+                  type={"text"}
                   value={formData.companyName}
                   onChange={(e) =>
                     setFormData({ ...formData, companyName: e.target.value })
                   }
-                  placeholder="Enter the company name..."
+                  placeholder={"Enter the company name..."}
                   required
                 />
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="jobTitle">Job Title *</Label>
+                <Label htmlFor={"jobTitle"}>{"Job Title *"}</Label>
                 <Input
-                  id="jobTitle"
-                  type="text"
+                  id={"jobTitle"}
+                  type={"text"}
                   value={formData.jobTitle}
                   onChange={(e) =>
                     setFormData({ ...formData, jobTitle: e.target.value })
                   }
-                  placeholder="e.g. Senior Frontend Developer, Full Stack Engineer..."
+                  placeholder={
+                    "e.g. Senior Frontend Developer, Full Stack Engineer..."
+                  }
                   required
                 />
               </FormGroup>
 
               <FormGroup>
-                <Label htmlFor="jobDescription">Job Description *</Label>
+                <Label htmlFor={"jobDescription"}>{"Job Description *"}</Label>
                 <TextArea
-                  id="jobDescription"
+                  id={"jobDescription"}
                   value={formData.jobDescription}
                   onChange={(e) =>
                     setFormData({ ...formData, jobDescription: e.target.value })
                   }
-                  placeholder="Paste the job description here..."
+                  placeholder={"Paste the job description here..."}
                   rows={8}
                   required
                 />
                 <HelperText>
-                  Paste the complete job description to get the most personalized cover letter
+                  {
+                    "Paste the complete job description to get the most personalized cover letter"
+                  }
                 </HelperText>
               </FormGroup>
 
-              <Button type="submit" disabled={!isFormValid() || isLoading}>
+              <Button type={"submit"} disabled={!isFormValid() || isLoading}>
                 {isLoading ? "Generating..." : "Generate Cover Letter"}
               </Button>
             </form>
@@ -280,7 +279,11 @@ const Clg: React.FC = () => {
         {currentStep === "company-analysis" && (
           <LoadingContainer>
             <LoadingSpinner />
-            <p>Researching {formData.companyName}...</p>
+            <p>
+              {"Researching "}
+              {formData.companyName}
+              {"..."}
+            </p>
           </LoadingContainer>
         )}
 
@@ -288,50 +291,80 @@ const Clg: React.FC = () => {
           <LoadingContainer>
             <LoadingSpinner />
             <CompanySummaryCard>
-              <h3>Company Analysis Complete</h3>
-              <p><strong>Industry:</strong> {companySummary.industry}</p>
-              <p><strong>Description:</strong> {companySummary.description}</p>
+              <h3>{"Company Analysis Complete"}</h3>
+              <p>
+                <strong>{"Industry:"}</strong> {companySummary.industry}
+              </p>
+              <p>
+                <strong>{"Description:"}</strong> {companySummary.description}
+              </p>
               {companySummary.values.length > 0 && (
-                <p><strong>Values:</strong> {companySummary.values.join(", ")}</p>
+                <p>
+                  <strong>{"Values:"}</strong>{" "}
+                  {companySummary.values.join(", ")}
+                </p>
               )}
             </CompanySummaryCard>
             <JobInfoCard>
-              <h3>Job Information</h3>
-              <p><strong>Position:</strong> {formData.jobTitle}</p>
-              <p><strong>Requirements analyzed:</strong> ✓</p>
+              <h3>{"Job Information"}</h3>
+              <p>
+                <strong>{"Position:"}</strong> {formData.jobTitle}
+              </p>
+              <p>
+                <strong>{"Requirements analyzed:"}</strong> {"✓"}
+              </p>
             </JobInfoCard>
-            <p>Creating your personalized cover letter...</p>
+            <p>{"Creating your personalized cover letter..."}</p>
           </LoadingContainer>
         )}
 
         {currentStep === "download" && coverLetter && companySummary && (
           <ResultContainer>
             <CompanySummaryCard>
-              <h3>Company Analysis</h3>
-              <p><strong>Industry:</strong> {companySummary.industry}</p>
-              <p><strong>Description:</strong> {companySummary.description}</p>
+              <h3>{"Company Analysis"}</h3>
+              <p>
+                <strong>{"Industry:"}</strong> {companySummary.industry}
+              </p>
+              <p>
+                <strong>{"Description:"}</strong> {companySummary.description}
+              </p>
               {companySummary.values.length > 0 && (
-                <p><strong>Key Values:</strong> {companySummary.values.join(", ")}</p>
+                <p>
+                  <strong>{"Key Values:"}</strong>{" "}
+                  {companySummary.values.join(", ")}
+                </p>
               )}
             </CompanySummaryCard>
 
             <JobInfoCard>
-              <h3>Target Position</h3>
-              <p><strong>Role:</strong> {formData.jobTitle}</p>
-              <p><strong>Company:</strong> {formData.companyName}</p>
+              <h3>{"Target Position"}</h3>
+              <p>
+                <strong>{"Role:"}</strong> {formData.jobTitle}
+              </p>
+              <p>
+                <strong>{"Company:"}</strong> {formData.companyName}
+              </p>
             </JobInfoCard>
 
             <CoverLetterPreview>
-              <h3>Cover Letter Preview</h3>
-              <LetterContent dangerouslySetInnerHTML={{ __html: coverLetter.formatted }} />
+              <h3>{"Cover Letter Preview"}</h3>
+              <LetterContent
+                dangerouslySetInnerHTML={{ __html: coverLetter.formatted }}
+              />
             </CoverLetterPreview>
 
             <ActionButtons>
               <Button onClick={handleDownloadPDF} disabled={isLoading}>
                 {isLoading ? "Preparing..." : "Print to PDF"}
               </Button>
-              <Button onClick={resetForm} style={{ backgroundColor: "transparent", border: "1px solid #30302b" }}>
-                Generate Another
+              <Button
+                onClick={resetForm}
+                style={{
+                  backgroundColor: "transparent",
+                  border: "1px solid #30302b",
+                }}
+              >
+                {"Generate Another"}
               </Button>
             </ActionButtons>
           </ResultContainer>
@@ -386,8 +419,9 @@ const Step = styled.div<{ $active: boolean; $completed: boolean }>`
     $completed ? "#ffffe3" : $active ? "#30302b" : "transparent"};
   color: ${({ $active, $completed }) =>
     $completed ? "#10100e" : $active ? "#ffffe3" : "#bdbdb2"};
-  border: 2px solid ${({ $active, $completed }) =>
-    $completed ? "#ffffe3" : $active ? "#ffffe3" : "#30302b"};
+  border: 2px solid
+    ${({ $active, $completed }) =>
+      $completed ? "#ffffe3" : $active ? "#ffffe3" : "#30302b"};
   transition: all 0.3s ease;
 `;
 
@@ -497,8 +531,12 @@ const LoadingSpinner = styled.div`
   margin: 0 auto;
 
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 `;
 

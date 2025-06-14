@@ -25,6 +25,6 @@ const contributions: Package[] = [
     name: "nextra/nextra",
     downloads: 9510597,
   },
-]
+];
 
 export default contributions;

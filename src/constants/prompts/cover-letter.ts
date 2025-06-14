@@ -1,14 +1,13 @@
 import { certifications } from "src/data/certifications";
 import compagnies from "src/data/compagnies";
+import contributions from "src/data/contributions";
 import { diplomas } from "src/data/diplomas";
 import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";
-import { NAV_ITEMS } from "../nav-items";
-import contributions from "src/data/contributions";
 
 export const coverLetterPrompt = (
   companyData: object,
-  language: string
+  language: string,
 ) => `You are writing a professional cover letter for Antoine Kingue using a natural 5W2H narrative approach.
 
 <CANDIDATE_PROFILE>
@@ -89,14 +88,16 @@ Technologies: ${JSON.stringify(technologies)}
 </EDUCATION_CONTEXT>
 
 <CRITICAL_RULES>
+- NEVER start with a title or header like "Job application for X at Y"
+- NEVER mention specific company partnerships, recent news, or tactical announcements
 - Use EXACT job title provided - never change or interpret it
 - Follow natural 5W2H narrative flow (personal → technical → results → alignment)
-- Start with authentic personal story (coding since 11, current life context)
+- Start directly with authentic personal story (coding since 11, current life context)
 - Lead with most impressive relevant achievements (billion+ downloads when applicable)
 - Be concrete and specific with numbers and results
 - 70% about Antoine's story and value, 30% company connection
 - Professional but authentic tone (not overly formal)
-- No headers, dates, contact info, or signature lines
+- No headers, dates, contact info, signature lines, or job application titles
 - Do not end with any signature
 - Length: 250-350 words
 - Respond in ${language}
@@ -110,10 +111,10 @@ Contributions: ${JSON.stringify(contributions)}
 
 <TASK>
 Write a cover letter using the natural 5W2H narrative approach that:
-1. Opens with authentic personal context and exact job title
+1. Opens directly with authentic personal context (NO TITLE/HEADER)
 2. Shows technical journey and passion (11 years old → today)
 3. Highlights concrete results with specific numbers
-4. Connects to company mission and role without over-describing the company
+4. Connects to company mission and values (high-level, no specific news/partnerships)
 5. Closes with clear availability and next steps
 6. Provides both raw text and HTML formatted versions
-</TASK>`
+</TASK>`;
