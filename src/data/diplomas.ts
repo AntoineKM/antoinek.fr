@@ -1,5 +1,12 @@
 export const diplomas = [
   {
+    year: "2025",
+    title: "Permis A2",
+    subtitle: "Motorcycle license",
+    location: "Rouen, France",
+    icon: "🏍️",
+  },
+  {
     year: "2023-2025",
     title: "Master Concepteur développeur d'applications",
     subtitle: "Master's degree in application development",
@@ -15,7 +22,8 @@ export const diplomas = [
   },
   {
     year: "2021",
-    title: "Permis B (driving license)",
+    title: "Permis B",
+    subtitle: "Driving license",
     location: "Rouen, France",
     icon: "🚗",
   },
