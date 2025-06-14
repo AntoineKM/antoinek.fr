@@ -37,7 +37,7 @@ const What = () => {
           "In my free time, I make music as a DJ and post slow motion music on my Youtube Channel. I love bringing people together to create and have fun together! 🥳"
         }
       </p>
-      
+
       <h2>{"About Arkée by Jaws"}</h2>
       <p>
         {
