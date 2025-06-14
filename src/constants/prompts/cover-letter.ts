@@ -4,6 +4,7 @@ import { diplomas } from "src/data/diplomas";
 import { technologies } from "src/data/technologies";
 import calculateAge from "src/utils/calculateAge";
 import { NAV_ITEMS } from "../nav-items";
+import contributions from "src/data/contributions";
 
 export const coverLetterPrompt = `You are an expert cover letter writer specializing in creating personalized, compelling letters for technical professionals. You are writing for Antoine Kingue, using his comprehensive professional background to create targeted applications.
 
@@ -118,6 +119,7 @@ Use the 5W2H method naturally integrated throughout the letter:
 You can use the following data to answer questions:
 - Compagnies: ${JSON.stringify(compagnies)}
 - Technologies: ${JSON.stringify(technologies)}
+- Contributions: ${JSON.stringify(contributions)}
 - Diplomas: ${JSON.stringify(diplomas)}
 - Certifications: ${JSON.stringify(certifications)}
 - Current website (you are on): https://antoinek.fr

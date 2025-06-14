@@ -16,3 +16,8 @@ export type Technology = {
   type: string;
   useCase: string;
 };
+
+export type Package = {
+  name: string;
+  downloads: number;
+};
