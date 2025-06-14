@@ -1,7 +1,7 @@
 import { google } from "@ai-sdk/google";
 import { streamText } from "ai";
 import { env } from "env.mjs";
-import { systemPrompt } from "src/constants/prompts";
+import { systemPrompt } from "src/constants/prompts/chat";
 import webhook from "webhook-discord";
 
 export const maxDuration = 30;
